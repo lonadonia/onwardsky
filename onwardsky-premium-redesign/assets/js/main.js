@@ -453,7 +453,7 @@
       if (input) input.setAttribute('aria-invalid', msg ? 'true' : 'false');
       if (err) {
         err.hidden = !msg;
-        err.innerHTML = msg ? '<svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg><span>' + esc(msg) + '</span>' : '';
+        err.innerHTML = msg ? '<svg class="icon" aria-hidden="true"><use href="#b-warning-circle"/></svg><span>' + esc(msg) + '</span>' : '';
       }
     });
   }
@@ -466,7 +466,7 @@
   }
 
   function setStatus(type, html) {
-    statusEl.className = 'console-status' + (type ? ' is-' + type : '');
+    statusEl.className = 'booking-status' + (type ? ' is-' + type : '');
     statusEl.hidden = !type;
     statusEl.innerHTML = type ? html : '';
   }
@@ -487,7 +487,7 @@
     var s = summary();
     // Production: handoff.js builds the wizard URL from these values. The prototype stops here.
     setStatus('ready',
-      '<svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>' +
+      '<svg class="icon" aria-hidden="true"><use href="#b-check-circle"/></svg>' +
       '<span><strong>Search ready: ' + esc(s.route) + '</strong> · ' + esc(s.when) + ' · ' + esc(s.pax) +
       '<span class="status-note">On the live site this opens the secure booking wizard. This prototype stops here, so no booking or payment is made.</span></span>');
     announce('Search ready. ' + s.route.replace(/→/g, 'to') + ', ' + s.when + ', ' + s.pax + '. Prototype: no booking is made.');
@@ -580,14 +580,14 @@
     e.preventDefault();
     closeList();
     if (!AIRPORTS.length) {
-      setStatus('error', '<svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg><span>' + esc(MSG.unavailable) + '</span>');
+      setStatus('error', '<svg class="icon" aria-hidden="true"><use href="#b-warning-circle"/></svg><span>' + esc(MSG.unavailable) + '</span>');
       return;
     }
     state.errors = validate();
     paintErrors();
     var first = Object.keys(state.errors)[0];
     if (first) {
-      setStatus('error', '<svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg><span>' + esc(MSG.fix) + '</span>');
+      setStatus('error', '<svg class="icon" aria-hidden="true"><use href="#b-warning-circle"/></svg><span>' + esc(MSG.fix) + '</span>');
       announce(MSG.fix);
       var f = F(first);
       if (f) f.input.focus();

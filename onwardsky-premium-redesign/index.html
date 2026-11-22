@@ -12,7 +12,7 @@
   <script>
     /* Preload the two variable fonts when served over http(s); file:// previews skip it to stay error-free. */
     if (location.protocol.indexOf('http') === 0) {
-      ['archivo-latin-variable.woff2', 'figtree-latin-variable.woff2'].forEach(function (file) {
+      ['manrope-latin-variable.woff2', 'figtree-latin-variable.woff2'].forEach(function (file) {
         var link = document.createElement('link');
         link.rel = 'preload'; link.as = 'font'; link.type = 'font/woff2'; link.crossOrigin = 'anonymous';
         link.href = 'assets/fonts/' + file;
@@ -23,25 +23,7 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <svg class="sprite" aria-hidden="true" focusable="false">
-    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.4l1.4-4.4A8.4 8.4 0 1 1 20.5 11.6Z"/><path d="M8.6 11.7h.01M12.1 11.7h.01M15.6 11.7h.01" stroke-width="2.4"/></symbol>
-    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
-    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
-    <symbol id="i-verify" viewBox="0 0 24 24"><path d="M14 3.2H7.2a2 2 0 0 0-2 2v13.6a2 2 0 0 0 2 2h9.6a2 2 0 0 0 2-2V8Z"/><path d="M14 3.2V8h4.8"/><path d="M8.8 14.1l2.2 2.2 4.2-4.4"/></symbol>
-    <symbol id="i-expire" viewBox="0 0 24 24"><path d="M19.8 12.6a7.9 7.9 0 1 1-2.3-6.1"/><path d="M19.9 3.9v4h-4"/><path d="M12 8.2v4.2l2.7 1.6"/></symbol>
-    <symbol id="i-support" viewBox="0 0 24 24"><path d="M4.5 13.5v-1.8a7.5 7.5 0 0 1 15 0v1.8"/><path d="M4.5 13.2h2.2v5H5.6a1.1 1.1 0 0 1-1.1-1.1Zm15 0h-2.2v5h1.1a1.1 1.1 0 0 0 1.1-1.1Z"/><path d="M17.3 18.2c0 1.5-1.6 2.3-4.4 2.3"/></symbol>
-    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M5 8.5h13.5M15 5l3.5 3.5L15 12M19 15.5H5.5M9 12l-3.5 3.5L9 19"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.4V12l3 1.9"/></symbol>
-    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.2" width="14" height="10" rx="2.2"/><path d="M8.3 10.2V7.6a3.7 3.7 0 0 1 7.4 0v2.6"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.4" y="5.4" width="17.2" height="13.2" rx="2.2"/><path d="M4.2 6.8l7.8 6 7.8-6"/></symbol>
-    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5.5v13M5.5 12h13"/></symbol>
-    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.6v5.2"/><path d="M12 16.3v.1" stroke-width="2.4"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5.2 12.6l4.4 4.3 9.2-9.6"/></symbol>
-    <symbol id="i-external" viewBox="0 0 24 24"><path d="M8 16l8.5-8.5M9.5 7.5h7v7"/></symbol>
-    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8.2" r="3.6"/><path d="M5.2 19.6c.5-3.6 3.3-6 6.8-6s6.3 2.4 6.8 6"/></symbol>
-    <symbol id="i-plane" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M21.6 12c0-.8-.7-1.4-1.6-1.4h-5.2L10.3 3.6H8.4l2.3 7H6.3L4.7 8.5H3.3l1 3.5-1 3.5h1.4l1.6-2.1h4.4l-2.3 7h1.9l4.5-7h5.2c.9 0 1.6-.6 1.6-1.4Z"/></symbol>
-    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 3.1l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17.1 6.6 20l1-6.1-4.4-4.3 6.1-.9Z"/></symbol>
-  </svg>
+  <!--SPRITE:START--><svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0"><symbol id="b-list" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"/></symbol><symbol id="b-x" viewBox="0 0 256 256"><path d="M208.49,191.51a12,12,0,0,1-17,17L128,145,64.49,208.49a12,12,0,0,1-17-17L111,128,47.51,64.49a12,12,0,0,1,17-17L128,111l63.51-63.52a12,12,0,0,1,17,17L145,128Z"/></symbol><symbol id="b-arrows-down-up" viewBox="0 0 256 256"><path d="M120.49,167.51a12,12,0,0,1,0,17l-32,32a12,12,0,0,1-17,0l-32-32a12,12,0,1,1,17-17L68,179V48a12,12,0,0,1,24,0V179l11.51-11.52A12,12,0,0,1,120.49,167.51Zm96-96-32-32a12,12,0,0,0-17,0l-32,32a12,12,0,0,0,17,17L164,77V208a12,12,0,0,0,24,0V77l11.51,11.52a12,12,0,0,0,17-17Z"/></symbol><symbol id="b-plus" viewBox="0 0 256 256"><path d="M228,128a12,12,0,0,1-12,12H140v76a12,12,0,0,1-24,0V140H40a12,12,0,0,1,0-24h76V40a12,12,0,0,1,24,0v76h76A12,12,0,0,1,228,128Z"/></symbol><symbol id="b-warning-circle" viewBox="0 0 256 256"><path d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212Zm-12-80V80a12,12,0,0,1,24,0v52a12,12,0,0,1-24,0Zm28,40a16,16,0,1,1-16-16A16,16,0,0,1,144,172Z"/></symbol><symbol id="b-check-circle" viewBox="0 0 256 256"><path d="M176.49,95.51a12,12,0,0,1,0,17l-56,56a12,12,0,0,1-17,0l-24-24a12,12,0,1,1,17-17L112,143l47.51-47.52A12,12,0,0,1,176.49,95.51ZM236,128A108,108,0,1,1,128,20,108.12,108.12,0,0,1,236,128Zm-24,0a84,84,0,1,0-84,84A84.09,84.09,0,0,0,212,128Z"/></symbol><symbol id="b-arrow-right" viewBox="0 0 256 256"><path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"/></symbol><symbol id="b-arrow-up-right" viewBox="0 0 256 256"><path d="M204,64V168a12,12,0,0,1-24,0V93L72.49,200.49a12,12,0,0,1-17-17L163,76H88a12,12,0,0,1,0-24H192A12,12,0,0,1,204,64Z"/></symbol><symbol id="b-caret-down" viewBox="0 0 256 256"><path d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"/></symbol><symbol id="b-lock-simple" viewBox="0 0 256 256"><path d="M208,76H180V56A52,52,0,0,0,76,56V76H48A20,20,0,0,0,28,96V208a20,20,0,0,0,20,20H208a20,20,0,0,0,20-20V96A20,20,0,0,0,208,76ZM100,56a28,28,0,0,1,56,0V76H100ZM204,204H52V100H204Z"/></symbol><symbol id="b-envelope-simple" viewBox="0 0 256 256"><path d="M224,44H32A12,12,0,0,0,20,56V192a20,20,0,0,0,20,20H216a20,20,0,0,0,20-20V56A12,12,0,0,0,224,44ZM193.15,68,128,127.72,62.85,68ZM44,188V83.28l75.89,69.57a12,12,0,0,0,16.22,0L212,83.28V188Z"/></symbol><symbol id="b-clock" viewBox="0 0 256 256"><path d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212Zm68-84a12,12,0,0,1-12,12H128a12,12,0,0,1-12-12V72a12,12,0,0,1,24,0v44h44A12,12,0,0,1,196,128Z"/></symbol><symbol id="b-user" viewBox="0 0 256 256"><path d="M234.38,210a123.36,123.36,0,0,0-60.78-53.23,76,76,0,1,0-91.2,0A123.36,123.36,0,0,0,21.62,210a12,12,0,1,0,20.77,12c18.12-31.32,50.12-50,85.61-50s67.49,18.69,85.61,50a12,12,0,0,0,20.77-12ZM76,96a52,52,0,1,1,52,52A52.06,52.06,0,0,1,76,96Z"/></symbol><symbol id="b-whatsapp-logo" viewBox="0 0 256 256"><path d="M187.3,159.06A36.09,36.09,0,0,1,152,188a84.09,84.09,0,0,1-84-84A36.09,36.09,0,0,1,96.94,68.7,12,12,0,0,1,110,75.1l11.48,23a12,12,0,0,1-.75,12l-8.52,12.78a44.56,44.56,0,0,0,20.91,20.91l12.78-8.52a12,12,0,0,1,12-.75l23,11.48A12,12,0,0,1,187.3,159.06ZM236,128A108,108,0,0,1,78.77,224.15L46.34,235A20,20,0,0,1,21,209.66l10.81-32.43A108,108,0,1,1,236,128Zm-24,0A84,84,0,1,0,55.27,170.06a12,12,0,0,1,1,9.81l-9.93,29.79,29.79-9.93a12.1,12.1,0,0,1,3.8-.62,12,12,0,0,1,6,1.62A84,84,0,0,0,212,128Z"/></symbol><symbol id="b-headset" viewBox="0 0 256 256"><path d="M204.73,51.85A108.07,108.07,0,0,0,20,128v56a28,28,0,0,0,28,28H64a28,28,0,0,0,28-28V144a28,28,0,0,0-28-28H44.84A84.05,84.05,0,0,1,128,44h.64a83.7,83.7,0,0,1,82.52,72H192a28,28,0,0,0-28,28v40a28,28,0,0,0,28,28h19.6A20,20,0,0,1,192,228H136a12,12,0,0,0,0,24h56a44.05,44.05,0,0,0,44-44V128A107.34,107.34,0,0,0,204.73,51.85ZM64,140a4,4,0,0,1,4,4v40a4,4,0,0,1-4,4H48a4,4,0,0,1-4-4V140Zm124,44V144a4,4,0,0,1,4-4h20v48H192A4,4,0,0,1,188,184Z"/></symbol><symbol id="d-seal-check" viewBox="0 0 256 256"><path d="M232,128c0,12.51-17.82,21.95-22.68,33.69-4.68,11.32,1.42,30.65-7.78,39.85s-28.53,3.1-39.85,7.78C150,214.18,140.5,232,128,232s-22-17.82-33.69-22.68c-11.32-4.68-30.65,1.42-39.85-7.78s-3.1-28.53-7.78-39.85C41.82,150,24,140.5,24,128s17.82-22,22.68-33.69C51.36,83,45.26,63.66,54.46,54.46S83,51.36,94.31,46.68C106.05,41.82,115.5,24,128,24S150,41.82,161.69,46.68c11.32,4.68,30.65-1.42,39.85,7.78s3.1,28.53,7.78,39.85C214.18,106.05,232,115.5,232,128Z" opacity="0.2"/><path d="M225.86,102.82c-3.77-3.94-7.67-8-9.14-11.57-1.36-3.27-1.44-8.69-1.52-13.94-.15-9.76-.31-20.82-8-28.51s-18.75-7.85-28.51-8c-5.25-.08-10.67-.16-13.94-1.52-3.56-1.47-7.63-5.37-11.57-9.14C146.28,23.51,138.44,16,128,16s-18.27,7.51-25.18,14.14c-3.94,3.77-8,7.67-11.57,9.14C88,40.64,82.56,40.72,77.31,40.8c-9.76.15-20.82.31-28.51,8S41,67.55,40.8,77.31c-.08,5.25-.16,10.67-1.52,13.94-1.47,3.56-5.37,7.63-9.14,11.57C23.51,109.72,16,117.56,16,128s7.51,18.27,14.14,25.18c3.77,3.94,7.67,8,9.14,11.57,1.36,3.27,1.44,8.69,1.52,13.94.15,9.76.31,20.82,8,28.51s18.75,7.85,28.51,8c5.25.08,10.67.16,13.94,1.52,3.56,1.47,7.63,5.37,11.57,9.14C109.72,232.49,117.56,240,128,240s18.27-7.51,25.18-14.14c3.94-3.77,8-7.67,11.57-9.14,3.27-1.36,8.69-1.44,13.94-1.52,9.76-.15,20.82-.31,28.51-8s7.85-18.75,8-28.51c.08-5.25.16-10.67,1.52-13.94,1.47-3.56,5.37-7.63,9.14-11.57C232.49,146.28,240,138.44,240,128S232.49,109.73,225.86,102.82Zm-11.55,39.29c-4.79,5-9.75,10.17-12.38,16.52-2.52,6.1-2.63,13.07-2.73,19.82-.1,7-.21,14.33-3.32,17.43s-10.39,3.22-17.43,3.32c-6.75.1-13.72.21-19.82,2.73-6.35,2.63-11.52,7.59-16.52,12.38S132,224,128,224s-9.15-4.92-14.11-9.69-10.17-9.75-16.52-12.38c-6.1-2.52-13.07-2.63-19.82-2.73-7-.1-14.33-.21-17.43-3.32s-3.22-10.39-3.32-17.43c-.1-6.75-.21-13.72-2.73-19.82-2.63-6.35-7.59-11.52-12.38-16.52S32,132,32,128s4.92-9.15,9.69-14.11,9.75-10.17,12.38-16.52c2.52-6.1,2.63-13.07,2.73-19.82.1-7,.21-14.33,3.32-17.43S70.51,56.9,77.55,56.8c6.75-.1,13.72-.21,19.82-2.73,6.35-2.63,11.52-7.59,16.52-12.38S124,32,128,32s9.15,4.92,14.11,9.69,10.17,9.75,16.52,12.38c6.1,2.52,13.07,2.63,19.82,2.73,7,.1,14.33.21,17.43,3.32s3.22,10.39,3.32,17.43c.1,6.75.21,13.72,2.73,19.82,2.63,6.35,7.59,11.52,12.38,16.52S224,124,224,128,219.08,137.15,214.31,142.11ZM173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34Z"/></symbol><symbol id="d-clock" viewBox="0 0 256 256"><path d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z" opacity="0.2"/><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm64-88a8,8,0,0,1-8,8H128a8,8,0,0,1-8-8V72a8,8,0,0,1,16,0v48h48A8,8,0,0,1,192,128Z"/></symbol><symbol id="d-headset" viewBox="0 0 256 256"><path d="M80,144v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V128H64A16,16,0,0,1,80,144Zm112-16a16,16,0,0,0-16,16v40a16,16,0,0,0,16,16h32V128Z" opacity="0.2"/><path d="M201.89,54.66A104.08,104.08,0,0,0,24,128v56a24,24,0,0,0,24,24H64a24,24,0,0,0,24-24V144a24,24,0,0,0-24-24H40.36A88.12,88.12,0,0,1,190.54,65.93,87.39,87.39,0,0,1,215.65,120H192a24,24,0,0,0-24,24v40a24,24,0,0,0,24,24h24a24,24,0,0,1-24,24H136a8,8,0,0,0,0,16h56a40,40,0,0,0,40-40V128A103.41,103.41,0,0,0,201.89,54.66ZM64,136a8,8,0,0,1,8,8v40a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V136Zm128,56a8,8,0,0,1-8-8V144a8,8,0,0,1,8-8h24v56Z"/></symbol><symbol id="f-star" viewBox="0 0 256 256"><path d="M234.29,114.85l-45,38.83L203,211.75a16.4,16.4,0,0,1-24.5,17.82L128,198.49,77.47,229.57A16.4,16.4,0,0,1,53,211.75l13.76-58.07-45-38.83A16.46,16.46,0,0,1,31.08,86l59-4.76,22.76-55.08a16.36,16.36,0,0,1,30.27,0l22.75,55.08,59,4.76a16.46,16.46,0,0,1,9.37,28.86Z"/></symbol><symbol id="f-quotes" viewBox="0 0 256 256"><path d="M116,72v88a48.05,48.05,0,0,1-48,48,8,8,0,0,1,0-16,32,32,0,0,0,32-32v-8H40a16,16,0,0,1-16-16V72A16,16,0,0,1,40,56h60A16,16,0,0,1,116,72ZM216,56H156a16,16,0,0,0-16,16v64a16,16,0,0,0,16,16h60v8a32,32,0,0,1-32,32,8,8,0,0,0,0,16,48.05,48.05,0,0,0,48-48V72A16,16,0,0,0,216,56Z"/></symbol></svg><!--SPRITE:END-->
 
   <a class="skip-link" href="#main">Skip to content</a>
 
@@ -61,12 +43,12 @@
       </nav>
       <div class="header-actions">
         <a class="support-link" href="https://wa.me/message/TBHD45GBIGNPL1">
-          <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>WhatsApp support
+          <svg class="icon" aria-hidden="true"><use href="#b-whatsapp-logo"/></svg>WhatsApp support
         </a>
         <a class="btn btn-cta btn-sm header-cta" href="#book">Get my onward ticket</a>
         <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
-          <svg class="icon icon-open" aria-hidden="true"><use href="#i-menu"/></svg>
-          <svg class="icon icon-close" aria-hidden="true"><use href="#i-close"/></svg>
+          <svg class="icon icon-open" aria-hidden="true"><use href="#b-list"/></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#b-x"/></svg>
           <span class="visually-hidden">Menu</span>
         </button>
       </div>
@@ -81,7 +63,7 @@
           <li><a href="https://onwardsky.com/contact-us/">Contact</a></li>
         </ul>
         <a class="mobile-support" href="https://onwardsky.com/contact-us/">
-          <svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>
+          <svg class="icon" aria-hidden="true"><use href="#b-headset"/></svg>
           <span>Contact support <span class="mobile-support-sub">Email or WhatsApp</span></span>
         </a>
         <a class="btn btn-cta btn-block" href="#book">Get my onward ticket</a>
@@ -91,242 +73,217 @@
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-paper">
-        <svg class="hero-chart" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMin slice" aria-hidden="true" focusable="false">
-          <defs>
-            <radialGradient id="hero-fade" cx="0.86" cy="0.08" r="0.95">
-              <stop offset="0" stop-color="#fff"/>
-              <stop offset="0.55" stop-color="#fff" stop-opacity="0.55"/>
-              <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-            </radialGradient>
-            <mask id="hero-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1600" height="900">
-              <rect width="1600" height="900" fill="url(#hero-fade)"/>
-            </mask>
-          </defs>
-          <g class="chart-grat chart-grat--hero" mask="url(#hero-mask)">
-            <path pathLength="1" style="--i:0" d="M1680 -36.6A3380 3380 0 0 1 -80 -36.6"/>
-            <path pathLength="1" style="--i:1" d="M1680 58.6A3472 3472 0 0 1 -80 58.6"/>
-            <path pathLength="1" style="--i:2" d="M1680 153.6A3564 3564 0 0 1 -80 153.6"/>
-            <path pathLength="1" style="--i:3" d="M1680 248.5A3656 3656 0 0 1 -80 248.5"/>
-            <path pathLength="1" style="--i:4" d="M1680 343.2A3748 3748 0 0 1 -80 343.2"/>
-            <path pathLength="1" style="--i:5" d="M1680 437.8A3840 3840 0 0 1 -80 437.8"/>
-            <path pathLength="1" style="--i:6" d="M1680 532.3A3932 3932 0 0 1 -80 532.3"/>
-            <path pathLength="1" style="--i:7" d="M1680 626.6A4024 4024 0 0 1 -80 626.6"/>
-            <path pathLength="1" style="--i:8" d="M1680 720.8A4116 4116 0 0 1 -80 720.8"/>
-            <path pathLength="1" style="--i:9" d="M1680 815A4208 4208 0 0 1 -80 815"/>
-            <path pathLength="1" style="--i:10" d="M1680 909A4300 4300 0 0 1 -80 909"/>
-            <path pathLength="1" style="--i:0" d="M1706.3 -139.4L2010.6 921.9"/>
-            <path pathLength="1" style="--i:1" d="M1617.7 -115.3L1892.2 954"/>
-            <path pathLength="1" style="--i:2" d="M1528.5 -93.7L1773 982.9"/>
-            <path pathLength="1" style="--i:3" d="M1438.6 -74.6L1653.1 1008.4"/>
-            <path pathLength="1" style="--i:4" d="M1348.3 -58L1532.4 1030.5"/>
-            <path pathLength="1" style="--i:5" d="M1257.6 -44L1411.2 1049.3"/>
-            <path pathLength="1" style="--i:6" d="M1166.5 -32.5L1289.6 1064.6"/>
-            <path pathLength="1" style="--i:7" d="M1075.1 -23.5L1167.5 1076.6"/>
-            <path pathLength="1" style="--i:8" d="M983.5 -17.1L1045.2 1085.2"/>
-            <path pathLength="1" style="--i:9" d="M891.8 -13.3L922.6 1090.3"/>
-            <path pathLength="1" style="--i:10" d="M800 -12L800 1092"/>
-            <path pathLength="1" style="--i:11" d="M708.2 -13.3L677.4 1090.3"/>
-            <path pathLength="1" style="--i:12" d="M616.5 -17.1L554.8 1085.2"/>
-            <path pathLength="1" style="--i:13" d="M524.9 -23.5L432.5 1076.6"/>
-            <path pathLength="1" style="--i:14" d="M433.5 -32.5L310.4 1064.6"/>
-            <path pathLength="1" style="--i:15" d="M342.4 -44L188.8 1049.3"/>
-            <path pathLength="1" style="--i:16" d="M251.7 -58L67.6 1030.5"/>
-            <path pathLength="1" style="--i:17" d="M161.4 -74.6L-53.1 1008.4"/>
-            <path pathLength="1" style="--i:18" d="M71.5 -93.7L-173 982.9"/>
-            <path pathLength="1" style="--i:19" d="M-17.7 -115.3L-292.2 954"/>
-            <path pathLength="1" style="--i:20" d="M-106.3 -139.4L-410.6 921.9"/>
-          </g>
-        </svg>
-
-        <div class="container hero-top">
+      <div class="hero-bg" aria-hidden="true">
+        <img class="hero-map" src="assets/vectors/connected-world-soft.svg" alt="" width="1177" height="874">
+        <div class="hero-halo"></div>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
           <h1 class="hero-title" id="hero-title">
             <span class="line">Get a verifiable</span>
             <span class="line">onward ticket</span>
             <span class="line">in 2&nbsp;minutes.</span>
           </h1>
-          <div class="hero-aside">
-            <p class="hero-lead">Get a temporary flight reservation with a verifiable PNR for proof of onward travel, flexible travel plans or visa documentation, without paying for a full flight upfront.</p>
-            <ul class="proof proof--hero">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-verify"/></svg>Real airline PNR you can verify</li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-expire"/></svg>Automatically expires. No cancellation needed.</li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-support"/></svg>Human support when you need it</li>
-            </ul>
-            <a class="trust-line" href="https://www.trustpilot.com/review/onwardsky.com" target="_blank" rel="noopener">
-              <span class="stars stars--4" aria-hidden="true">
-                <svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg>
-              </span>
-              <span class="trust-text"><strong>TrustScore 4.0 on Trustpilot</strong> <span>All 4 reviews rated 5 stars</span></span>
-            </a>
-          </div>
+          <p class="hero-lead">Get a temporary flight reservation with a verifiable PNR for proof of onward travel, flexible travel plans or visa documentation, without paying for a full flight upfront.</p>
+          <ul class="proof proof--hero">
+            <li><span class="tile"><svg class="icon" aria-hidden="true"><use href="#d-seal-check"/></svg></span>Real airline PNR you can verify</li>
+            <li><span class="tile"><svg class="icon" aria-hidden="true"><use href="#d-clock"/></svg></span>Automatically expires. No cancellation needed.</li>
+            <li><span class="tile"><svg class="icon" aria-hidden="true"><use href="#d-headset"/></svg></span>Human support when you need it</li>
+          </ul>
+          <a class="trust-line" href="https://www.trustpilot.com/review/onwardsky.com" target="_blank" rel="noopener">
+            <span class="stars stars--4" aria-hidden="true">
+              <svg><use href="#f-star"/></svg><svg><use href="#f-star"/></svg><svg><use href="#f-star"/></svg><svg><use href="#f-star"/></svg><svg><use href="#f-star"/></svg>
+            </span>
+            <span class="trust-text"><strong>TrustScore 4.0 on Trustpilot</strong> <span>All 4 reviews rated 5 stars</span></span>
+          </a>
+        </div>
+
+        <img class="hero-traveler" src="assets/vectors/at-the-airport.svg" alt="" width="800" height="662" aria-hidden="true">
+
+        <div class="booking-wrap">
+          <form class="booking" id="book" data-trip="one_way" action="https://onwardsky.com/flight-booking-wizard/" method="get" novalidate aria-label="Choose your route" data-booking>
+            <div class="booking-head">
+              <p class="booking-title" aria-hidden="true">Choose your route</p>
+              <fieldset class="trip-type">
+                <legend class="visually-hidden">Trip type</legend>
+                <label><input type="radio" name="trip_type" value="one_way" checked><span>One way</span></label>
+                <label><input type="radio" name="trip_type" value="round_trip"><span>Return</span></label>
+                <label><input type="radio" name="trip_type" value="multi_city"><span>Multi-city</span></label>
+              </fieldset>
+            </div>
+
+            <div class="booking-body" data-body>
+              <div class="legs" data-area="legs" data-legs>
+                <div class="leg" data-leg="0">
+                  <p class="leg-title" id="leg-0-title">Flight 1</p>
+                  <div class="route" data-route="0">
+                    <div class="field field-place" data-key="from0">
+                      <label class="field-label" for="osb-from0"><span class="visually-hidden" data-leg-prefix>Flight 1 </span>From</label>
+                      <div class="field-control">
+                        <input class="field-input" id="osb-from0" name="from_city" type="text" role="combobox" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-expanded="false" aria-controls="osb-from0-list" aria-describedby="osb-from0-err" placeholder="City or airport…">
+                        <span class="place" aria-hidden="true"><span class="place-code" translate="no"></span><span class="place-name"><span class="place-city"></span><span class="place-country"></span></span></span>
+                      </div>
+                      <ul class="suggestions" id="osb-from0-list" role="listbox" aria-label="From" hidden></ul>
+                      <p class="field-error" id="osb-from0-err" hidden></p>
+                    </div>
+                    <button class="swap" type="button" aria-label="Swap origin and destination" data-swap>
+                      <svg class="icon" aria-hidden="true"><use href="#b-arrows-down-up"/></svg>
+                    </button>
+                    <div class="field field-place" data-key="to0">
+                      <label class="field-label" for="osb-to0"><span class="visually-hidden" data-leg-prefix>Flight 1 </span>To</label>
+                      <div class="field-control">
+                        <input class="field-input" id="osb-to0" name="to_city" type="text" role="combobox" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-expanded="false" aria-controls="osb-to0-list" aria-describedby="osb-to0-err" placeholder="City or airport…">
+                        <span class="place" aria-hidden="true"><span class="place-code" translate="no"></span><span class="place-name"><span class="place-city"></span><span class="place-country"></span></span></span>
+                      </div>
+                      <ul class="suggestions" id="osb-to0-list" role="listbox" aria-label="To" hidden></ul>
+                      <p class="field-error" id="osb-to0-err" hidden></p>
+                    </div>
+                  </div>
+                  <div class="field field-date" data-key="date0">
+                    <label class="field-label" for="osb-date0"><span class="visually-hidden" data-leg-prefix>Flight 1 </span><span data-date-label>Travel date</span></label>
+                    <input class="field-input" id="osb-date0" name="dep_date" type="date" required aria-describedby="osb-date0-err">
+                    <p class="field-error" id="osb-date0-err" hidden></p>
+                  </div>
+                  <div class="field field-date field-ret" data-key="ret">
+                    <label class="field-label" for="osb-ret">Return date</label>
+                    <input class="field-input" id="osb-ret" name="ret_date" type="date" aria-describedby="osb-ret-err">
+                    <p class="field-error" id="osb-ret-err" hidden></p>
+                  </div>
+                </div>
+              </div>
+
+              <button class="add-leg" type="button" data-area="add" data-add-leg hidden>
+                <svg class="icon" aria-hidden="true"><use href="#b-plus"/></svg>Add another flight
+              </button>
+
+              <div class="field field-pax" data-area="pax">
+                <label class="field-label" for="osb-pax">Passengers</label>
+                <div class="select-wrap">
+                  <select class="field-input" id="osb-pax" name="pax">
+                    <option value="1">1 passenger</option>
+                    <option value="2">2 passengers</option>
+                    <option value="3">3 passengers</option>
+                    <option value="4">4 passengers</option>
+                    <option value="5">5 passengers</option>
+                  </select>
+                  <svg class="icon select-caret" aria-hidden="true"><use href="#b-caret-down"/></svg>
+                </div>
+              </div>
+
+              <p class="fare" data-area="fare">
+                <span class="fare-price"><span class="fare-from">From</span> <strong>$9.99</strong></span>
+                <span class="fare-eta"><svg class="icon" aria-hidden="true"><use href="#b-clock"/></svg>Delivered in 2&nbsp;minutes</span>
+              </p>
+
+              <button class="btn btn-cta btn-submit" type="submit" data-area="cta">
+                Get my onward ticket<svg class="icon" aria-hidden="true"><use href="#b-arrow-right"/></svg>
+              </button>
+
+              <div class="booking-status" data-area="status" data-status hidden></div>
+
+              <div class="booking-foot" data-area="foot">
+                <ul class="assurances">
+                  <li><svg class="icon" aria-hidden="true"><use href="#b-lock-simple"/></svg>Secure checkout</li>
+                  <li><svg class="icon" aria-hidden="true"><use href="#b-envelope-simple"/></svg>Delivered straight to your email</li>
+                </ul>
+                <ul class="payments" aria-label="Accepted payment methods">
+                  <li><img src="assets/brands/paypal.svg" alt="" width="14" height="16">PayPal</li>
+                  <li><img src="assets/brands/stripe.svg" alt="" width="12" height="16">Stripe</li>
+                  <li class="pay-text">UPI</li>
+                  <li><img class="pay-wide" src="assets/brands/visa.svg" alt="" width="34" height="11"><span class="visually-hidden">Visa</span></li>
+                  <li><img src="assets/brands/mastercard.svg" alt="" width="26" height="16">Mastercard</li>
+                </ul>
+              </div>
+
+              <p class="visually-hidden" role="status" aria-live="polite" data-announcer></p>
+            </div>
+          </form>
         </div>
       </div>
+    </section>
 
-      <div class="container console-wrap">
-        <form class="console" id="book" data-trip="one_way" action="https://onwardsky.com/flight-booking-wizard/" method="get" novalidate aria-label="Choose your route" data-booking>
-
-          <fieldset class="trip-type" data-area="trip">
-            <legend class="visually-hidden">Trip type</legend>
-            <label><input type="radio" name="trip_type" value="one_way" checked><span>One way</span></label>
-            <label><input type="radio" name="trip_type" value="round_trip"><span>Return</span></label>
-            <label><input type="radio" name="trip_type" value="multi_city"><span>Multi-city</span></label>
-          </fieldset>
-
-          <p class="fare" data-area="fare">
-            <span class="fare-from">From</span>
-            <strong class="fare-price">$9.99</strong>
-            <span class="fare-eta"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Delivered in 2&nbsp;minutes</span>
-          </p>
-
-          <div class="legs" data-area="legs" data-legs>
-            <div class="leg" data-leg="0">
-              <p class="leg-title" id="leg-0-title">Flight 1</p>
-              <div class="route" data-route="0">
-                <div class="field field-place" data-key="from0">
-                  <label class="field-label" for="osb-from0"><span class="visually-hidden" data-leg-prefix>Flight 1 </span>From</label>
-                  <div class="field-control">
-                    <input class="field-input" id="osb-from0" name="from_city" type="text" role="combobox" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-expanded="false" aria-controls="osb-from0-list" aria-describedby="osb-from0-err" placeholder="City or airport…">
-                    <span class="place" aria-hidden="true"><span class="place-code" translate="no"></span><span class="place-name"><span class="place-city"></span><span class="place-country"></span></span><span class="rail"><svg class="rail-plane"><use href="#i-plane"/></svg></span></span>
-                  </div>
-                  <ul class="suggestions" id="osb-from0-list" role="listbox" aria-label="From" hidden></ul>
-                  <p class="field-error" id="osb-from0-err" hidden></p>
-                </div>
-                <button class="swap" type="button" aria-label="Swap origin and destination" data-swap>
-                  <svg class="icon" aria-hidden="true"><use href="#i-swap"/></svg>
-                </button>
-                <div class="field field-place" data-key="to0">
-                  <label class="field-label" for="osb-to0"><span class="visually-hidden" data-leg-prefix>Flight 1 </span>To</label>
-                  <div class="field-control">
-                    <input class="field-input" id="osb-to0" name="to_city" type="text" role="combobox" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-expanded="false" aria-controls="osb-to0-list" aria-describedby="osb-to0-err" placeholder="City or airport…">
-                    <span class="place" aria-hidden="true"><span class="rail-in"></span><span class="place-code" translate="no"></span><span class="place-name"><span class="place-city"></span><span class="place-country"></span></span></span>
-                  </div>
-                  <ul class="suggestions" id="osb-to0-list" role="listbox" aria-label="To" hidden></ul>
-                  <p class="field-error" id="osb-to0-err" hidden></p>
-                </div>
-              </div>
-              <div class="field field-date" data-key="date0" data-area="date">
-                <label class="field-label" for="osb-date0"><span class="visually-hidden" data-leg-prefix>Flight 1 </span><span data-date-label>Travel date</span></label>
-                <input class="field-input" id="osb-date0" name="dep_date" type="date" required aria-describedby="osb-date0-err">
-                <p class="field-error" id="osb-date0-err" hidden></p>
-              </div>
-              <div class="field field-date field-ret" data-key="ret" data-area="ret">
-                <label class="field-label" for="osb-ret">Return date</label>
-                <input class="field-input" id="osb-ret" name="ret_date" type="date" aria-describedby="osb-ret-err">
-                <p class="field-error" id="osb-ret-err" hidden></p>
-              </div>
-            </div>
-          </div>
-
-          <button class="add-leg" type="button" data-area="add" data-add-leg hidden>
-            <svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg>Add another flight
-          </button>
-
-          <div class="field field-pax" data-area="pax">
-            <label class="field-label" for="osb-pax">Passengers</label>
-            <div class="select-wrap">
-              <select class="field-input" id="osb-pax" name="pax">
-                <option value="1">1 passenger</option>
-                <option value="2">2 passengers</option>
-                <option value="3">3 passengers</option>
-                <option value="4">4 passengers</option>
-                <option value="5">5 passengers</option>
-              </select>
-            </div>
-          </div>
-
-          <button class="btn btn-cta btn-submit" type="submit" data-area="cta">Get my onward ticket</button>
-
-          <div class="console-status" data-area="status" data-status hidden></div>
-
-          <div class="console-foot" data-area="foot">
-            <ul class="assurances">
-              <li><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>Secure checkout</li>
-              <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>Delivered straight to your email</li>
-            </ul>
-            <ul class="payments" aria-label="Accepted payment methods">
-              <li>PayPal</li><li>Stripe</li><li>UPI</li><li>Visa</li><li>Mastercard</li>
-            </ul>
-          </div>
-
-          <p class="visually-hidden" role="status" aria-live="polite" data-announcer></p>
-        </form>
-      </div>
-
-      <div class="band">
-        <svg class="band-chart" viewBox="0 0 1600 520" preserveAspectRatio="xMidYMin slice" aria-hidden="true" focusable="false">
-          <path class="chart-grat" d="M-80 -896.6A3380 3380 0 0 0 1680 -896.6M-80 -801.4A3472 3472 0 0 0 1680 -801.4M-80 -706.4A3564 3564 0 0 0 1680 -706.4M-80 -611.5A3656 3656 0 0 0 1680 -611.5M-80 -516.8A3748 3748 0 0 0 1680 -516.8M-80 -422.2A3840 3840 0 0 0 1680 -422.2M-80 -327.7A3932 3932 0 0 0 1680 -327.7M-80 -233.4A4024 4024 0 0 0 1680 -233.4M-80 -139.2A4116 4116 0 0 0 1680 -139.2M-80 -45A4208 4208 0 0 0 1680 -45M-80 49A4300 4300 0 0 0 1680 49M-106.3 -999.4L-410.6 61.9M-17.7 -975.3L-292.2 94M71.5 -953.7L-173 122.9M161.4 -934.6L-53.1 148.4M251.7 -918L67.6 170.5M342.4 -904L188.8 189.3M433.5 -892.5L310.4 204.6M524.9 -883.5L432.5 216.6M616.5 -877.1L554.8 225.2M708.2 -873.3L677.4 230.3M800 -872L800 232M891.8 -873.3L922.6 230.3M983.5 -877.1L1045.2 225.2M1075.1 -883.5L1167.5 216.6M1166.5 -892.5L1289.6 204.6M1257.6 -904L1411.2 189.3M1348.3 -918L1532.4 170.5M1438.6 -934.6L1653.1 148.4M1528.5 -953.7L1773 122.9M1617.7 -975.3L1892.2 94M1706.3 -999.4L2010.6 61.9"/>
-          <path class="band-airway" d="M-60 318C380 150 1180 140 1660 268"/>
-          <path class="band-airway band-airway--faint" d="M-60 168C520 300 1060 318 1660 196"/>
-        </svg>
-        <div class="container band-inner">
-          <ul class="proof proof--band">
-            <li><svg class="icon" aria-hidden="true"><use href="#i-verify"/></svg>Real airline PNR you can verify</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-expire"/></svg>Automatically expires. No cancellation needed.</li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-support"/></svg>Human support when you need it</li>
+    <section class="band" aria-label="Why travelers trust Onward Sky">
+      <div class="container band-inner">
+        <ul class="proof proof--band">
+          <li><span class="tile"><svg class="icon" aria-hidden="true"><use href="#d-seal-check"/></svg></span>Real airline PNR you can verify</li>
+          <li><span class="tile"><svg class="icon" aria-hidden="true"><use href="#d-clock"/></svg></span>Automatically expires. No cancellation needed.</li>
+          <li><span class="tile"><svg class="icon" aria-hidden="true"><use href="#d-headset"/></svg></span>Human support when you need it</li>
+        </ul>
+        <div class="airlines">
+          <p class="airlines-title" id="airlines-title"><span translate="no">Onward&nbsp;Sky™</span> works with 100+&nbsp;airlines</p>
+          <ul class="airline-list" aria-labelledby="airlines-title">
+            <li><img src="assets/airlines/british-airways.svg" alt="British Airways" style="--w: 140px" width="140" height="22"></li>
+            <li><img src="assets/airlines/malaysia-airlines.svg" alt="Malaysia Airlines" style="--w: 98px" width="98" height="24"></li>
+            <li><img src="assets/airlines/turkish-airlines.svg" alt="Turkish Airlines" style="--w: 124px" width="124" height="22"></li>
+            <li><img src="assets/airlines/emirates.svg" alt="Emirates" style="--w: 60px" width="60" height="41"></li>
+            <li><img src="assets/airlines/qatar-airways.svg" alt="Qatar Airways" style="--w: 100px" width="100" height="28"></li>
+            <li><img src="assets/airlines/iberia.svg" alt="Iberia" style="--w: 92px" width="92" height="20"></li>
+            <li><img src="assets/airlines/klm.svg" alt="KLM" style="--w: 112px" width="112" height="17"></li>
+            <li><img src="assets/airlines/airasia.svg" alt="AirAsia" style="--w: 76px" width="76" height="33"></li>
           </ul>
-          <div class="airlines">
-            <p class="airlines-title" id="airlines-title"><span translate="no">Onward&nbsp;Sky™</span> works with 100+&nbsp;airlines</p>
-            <ul class="airline-list" aria-labelledby="airlines-title" aria-describedby="airlines-note">
-              <li class="visually-hidden" id="airlines-note">Examples of supported airlines:</li>
-              <li><span class="ident" aria-hidden="true" translate="no">BA</span>British Airways</li>
-              <li><span class="ident" aria-hidden="true" translate="no">MH</span>Malaysia Airlines</li>
-              <li><span class="ident" aria-hidden="true" translate="no">UL</span>SriLankan Airlines</li>
-              <li><span class="ident" aria-hidden="true" translate="no">TK</span>Turkish Airlines</li>
-              <li><span class="ident" aria-hidden="true" translate="no">EK</span>Emirates</li>
-              <li><span class="ident" aria-hidden="true" translate="no">QR</span>Qatar Airways</li>
-              <li><span class="ident" aria-hidden="true" translate="no">IB</span>Iberia</li>
-              <li><span class="ident" aria-hidden="true" translate="no">KL</span>KLM</li>
-              <li><span class="ident" aria-hidden="true" translate="no">AK</span>AirAsia</li>
-            </ul>
-          </div>
         </div>
       </div>
     </section>
 
     <section class="reviews" aria-labelledby="reviews-title">
-      <div class="container reviews-grid">
-        <div class="reviews-intro">
-          <h2 class="h-section" id="reviews-title">Helping travelers get on with their journey.</h2>
-          <p class="section-lead">See what travelers say about their reservations, delivery and support.</p>
-          <a class="btn btn-quiet" href="https://www.trustpilot.com/review/onwardsky.com" target="_blank" rel="noopener">
-            Read more reviews on Trustpilot<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
-          </a>
+      <div class="container">
+        <div class="reviews-head">
+          <div class="reviews-intro">
+            <h2 class="h-section" id="reviews-title">Helping travelers get on with their journey.</h2>
+            <p class="section-lead">See what travelers say about their reservations, delivery and support.</p>
+            <a class="btn btn-quiet" href="https://www.trustpilot.com/review/onwardsky.com" target="_blank" rel="noopener">
+              <img class="tp-mark" src="assets/brands/trustpilot.svg" alt="" width="18" height="17">Read more reviews on Trustpilot<svg class="icon" aria-hidden="true"><use href="#b-arrow-up-right"/></svg>
+            </a>
+          </div>
+          <img class="reviews-art" src="assets/vectors/reviews.svg" alt="" width="960" height="665" loading="lazy" aria-hidden="true">
         </div>
 
-        <div class="reviews-list">
+        <div class="reviews-grid">
           <figure class="review review--feature">
+            <svg class="quote-mark" aria-hidden="true"><use href="#f-quotes"/></svg>
             <span class="stars" role="img" aria-label="Rated 5 out of 5 on Trustpilot">
-              <svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg>
+              <svg aria-hidden="true"><use href="#f-star"/></svg><svg aria-hidden="true"><use href="#f-star"/></svg><svg aria-hidden="true"><use href="#f-star"/></svg><svg aria-hidden="true"><use href="#f-star"/></svg><svg aria-hidden="true"><use href="#f-star"/></svg>
             </span>
             <h3 class="review-title">Best Onward Ticket Website for My Schengen Visa VFS Appointment</h3>
             <blockquote class="review-quote"><p>“The booking came with a verifiable PNR, which gave me the confidence that I had the required flight reservation ready for my visa application.”</p></blockquote>
             <figcaption class="review-meta">
-              <a href="https://www.trustpilot.com/reviews/6aba76e37ac51fb51baa4b8a" target="_blank" rel="noopener">Zeeshan Khan</a>
-              <span>IN · <time datetime="2026-09-28">Sep 28, 2026</time></span>
+              <span class="avatar" aria-hidden="true">ZK</span>
+              <span class="review-who">
+                <a href="https://www.trustpilot.com/reviews/6aba76e37ac51fb51baa4b8a" target="_blank" rel="noopener">Zeeshan Khan</a>
+                <span>IN · <time datetime="2026-09-28">Sep 28, 2026</time></span>
+              </span>
               <span class="review-source">5-star review on Trustpilot</span>
             </figcaption>
           </figure>
+
           <figure class="review">
             <span class="stars" role="img" aria-label="Rated 5 out of 5 on Trustpilot">
-              <svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg>
+              <svg aria-hidden="true"><use href="#f-star"/></svg><svg aria-hidden="true"><use href="#f-star"/></svg><svg aria-hidden="true"><use href="#f-star"/></svg><svg aria-hidden="true"><use href="#f-star"/></svg><svg aria-hidden="true"><use href="#f-star"/></svg>
             </span>
             <h3 class="review-title">Easy, Fast &amp; Reliable</h3>
             <blockquote class="review-quote"><p>“The whole process was quick and straightforward, and I received the reservation within the promised time.”</p></blockquote>
             <figcaption class="review-meta">
-              <a href="https://www.trustpilot.com/reviews/6ab8c432e2cb8063018acd31" target="_blank" rel="noopener">Md Manam</a>
-              <span>IN · <time datetime="2026-09-27">Sep 27, 2026</time></span>
+              <span class="avatar" aria-hidden="true">MM</span>
+              <span class="review-who">
+                <a href="https://www.trustpilot.com/reviews/6ab8c432e2cb8063018acd31" target="_blank" rel="noopener">Md Manam</a>
+                <span>IN · <time datetime="2026-09-27">Sep 27, 2026</time></span>
+              </span>
               <span class="review-source">5-star review on Trustpilot</span>
             </figcaption>
           </figure>
+
           <figure class="review">
             <span class="stars" role="img" aria-label="Rated 5 out of 5 on Trustpilot">
-              <svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg><svg aria-hidden="true"><use href="#i-star"/></svg>
+              <svg aria-hidden="true"><use href="#f-star"/></svg><svg aria-hidden="true"><use href="#f-star"/></svg><svg aria-hidden="true"><use href="#f-star"/></svg><svg aria-hidden="true"><use href="#f-star"/></svg><svg aria-hidden="true"><use href="#f-star"/></svg>
             </span>
             <h3 class="review-title">Great experience</h3>
             <blockquote class="review-quote"><p>“The itinerary was prepared professionally with the correct passenger and route details.”</p></blockquote>
             <figcaption class="review-meta">
-              <a href="https://www.trustpilot.com/reviews/6a814f21ebd501e11cfa0a63" target="_blank" rel="noopener">Elena Fernández</a>
-              <span>ES · <time datetime="2026-08-16">Aug 16, 2026</time></span>
+              <span class="avatar" aria-hidden="true">EF</span>
+              <span class="review-who">
+                <a href="https://www.trustpilot.com/reviews/6a814f21ebd501e11cfa0a63" target="_blank" rel="noopener">Elena Fernández</a>
+                <span>ES · <time datetime="2026-08-16">Aug 16, 2026</time></span>
+              </span>
               <span class="review-source">5-star review on Trustpilot</span>
             </figcaption>
           </figure>
@@ -338,110 +295,53 @@
     <section class="ready" aria-labelledby="ready-title">
       <div class="container">
         <h2 class="h-section ready-title" id="ready-title"><span class="line">Be ready when proof of</span> <span class="line">onward travel is requested</span></h2>
-        <ol class="journey">
-          <li class="stop stop--visa">
-            <svg class="vignette" viewBox="0 0 240 140" aria-hidden="true" focusable="false">
-              <path class="v-ground" d="M-30 118H270"/>
-              <rect class="v-fill-tint v-stroke" x="160" y="38" width="70" height="80" rx="4"/>
-              <circle class="v-accent-stroke" cx="172" cy="56" r="3.2"/><path class="v-accent-stroke" d="M176 56h25"/><circle class="v-accent-fill" cx="205" cy="56" r="3.2"/>
-              <path class="v-line" d="M170 70h40M170 78h28"/>
-              <rect class="v-accent-fill" x="170" y="90" width="38" height="14" rx="3"/>
-              <path class="v-paper-line" d="M175 97h4M182 97h4M189 97h4M196 97h4"/>
-              <rect class="v-fill-white v-stroke" x="112" y="24" width="72" height="94" rx="4"/>
-              <rect class="v-fill-tint" x="120" y="33" width="36" height="7" rx="2"/>
-              <path class="v-line" d="M120 50h54M120 58h54M120 66h40"/>
-              <rect class="v-fill-white v-stroke-thin" x="120" y="76" width="9" height="9" rx="2"/><path class="v-accent-stroke" d="M122 80.5l2 2 3.6-4"/>
-              <path class="v-line" d="M134 80.5h34"/>
-              <rect class="v-fill-white v-stroke-thin" x="120" y="91" width="9" height="9" rx="2"/><path class="v-accent-stroke" d="M122 95.5l2 2 3.6-4"/>
-              <path class="v-line" d="M134 95.5h26"/>
-              <rect class="v-fill-deep v-stroke" x="76" y="62" width="48" height="56" rx="5"/>
-              <circle class="v-paper-stroke" cx="100" cy="85" r="10"/><path class="v-paper-stroke" d="M90 85h20M100 75c-4.5 5.5-4.5 14.5 0 20M100 75c4.5 5.5 4.5 14.5 0 20"/>
-              <path class="v-paper-line" d="M90 104h20"/>
-              <circle class="v-marker" cx="14" cy="118" r="5"/>
-              <text class="v-label" x="6" y="104">Visa</text>
-            </svg>
-            <h3 class="stop-title">Applying for Visa?</h3>
-            <div class="stop-body">
-              <p>Get a flight itinerary for your visa file before committing to the full airfare.</p>
-              <p class="stop-who"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>Visa applicants</p>
+        <ul class="moments">
+          <li class="moment" style="--tint: var(--tint-peach)">
+            <div class="stage">
+              <span class="stage-tag">Ready for check-in</span>
+              <img src="assets/vectors/luggage.svg" alt="" width="639" height="605" loading="lazy">
             </div>
-          </li>
-          <li class="stop stop--checkin">
-            <svg class="vignette" viewBox="0 0 240 140" aria-hidden="true" focusable="false">
-              <path class="v-ground" d="M-30 118H270"/>
-              <path class="v-line" d="M152 4v12M202 4v12"/>
-              <rect class="v-fill-deep" x="140" y="16" width="74" height="22" rx="4"/>
-              <use class="v-sign-plane" href="#i-plane" x="147" y="19" width="16" height="16"/>
-              <path class="v-paper-line" d="M170 24h34M170 30h22"/>
-              <rect class="v-fill-tint v-stroke" x="118" y="74" width="112" height="44"/>
-              <rect class="v-fill-white v-stroke" x="112" y="66" width="124" height="9" rx="2"/>
-              <rect class="v-fill-white v-stroke" x="196" y="44" width="28" height="20" rx="2"/><path class="v-stroke" d="M210 64v2"/>
-              <path class="v-line" d="M130 90h30M130 98h22"/>
-              <g transform="rotate(-10 141 56)"><rect class="v-fill-white v-stroke" x="126" y="46" width="30" height="20" rx="2"/><path class="v-line" d="M131 53h14M131 59h20"/></g>
-              <circle class="v-accent-fill" cx="160" cy="49" r="6.5"/><path class="v-paper-stroke" d="M157 49.2l2 2 3.6-3.8"/>
-              <rect class="v-fill-peach v-stroke" x="66" y="64" width="38" height="50" rx="6"/>
-              <path class="v-stroke" d="M77 64v-9a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v9"/>
-              <path class="v-stroke-thin" d="M76 72v34M94 72v34"/>
-              <circle class="v-fill-white v-stroke" cx="72" cy="116" r="3"/><circle class="v-fill-white v-stroke" cx="98" cy="116" r="3"/>
-              <circle class="v-marker" cx="14" cy="118" r="5"/>
-              <text class="v-label" x="6" y="104">Check-in</text>
-            </svg>
-            <h3 class="stop-title">Flying without a return ticket?</h3>
-            <div class="stop-body">
+            <h3 class="moment-title">Flying without a return ticket?</h3>
+            <div class="moment-body">
               <p>Traveling one way as a digital nomad or backpacker? Some airlines ask for proof of onward travel at check-in. Have your reservation ready when they ask.</p>
-              <p class="stop-who"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>One-way travelers</p>
+              <p class="moment-who"><svg class="icon" aria-hidden="true"><use href="#b-user"/></svg>One-way travelers</p>
             </div>
           </li>
-          <li class="stop stop--takeoff">
-            <svg class="vignette" viewBox="0 0 240 140" aria-hidden="true" focusable="false">
-              <path class="v-ground" d="M-30 118H84"/>
-              <path class="v-route" d="M84 118C130 118 155 26 200 26H280"/>
-              <circle class="v-fill-white v-stroke" cx="40" cy="58" r="22"/>
-              <rect class="v-fill-white v-stroke" x="35" y="29" width="10" height="7" rx="2"/>
-              <path class="v-stroke" d="M57 39l4-4"/>
-              <path class="v-accent-fill" d="M40 58V40.5a17.5 17.5 0 0 1 12.4 5.1Z"/>
-              <path class="v-stroke" d="M40 58V45M40 58l7 6"/>
-              <circle class="v-fill-deep" cx="40" cy="58" r="2.4"/>
-              <g transform="translate(142 72) rotate(-52)">
-                <path class="v-fill-white v-stroke" d="M-34-5H20c7 0 12 2.4 12 5s-5 5-12 5H-28Z"/>
-                <path class="v-fill-deep" d="M-34-5l-7-14h8l11 14Z"/>
-                <path class="v-fill-deep" d="M-2 2l-14 15h8L10 2Z"/>
-                <path class="v-paper-line" d="M-14-1h2M-8-1h2M-2-1h2M4-1h2M10-1h2"/>
-              </g>
-              <circle class="v-marker" cx="84" cy="118" r="5"/>
-              <text class="v-label" x="76" y="104" text-anchor="end">Take-off</text>
-            </svg>
-            <h3 class="stop-title">Booking at the last minute?</h3>
-            <div class="stop-body">
-              <p>Get your onward reservation in under 2&nbsp;minutes, guaranteed.</p>
-              <p class="stop-who"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>Last-minute fliers</p>
-              <a class="btn btn-cta stop-cta" href="#book">Get my onward ticket</a>
+          <li class="moment" style="--tint: var(--tint-teal)">
+            <div class="stage">
+              <span class="stage-tag">Ready for arrival</span>
+              <img src="assets/vectors/my-documents.svg" alt="" width="759" height="684" loading="lazy">
             </div>
-          </li>
-          <li class="stop stop--arrival">
-            <svg class="vignette" viewBox="0 0 240 140" aria-hidden="true" focusable="false">
-              <path class="v-route" d="M-40 26H40C70 26 90 118 114 118"/>
-              <path class="v-ground" d="M114 118H270"/>
-              <rect class="v-fill-deep" x="168" y="36" width="68" height="11" rx="2"/>
-              <rect class="v-fill-tint v-stroke" x="174" y="47" width="56" height="71"/>
-              <rect class="v-fill-white v-stroke" x="182" y="58" width="40" height="28" rx="3"/>
-              <circle class="v-fill-teal" cx="202" cy="70" r="6"/><path class="v-fill-teal" d="M190 86c1.5-6.5 6-9.5 12-9.5s10.5 3 12 9.5Z"/>
-              <rect class="v-fill-white v-stroke" x="178" y="86" width="48" height="7" rx="2"/>
-              <g transform="rotate(-6 188 105)">
-                <path class="v-fill-white v-stroke" d="M170 94h18v22h-18a3 3 0 0 1-3-3V97a3 3 0 0 1 3-3Zm18 0h18a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3h-18Z"/>
-                <path class="v-line" d="M171 101h12M171 107h8"/>
-                <circle class="v-accent-stroke" cx="198" cy="105" r="6.5"/><circle class="v-accent-stroke-thin" cx="198" cy="105" r="4"/>
-              </g>
-              <circle class="v-marker" cx="114" cy="118" r="5"/>
-              <text class="v-label" x="122" y="104">Arrival</text>
-            </svg>
-            <h3 class="stop-title">Preparing for immigration checks?</h3>
-            <div class="stop-body">
+            <h3 class="moment-title">Preparing for immigration checks?</h3>
+            <div class="moment-body">
               <p>Keep your reservation and booking reference handy with your travel documents.</p>
-              <p class="stop-who"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>Border crossings</p>
+              <p class="moment-who"><svg class="icon" aria-hidden="true"><use href="#b-user"/></svg>Border crossings</p>
             </div>
           </li>
-        </ol>
+          <li class="moment" style="--tint: var(--tint-sky)">
+            <div class="stage">
+              <span class="stage-tag">Ready for visa</span>
+              <img src="assets/vectors/approve.svg" alt="" width="602" height="651" loading="lazy">
+            </div>
+            <h3 class="moment-title">Applying for Visa?</h3>
+            <div class="moment-body">
+              <p>Get a flight itinerary for your visa file before committing to the full airfare.</p>
+              <p class="moment-who"><svg class="icon" aria-hidden="true"><use href="#b-user"/></svg>Visa applicants</p>
+            </div>
+          </li>
+          <li class="moment" style="--tint: var(--tint-sand)">
+            <div class="stage">
+              <span class="stage-tag">Ready for take-off</span>
+              <img src="assets/vectors/travel-mode.svg" alt="" width="905" height="880" loading="lazy">
+            </div>
+            <h3 class="moment-title">Booking at the last minute?</h3>
+            <div class="moment-body">
+              <p>Get your onward reservation in under 2&nbsp;minutes, guaranteed.</p>
+              <p class="moment-who"><svg class="icon" aria-hidden="true"><use href="#b-user"/></svg>Last-minute fliers</p>
+              <a class="btn btn-cta moment-cta" href="#book">Get my onward ticket<svg class="icon" aria-hidden="true"><use href="#b-arrow-right"/></svg></a>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -465,7 +365,7 @@
           <label class="field-label" for="osb-from__I__"><span class="visually-hidden">Flight __N__ </span>From</label>
           <div class="field-control">
             <input class="field-input" id="osb-from__I__" name="from_city___I__" type="text" role="combobox" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-expanded="false" aria-controls="osb-from__I__-list" aria-describedby="osb-from__I__-err" placeholder="City or airport…">
-            <span class="place" aria-hidden="true"><span class="place-code" translate="no"></span><span class="place-name"><span class="place-city"></span><span class="place-country"></span></span><span class="rail"><svg class="rail-plane"><use href="#i-plane"/></svg></span></span>
+            <span class="place" aria-hidden="true"><span class="place-code" translate="no"></span><span class="place-name"><span class="place-city"></span><span class="place-country"></span></span></span>
           </div>
           <ul class="suggestions" id="osb-from__I__-list" role="listbox" aria-label="Flight __N__ from" hidden></ul>
           <p class="field-error" id="osb-from__I__-err" hidden></p>
@@ -474,7 +374,7 @@
           <label class="field-label" for="osb-to__I__"><span class="visually-hidden">Flight __N__ </span>To</label>
           <div class="field-control">
             <input class="field-input" id="osb-to__I__" name="to_city___I__" type="text" role="combobox" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-expanded="false" aria-controls="osb-to__I__-list" aria-describedby="osb-to__I__-err" placeholder="City or airport…">
-            <span class="place" aria-hidden="true"><span class="rail-in"></span><span class="place-code" translate="no"></span><span class="place-name"><span class="place-city"></span><span class="place-country"></span></span></span>
+            <span class="place" aria-hidden="true"><span class="place-code" translate="no"></span><span class="place-name"><span class="place-city"></span><span class="place-country"></span></span></span>
           </div>
           <ul class="suggestions" id="osb-to__I__-list" role="listbox" aria-label="Flight __N__ to" hidden></ul>
           <p class="field-error" id="osb-to__I__-err" hidden></p>
@@ -486,7 +386,7 @@
         <p class="field-error" id="osb-date__I__-err" hidden></p>
       </div>
       <button class="leg-remove" type="button" data-remove-leg="__I__">
-        <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg><span class="leg-remove-text">Remove</span><span class="visually-hidden"> flight __N__</span>
+        <svg class="icon" aria-hidden="true"><use href="#b-x"/></svg><span class="leg-remove-text">Remove</span><span class="visually-hidden"> flight __N__</span>
       </button>
     </div>
   </template>

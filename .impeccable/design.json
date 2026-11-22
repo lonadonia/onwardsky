@@ -1,12 +1,12 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-22T12:16:24+00:00",
+  "generatedAt": "2026-11-22T13:56:35+00:00",
   "title": "Design System: Onward Sky",
   "extensions": {
     "colorMeta": {
-      "chart-ink": {
+      "ink": {
         "role": "neutral",
-        "displayName": "Chart Ink",
+        "displayName": "Ink",
         "canonical": "oklch(26.8% 0.038 209.5)",
         "tonalRamp": [
           "#051417",
@@ -64,9 +64,9 @@
           "#E7F1F2"
         ]
       },
-      "route-teal": {
+      "brand-teal": {
         "role": "secondary",
-        "displayName": "Route Teal",
+        "displayName": "Brand Teal",
         "canonical": "oklch(47.7% 0.075 203.6)",
         "tonalRamp": [
           "#001518",
@@ -94,9 +94,9 @@
           "#DBF4F7"
         ]
       },
-      "night-chart": {
+      "night-teal": {
         "role": "tertiary",
-        "displayName": "Night Chart",
+        "displayName": "Night Teal",
         "canonical": "oklch(30.7% 0.046 208.5)",
         "tonalRamp": [
           "#021518",
@@ -140,7 +140,7 @@
         ]
       },
       "mist": {
-        "role": "neutral",
+        "role": "tertiary",
         "displayName": "Mist",
         "canonical": "oklch(84.7% 0.029 193.9)",
         "tonalRamp": [
@@ -154,9 +154,9 @@
           "#E6F1F1"
         ]
       },
-      "burnt-orange": {
+      "action-orange": {
         "role": "primary",
-        "displayName": "Burnt Orange",
+        "displayName": "Action Orange",
         "canonical": "oklch(56.7% 0.180 39.4)",
         "tonalRamp": [
           "#260500",
@@ -169,9 +169,9 @@
           "#FFE9E2"
         ]
       },
-      "burnt-orange-hover": {
+      "action-orange-hover": {
         "role": "primary",
-        "displayName": "Burnt Orange, hover",
+        "displayName": "Action Orange Hover",
         "canonical": "oklch(52.2% 0.164 39.8)",
         "tonalRamp": [
           "#250600",
@@ -184,9 +184,9 @@
           "#FFE9E2"
         ]
       },
-      "burnt-orange-active": {
+      "action-orange-active": {
         "role": "primary",
-        "displayName": "Burnt Orange, pressed",
+        "displayName": "Action Orange Active",
         "canonical": "oklch(47.0% 0.149 39.4)",
         "tonalRamp": [
           "#260500",
@@ -199,49 +199,49 @@
           "#FFE9E2"
         ]
       },
-      "chart-paper": {
+      "stage": {
         "role": "neutral",
-        "displayName": "Chart Paper",
-        "canonical": "oklch(97.6% 0.004 179.7)",
-        "tonalRamp": [
-          "#101212",
-          "#272929",
-          "#404342",
-          "#616463",
-          "#848786",
-          "#A8ACAB",
-          "#CED2D1",
-          "#ECEFEE"
-        ]
-      },
-      "chart-paper-tint": {
-        "role": "neutral",
-        "displayName": "Chart Paper Tint",
-        "canonical": "oklch(95.5% 0.009 188.1)",
-        "tonalRamp": [
-          "#0F1212",
-          "#262A29",
-          "#3E4443",
-          "#5E6564",
-          "#818887",
-          "#A7ACAB",
-          "#CED2D1",
-          "#ECEFEF"
-        ]
-      },
-      "chart-paper-deep": {
-        "role": "neutral",
-        "displayName": "Chart Paper Deep",
-        "canonical": "oklch(92.9% 0.015 191.7)",
+        "displayName": "Stage",
+        "canonical": "oklch(95.0% 0.016 201.7)",
         "tonalRamp": [
           "#0D1313",
-          "#232B2A",
-          "#3B4544",
-          "#5A6665",
-          "#7E8988",
-          "#A4ADAC",
-          "#CBD3D2",
-          "#EAF0EF"
+          "#232B2B",
+          "#3A4545",
+          "#596667",
+          "#7D8989",
+          "#A3ADAE",
+          "#CBD3D3",
+          "#EAF0F0"
+        ]
+      },
+      "stage-deep": {
+        "role": "neutral",
+        "displayName": "Stage Deep",
+        "canonical": "oklch(91.7% 0.027 205.4)",
+        "tonalRamp": [
+          "#091415",
+          "#1E2C2D",
+          "#344648",
+          "#52686B",
+          "#778A8D",
+          "#9EAEB0",
+          "#C7D4D5",
+          "#E6F1F2"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(97.8% 0.006 197.1)",
+        "tonalRamp": [
+          "#101212",
+          "#262A2A",
+          "#3F4343",
+          "#5F6464",
+          "#838787",
+          "#A8ACAC",
+          "#CED2D2",
+          "#EBEFEF"
         ]
       },
       "white": {
@@ -287,6 +287,96 @@
           "#9DAFB1",
           "#C6D4D6",
           "#E6F1F2"
+        ]
+      },
+      "selection": {
+        "role": "neutral",
+        "displayName": "Selection",
+        "canonical": "oklch(89.1% 0.038 204.7)",
+        "tonalRamp": [
+          "#051416",
+          "#182D2F",
+          "#2D484A",
+          "#496A6D",
+          "#708C8F",
+          "#99B0B3",
+          "#C3D5D7",
+          "#E3F2F3"
+        ]
+      },
+      "star-muted": {
+        "role": "neutral",
+        "displayName": "Star Muted",
+        "canonical": "oklch(84.9% 0.025 193.5)",
+        "tonalRamp": [
+          "#0A1413",
+          "#1F2C2B",
+          "#364645",
+          "#536867",
+          "#788A8A",
+          "#9FAEAE",
+          "#C8D4D3",
+          "#E7F1F0"
+        ]
+      },
+      "tint-peach": {
+        "role": "neutral",
+        "displayName": "Tint Peach",
+        "canonical": "oklch(93.5% 0.033 60.1)",
+        "tonalRamp": [
+          "#181009",
+          "#32261D",
+          "#4E3F33",
+          "#725F50",
+          "#938376",
+          "#B6A89D",
+          "#DACFC6",
+          "#F6EDE5"
+        ]
+      },
+      "tint-teal": {
+        "role": "neutral",
+        "displayName": "Tint Teal",
+        "canonical": "oklch(92.8% 0.024 206.6)",
+        "tonalRamp": [
+          "#0A1315",
+          "#1F2B2D",
+          "#364648",
+          "#54676A",
+          "#798A8C",
+          "#A0AEB0",
+          "#C8D3D5",
+          "#E7F0F2"
+        ]
+      },
+      "tint-sky": {
+        "role": "neutral",
+        "displayName": "Tint Sky",
+        "canonical": "oklch(92.6% 0.025 242.4)",
+        "tonalRamp": [
+          "#0C1217",
+          "#212A31",
+          "#39444D",
+          "#576570",
+          "#7C8892",
+          "#A2ACB5",
+          "#CAD2D9",
+          "#E9EFF5"
+        ]
+      },
+      "tint-sand": {
+        "role": "neutral",
+        "displayName": "Tint Sand",
+        "canonical": "oklch(94.1% 0.024 77.5)",
+        "tonalRamp": [
+          "#15110A",
+          "#2E281F",
+          "#494136",
+          "#6B6254",
+          "#8D8579",
+          "#B1AA9F",
+          "#D6D0C8",
+          "#F2EEE7"
         ]
       },
       "error": {
@@ -348,57 +438,12 @@
           "#CDD2D0",
           "#EBF0EE"
         ]
-      },
-      "illustration-line": {
-        "role": "neutral",
-        "displayName": "Illustration Line",
-        "canonical": "oklch(75.8% 0.027 199.5)",
-        "tonalRamp": [
-          "#091414",
-          "#1D2C2D",
-          "#344647",
-          "#516869",
-          "#778B8B",
-          "#9EAFAF",
-          "#C7D4D5",
-          "#E6F1F1"
-        ]
-      },
-      "illustration-tint": {
-        "role": "neutral",
-        "displayName": "Illustration Tint",
-        "canonical": "oklch(94.0% 0.013 191.0)",
-        "tonalRamp": [
-          "#0E1312",
-          "#242A2A",
-          "#3C4444",
-          "#5B6665",
-          "#7F8888",
-          "#A5ADAC",
-          "#CCD2D2",
-          "#EBF0EF"
-        ]
-      },
-      "illustration-peach": {
-        "role": "neutral",
-        "displayName": "Illustration Peach",
-        "canonical": "oklch(90.0% 0.044 54.9)",
-        "tonalRamp": [
-          "#1A0E07",
-          "#35251A",
-          "#523D2F",
-          "#775D4B",
-          "#988171",
-          "#BBA699",
-          "#DECDC3",
-          "#F9ECE3"
-        ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Hero headline only; lines break on meaning."
+        "purpose": "Hero headline only."
       },
       "headline": {
         "displayName": "Headline",
@@ -406,11 +451,15 @@
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Journey questions and review titles."
+        "purpose": "Moment questions and review titles."
       },
-      "identifier": {
-        "displayName": "Identifier",
-        "purpose": "Chosen airport codes and the fare."
+      "price": {
+        "displayName": "Price",
+        "purpose": "The fare."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Chosen airport codes."
       },
       "lead": {
         "displayName": "Lead",
@@ -418,40 +467,43 @@
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Descriptions and review quotes."
+        "purpose": "Descriptions and quotes."
+      },
+      "ui": {
+        "displayName": "Ui",
+        "purpose": "Fields and buttons."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Meta and notes."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Field labels and meta lines."
+        "purpose": "Field labels."
       }
     },
     "shadows": [
       {
-        "name": "console",
-        "value": "0 1px 1px rgba(11,43,48,.05), 0 6px 14px -6px rgba(11,43,48,.12), 0 32px 64px -28px rgba(11,43,48,.38)",
-        "purpose": "The booking console only."
+        "name": "card",
+        "value": "0 1px 1px rgba(11,43,48,.05), 0 10px 24px -10px rgba(11,43,48,.2), 0 44px 80px -36px rgba(11,43,48,.5)",
+        "purpose": "The booking card only."
       },
       {
         "name": "pop",
         "value": "0 2px 6px rgba(11,43,48,.08), 0 22px 44px -18px rgba(11,43,48,.36)",
-        "purpose": "Suggestion lists."
+        "purpose": "Suggestions menu."
       },
       {
         "name": "action",
         "value": "0 1px 1px rgba(122,51,0,.28), 0 10px 22px -12px rgba(201,67,0,.62)",
-        "purpose": "Primary buttons at rest."
-      },
-      {
-        "name": "action-hover",
-        "value": "0 1px 1px rgba(122,51,0,.3), 0 16px 28px -14px rgba(179,60,0,.7)",
-        "purpose": "Primary buttons on hover."
+        "purpose": "Primary buttons."
       }
     ],
     "motion": [
       {
         "name": "ease-out",
         "value": "cubic-bezier(0.16, 0.84, 0.24, 1)",
-        "purpose": "All state transitions and draws."
+        "purpose": "All transitions and the entrance."
       },
       {
         "name": "fast",
@@ -461,22 +513,17 @@
       {
         "name": "base",
         "value": "200ms",
-        "purpose": "Hover, focus and colour changes."
+        "purpose": "Hover, focus, color."
       },
       {
         "name": "slow",
         "value": "360ms",
-        "purpose": "Sticky bar, swap rotation, flight added."
+        "purpose": "Swap turn, flight added, sticky bar, connector."
       },
       {
-        "name": "draw",
-        "value": "760ms",
-        "purpose": "Route line draw once both airports are set."
-      },
-      {
-        "name": "chart-plot",
-        "value": "1.7s, 55ms stagger",
-        "purpose": "One-time graticule draw on load; skipped under reduced motion."
+        "name": "entrance",
+        "value": "640-900ms, staggered",
+        "purpose": "Hero copy, card and traveler rise once on load; skipped under reduced motion."
       }
     ],
     "breakpoints": [
@@ -486,15 +533,15 @@
       },
       {
         "name": "tablet",
-        "value": "768–1023px"
+        "value": "768-1023px"
       },
       {
         "name": "laptop",
-        "value": "1024–1199px"
+        "value": "1024-1279px"
       },
       {
         "name": "desktop",
-        "value": "≥1200px"
+        "value": ">=1280px"
       }
     ]
   },
@@ -504,72 +551,72 @@
       "kind": "button",
       "refersTo": "button-primary",
       "description": "The one action: Get my onward ticket.",
-      "html": "<button class=\"ds-btn-primary\">Get my onward ticket</button>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border: 0; border-radius: 12px; background: #C94300; color: #fff; font-family: Figtree, ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 16px; box-shadow: 0 1px 1px rgba(122,51,0,.28), 0 10px 22px -12px rgba(201,67,0,.62); cursor: pointer; transition: background-color .2s, box-shadow .2s, transform .12s; } .ds-btn-primary:hover { background: #B33C00; box-shadow: 0 1px 1px rgba(122,51,0,.3), 0 16px 28px -14px rgba(179,60,0,.7); } .ds-btn-primary:active { background: #9C3200; transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid #0B2B30; outline-offset: 3px; }"
+      "html": "<button class=\"ds-btn\">Get my onward ticket</button>",
+      "css": ".ds-btn { display:inline-flex; align-items:center; min-height:48px; padding:0 22px; border:0; border-radius:14px; background:#C94300; color:#fff; font-family: Figtree, system-ui, sans-serif; font-weight:700; font-size:16px; box-shadow:0 1px 1px rgba(122,51,0,.28),0 10px 22px -12px rgba(201,67,0,.62); cursor:pointer; transition:background-color .2s, box-shadow .2s, transform .12s; } .ds-btn:hover { background:#B33C00; } .ds-btn:active { background:#9C3200; transform:translateY(1px); } .ds-btn:focus-visible { outline:2px solid #0B2B30; outline-offset:3px; }"
     },
     {
       "name": "Quiet Button",
       "kind": "button",
       "refersTo": "button-quiet",
-      "description": "Secondary links styled as buttons, e.g. Read more reviews on Trustpilot.",
-      "html": "<a class=\"ds-btn-quiet\" href=\"#\">Read more reviews on Trustpilot</a>",
-      "css": ".ds-btn-quiet { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border: 1px solid #7E979A; border-radius: 12px; background: #fff; color: #0B2B30; font-family: Figtree, ui-sans-serif, system-ui, sans-serif; font-weight: 700; font-size: 16px; text-decoration: none; transition: background-color .2s, border-color .2s; } .ds-btn-quiet:hover { border-color: #0B2B30; background: #F4F8F7; } .ds-btn-quiet:focus-visible { outline: 2px solid #156970; outline-offset: 3px; }"
+      "description": "Secondary link styled as a button.",
+      "html": "<a class=\"ds-quiet\" href=\"#\">Read more reviews on Trustpilot</a>",
+      "css": ".ds-quiet { display:inline-flex; align-items:center; min-height:48px; padding:0 22px; border:1px solid #7E979A; border-radius:14px; background:#fff; color:#0B2B30; font-family: Figtree, system-ui, sans-serif; font-weight:700; text-decoration:none; transition:background-color .2s, border-color .2s; } .ds-quiet:hover { border-color:#0B2B30; background:#F3F9F9; } .ds-quiet:focus-visible { outline:2px solid #156970; outline-offset:3px; }"
     },
     {
-      "name": "Field Cell",
+      "name": "Field",
       "kind": "input",
       "refersTo": "field",
-      "description": "Labelled booking field: label above, value below, whole cell focusable.",
-      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Travel date</span><input class=\"ds-field-input\" placeholder=\"City or airport…\"></label>",
-      "css": ".ds-field { display: flex; flex-direction: column; gap: 2px; min-height: 68px; padding: 10px 16px; border: 1px solid #7E979A; border-radius: 12px; background: #fff; font-family: Figtree, ui-sans-serif, system-ui, sans-serif; transition: border-color .2s, box-shadow .2s; } .ds-field:hover { border-color: #2E474B; } .ds-field:focus-within { border-color: #156970; box-shadow: 0 0 0 1px #156970, 0 0 0 5px rgba(21,105,112,.14); } .ds-field-label { font-weight: 650; font-size: 13px; color: #2E474B; } .ds-field-input { border: 0; outline: 0; padding: 0; height: 30px; font: 600 17px/30px Figtree, system-ui, sans-serif; color: #0B2B30; background: transparent; } .ds-field-input::placeholder { color: #5E7478; font-weight: 500; }"
+      "description": "Labelled booking field: label above, value below.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-l\">Travel date</span><input class=\"ds-i\" placeholder=\"City or airport…\"></label>",
+      "css": ".ds-field { display:flex; flex-direction:column; gap:2px; min-height:66px; padding:10px 16px; border:1px solid #7E979A; border-radius:14px; background:#fff; font-family: Figtree, system-ui, sans-serif; transition:border-color .2s, box-shadow .2s; } .ds-field:hover { border-color:#2E474B; } .ds-field:focus-within { border-color:#156970; box-shadow:0 0 0 1px #156970,0 0 0 5px rgba(21,105,112,.16); } .ds-l { font-weight:600; font-size:13px; color:#4F676B; } .ds-i { border:0; outline:0; padding:0; height:30px; font:650 17px/30px Figtree, system-ui, sans-serif; color:#0B2B30; background:transparent; } .ds-i::placeholder { color:#5E7478; font-weight:500; }"
     },
     {
-      "name": "Trip Type",
+      "name": "Trip Control",
       "kind": "chip",
       "refersTo": "segment-selected",
-      "description": "Segmented control built from real radio buttons.",
-      "html": "<div class=\"ds-seg\"><button class=\"ds-seg-item is-on\">One way</button><button class=\"ds-seg-item\">Return</button><button class=\"ds-seg-item\">Multi-city</button></div>",
-      "css": ".ds-seg { display: inline-flex; gap: 2px; padding: 4px; border: 1px solid #D5E3E2; border-radius: 14px; background: #F4F8F7; } .ds-seg-item { padding: 9px 18px; border: 0; border-radius: 10px; background: transparent; color: #2E474B; font-family: Figtree, ui-sans-serif, system-ui, sans-serif; font-weight: 650; font-size: 15px; cursor: pointer; transition: background-color .2s, color .2s; } .ds-seg-item:hover { background: rgba(255,255,255,.8); color: #0B2B30; } .ds-seg-item.is-on { background: #0F555B; color: #fff; box-shadow: 0 1px 2px rgba(11,43,48,.25); } .ds-seg-item:focus-visible { outline: 2px solid #156970; outline-offset: 2px; }"
+      "description": "Segmented trip type control on the deep teal card header.",
+      "html": "<div class=\"ds-head\"><span class=\"ds-t\">Choose your route</span><div class=\"ds-seg\"><button class=\"ds-s on\">One way</button><button class=\"ds-s\">Return</button><button class=\"ds-s\">Multi-city</button></div></div>",
+      "css": ".ds-head { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 16px 14px 24px; border-radius:28px 28px 0 0; background:#0F555B; color:#fff; } .ds-t { font-family: Manrope, system-ui, sans-serif; font-weight:700; font-size:19px; } .ds-seg { display:inline-flex; gap:2px; padding:4px; border-radius:12px; background:rgba(255,255,255,.14); } .ds-s { padding:8px 14px; border:0; border-radius:8px; background:transparent; color:rgba(255,255,255,.92); font-family: Figtree, system-ui, sans-serif; font-weight:650; font-size:15px; cursor:pointer; } .ds-s.on { background:#fff; color:#0F555B; font-weight:750; box-shadow:0 1px 3px rgba(11,43,48,.3); }"
     },
     {
-      "name": "Identifier",
-      "kind": "chip",
-      "refersTo": "identifier",
-      "description": "Boxed IATA code, the chart identifier used for airports and airlines.",
-      "html": "<span class=\"ds-ident\">DEL</span> <span class=\"ds-ident ds-ident--on\">AMS</span>",
-      "css": ".ds-ident { display: inline-grid; place-items: center; min-width: 44px; padding: 6px 6px 5px; border: 1.25px solid #0F555B; border-radius: 6px; color: #0F555B; font-family: Archivo, 'Arial Narrow', sans-serif; font-stretch: 76%; font-weight: 720; font-size: 14px; line-height: 1; letter-spacing: .06em; } .ds-ident--on { background: #0F555B; color: #fff; }"
-    },
-    {
-      "name": "Route Pair",
+      "name": "Route Entry",
       "kind": "custom",
-      "refersTo": "console",
-      "description": "Signature: chosen airports as identifiers joined by the plotted route.",
-      "html": "<div class=\"ds-route\"><span class=\"ds-code\">DEL</span><span class=\"ds-city\">New Delhi<small>India</small></span><span class=\"ds-rail\"></span><span class=\"ds-code\">AMS</span><span class=\"ds-city\">Amsterdam<small>Netherlands</small></span></div>",
-      "css": ".ds-route { display: flex; align-items: center; gap: 10px; padding: 14px 16px; border: 1px solid #7E979A; border-radius: 12px; background: #fff; } .ds-code { font-family: Archivo, 'Arial Narrow', sans-serif; font-stretch: 76%; font-weight: 780; font-size: 30px; line-height: 1; color: #0B2B30; } .ds-city { display: grid; font-family: Figtree, ui-sans-serif, system-ui, sans-serif; font-weight: 650; font-size: 14px; line-height: 1.15; color: #0B2B30; } .ds-city small { font-weight: 400; font-size: 12.5px; color: #4F676B; } .ds-rail { flex: 1; height: 2px; min-width: 40px; background: #C94300; border-radius: 2px; }"
+      "refersTo": "field",
+      "description": "Signature: chosen airports as departure-board entries joined by a connector.",
+      "html": "<div class=\"ds-route\"><div class=\"ds-row\"><b>DEL</b><span>New Delhi<small>India</small></span></div><div class=\"ds-row\"><b>AMS</b><span>Amsterdam<small>Netherlands</small></span></div></div>",
+      "css": ".ds-route { position:relative; border:1px solid #7E979A; border-radius:14px; background:#fff; } .ds-route::before { content:''; position:absolute; left:27px; top:34px; bottom:34px; border-left:2px solid #C94300; } .ds-row { display:flex; align-items:center; gap:12px; padding:14px 16px 14px 58px; } .ds-row + .ds-row { border-top:1px solid #D5E3E2; } .ds-row b { font-family: Manrope, system-ui, sans-serif; font-weight:800; font-size:26px; color:#0B2B30; } .ds-row span { display:grid; font-family: Figtree, system-ui, sans-serif; font-weight:650; font-size:15px; line-height:1.15; color:#0B2B30; } .ds-row small { font-weight:400; font-size:13px; color:#4F676B; }"
     },
     {
-      "name": "Main Navigation",
-      "kind": "nav",
-      "refersTo": "navigation",
-      "description": "Header links with a quiet hover tint.",
-      "html": "<nav class=\"ds-nav\"><a href=\"#\">How it works</a><a href=\"#\">Verify a PNR</a><a href=\"#\">Help</a><a href=\"#\">Guides</a><a href=\"#\">Contact</a></nav>",
-      "css": ".ds-nav { display: flex; gap: 2px; } .ds-nav a { padding: 10px 12px; border-radius: 8px; color: #0B2B30; font-family: Figtree, ui-sans-serif, system-ui, sans-serif; font-weight: 550; font-size: 15.5px; text-decoration: none; transition: background-color .2s, color .2s; } .ds-nav a:hover { background: #F4F8F7; color: #0F555B; } .ds-nav a:focus-visible { outline: 2px solid #156970; outline-offset: 3px; }"
+      "name": "Moment Stage",
+      "kind": "card",
+      "refersTo": "stage",
+      "description": "Pastel stage holding one fetched illustration with a moment tag.",
+      "html": "<div class=\"ds-stage\"><span class=\"ds-tag\">Ready for check-in</span></div>",
+      "css": ".ds-stage { position:relative; width:260px; aspect-ratio:1/1.04; border-radius:28px; background:#FBE5D4; } .ds-tag { position:absolute; left:16px; top:16px; padding:6px 12px; border-radius:999px; background:#fff; color:#0B2B30; font-family: Figtree, system-ui, sans-serif; font-weight:650; font-size:13px; box-shadow:0 1px 2px rgba(11,43,48,.1); }"
+    },
+    {
+      "name": "Featured Review",
+      "kind": "card",
+      "refersTo": "review-featured",
+      "description": "Large quote on deep teal.",
+      "html": "<figure class=\"ds-rev\"><blockquote>“The booking came with a verifiable PNR…”</blockquote><figcaption>Zeeshan Khan</figcaption></figure>",
+      "css": ".ds-rev { margin:0; padding:32px; border-radius:28px; background:#0F555B; color:#fff; font-family: Figtree, system-ui, sans-serif; } .ds-rev blockquote { margin:0 0 16px; font-weight:500; font-size:24px; line-height:1.42; } .ds-rev figcaption { font-size:14px; color:rgba(255,255,255,.78); }"
     }
   ],
   "narrative": {
-    "northStar": "The Enroute Chart",
-    "overview": "Onward Sky is drawn like an aeronautical enroute chart: cool chart paper ruled with a faint Lambert-conic graticule, a deep night-chart field where the network lives, and condensed chart lettering that names places the way a pilot reads them. The booking console is the instrument on that chart. It is the brightest, most finished object on the page, and it turns the traveller's input into identifiers and a plotted route, so the product proves itself the moment it is used.\n\nDensity is calm and exact. Hairlines, identifier boxes and waypoint markers are the whole ornament vocabulary; everything else is type, spacing and two committed fields of color (paper and night). Motion is rare and earned: the graticule plots itself once on load, and every other movement answers a person's action.\n\nThe system is light by choice: travellers read it on phones in airports and on laptops while assembling visa files, often in bright ambient light, and official paperwork is read on light grounds.",
+    "northStar": "The Daylight Terminal",
+    "overview": "Onward Sky is drawn as a bright departure hall: pale teal daylight, a traveler on a phone with her luggage and a plane overhead, and a booking card that is the counter she steps up to. It keeps the brand's friendly identity (teal, the production orange, Figtree) and adds weight where a premium service needs it: confident Manrope headlines, a deep teal card header, real airline marks and illustration with a human in it.\n\nDensity is calm. Large type, generous space, and surfaces that change color by meaning: pale teal for the welcome, deep teal for the instrument and the proof, white for reading, four pastel stages for the four moments. Motion is one gentle entrance on load; after that, only answers to input.\n\nEverything that looks drawn was fetched. Illustrations come from the unDraw collection and are only recolored; icons are Phosphor; airline and payment marks come from Soaring Symbols and Simple Icons; the full record is in `assets/SOURCES.md`.",
     "keyCharacteristics": [
-      "Chart paper and night-chart teal as the two grounds; white reserved for the console, panels and controls.",
-      "Condensed Archivo for headlines, airport codes and fares; Figtree for reading and every control.",
-      "Burnt orange appears only where something happens: the action, the plotted route, the proof mark in an illustration.",
-      "Hairline graticules and great-circle airways as the world's texture, always behind content and never crossing copy.",
-      "One signature moment: a chosen airport becomes a chart identifier and both ends join with an orange route line."
+      "Pale teal stage with one large soft halo behind the booking card and a faint vector atlas behind the traveler.",
+      "Deep teal as the committed dark: the card header, the airline band and the featured review.",
+      "Burnt orange appears only on actions (and on the plotted connector once a route is set).",
+      "Manrope 800 for headlines, prices and airport codes; Figtree for sentences and controls.",
+      "Fetched illustration, recolored to brand teal, ink and a peach accent; the figure stands on a real edge (the band)."
     ],
     "rules": [
       {
         "name": "The One Hot Color Rule",
-        "body": "Burnt orange marks what happens next (the action, the route, the proof) and nothing else: never a heading, a badge, an eyebrow or a background wash.",
+        "body": "Burnt orange marks what happens next (the action, the route) and nothing else: never a heading, badge or background wash.",
         "section": "colors"
       },
       {
@@ -578,33 +625,38 @@
         "section": "colors"
       },
       {
-        "name": "The Chart Lettering Rule",
-        "body": "Archivo carries names, codes, prices and headings; Figtree carries sentences and controls. Never set a paragraph in Archivo or a headline in Figtree.",
+        "name": "The Fetched Art Rule",
+        "body": "Illustration, icons, logos and maps are fetched from open libraries and only recolored or cropped. Nothing figurative is drawn by hand; every source is recorded with its license.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Manrope carries headings, prices and codes; Figtree carries sentences and controls. Never a paragraph in Manrope or a heading in Figtree.",
         "section": "typography"
       },
       {
         "name": "The Sentence Case Rule",
-        "body": "Labels, buttons and headings are sentence case; identifiers (DEL, AMS, BA) are the only capitals that run together.",
+        "body": "Labels, buttons and headings are sentence case; only airport and airline codes are capitals.",
         "section": "typography"
       },
       {
         "name": "The Instrument Rule",
-        "body": "Only things you can operate float. Content panels sit on the page with a hairline or a tint, never a shadow.",
+        "body": "Only things you can operate float. Content panels sit on their ground with a tint or a hairline, never a shadow.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do keep the booking console the brightest, most finished object in the first viewport.",
-      "Do break display lines on meaning (\"Get a verifiable / onward ticket / in 2 minutes.\").",
-      "Do draw chart texture (graticule, airways) behind content and stop it before it crosses copy.",
+      "Do keep the booking card the brightest, most finished object in the first viewport.",
+      "Do break the display headline on meaning (\"Get a verifiable / onward ticket / in 2 minutes.\").",
+      "Do fetch every illustration, icon, logo and map from an open library, recolor it to the palette, and record the source.",
       "Do give every control a 44px minimum target and a control-line boundary.",
-      "Do answer input with motion (route draw, swap rotation, flight added) and show the final state under reduced motion."
+      "Do answer input with motion (route connector, swap turn, flight added) and show final states under reduced motion."
     ],
     "donts": [
+      "Don't hand-draw illustrations, icons or logos.",
       "Don't put eyebrow labels or kickers above headings.",
       "Don't use burnt orange for decoration, emphasis words or headings.",
       "Don't set the display face as body copy, or Figtree as a headline.",
-      "Don't introduce gradients, glass, glow halos or offset block shadows.",
       "Don't hide the booking form behind a button, modal or second page."
     ]
   }

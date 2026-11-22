@@ -17,105 +17,81 @@ In order, from the top of the page:
 ### What already worked (kept)
 - **The booking form lives in the hero.** This is the single biggest advantage over the competitor, whose hero only has a “Book now” button.
 - A clear, specific promise (“verifiable onward ticket in 2 minutes”), a visible price (“From $9.99”) and delivery time next to the action.
-- A distinctive brand pairing: deep teal with a burnt-orange CTA and a recognisable logo.
+- A friendly, recognisable brand: deep teal, a burnt-orange CTA, rounded Figtree type, illustrated moments.
 - Honest social proof: real Trustpilot excerpts plus a disclosure of the overall 4.0 TrustScore.
 - Solid form engineering underneath: accessible combobox, plugin-matched validation, multi-city 2–6 flights, a sticky mobile CTA.
 
 ### What held it back
-- **Template composition.** The hero was the category default: copy left, a floating form card right, a faded gradient panel, a dotted globe and clip-art planes on dashed paths. Nothing in it was specific to Onward Sky.
-- **Generic headline treatment.** A single accented word (“verifiable”) on a stock geometric sans, with a hierarchy only a little larger than the form.
-- **A cramped form.**
-  - Tiny 11–12px labels and an ambiguous floating swap circle.
-  - Field borders at 1.4:1 contrast (below the WCAG 3:1 for control boundaries).
-  - Price, delivery, trust lines and payment logos all competing at the same weight.
-- **A disconnected airline strip.** An all-caps label on a teal band, with logos hosted externally (they vanished in the export).
-- **Reviews as three unequal cards** (dark, tinted, white) with carousel arrows for only three items.
-- **The “Be ready” section.**
-  - Four similar ticket-stub cards with ALL-CAPS stub labels and orange eyebrow labels.
-  - Inconsistent heights and empty space (the Visa card).
-  - The only CTA buried in the fourth card.
+- **A generic hero.** Copy left, a floating form card right, a faded gradient panel, a dotted globe and clip-art planes. Nothing in it showed a person or the moment the product solves.
+- **A cramped form.** 11–12px labels, an empty circle where the swap icon should be, field borders at 1.4:1 contrast (below WCAG's 3:1 for control boundaries), and price, delivery, trust and payment logos all at the same weight.
+- **A dead airline strip.** An all-caps label on a teal band; the logos are hosted externally and vanished in the export.
+- **Reviews as three unequal cards** with carousel arrows for only three items.
+- **The “Be ready” cards.** Four similar stub cards with ALL-CAPS labels and orange eyebrows, uneven heights, and the only CTA buried in the fourth.
 
-### What the competitor (onwardticket.com) does well and badly
-- **Learned:** one dominant message, a memorable boarding-pass motif, generous spacing, and named-airline proof.
-- **Avoided:**
-  - The booking form is hidden behind a button.
-  - Pastel gradient cards everywhere, low-contrast light-on-mint text, and cartoon softness.
-  - Identical rounded cards in every section.
-- Nothing was copied: no layout, assets, illustrations or styling.
+### The competitor (onwardticket.com): what to learn and what to avoid
+- **Learned:** one dominant message, a visual that shows the product, generous spacing, named-airline proof, human faces in social proof.
+- **Avoided:** the booking form hidden behind a button; pastel mint everywhere with low-contrast light-on-mint text; identical rounded cards in every section; cartoon softness.
+- Fonts and colors observed in its CSS: Poppins, navy `#1f368d` on mint, lime and pink accents. Nothing was copied: no layout, assets, illustrations or styling.
 
-## 3. Directions explored
+## 3. What v1 got wrong (and why it was rejected)
 
-Seven world candidates were drawn from the traveller's own culture, ranked by resonance:
+The first version used a cold “aeronautical chart” world: condensed display type, a faint graticule, a dark band, and
+illustrations drawn by hand in code. The client rejected it outright. The honest critique:
 
-1. E-ticket itinerary
-2. Airport wayfinding
-3. Passport security print
-4. Split-flap board
-5. Aeronautical route chart
-6. Luggage tag
-7. The literal “sky”
+- **It abandoned the brand's warmth.** The original is friendly and human; v1 was technical and dry, and read as a different company.
+- **Hand-drawn art looked amateur.** The vignettes were simple shapes, not professional illustration. The client was explicit that vectors must come from a real library.
+- **Nothing in the first viewport was human or concrete.** No traveler, no scene, no real airline marks; a hairline grid is not a hero.
+- **Typography was harsh.** Heavy condensed capitals suit a flight board, not a trust-first consumer brand.
+- **The form was a wide search bar.** It matched airline sites but was less comfortable than the original's tall card.
 
-The Impeccable skill's concept roll (which ran in a degraded, offline mode) assigned candidate 5. Three directions were then fully developed and scored on the brief's eight criteria:
+## 4. v2 concept: “The Daylight Terminal”
 
-| Criterion | **A · Enroute Chart** | B · The Itinerary | C · Wayfinding |
-| --- | --- | --- | --- |
-| Originality | 4 | 3 | 4 |
-| Brand alignment | **5** | 3.5 | 4.5 |
-| Premium quality | **4.5** | 3.5 | 3.5 |
-| Booking-form prominence | **5** | 4.5 | 4.5 |
-| Clarity | 4 | 5 | 5 |
-| Ease of implementation | 3.5 | 4.5 | 4 |
-| Responsive usability | 4 | 4.5 | 4.5 |
-| Conversion potential | 4.5 | 4.5 | 4.5 |
-| **Total** | **34.5** | 33 | 34 |
+Three directions were considered again with that feedback:
 
-**Selected: A, the Enroute Chart.** It takes two disciplines from the others:
-- From C, signage-grade clarity: one message per panel and large legible labels.
-- From B, “prove, don't claim”: the console visibly assembles the traveller's real route.
+| Direction | Verdict |
+| --- | --- |
+| A · **Daylight terminal**: bright stage, a traveler at the airport, a tall booking card with a deep teal header, fetched illustration | **Chosen**: closest to the brand, most human, and the card stays the focal point |
+| B · Deep teal hero with white card | Rejected: the unDraw figures use dark ink and would vanish on a dark ground |
+| C · Light hero with a deep teal card | Close, but heavier than needed; the card header carries the same brand weight |
 
-Why it fits Onward Sky: the logo's orbit swoosh already describes a trajectory, “onward” is a route, and the
-brand teals are chart inks. A chart also gives a premium, precise visual language that needs no stock
-photography and stays light (pure SVG/CSS).
+The traveler is on a phone with luggage and a boarding pass while a plane passes overhead: it tells the product's story
+(“I need proof at the counter, now”) before a word is read. She stands on the top edge of the airline band, so the
+illustration, the proof and the page share one ground.
 
-## 4. Key improvements and why
+## 5. Key improvements and why
 
 | Change | Why it helps |
 | --- | --- |
-| **Full-width booking console** spanning the hero, straddling the paper and night fields | The form becomes the hero's spine instead of a side card. At 1280×720 the full console, including the CTA, sits above the fold. |
-| Fare + delivery set top-right, directly above the CTA | The price is read in the same glance as the action. |
-| **Airport → identifier transformation** with a drawn route line | Turns form-filling into visible proof the system understands real routes; memorable and on-brand. |
-| Labelled cells, 68px tall, 3:1 boundaries, 44px swap, 16px inputs on phones | Easier to read and tap; meets WCAG 1.4.11; no iOS zoom. |
-| Visible error summary, inline errors with icons, focus to the first error, a “No airports found” state | Problems are explained where they happen, in the plugin's own wording. |
-| **Condensed chart lettering** (Archivo) with Figtree kept for text | Typography becomes the strongest element (90px three-line headline broken on meaning) while staying continuous with the brand face. |
-| Removed the accented-word headline, ALL-CAPS labels and eyebrows | These read as template tells; hierarchy now comes from scale and weight. |
-| Chart-paper ground with a Lambert-conic graticule; night field with sky airways | A world specific to Onward Sky, at low contrast so it never fights the copy. |
-| Airline strip rebuilt as identifier-boxed names on a grid | Factual, legible proof with no externally hosted logos; it reads as part of the chart. |
-| Reviews as an editorial layout (featured + two supporting, hairline divider) | No identical cards or pointless carousel; the most relevant review (Schengen visa) leads. |
-| **“Be ready” as a journey line** (Visa → Check-in → Take-off → Arrival) | The four moments become one story in travel order. The take-off CTA sits on the climb, and custom illustrations replace small stub art. |
-| Sticky header CTA (desktop) and sticky fare bar (mobile) | The action is always one tap away, without competing with the console when it is on screen. |
+| **Tall booking card** with a deep teal header (title and trip tabs), 480px wide, on a soft halo | Bigger labels and targets, clearer grouping, and the most finished object on the page; the CTA clears the fold at 1280×720 and on phones |
+| Route as **From over To** with a dashed connector and a real swap icon; chosen airports become **departure-board entries** | Easier to read and tap than a floating circle; the form visibly “understands” the route (the connector turns orange) |
+| Fare and delivery directly above the CTA; assurances and payment marks below | The price is read in the same glance as the action; trust details no longer compete with it |
+| Visible error summary, inline errors with icons, focus to the first error, a “No airports found” state | Problems are explained where they happen, in the plugin's own wording |
+| **Manrope 800 headlines** over the brand's Figtree | A confident premium voice without leaving the brand's friendly geometry |
+| **Fetched illustration** (unDraw, recolored to the brand) in the hero, reviews and moments | Professional art that is cohesive with the palette and clearly not hand-made |
+| **Real airline marks** in white on a deep teal band | Instantly legible proof, replacing invisible externally hosted logos |
+| Reviews: one **featured quote** on deep teal plus two supporting quotes, with the illustration | A clear hierarchy (the Schengen visa story leads) instead of three mismatched cards and carousel arrows |
+| “Be ready” as **four pastel stages with illustration**, aligned across columns | Each person finds their moment at a glance; no stub cards, no eyebrows; the CTA keeps its place |
+| Sticky header CTA (desktop) and sticky fare bar (phones and tablets) | The action is always one tap away without competing with the card when it is on screen |
 
-## 5. Content decisions (all factual copy preserved)
+## 6. Content decisions (all factual copy preserved)
 
-All headlines, descriptions, review excerpts, names, dates, prices, delivery promises, payment methods
-and the TrustScore disclosure are the client's existing copy. Changes made:
+All headlines, descriptions, review excerpts, names, dates, prices, delivery promises, payment methods and the
+TrustScore disclosure are the client's existing copy. Changes made:
 
-- **“Be ready” order** changed from Check-in, Arrival, Visa, Take-off to journey order (**Visa → Check-in → Take-off → Arrival**).
-  - Stub labels “READY FOR X” became checkpoint labels on the journey line.
-  - Persona labels (“One-way travelers”, etc.) moved from eyebrows to a line under each description (eyebrows are banned in this system).
-- **Hero trust line:** “TrustScore 4.0 · All 4 reviews rated 5 stars” is now set as two lines, “TrustScore 4.0 on Trustpilot / All 4 reviews rated 5 stars”.
-- **Placeholders:** “City or airport” became “City or airport…” (typographic convention for placeholder prompts).
+- **“Be ready” stays in the original order** (check-in, arrival, visa, take-off). The stub labels “READY FOR …” became small tags on each illustration; the audience labels (“One-way travelers”, etc.) moved from eyebrows to a line under each description.
+- **Hero trust line:** “TrustScore 4.0 · All 4 reviews rated 5 stars” is set as two lines, “TrustScore 4.0 on Trustpilot / All 4 reviews rated 5 stars”.
+- **Placeholders:** “City or airport” became “City or airport…”.
 - **New UI guidance copy** (not claims): “No airports found. Try another spelling, a nearby city or a 3-letter airport code.” and the prototype's “Search ready …” confirmation.
-- **Airline strip:** the heading is in sentence case. The nine named airlines are unchanged; their IATA codes (BA, MH, UL, TK, EK, QR, IB, KL, AK) were added as identifiers.
-- **Removed duplication:** the reviews section had no separate score block in the original, so none was added. The rating appears in the hero and in the section's footnote disclosure.
-- **Not added:** no testimonials, customer counts, years in business, certifications, guarantees or new prices.
+- **Airline strip:** the heading is in sentence case; eight of the nine named airlines appear as marks (SriLankan is not in the fetched library; see `assets/SOURCES.md`).
+- **Not added:** no testimonials, customer counts, years in business, certifications, guarantees or new prices. Reviewer avatars are the reviewers' initials only.
 
-## 6. Self-critique: what was changed during review
+## 7. Self-critique during the build
 
-Each issue below was caught in a Playwright screenshot pass and fixed:
+Each issue was caught in a Playwright screenshot pass and fixed:
 
-- A compass rose and an orange airway in the hero collided with the lead text. Both were removed; the airways moved to the night band.
-- Vignette labels sat under drawings, and the climb and descent paths crossed at the column gap. The illustrations were re-laid out with level-cruise joins.
-- The Impeccable detector flagged Mona Sans as an overused face. It was replaced with Archivo after checking candidates against the detector.
-- Journey columns misaligned. They now use a subgrid with titles bottom-aligned to their copy.
-- On mobile, the trust line orphaned a word, the date field truncated at 375px, and the Trustpilot button was offset. All three were fixed.
-- The sticky fare bar was reachable on desktop. It is now hidden at 1024px and up.
+- The traveler first sat behind the halo and over the lead text; the layering was fixed and the text column narrowed.
+- The first atlas was too dark and fought the headline; it was remapped to a quiet teal-on-teal.
+- A hero clip also cut off the airport suggestions list; the decoration now lives in its own clipped layer.
+- The airport chip lost a letter to a neighbouring marker; focused fields now stack above their siblings.
+- The visa illustration read as a close-up of a face; it was replaced by one showing a document being approved.
+- On phones the booking CTA fell below the fold; spacing was tightened (and the title kept for screen readers only) so the whole form fits at 375×812.

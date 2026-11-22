@@ -1,64 +1,71 @@
 ---
 name: Onward Sky
-description: Verifiable onward tickets, set as a precise route chart with the booking console as its instrument.
+description: A bright, human travel-document service: pale teal daylight, a traveler in the scene, and a booking card you step up to.
 colors:
-  chart-ink: "#0B2B30"
+  ink: "#0B2B30"
   ink-secondary: "#2E474B"
   ink-muted: "#4F676B"
   placeholder: "#5E7478"
-  route-teal: "#156970"
+  brand-teal: "#156970"
   deep-teal: "#0F555B"
-  night-chart: "#0B363C"
+  night-teal: "#0B363C"
   logo-sky: "#2FB0C6"
   sky-soft: "#8FD3DF"
   mist: "#B8D3D2"
-  burnt-orange: "#C94300"
-  burnt-orange-hover: "#B33C00"
-  burnt-orange-active: "#9C3200"
-  chart-paper: "#F4F8F7"
-  chart-paper-tint: "#EAF2F1"
-  chart-paper-deep: "#DDEBEA"
+  action-orange: "#C94300"
+  action-orange-hover: "#B33C00"
+  action-orange-active: "#9C3200"
+  stage: "#E3F2F3"
+  stage-deep: "#D0E9EC"
+  paper: "#F3F9F9"
   white: "#FFFFFF"
   hairline: "#D5E3E2"
   control-line: "#7E979A"
+  selection: "#BFE3E7"
+  star-muted: "#BCD3D2"
+  tint-peach: "#FBE5D4"
+  tint-teal: "#D6ECEF"
+  tint-sky: "#D9E9F6"
+  tint-sand: "#F5EADA"
   error: "#B3261E"
   error-wash: "#FDF1EF"
   confirm: "#17684A"
   confirm-wash: "#EAF5F0"
-  illustration-line: "#9DB6B7"
-  illustration-tint: "#E2EEED"
-  illustration-peach: "#F6D7C3"
 typography:
   display:
-    fontFamily: "Archivo, Arial Narrow, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(2.6rem, 1.05rem + 5.1vw, 5.75rem)"
-    fontWeight: 780
-    lineHeight: 0.93
-    letterSpacing: "-0.014em"
-    fontVariation: "'wdth' 74"
+    fontFamily: "Manrope, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(2.5rem, 1.25rem + 3.75vw, 4.75rem)"
+    fontWeight: 800
+    lineHeight: 1.02
+    letterSpacing: "-0.035em"
   headline:
-    fontFamily: "Archivo, Arial Narrow, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(2.125rem, 1.45rem + 2.1vw, 3.5rem)"
-    fontWeight: 760
-    lineHeight: 1
-    letterSpacing: "-0.01em"
-    fontVariation: "'wdth' 76"
+    fontFamily: "Manrope, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(2rem, 1.1rem + 2.6vw, 3.25rem)"
+    fontWeight: 800
+    lineHeight: 1.05
+    letterSpacing: "-0.03em"
   title:
-    fontFamily: "Archivo, Arial Narrow, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(1.3125rem, 1.15rem + 0.45vw, 1.5rem)"
-    fontWeight: 740
-    lineHeight: 1.12
-    fontVariation: "'wdth' 80"
-  identifier:
-    fontFamily: "Archivo, Arial Narrow, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1.875rem"
-    fontWeight: 780
+    fontFamily: "Manrope, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.25rem, 1.12rem + 0.4vw, 1.5rem)"
+    fontWeight: 800
+    lineHeight: 1.15
+    letterSpacing: "-0.02em"
+  price:
+    fontFamily: "Manrope, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "2.125rem"
+    fontWeight: 800
     lineHeight: 1
-    fontVariation: "'wdth' 76"
+    letterSpacing: "-0.03em"
     fontFeature: "'tnum' 1, 'lnum' 1"
+  code:
+    fontFamily: "Manrope, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.625rem"
+    fontWeight: 800
+    lineHeight: 1
+    letterSpacing: "0.01em"
   lead:
     fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.0625rem, 0.98rem + 0.3vw, 1.1875rem)"
+    fontSize: "clamp(1.0625rem, 0.98rem + 0.3vw, 1.25rem)"
     fontWeight: 400
     lineHeight: 1.55
   body:
@@ -66,16 +73,57 @@ typography:
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.6
+  ui:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.0625rem"
+    fontWeight: 650
+    lineHeight: 1.3
+  ui-compact:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.9375rem"
+    fontWeight: 600
+    lineHeight: 1.3
+  button:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.125rem"
+    fontWeight: 700
+    lineHeight: 1.15
+  micro:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.75rem"
+    fontWeight: 700
+    lineHeight: 1
+  price-compact:
+    fontFamily: "Manrope, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.875rem"
+    fontWeight: 800
+    lineHeight: 1
+    letterSpacing: "-0.03em"
+  display-phone:
+    fontFamily: "Manrope, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(2.375rem, 1.3rem + 5.2vw, 3.25rem)"
+    fontWeight: 800
+    lineHeight: 1.04
+    letterSpacing: "-0.035em"
+  small:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.875rem"
+    fontWeight: 400
+    lineHeight: 1.5
   label:
     fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
     fontSize: "0.8125rem"
-    fontWeight: 650
+    fontWeight: 600
     lineHeight: 1.25
 rounded:
-  chip: "6px"
-  control: "12px"
-  panel: "20px"
-  console: "24px"
+  chip: "8px"
+  button-sm: "12px"
+  field-inner: "13px"
+  control: "14px"
+  menu: "16px"
+  panel: "24px"
+  phone-card: "22px"
+  card: "28px"
   pill: "999px"
 spacing:
   "2": "8px"
@@ -89,180 +137,200 @@ spacing:
   "10": "64px"
 components:
   button-primary:
-    backgroundColor: "{colors.burnt-orange}"
+    backgroundColor: "{colors.action-orange}"
     textColor: "{colors.white}"
     rounded: "{rounded.control}"
     padding: "0 22px"
     height: "48px"
   button-primary-hover:
-    backgroundColor: "{colors.burnt-orange-hover}"
+    backgroundColor: "{colors.action-orange-hover}"
   button-primary-active:
-    backgroundColor: "{colors.burnt-orange-active}"
+    backgroundColor: "{colors.action-orange-active}"
   button-submit:
-    backgroundColor: "{colors.burnt-orange}"
+    backgroundColor: "{colors.action-orange}"
     textColor: "{colors.white}"
-    rounded: "14px"
-    padding: "0 30px"
-    height: "68px"
+    rounded: "{rounded.control}"
+    padding: "0 28px"
+    height: "60px"
   button-quiet:
     backgroundColor: "{colors.white}"
-    textColor: "{colors.chart-ink}"
+    textColor: "{colors.ink}"
     rounded: "{rounded.control}"
     padding: "0 22px"
     height: "48px"
   field:
     backgroundColor: "{colors.white}"
-    textColor: "{colors.chart-ink}"
+    textColor: "{colors.ink}"
     rounded: "{rounded.control}"
     padding: "10px 16px"
-    height: "68px"
-  segment-selected:
+    height: "66px"
+  booking-card:
+    backgroundColor: "{colors.white}"
+    rounded: "{rounded.card}"
+    padding: "20px 22px"
+  booking-card-head:
     backgroundColor: "{colors.deep-teal}"
     textColor: "{colors.white}"
-    rounded: "10px"
-    padding: "9px 18px"
-  identifier:
+    rounded: "{rounded.card}"
+    padding: "14px 16px 14px 24px"
+  segment-selected:
+    backgroundColor: "{colors.white}"
     textColor: "{colors.deep-teal}"
     rounded: "{rounded.chip}"
-    padding: "6px 6px 5px"
-  console:
-    backgroundColor: "{colors.white}"
-    rounded: "{rounded.console}"
-    padding: "24px"
+    padding: "8px 14px"
+  stage:
+    backgroundColor: "{colors.tint-peach}"
+    rounded: "{rounded.card}"
+  review-featured:
+    backgroundColor: "{colors.deep-teal}"
+    textColor: "{colors.white}"
+    rounded: "{rounded.card}"
+    padding: "48px"
+  review:
+    backgroundColor: "{colors.paper}"
+    textColor: "{colors.ink-secondary}"
+    rounded: "{rounded.panel}"
+    padding: "32px"
 ---
 
 # Design System: Onward Sky
 
 ## Overview
 
-**Creative North Star: "The Enroute Chart"**
+**Creative North Star: "The Daylight Terminal"**
 
-Onward Sky is drawn like an aeronautical enroute chart: cool chart paper ruled with a faint Lambert-conic graticule, a deep night-chart field where the network lives, and condensed chart lettering that names places the way a pilot reads them. The booking console is the instrument on that chart. It is the brightest, most finished object on the page, and it turns the traveller's input into identifiers and a plotted route, so the product proves itself the moment it is used.
+Onward Sky is drawn as a bright departure hall: pale teal daylight, a traveler on a phone with her luggage and a plane overhead, and a booking card that is the counter she steps up to. It keeps the brand's friendly identity (teal, the production orange, Figtree) and adds weight where a premium service needs it: confident Manrope headlines, a deep teal card header, real airline marks and illustration with a human in it.
 
-Density is calm and exact. Hairlines, identifier boxes and waypoint markers are the whole ornament vocabulary; everything else is type, spacing and two committed fields of color (paper and night). Motion is rare and earned: the graticule plots itself once on load, and every other movement answers a person's action.
+Density is calm. Large type, generous space, and surfaces that change color by meaning: pale teal for the welcome, deep teal for the instrument and the proof, white for reading, four pastel stages for the four moments. Motion is one gentle entrance on load; after that, only answers to input.
 
-The system is light by choice: travellers read it on phones in airports and on laptops while assembling visa files, often in bright ambient light, and official paperwork is read on light grounds.
+Everything that looks drawn was fetched. Illustrations come from the unDraw collection and are only recolored; icons are Phosphor; airline and payment marks come from Soaring Symbols and Simple Icons; the full record is in `assets/SOURCES.md`.
 
 **Key Characteristics:**
-- Chart paper and night-chart teal as the two grounds; white reserved for the console, panels and controls.
-- Condensed Archivo for headlines, airport codes and fares; Figtree for reading and every control.
-- Burnt orange appears only where something happens: the action, the plotted route, the proof mark in an illustration.
-- Hairline graticules and great-circle airways as the world's texture, always behind content and never crossing copy.
-- One signature moment: a chosen airport becomes a chart identifier and both ends join with an orange route line.
+- Pale teal stage with one large soft halo behind the booking card and a faint vector atlas behind the traveler.
+- Deep teal as the committed dark: the card header, the airline band and the featured review.
+- Burnt orange appears only on actions (and on the plotted connector once a route is set).
+- Manrope 800 for headlines, prices and airport codes; Figtree for sentences and controls.
+- Fetched illustration, recolored to brand teal, ink and a peach accent; the figure stands on a real edge (the band).
 
 ## Colors
 
-A cool, teal-tinted chart palette with one hot action color.
+A cool, teal-tinted daylight palette with one hot action color.
 
 ### Primary
-- **Burnt Orange** (burnt-orange): the primary action, the plotted route in the console and the journey profile, and the single proof mark in each illustration. Hover deepens to burnt-orange-hover, press to burnt-orange-active.
+- **Action Orange** (action-orange): primary buttons and the plotted route connector. Hover deepens to action-orange-hover, press to action-orange-active.
 
 ### Secondary
-- **Route Teal** (route-teal): links, icons in proof lists, focus rings, the rating stars and the delivery note.
-- **Deep Teal** (deep-teal): selected segments, identifier boxes, passport and signage fills in illustrations.
+- **Brand Teal** (brand-teal): links, rating stars, small icons, delivery note, illustration accent.
+- **Deep Teal** (deep-teal): the booking card header, selected states, the featured review, identifier chips.
+- **Night Teal** (night-teal): the airline band and the scope strip; carries white marks and mist text.
 
 ### Tertiary
-- **Night Chart** (night-chart): the committed dark field under the console and the closing band. Carries white type, the graticule in sky at low alpha, and cyan airways.
-- **Logo Sky** (logo-sky) and **Sky Soft** (sky-soft): airways and graticule on night, identifier boxes and icons on night, the focus ring on night.
-
-### Neutral
-- **Chart Ink** (chart-ink): headlines and primary text, 14:1 on chart paper.
-- **Ink Secondary** (ink-secondary) and **Ink Muted** (ink-muted): reading text and meta; both clear 5:1 on every light ground.
-- **Chart Paper** (chart-paper), **Chart Paper Tint** (chart-paper-tint), **Chart Paper Deep** (chart-paper-deep): page grounds, hover tints, quiet surfaces.
-- **Hairline** (hairline): decorative rules and dividers only.
-- **Control Line** (control-line): the boundary of every control, 3.1:1 against white.
+- **Logo Sky** (logo-sky) and **Sky Soft** (sky-soft): quote mark, stars and icons on deep teal and night.
 - **Mist** (mist): secondary text on night.
 
+### Neutral
+- **Ink** (ink): headlines and primary text, 14:1 on stage.
+- **Ink Secondary** (ink-secondary) and **Ink Muted** (ink-muted): reading text and meta; both clear 5:1 on every light ground.
+- **Stage** (stage) and **Stage Deep** (stage-deep): the hero ground and the halo.
+- **Paper** (paper): section ground and quiet panels. **White** (white): reading surfaces, fields, the card body.
+- **Hairline** (hairline): decorative dividers only. **Control Line** (control-line): every control boundary (3.1:1 on white).
+- **Tints** (tint-peach, tint-teal, tint-sky, tint-sand): the four moment stages, one per moment.
+
 ### Named Rules
-**The One Hot Color Rule.** Burnt orange marks what happens next (the action, the route, the proof) and nothing else: never a heading, a badge, an eyebrow or a background wash.
+**The One Hot Color Rule.** Burnt orange marks what happens next (the action, the route) and nothing else: never a heading, badge or background wash.
 
 **The Boundary Rule.** A control's edge uses control-line (3:1 minimum); hairline is for decoration and never the only boundary of something a person operates.
 
+**The Fetched Art Rule.** Illustration, icons, logos and maps are fetched from open libraries and only recolored or cropped. Nothing figurative is drawn by hand; every source is recorded with its license.
+
 ## Typography
 
-**Display Font:** Archivo variable (with Arial Narrow, Helvetica Neue)
+**Display Font:** Manrope variable (with the platform sans)
 **Body Font:** Figtree variable (with the platform sans)
 
-**Character:** Condensed industrial chart lettering against a round, friendly text face: the chart names places, the text face talks to people.
+**Character:** A modern geometric headline voice over the brand's round, friendly text face: Manrope names things and sets prices, Figtree talks to people.
 
 ### Hierarchy
-- **Display** (780, width 74%, clamp(2.6rem…5.75rem), line-height 0.93): the hero headline only, broken on meaning, one thought per line.
-- **Headline** (760, width 76%, clamp(2.125rem…3.5rem), line-height 1.0): section titles, balanced.
-- **Title** (720–740, width 80–82%, 1.3125–1.5rem, line-height 1.12–1.18): journey questions and review titles.
-- **Identifier** (780, width 76%, 1.875rem, tabular lining numerals): chosen airport codes and the fare.
-- **Lead** (400, clamp(1.0625rem…1.1875rem), line-height 1.55, max 46ch): the hero promise and section intros.
-- **Body** (400, 1rem, line-height 1.6, max 34–48ch in columns): descriptions and review quotes.
-- **Label** (650, 0.8125rem, sentence case): field labels, legal and meta lines.
+- **Display** (800, clamp(2.5rem…4.75rem), line-height 1.02, -0.035em): the hero headline only, broken on meaning.
+- **Headline** (800, clamp(2rem…3.25rem), line-height 1.05, -0.03em): section titles, balanced.
+- **Title** (800, clamp(1.25rem…1.5rem), line-height 1.15): moment questions, review titles.
+- **Price and Code** (800, 2.125rem and 1.625rem, tabular lining numerals): the fare and chosen airport codes.
+- **Lead** (400, clamp(1.0625rem…1.25rem), line-height 1.55, max 22em): the hero promise and section intros.
+- **Body** (400, 1rem, line-height 1.6, max 34ch in columns): descriptions and quotes.
+- **UI** (650, 1.0625rem), **UI compact** (600, 0.9375rem), **Button** (700, 1.125rem in the card) and **Label** (600, 0.8125rem, sentence case): fields, buttons, meta; **Micro** (700, 0.75rem) for payment chips.
 
 ### Named Rules
-**The Chart Lettering Rule.** Archivo carries names, codes, prices and headings; Figtree carries sentences and controls. Never set a paragraph in Archivo or a headline in Figtree.
+**The Two Voices Rule.** Manrope carries headings, prices and codes; Figtree carries sentences and controls. Never a paragraph in Manrope or a heading in Figtree.
 
-**The Sentence Case Rule.** Labels, buttons and headings are sentence case; identifiers (DEL, AMS, BA) are the only capitals that run together.
+**The Sentence Case Rule.** Labels, buttons and headings are sentence case; only airport and airline codes are capitals.
 
 ## Layout
 
-A 12-column grid in a 1240px container with fluid gutters (16px on phones to 56px on wide screens) and 16–24px column gaps. Sections breathe on a fluid rhythm (64px to 112px). The hero places the headline over seven columns and the promise, proof and rating over the remaining five, aligned to the headline's last line; below 1024px they stack and the proof list moves under the console on phones.
+A 12-column grid in a 1240px container with fluid gutters (16px on phones to 56px) and 16–28px column gaps. Sections breathe on a fluid rhythm (64px to 104px). The hero places copy at the left, the 480px booking card at the right and the traveler between them, standing on the top edge of the airline band; below 1024px the order becomes copy, card, traveler, and the proof points move into the band.
 
-The console spans the full container and reaches 112px into the night field below it (96px on tablets, none on phones). It runs on its own grid: one row for route, dates, passengers and action at 1200px and above, two rows to 768px, and a stacked single column on phones where date and passengers share a row. Multi-city flights stack as labelled rows.
+The booking card runs on its own two-column grid: route (From over To) full width, date and passengers side by side, fare, submit, status and foot. Return adds a return-date cell and moves passengers beside the fare; multi-city stacks labelled flights (2–6) with From and To side by side.
 
-The journey runs as four columns sharing three rows (illustration, title, body) through CSS subgrid, then 2×2 on tablets and a single column on phones.
+Reviews pair one featured quote (7 columns) with two supporting quotes (5 columns) under an intro and illustration. The moments run as four columns sharing rows through CSS subgrid (stage, title, body), then 2×2 on tablets and one column on phones.
 
 ## Elevation & Depth
 
-Mostly flat and tonal: depth comes from the two committed grounds and from the console sitting across them. Shadows are reserved for objects a person operates, always with an offset and a soft blur, tinted from chart ink or from the action color.
+Mostly flat and tonal; depth comes from color fields (stage, halo, deep teal) and from the booking card lifting off them. Shadows are reserved for things you operate, always with an offset and a soft blur tinted from ink or the action color.
 
 ### Shadow Vocabulary
-- **Console** (`0 1px 1px rgba(11,43,48,.05), 0 6px 14px -6px rgba(11,43,48,.12), 0 32px 64px -28px rgba(11,43,48,.38)`): the booking console only.
+- **Card** (`0 1px 1px rgba(11,43,48,.05), 0 10px 24px -10px rgba(11,43,48,.2), 0 44px 80px -36px rgba(11,43,48,.5)`): the booking card only.
 - **Pop** (`0 2px 6px rgba(11,43,48,.08), 0 22px 44px -18px rgba(11,43,48,.36)`): the suggestions list.
-- **Action** (`0 1px 1px rgba(122,51,0,.28), 0 10px 22px -12px rgba(201,67,0,.62)`): primary buttons; grows on hover, collapses on press.
+- **Action** (`0 1px 1px rgba(122,51,0,.28), 0 10px 22px -12px rgba(201,67,0,.62)`): primary buttons; longer on hover, collapsed on press.
 
 ### Named Rules
-**The Instrument Rule.** Only things you can operate float. Content panels sit on the page with a hairline or a tint, never a shadow.
+**The Instrument Rule.** Only things you can operate float. Content panels sit on their ground with a tint or a hairline, never a shadow.
 
 ## Shapes
 
-Radii follow hierarchy, not habit: 6px identifier boxes and chips, 12px controls, 14px for the submit button, 20px panels, 24px for the console. Circles are reserved for the swap control and waypoint markers. Lines are 1px hairlines or 2px route strokes with round caps.
+Radii follow hierarchy: 8px chips and tabs, 12px small buttons, 14px controls and the submit button (13px for the fields nested inside the route group), 16px for the suggestions menu, 24px panels, 28px for the booking card, featured review and moment stages (22px for the card on phones). Circles are reserved for the swap control, avatars and route markers. Illustration sits on tinted stages with the figure standing on the stage's bottom edge.
 
 ## Components
 
 ### Buttons
-- **Shape:** gently rounded (12px; the console submit 14px).
-- **Primary:** burnt orange with white text, 700 weight, 48px tall (44px compact, 68px in the console, 56px on phones).
-- **Hover / Focus:** darker orange and a longer shadow; focus shows a 2px chart-ink outline offset by 3px; press drops 1px.
-- **Quiet:** white with a control-line border and chart-ink text; hover darkens the border and tints the ground.
-
-### Identifier boxes
-- **Style:** condensed Archivo capitals with wide tracking inside a 1.25px box (6px radius). Deep teal on light grounds, sky-soft on night; filled deep teal when it marks the active suggestion.
+- **Shape:** 14px radius (12px compact).
+- **Primary:** action orange with white text, 700 weight, 48px tall (44px compact, 60px in the card, 58px on phones); a trailing arrow nudges right on hover.
+- **Hover / Focus:** darker orange and a longer shadow; focus shows a 2px ink outline offset by 3px; press drops 1px.
+- **Quiet:** white with a control-line border and ink text; hover darkens the border and tints the ground.
 
 ### Inputs / Fields
-- **Style:** a labelled cell (label above, value below) on white with a control-line border, 12px radius, 68px tall.
-- **Focus:** the whole cell takes a route-teal border, a 1px inner ring and a soft 5px teal halo.
-- **Error:** error border, error wash and a red label, with the message and an alert icon inside the cell; the console shows one summary line and focus moves to the first invalid field.
-- **Chosen airport:** the cell shows the code as an identifier with city and country beside it; editing reveals the typed value again.
+- **Style:** a labelled cell (label above, value below) on white with a control-line border, 14px radius, 66px tall.
+- **Focus:** the whole cell takes a brand-teal border, a 1px inner ring and a soft 5px teal halo.
+- **Error:** error border, error wash and a red label, with the message and an alert icon inside the cell; the card shows one summary line and focus moves to the first invalid field.
+- **Chosen airport:** the field shows the code as a departure-board entry with city and country beside it; editing shows the typed value again.
+
+### Booking Card (signature)
+- White, 28px radius, card shadow, on a soft halo; deep teal header with the title and a segmented trip control built on real radio buttons.
+- Route: From over To in one bordered unit with a dashed vertical connector and a circular swap control; once both ends are set the connector turns solid orange.
+- Foot: secure checkout and email delivery assurances, and payment marks as quiet monochrome chips.
+
+### Airline Band
+- Night teal; the heading at the left and eight white airline marks at equal optical weight; the hero traveler stands on its top edge.
+
+### Reviews
+- One featured quote on deep teal with a large quote mark and sky stars; two supporting quotes on paper; avatars are initials on tinted circles.
+
+### Moments (signature)
+- Four pastel stages, each holding one fetched illustration standing on the stage's bottom edge, a small white tag naming the moment, then title, body and an audience line.
 
 ### Navigation
-- **Style:** Figtree 550 links on white, 8px-radius hover tint; the WhatsApp support link in route teal; the header CTA stays visible. Below 1080px the links collapse into a menu button that opens a full-width panel (a disclosure, not a modal).
-
-### Booking Console (signature)
-- White, 24px radius, console shadow, straddling chart paper and night chart.
-- Trip type is a segmented control of real radio buttons (selected in deep teal).
-- The From and To cells form one route unit with a circular swap control on their divider; once both ends are set an orange route line draws from origin to destination through the swap control (a dashed vertical line with ring and dot markers on phones).
-
-### Journey Line (signature)
-- Four illustrated checkpoints share one continuous line: a hairline ground through Visa and Check-in, an orange climb from the Take-off marker, level cruise across the gap, and descent to the Arrival marker. Illustrations use deep-teal ink, chart tints and one orange proof mark each.
+- White sticky header; 600-weight links with an 8px-radius hover tint; the WhatsApp support link in brand teal; the CTA stays visible. Below 1080px the links collapse into a menu button that opens a full-width disclosure panel.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep the booking console the brightest, most finished object in the first viewport.
-- **Do** break display lines on meaning ("Get a verifiable / onward ticket / in 2 minutes.").
-- **Do** draw chart texture (graticule, airways) behind content and stop it before it crosses copy.
+- **Do** keep the booking card the brightest, most finished object in the first viewport.
+- **Do** break the display headline on meaning ("Get a verifiable / onward ticket / in 2 minutes.").
+- **Do** fetch every illustration, icon, logo and map from an open library, recolor it to the palette, and record the source.
 - **Do** give every control a 44px minimum target and a control-line boundary.
-- **Do** answer input with motion (route draw, swap rotation, flight added) and show the final state under reduced motion.
+- **Do** answer input with motion (route connector, swap turn, flight added) and show final states under reduced motion.
 
 ### Don't:
+- **Don't** hand-draw illustrations, icons or logos.
 - **Don't** put eyebrow labels or kickers above headings.
 - **Don't** use burnt orange for decoration, emphasis words or headings.
 - **Don't** set the display face as body copy, or Figtree as a headline.
-- **Don't** introduce gradients, glass, glow halos or offset block shadows.
 - **Don't** hide the booking form behind a button, modal or second page.

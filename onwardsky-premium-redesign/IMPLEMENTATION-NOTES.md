@@ -1,4 +1,4 @@
-# Implementation notes (v5)
+# Implementation notes (v6)
 
 ## 1. What is real, what is simulated
 
@@ -10,7 +10,7 @@
 | Airport search | **Demo data**: 140 major airports in `assets/js/airports.js` with a local ranking (code → city → alias → country) | Plugin dataset (`airports-data.js`) + `airport-search.js` ranking, loaded on first focus |
 | Submit | **Stops at a “Search ready” confirmation.** No redirect, no network request | Hands off to `/flight-booking-wizard/` via `handoff.js`; the wizard and checkout re-validate and re-quote |
 | Prices, payment and checkout | Static copy (“From $9.99”, payment names) | Quoted by the wizard |
-| Hero photograph | **Static image**, decorative (an Unsplash photograph graded to the brand; nothing is generated from the form) | A Cover block or a pattern with the same image and overlay |
+| Hero route map | **Static SVG**, decorative, built once by `tools/build-route-map.mjs` from open map data (nothing is generated from the form, and the routes are not a statement about routes sold) | The same SVG file in a Cover block or a pattern; the four airport tags are plain HTML |
 | Airline strip | **Real marquee** (CSS animation) of the client's nine logo files, with a pause control | The production strip already scrolls (46s, hover pause); the control, the off-screen pause and the reduced-motion row are new |
 | Header links, Trustpilot links, WhatsApp | Point to the live URLs (read-only navigation) | Same |
 
@@ -47,26 +47,43 @@ From v4:
 - **The booking form is a boarding pass from 1180px** (fields, behaviour and validation unchanged; a card below 1180px). Return puts the route on its own row; multi-city shows one flight per row with a column always reserved for the remove control.
 - **The logo loop also rests while the strip is off screen** (IntersectionObserver), in addition to hover, focus and the button.
 - **Entrance motion is transform-only** for text, the form and the proof bar.
-- **A white focus ring on the Trustpilot cell** (the brand-teal ring would vanish on the photograph).
+- **A white focus ring on the Trustpilot cell** (the brand-teal ring would vanish on the dark panel).
 
-New in v5:
-- **The hero is photographic.** One aerial photograph of an airliner's wing against a sunset, graded to the brand, under two brand-teal veils (see `DESIGN-SYSTEM.md` §5). The v4 sample itinerary pages, “Verifiable PNR” badge, dotted globe, plane and glows are removed, along with their files.
+From v5 (kept):
 - **One glass proof bar** replaces the four separate chips (same words, same Trustpilot link); its last cell sizes to its content.
-- **The header collapses to the menu below 1200px** (was 1080px): at 1100px two nav links wrapped onto two lines.
-- **In the two-column band (900–1179px) the card starts 44–84px lower** so the sunset stays visible above it.
-- **A phone gets its own crop** of the photograph (`<picture>`, 20 KB) and a top-down veil; the page is 236 KB on a phone and 260 KB on a desktop (it was 467 KB in v4).
-- **The photograph fades in** (opacity only) over one second; text never fades.
+- **The header collapses to the menu below 1200px** (production: 1080px): at 1100px two nav links wrapped onto two lines.
+- **In the two-column band (900–1179px) the card starts 44–84px lower**, so the map stays visible above it.
+
+New in v6:
+- **The hero is vectors only.** The photograph and its two veils are gone (files deleted). The panel is the brand-teal gradient with
+  one soft glow and a **dot-matrix route map** at the right: Natural Earth land as 4,201 dots, five computed routes between real
+  airports, seven airport pins, the Phosphor airplane on the Delhi–London route, and four airport codes as HTML tags. A CSS mask
+  keeps it clear of the text column; it fades in over one second (opacity only).
+- **The map is not shown below 900px** (the text spans the width there) and it is `loading="lazy"`, so phones never download it:
+  264 KB on a phone, 309 KB on a desktop. From 900 to 1179px the card covers the map's eastern half, so only the London tag is
+  shown there (the other three would sit under, or peek out from under, the card).
+- **Reviews redesigned.** A Trustpilot summary beside the heading (the score, the green squares, the client's line “All 4 reviews
+  rated 5 stars”, and the link to Trustpilot); three cards of one kind (rating and a mint quote mark, title, quote, then the
+  reviewer's initials, name, country and date). The separate Trustpilot button under the grid is folded into the summary.
+- **Reviewer names are 25px targets** (2px vertical padding) to meet the 24px minimum of WCAG 2.5.8.
+- **“Be ready”: the action moved to the heading row** (right-aligned on desktop, full width on phones), so the fourth ticket is
+  the same shape as the others; the section ground carries the same dot matrix in the brand teal at 16%.
+- **No hover motion on things that are not links**: the tickets keep still; the Trustpilot summary (a link) answers hover.
 
 ## 4. Reference gaps and assumptions
 
 - **Airline logos** are the client's nine `.webp` files, copied unchanged (white marks, transparent background). The production strip paints them through CSS `mask-image`; the prototype uses `<img>` so the page also works when opened from disk (Chrome blocks file masks over `file://`). Sizes follow the production strip.
 - **The saved page** shows the strip empty (its logos load from elsewhere), so the logo sizes and marquee settings were read from the production CSS in the export.
-- **The hero photograph** is Unsplash `photo-1506012787146-f92b2d7d6d96` (Unsplash License). **The photographer's name is not recorded**: Unsplash's pages sit behind an anti-bot challenge and its files carry no embedded credit, so the name could not be read from the sandbox. The licence does not require a credit; add one before production if the client wants it (a reverse lookup of the id on unsplash.com finds the page).
-- **The grade** is one edit (a split tone in `heading` and `deep`); there is no retouching, no text, no logos and no people in the frame. `tools/build-hero-photo.py` reproduces both WebP files from the downloaded original.
-- **Trustpilot widget:** external. The prototype draws the five green rating squares the client's reviews use (Trustpilot's brand green), keeps the wording and links, and shows 4 of 5 for the 4.0 score.
+- **The map** uses Natural Earth's 1:110m land polygons (public domain), packaged by `world-atlas@2.0.2` (ISC) and projected with
+  `d3-geo@3.1.1` (Equal Earth, rotated 40°) via `topojson-client@3.1.0`. At this scale very small islands are absent; the map is a
+  decorative illustration, not a route network, and the airports (London, Lisbon, Istanbul, Dubai, Delhi, Bangkok, Singapore) are
+  examples. `tools/build-route-map.mjs` rebuilds both SVG files; the pin positions it prints are the tags' `--x` / `--y` values.
+- **No photograph remains.** v5's Unsplash photograph and its build script were removed from the repository.
+- **Trustpilot widget:** external. The prototype draws the five green rating squares the client's reviews use (Trustpilot's brand green), keeps the wording and links, and shows 4 of 5 for the 4.0 score. The summary's two lines (“TrustScore 4.0 on Trustpilot”, “All 4 reviews rated 5 stars”) are the live hero's own wording, checked against the export.
+- **Reviewers:** names, dates, titles and excerpts are as exported; the country codes are spelled out (IN → India, ES → Spain); the initials are derived from the names. No avatar photographs are invented.
 - **Payment marks:** PayPal, Stripe, Visa and Mastercard are quiet monochrome marks (Simple Icons). **UPI has no mark in that library, so it is set as text** in the same chip.
 - **Review dates** (Aug–Sep 2026) are reproduced exactly as they appear in the export.
-- **The decorative quote glyph** on the review cards is a straight `"` in italic (aria-hidden), as on the production page.
+- **The decorative quote mark** on the review cards is Phosphor's `quotes` (fill) in mint, aria-hidden (production uses a typed glyph).
 - **Copy case:** headings and buttons stay in the client's sentence case; the Web Interface Guidelines suggest Title Case, which would change the brand voice. The input placeholder keeps the client's “City or airport…” (no example pattern).
 - **Competitor:** observed for structure only (framed hero, ticket motif, a strip of promises). No layout, asset, photograph, colour or text was copied.
 - **Error summary:** a failed submit shows inline errors and a summary line and moves focus to the first invalid field (the production behaviour). It does not add a separate focusable summary block.
@@ -75,7 +92,8 @@ New in v5:
 
 - Native `<input type="date">` shows the browser's locale format (e.g. mm/dd/yyyy in en-US). The validation message keeps the plugin's dd/mm/yyyy wording.
 - Uses modern CSS: `:has()` (Chrome 105+, Safari 15.4+, Firefox 121+), `backdrop-filter` (the glass bar falls back to its translucent fill without it), `overflow: clip`, `text-wrap: balance` / `pretty` (progressive), and `inert` on the sticky bar.
-- The photograph is a 2000px raster: on a 2× desktop display it is scaled about 1.3×, which the haze of the sky and the veils hide. Below 900px it is subdued on purpose (the text spans the width), so the photographic hero is a desktop and large-tablet feature.
+- The route map is a desktop and large-tablet feature: below 900px it is not shown, so phones see the brand-teal gradient and its glow. It is an SVG, so it stays sharp at any pixel density.
+- The map's mask needs `mask-composite` (and `-webkit-mask-composite` for Safari); where masks are not supported the map shows unmasked at the right of the panel, still behind the text column's plain left side.
 - Demo airport data covers 140 airports. Unlisted airports show the “No airports found” state.
 - Screen-reader behaviour was checked through the accessibility tree and axe-core, not with a physical screen reader.
 - The preview server in `README.md` is optional: opening `index.html` from disk works (fonts preload only over http).
@@ -85,8 +103,8 @@ New in v5:
 - **Tokens:** the `:root` names are the production preset slugs (`heading`, `accent`, `deep`, `surface`, `cta` …) plus the section values listed in `DESIGN-SYSTEM.md`; copy them into `theme.json` (`settings.color.palette`) and the section stylesheets.
 - **Booking form:** replace the markup of `wp-block-onwardsky-booking-form`. The behaviour layer maps onto the existing Interactivity API store (`state.fields`, `state.dates`, `state.trip`, `state.legCount`); add the `is-set` / `is-routed` class bindings and keep `handoff.js` for submit. Add the click-to-focus on field cells. The ticket and the card are the **same DOM**: `.ticket`, `.ticket-main` and `.stub` are `display: contents` below 1180px, so only the stylesheet changes between them.
 - **Ticket notches:** painted with two `radial-gradient` backgrounds per half, not masks, so the suggestion list can overflow the ticket. Keep the halves' `--notch` (12px) and `--stub-w` (344px; 322px from 1180 to 1279px) variables together.
-- **Hero panel:** a Cover block (the graded image, a fixed focal point, an overlay) or a pattern. The two veils are plain gradients over the image (`.hero-art::after`); keep them, because the contrast figures depend on them. Use the portrait crop for narrow viewports.
-- **Proof bar, reviews, tickets:** register as block patterns. The “Be ready” illustrations are inline SVG in the pattern.
+- **Hero panel:** a Group block with the panel gradient, plus the map as an image (or a Cover block with the SVG and no overlay). Keep the mask on the image: the contrast figures depend on the map staying clear of the text column. The four airport tags are absolutely positioned spans whose `--x` / `--y` come from the build script's output.
+- **Proof bar, reviews, tickets:** register as block patterns. The review cards are `figure` / `blockquote` / `figcaption`; the Trustpilot summary is one link. The “Be ready” illustrations are inline SVG in the pattern; the section's dotted texture is a CSS background (`world-dots.svg`).
 - **Airline strip:** keep the existing strip block; add the pause button, the off-screen pause, a third set of logos for very wide screens and the reduced-motion static row.
 - **Fonts:** none to add (Figtree is already the theme font).
 
@@ -98,30 +116,51 @@ New in v5:
 | Booking CTA inside the first viewport | Bottom edge: 1440×900 612px · 1366×768 604 · 1280×720 591 · 1200×800 578 · 1180×800 575 · 1100×800 632 · 1024×768 624 · 900×900 607 · 820×1180 757 · 768×1024 751 · 680×900 757 · 430×932 754 · 390×844 748 · 375×812 743 · 360×740 740 |
 | Whole hero (form, proof bar, logo strip) in the first viewport | Yes at 1440×900 (the panel ends at 892px) and at 1920×1080 |
 | Console errors / failed requests | None over `http://` or `file://`; no broken images |
-| Colour audit (`tools/palette-audit.js`) | 32 distinct colours painted (error state included, transitions settled); **none outside the production palette** (three consecutive runs). Pixels inside the photograph are not audited |
-| axe-core 4.10 (WCAG 2.1 A/AA + best practice) | **0 violations** in four states (desktop, mobile, validation errors, multi-city with open listbox), repeated runs. The single “incomplete” item is the text over the photograph, which axe cannot compute, so it was measured (next row) |
-| Contrast on the photograph (measured on the rendered page: text hidden, pixels under each line box sampled, worst case kept; widths 1440, 1280, 1180, 1024, 768, 680, 390, 360) | White headline ≥ 5.6 : 1 (≥ 8.3 on desktop) · lead ≥ 4.85 : 1 · aqua key word ≥ 4.85 : 1 on desktop, ≥ 3.3 : 1 on tablet and phone (large text, 3 : 1 needed) · proof bar ≥ 10 : 1 · assurances ≥ 9.2 : 1 · inactive tabs ≥ 6.2 : 1 · strip title ≥ 6.8 : 1. A first veil measured 2.5–3.4 : 1 for the lead and was reshaped |
-| Keyboard | Tab order follows the visual order (header, trip tabs, From, swap, To, date, passengers, CTA, Trustpilot cell, pause button, review links, “Be ready” CTA); every stop shows a visible ring (white on the photograph); combobox ↑ ↓ Enter Esc; menu Escape returns focus |
+| Colour audit (`tools/palette-audit.js`) | 30 distinct colours painted (error state included, transitions settled); **none outside the production palette**. The map's SVG is drawn in white, aqua and accent-bright only |
+| axe-core 4.10 (WCAG 2.1 A/AA + best practice) | **0 violations** in four states (desktop, mobile, validation errors, multi-city with open listbox), repeated runs, including after the final fixes. The single “incomplete” item is text over a gradient (the map tags, the headline), which axe cannot compute, so it was measured (next row) |
+| Contrast on the hero (measured on the rendered page: text hidden, pixels under each line box sampled, worst case kept; widths 1440, 1280, 1180, 1024, 768, 680, 390, 360) | White headline ≥ 6.0 : 1 · lead ≥ 4.9 : 1 · aqua key word ≥ 3.5 : 1 (large text, 3 : 1 needed) · proof bar ≥ 10 : 1 · assurances ≥ 7.0 : 1 · inactive tabs ≥ 4.8 : 1 · strip title ≥ 6.8 : 1 · airport tags ≥ 8.8 : 1. The first map placement measured 3.1–3.7 : 1 for the lead and 1.1 : 1 for the aqua word on phones; it was moved and masked (see `DESIGN-RATIONALE.md` §9) |
+| Keyboard | Tab order follows the visual order (header, trip tabs, From, swap, To, date, passengers, CTA, Trustpilot cell, pause button, Trustpilot summary, three reviewer links, “Be ready” CTA); every stop shows a visible ring (white on the panel); combobox ↑ ↓ Enter Esc; menu Escape returns focus |
 | Functional | Validation messages, 10-day minimum, return and multi-city rules, auto-fill, swap, add/remove flights, suggestion list over the proof bar (not clipped by the notches), sticky bar focus hand-off, click anywhere in a field cell |
 | Marquee | Moves at ~34px/s; the pause button, hover pause, resume and the off-screen pause were verified; `prefers-reduced-motion` gives a static one-row set with duplicates removed and no control |
-| Impeccable detector (live page, 1440 / 1280 / 768 / 390) | Four findings at desktop: one “cyan gradient” (the client's brand teal, hue ≈ 185°, is read as cyan; accepted because the brief fixes the palette and the production strip already uses this gradient), two “nested cards” (the ticket halves and the glass bar sit on the hero panel by design) and “marquee” (requested; pausable); one advisory, “repeating stripes” (the client's barcode bar). The design-system lint (radius, type, colour) is clean. The static scan adds false positives (the gradient-painted ticket halves read as text on the panel, a shadow read as a glow, and “cramped padding” for the strip, which is the panel's full-bleed foot by design) |
+| Impeccable detector (live page, 1440 / 1280 / 768 / 390) | Desktop findings: “cyan gradient” ×3 (the client's brand teal, hue ≈ 185°, is read as cyan; accepted because the brief fixes the palette), two “nested cards” (the ticket halves and the glass bar sit on the hero panel by design) and “marquee” (requested; pausable); one advisory, “repeating stripes” (the client's barcode bar). The design-system lint (radius, type, colour) is clean after replacing a `#000` in the mask with the white token. The static scan adds false positives (the gradient-painted ticket halves read as text on the panel; “cramped padding” for the booking card's foot and the “Be ready” section edge) |
 | Impeccable first-viewport gate | Pass at 1440×900 and 390×844 (thesis fully visible, primary action wholly inside and answering a click); the price is client copy, so `--figures-supplied` |
-| Page weight | 260 KB uncompressed at desktop (photograph 44, CSS 57, HTML 44, JS 35, font 20, logos 52); 236 KB on a phone (portrait crop 20 KB) |
+| Page weight | 309 KB uncompressed at desktop (route map 46, dot texture 43, CSS 58, HTML 47, JS 35, font 20, logos 52); 264 KB on a phone (the map is lazy and hidden, so it is never requested) |
+| Design-review metrics (1440 / 768 / 375) | No horizontal overflow; review cards equal height per row (358px at 1440); quotes about 42 characters per line (the full-width third card at 768 about 72); the only targets under 24px were the reviewer names (21px), now 25px |
 
 ## 8. Skills used
 
 All five requested skills were installed from their official repositories into `~/.claude/skills/` and confirmed
-discovered by a fresh Claude Code process in round 1. In round 5, on the photographic hero:
+discovered by a fresh Claude Code process in round 1. In round 6 (vector-only hero, reviews, “Be ready”):
 
-- **frontend-design:** an art-direction check against the skill's guidance (loaded earlier in the session): the hero opens with the most characteristic thing in the subject's world (a wing at sunset beside a boarding pass), type is one family, motion is one orchestrated entrance, and the boldness is spent in one place (the photograph). Two of its “template tells” were reviewed and **kept on purpose**: the single accent word in the headline and the small-caps ticket label are the client's own conventions. It also flags “dark ground, one accent” as a common default; here the palette is fixed by the client and the photograph is what makes it specific.
-- **impeccable:** the surface brief and direction contract, `DESIGN.md` and `.impeccable/design.json` were rewritten for v5; the detector (live at four viewports and static) and the first-viewport gate were run. No new critique run in this round.
-- **design-review:** captures at 1440, 768 and 375, the whole phone hero, the accessibility tree and the checklist audit. Findings fixed in this round: the nav wrapping at 1100px, the photograph vanishing in the two-column band, the veil failing contrast (measured, not eyeballed) and the Trustpilot cell wrapping. The skill normally drives Playwright through MCP; the same steps were run with Playwright scripts.
-- **web-design-guidelines:** a pass over the new markup and styles: decorative `alt=""` with explicit dimensions and `fetchpriority="high"`, no `transition: all`, no `outline: none` without a replacement, reduced motion honoured. No violations; two optional ideas were left out (a `type` on the portrait `<source>`, a preload link).
-- **ui-ux-pro-max:** searches on hero imagery and overlays, contrast, responsive images, layout shift and glass surfaces. Its landing guidance (“use an overlay strong enough for text contrast … light text only when the measured contrast passes”) is what the measurement step implements; alt text for a decorative image is correctly empty.
+- **frontend-design:** an art-direction check against the skill's guidance (re-read this round). The hero opens with the most
+  characteristic thing in the subject's world (routes between real airports beside a boarding pass); one family of type; the
+  boldness is spent in one place (the map and the ticket), the sections below stay quiet. Its warning that hover transitions on
+  every card read as generated **removed the hover lift from the “Be ready” tickets**, which are not links. Two of its “template
+  tells” were reviewed and **kept on purpose** because they are the client's own: the one aqua word in the headline and the
+  middle dot in review meta (“India · Sep 28, 2026”; the live page uses “IN · Sep 28, 2026”).
+- **impeccable:** the surface brief and direction contract, `DESIGN.md` and `.impeccable/design.json` were rewritten for v6; the
+  detector (live at four viewports and static), the design-system lint and the first-viewport gate (pass at 1440×900 and
+  390×844, `--figures-supplied` because the price is client copy) were run. No new critique run in this round.
+- **design-review:** captures at 1440, 768 and 375, the accessibility tree and the checklist metrics (type scale, line length,
+  card heights, target sizes, overflow). Findings fixed: the map under the text (measured), the black quote marks, and the
+  reviewer links under 24px. The skill normally drives Playwright through MCP; the same steps were run with Playwright scripts.
+- **web-design-guidelines:** a pass over the new markup and styles against the bundled rules: the map is `alt=""` inside an
+  `aria-hidden` wrapper, with explicit dimensions and `loading="lazy"`; airport codes carry `translate="no"`; decorative icons are
+  `aria-hidden`; review quotes use curly quotes; headings use `text-wrap: balance`; no `transition: all`; reduced motion makes the
+  map's fade instant. No violations. Sentence case is kept (the guidelines suggest Title Case; it would change the brand voice).
+- **ui-ux-pro-max:** searches on review and rating sections (“Product Review/Ratings Focused”: an aggregate rating before the
+  individual reviews, the CTA after the social proof, which is the order v6 uses; its advice to show reviewer photos was not
+  followed, because none exist and none were invented; its gold stars were not followed, because Trustpilot's mark is green) and
+  on target size (web: 24 CSS px with WCAG exceptions, which led to the reviewer-link fix). A search for map or illustrated hero
+  backgrounds found no match in its database.
 
 **Substitutions and limits, disclosed:**
-- Impeccable's concept roll (its service is unreachable from the sandbox) was not run; the direction came from the client's feedback, the current site and the competitor.
+- Impeccable's concept roll (its service is unreachable from the sandbox) was not run; the direction came from the client's
+  feedback, the current site and the competitor.
 - design-review normally drives Playwright through MCP; the same steps were run with Playwright scripts.
-- The competitor and the client's own site were studied from the saved pages the client supplied (the live sites are not reachable from the sandbox).
-- Image hosts were blocked at first; with the user's approval a new cloud environment allowing `unsplash.com`, `images.unsplash.com`, `www.pexels.com` and `images.pexels.com` was created. Unsplash's search pages answer automated clients with an anti-bot challenge, so photographs were found by id on the image CDNs and judged by eye.
-- The Vercel deployment is checked by fetching it through the Vercel tools; a visual check of the live URL in a browser is not possible from the sandbox.
+- The competitor and the client's own site were studied from the saved pages the client supplied (the live sites are not
+  reachable from the sandbox).
+- The map data and libraries came from the npm registry (`world-atlas`, `d3-geo`, `topojson-client`) and the airplane from the
+  Phosphor package already used for the icons; no image host was needed in this round.
+- The Vercel deployment is checked by fetching it through the Vercel tools; a visual check of the live URL in a browser is not
+  possible from the sandbox.

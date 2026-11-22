@@ -1,7 +1,7 @@
 # Tools
 
 Small scripts that reproduce or check the assets in this folder. None of them draws anything: artwork is copied
-from the client's own page, from open libraries or from a free-licence photo site (see [`../assets/SOURCES.md`](../assets/SOURCES.md)). They are only
+from the client's own page or from open libraries, and the map is computed from open data (see [`../assets/SOURCES.md`](../assets/SOURCES.md)). They are only
 needed to regenerate assets or to re-run the colour audit.
 
 The client's saved page (`our_website.htm`) is not part of this repository; the scripts that read it take its path.
@@ -18,9 +18,12 @@ python3 tools/build-ready-art.py path/to/our_website.htm index.html
 ```
 
 ```bash
-# 3. Hero photograph: grade the Unsplash original to the brand and write the two WebP files (needs Pillow and NumPy)
-curl -L "https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?w=2400&q=85" -o hero-original.jpg
-python3 tools/build-hero-photo.py hero-original.jpg assets/img
+# 3. Hero route map and the "Be ready" texture: Natural Earth land (world-atlas, ISC) projected with d3-geo,
+#    routes computed between airport coordinates, Phosphor's airplane (from step 1). Prints the pin positions
+#    that index.html uses for the airport tags.
+npm install --prefix mapgen world-atlas@2.0.2 topojson-client@3.1.0 d3-geo@3.1.1
+NODE_PATH=mapgen/node_modules node tools/build-route-map.mjs mapgen/node_modules/world-atlas/land-110m.json \
+  phosphor/package/assets/fill/airplane-fill.svg assets/vectors/route-map.svg assets/vectors/world-dots.svg
 ```
 
 ```bash

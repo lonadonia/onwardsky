@@ -97,7 +97,7 @@ Machine-readable design records produced by the Impeccable skill live at the rep
 | Before / after, mobile | `screenshots/before-after/compare-mobile-390.png` |
 | First viewports (2×) | `screenshots/*-first-viewport.png` |
 | Full pages | `screenshots/*-full-page.png` |
-| Card, strip and mobile states | `screenshots/states/` |
+| Card, strip and mobile states, plus the reviews and “Be ready” sections at 1440 | `screenshots/states/` |
 
 ## Important
 

@@ -1,43 +1,58 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-22T13:56:35+00:00",
+  "generatedAt": "2026-11-22T16:59:33+00:00",
   "title": "Design System: Onward Sky",
   "extensions": {
     "colorMeta": {
-      "ink": {
+      "heading": {
         "role": "neutral",
-        "displayName": "Ink",
-        "canonical": "oklch(26.8% 0.038 209.5)",
+        "displayName": "Heading",
+        "canonical": "oklch(28.4% 0.039 208.9)",
         "tonalRamp": [
           "#051417",
           "#182D30",
-          "#2E474C",
-          "#4A696F",
+          "#2D474C",
+          "#496A6F",
           "#708C91",
-          "#99B0B4",
-          "#C3D5D8",
+          "#98B0B4",
+          "#C2D5D8",
           "#E3F2F4"
         ]
       },
-      "ink-secondary": {
+      "ink": {
         "role": "neutral",
-        "displayName": "Ink Secondary",
-        "canonical": "oklch(37.9% 0.031 208.5)",
+        "displayName": "Ink",
+        "canonical": "oklch(25.4% 0.027 211.9)",
         "tonalRamp": [
-          "#081416",
-          "#1C2C2F",
-          "#32464A",
-          "#4F696D",
-          "#748B8F",
-          "#9CAFB2",
-          "#C5D4D7",
-          "#E5F1F3"
+          "#091316",
+          "#1E2C2E",
+          "#354649",
+          "#52686C",
+          "#778A8E",
+          "#9EAEB2",
+          "#C7D4D6",
+          "#E6F1F3"
         ]
       },
-      "ink-muted": {
+      "secondary": {
         "role": "neutral",
-        "displayName": "Ink Muted",
-        "canonical": "oklch(49.6% 0.029 208.8)",
+        "displayName": "Secondary",
+        "canonical": "oklch(38.5% 0.027 207.1)",
+        "tonalRamp": [
+          "#091415",
+          "#1E2C2E",
+          "#354648",
+          "#52686B",
+          "#778A8D",
+          "#9EAEB1",
+          "#C7D4D6",
+          "#E6F1F2"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "oklch(47.8% 0.029 208.8)",
         "tonalRamp": [
           "#081416",
           "#1D2C2E",
@@ -52,21 +67,36 @@
       "placeholder": {
         "role": "neutral",
         "displayName": "Placeholder",
-        "canonical": "oklch(54.3% 0.027 209.9)",
+        "canonical": "oklch(54.3% 0.025 207.0)",
         "tonalRamp": [
-          "#091415",
-          "#1E2C2E",
-          "#354649",
-          "#52686C",
-          "#778A8E",
-          "#9EAEB1",
-          "#C7D4D6",
+          "#0A1315",
+          "#1E2B2D",
+          "#354648",
+          "#53686B",
+          "#788A8D",
+          "#9FAEB0",
+          "#C7D4D5",
           "#E7F1F2"
         ]
       },
-      "brand-teal": {
+      "control-line": {
+        "role": "neutral",
+        "displayName": "Control Line",
+        "canonical": "oklch(64.4% 0.020 209.4)",
+        "tonalRamp": [
+          "#0C1314",
+          "#212B2D",
+          "#384547",
+          "#576769",
+          "#7B898C",
+          "#A1ADAF",
+          "#C9D3D5",
+          "#E8F0F1"
+        ]
+      },
+      "accent": {
         "role": "secondary",
-        "displayName": "Brand Teal",
+        "displayName": "Accent",
         "canonical": "oklch(47.7% 0.075 203.6)",
         "tonalRamp": [
           "#001518",
@@ -79,9 +109,24 @@
           "#D7F5F8"
         ]
       },
-      "deep-teal": {
+      "accent-bright": {
+        "role": "tertiary",
+        "displayName": "Accent Bright",
+        "canonical": "oklch(64.6% 0.103 196.6)",
+        "tonalRamp": [
+          "#001616",
+          "#003031",
+          "#004D4E",
+          "#007274",
+          "#389698",
+          "#73B9BA",
+          "#A7DDDD",
+          "#CEF8F8"
+        ]
+      },
+      "deep": {
         "role": "secondary",
-        "displayName": "Deep Teal",
+        "displayName": "Deep",
         "canonical": "oklch(41.2% 0.065 203.8)",
         "tonalRamp": [
           "#001518",
@@ -94,69 +139,9 @@
           "#DBF4F7"
         ]
       },
-      "night-teal": {
-        "role": "tertiary",
-        "displayName": "Night Teal",
-        "canonical": "oklch(30.7% 0.046 208.5)",
-        "tonalRamp": [
-          "#021518",
-          "#132D32",
-          "#28484D",
-          "#426B71",
-          "#6B8D93",
-          "#94B1B5",
-          "#BFD6DA",
-          "#E1F2F5"
-        ]
-      },
-      "logo-sky": {
-        "role": "tertiary",
-        "displayName": "Logo Sky",
-        "canonical": "oklch(69.9% 0.111 211.9)",
-        "tonalRamp": [
-          "#00151A",
-          "#002F37",
-          "#004B57",
-          "#007080",
-          "#3095A7",
-          "#6FB8C7",
-          "#A4DCE8",
-          "#CFF7FF"
-        ]
-      },
-      "sky-soft": {
-        "role": "tertiary",
-        "displayName": "Sky Soft",
-        "canonical": "oklch(82.6% 0.070 209.7)",
-        "tonalRamp": [
-          "#001519",
-          "#002F36",
-          "#0F4B54",
-          "#296E79",
-          "#5A909A",
-          "#88B4BC",
-          "#B6D8DE",
-          "#D9F4F9"
-        ]
-      },
-      "mist": {
-        "role": "tertiary",
-        "displayName": "Mist",
-        "canonical": "oklch(84.7% 0.029 193.9)",
-        "tonalRamp": [
-          "#081414",
-          "#1D2C2C",
-          "#334746",
-          "#506968",
-          "#768B8A",
-          "#9DAFAE",
-          "#C6D4D4",
-          "#E6F1F1"
-        ]
-      },
-      "action-orange": {
+      "action": {
         "role": "primary",
-        "displayName": "Action Orange",
+        "displayName": "Action",
         "canonical": "oklch(56.7% 0.180 39.4)",
         "tonalRamp": [
           "#260500",
@@ -169,9 +154,9 @@
           "#FFE9E2"
         ]
       },
-      "action-orange-hover": {
+      "action-hover": {
         "role": "primary",
-        "displayName": "Action Orange Hover",
+        "displayName": "Action Hover",
         "canonical": "oklch(52.2% 0.164 39.8)",
         "tonalRamp": [
           "#250600",
@@ -184,9 +169,9 @@
           "#FFE9E2"
         ]
       },
-      "action-orange-active": {
+      "action-active": {
         "role": "primary",
-        "displayName": "Action Orange Active",
+        "displayName": "Action Active",
         "canonical": "oklch(47.0% 0.149 39.4)",
         "tonalRamp": [
           "#260500",
@@ -199,49 +184,19 @@
           "#FFE9E2"
         ]
       },
-      "stage": {
-        "role": "neutral",
-        "displayName": "Stage",
-        "canonical": "oklch(95.0% 0.016 201.7)",
+      "orange-text": {
+        "role": "tertiary",
+        "displayName": "Orange Text",
+        "canonical": "oklch(57.7% 0.180 40.3)",
         "tonalRamp": [
-          "#0D1313",
-          "#232B2B",
-          "#3A4545",
-          "#596667",
-          "#7D8989",
-          "#A3ADAE",
-          "#CBD3D3",
-          "#EAF0F0"
-        ]
-      },
-      "stage-deep": {
-        "role": "neutral",
-        "displayName": "Stage Deep",
-        "canonical": "oklch(91.7% 0.027 205.4)",
-        "tonalRamp": [
-          "#091415",
-          "#1E2C2D",
-          "#344648",
-          "#52686B",
-          "#778A8D",
-          "#9EAEB0",
-          "#C7D4D5",
-          "#E6F1F2"
-        ]
-      },
-      "paper": {
-        "role": "neutral",
-        "displayName": "Paper",
-        "canonical": "oklch(97.8% 0.006 197.1)",
-        "tonalRamp": [
-          "#101212",
-          "#262A2A",
-          "#3F4343",
-          "#5F6464",
-          "#838787",
-          "#A8ACAC",
-          "#CED2D2",
-          "#EBEFEF"
+          "#250600",
+          "#4B1400",
+          "#732400",
+          "#A83900",
+          "#D06037",
+          "#ED8F6D",
+          "#FFC0AA",
+          "#FFE9E2"
         ]
       },
       "white": {
@@ -259,59 +214,269 @@
           "#EFEEEB"
         ]
       },
-      "hairline": {
+      "surface": {
         "role": "neutral",
-        "displayName": "Hairline",
-        "canonical": "oklch(90.5% 0.015 191.7)",
+        "displayName": "Surface",
+        "canonical": "oklch(95.5% 0.013 196.9)",
+        "tonalRamp": [
+          "#0E1313",
+          "#242A2A",
+          "#3C4444",
+          "#5B6666",
+          "#7F8888",
+          "#A5ADAD",
+          "#CCD2D2",
+          "#EBF0F0"
+        ]
+      },
+      "surface-alt": {
+        "role": "neutral",
+        "displayName": "Surface Alt",
+        "canonical": "oklch(96.3% 0.005 197.1)",
+        "tonalRamp": [
+          "#101212",
+          "#272929",
+          "#404343",
+          "#606464",
+          "#838787",
+          "#A8ACAC",
+          "#CED2D2",
+          "#EBEFEF"
+        ]
+      },
+      "surface-soft": {
+        "role": "neutral",
+        "displayName": "Surface Soft",
+        "canonical": "oklch(97.5% 0.005 197.1)",
+        "tonalRamp": [
+          "#101212",
+          "#272929",
+          "#404343",
+          "#606464",
+          "#838787",
+          "#A8ACAC",
+          "#CED2D2",
+          "#EBEFEF"
+        ]
+      },
+      "section-ground": {
+        "role": "neutral",
+        "displayName": "Section Ground",
+        "canonical": "oklch(98.1% 0.005 197.1)",
+        "tonalRamp": [
+          "#101212",
+          "#272929",
+          "#404343",
+          "#606464",
+          "#838787",
+          "#A8ACAC",
+          "#CED2D2",
+          "#EBEFEF"
+        ]
+      },
+      "section-line": {
+        "role": "neutral",
+        "displayName": "Section Line",
+        "canonical": "oklch(93.6% 0.006 197.0)",
+        "tonalRamp": [
+          "#101212",
+          "#262A2A",
+          "#3F4343",
+          "#5F6464",
+          "#838787",
+          "#A8ACAC",
+          "#CED2D2",
+          "#EBEFEF"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Border",
+        "canonical": "oklch(90.8% 0.016 196.9)",
         "tonalRamp": [
           "#0D1313",
-          "#232B2A",
-          "#3B4544",
-          "#5A6665",
-          "#7E8988",
-          "#A4ADAC",
-          "#CBD3D2",
-          "#EAF0EF"
+          "#232B2B",
+          "#3A4545",
+          "#596666",
+          "#7D8989",
+          "#A3ADAD",
+          "#CBD3D3",
+          "#EAF0F0"
         ]
       },
-      "control-line": {
+      "border-strong": {
         "role": "neutral",
-        "displayName": "Control Line",
-        "canonical": "oklch(65.8% 0.029 205.4)",
+        "displayName": "Border Strong",
+        "canonical": "oklch(86.6% 0.018 196.8)",
         "tonalRamp": [
-          "#081415",
-          "#1D2C2E",
-          "#334649",
-          "#50686B",
-          "#768B8D",
-          "#9DAFB1",
-          "#C6D4D6",
-          "#E6F1F2"
+          "#0C1313",
+          "#222B2B",
+          "#394545",
+          "#586767",
+          "#7C8989",
+          "#A2ADAD",
+          "#CAD3D3",
+          "#E9F0F0"
         ]
       },
-      "selection": {
+      "divider": {
         "role": "neutral",
-        "displayName": "Selection",
-        "canonical": "oklch(89.1% 0.038 204.7)",
+        "displayName": "Divider",
+        "canonical": "oklch(92.0% 0.011 197.0)",
         "tonalRamp": [
-          "#051416",
-          "#182D2F",
-          "#2D484A",
-          "#496A6D",
-          "#708C8F",
-          "#99B0B3",
-          "#C3D5D7",
-          "#E3F2F3"
+          "#0E1212",
+          "#252A2A",
+          "#3D4444",
+          "#5D6565",
+          "#808888",
+          "#A6ACAC",
+          "#CDD2D2",
+          "#EBEFEF"
         ]
       },
-      "star-muted": {
+      "strip-start": {
+        "role": "tertiary",
+        "displayName": "Strip Start",
+        "canonical": "oklch(48.7% 0.076 203.5)",
+        "tonalRamp": [
+          "#001518",
+          "#003033",
+          "#024C52",
+          "#1D7077",
+          "#549298",
+          "#84B5BA",
+          "#B3D9DD",
+          "#D7F5F8"
+        ]
+      },
+      "strip-ink": {
         "role": "neutral",
-        "displayName": "Star Muted",
-        "canonical": "oklch(84.9% 0.025 193.5)",
+        "displayName": "Strip Ink",
+        "canonical": "oklch(94.0% 0.026 187.7)",
+        "tonalRamp": [
+          "#0A1413",
+          "#1F2C2A",
+          "#364644",
+          "#536866",
+          "#788B88",
+          "#9FAFAD",
+          "#C8D4D2",
+          "#E7F1F0"
+        ]
+      },
+      "deep-section": {
+        "role": "tertiary",
+        "displayName": "Deep Section",
+        "canonical": "oklch(42.8% 0.068 203.3)",
+        "tonalRamp": [
+          "#001518",
+          "#003033",
+          "#114B50",
+          "#2A6F75",
+          "#5B9196",
+          "#88B4B8",
+          "#B6D8DC",
+          "#DAF5F7"
+        ]
+      },
+      "mint": {
+        "role": "tertiary",
+        "displayName": "Mint",
+        "canonical": "oklch(90.2% 0.032 184.5)",
+        "tonalRamp": [
+          "#081413",
+          "#1C2D2A",
+          "#324744",
+          "#4F6A65",
+          "#758C88",
+          "#9CB0AC",
+          "#C5D5D2",
+          "#E5F2EF"
+        ]
+      },
+      "aqua": {
+        "role": "tertiary",
+        "displayName": "Aqua",
+        "canonical": "oklch(82.4% 0.079 191.7)",
+        "tonalRamp": [
+          "#001615",
+          "#00302F",
+          "#004D4B",
+          "#19716E",
+          "#539390",
+          "#83B6B3",
+          "#B2DAD8",
+          "#D7F6F4"
+        ]
+      },
+      "peach": {
+        "role": "tertiary",
+        "displayName": "Peach",
+        "canonical": "oklch(89.8% 0.060 51.2)",
+        "tonalRamp": [
+          "#1E0D04",
+          "#3A2215",
+          "#583A29",
+          "#7F5943",
+          "#A07E6B",
+          "#C1A494",
+          "#E3CCBF",
+          "#FDEAE0"
+        ]
+      },
+      "peach-wash": {
+        "role": "tertiary",
+        "displayName": "Peach Wash",
+        "canonical": "oklch(95.9% 0.021 39.4)",
+        "tonalRamp": [
+          "#17100E",
+          "#302623",
+          "#4B3F3B",
+          "#6F5F5A",
+          "#90837E",
+          "#B4A8A4",
+          "#D8CFCC",
+          "#F4EDEA"
+        ]
+      },
+      "ticket-bar": {
+        "role": "neutral",
+        "displayName": "Ticket Bar",
+        "canonical": "oklch(79.3% 0.042 202.2)",
+        "tonalRamp": [
+          "#041516",
+          "#162D2F",
+          "#2B484A",
+          "#466B6D",
+          "#6E8D8F",
+          "#97B1B3",
+          "#C1D6D7",
+          "#E2F2F3"
+        ]
+      },
+      "on-dark": {
+        "role": "neutral",
+        "displayName": "On Dark",
+        "canonical": "oklch(90.9% 0.014 196.9)",
+        "tonalRamp": [
+          "#0E1313",
+          "#232A2A",
+          "#3B4444",
+          "#5A6666",
+          "#7E8888",
+          "#A4ADAD",
+          "#CCD2D2",
+          "#EAF0F0"
+        ]
+      },
+      "on-dark-muted": {
+        "role": "neutral",
+        "displayName": "On Dark Muted",
+        "canonical": "oklch(79.6% 0.025 193.5)",
         "tonalRamp": [
           "#0A1413",
           "#1F2C2B",
-          "#364645",
+          "#354645",
           "#536867",
           "#788A8A",
           "#9FAEAE",
@@ -319,124 +484,19 @@
           "#E7F1F0"
         ]
       },
-      "tint-peach": {
-        "role": "neutral",
-        "displayName": "Tint Peach",
-        "canonical": "oklch(93.5% 0.033 60.1)",
+      "trustpilot-green": {
+        "role": "tertiary",
+        "displayName": "Trustpilot Green",
+        "canonical": "oklch(68.5% 0.153 160.9)",
         "tonalRamp": [
-          "#181009",
-          "#32261D",
-          "#4E3F33",
-          "#725F50",
-          "#938376",
-          "#B6A89D",
-          "#DACFC6",
-          "#F6EDE5"
-        ]
-      },
-      "tint-teal": {
-        "role": "neutral",
-        "displayName": "Tint Teal",
-        "canonical": "oklch(92.8% 0.024 206.6)",
-        "tonalRamp": [
-          "#0A1315",
-          "#1F2B2D",
-          "#364648",
-          "#54676A",
-          "#798A8C",
-          "#A0AEB0",
-          "#C8D3D5",
-          "#E7F0F2"
-        ]
-      },
-      "tint-sky": {
-        "role": "neutral",
-        "displayName": "Tint Sky",
-        "canonical": "oklch(92.6% 0.025 242.4)",
-        "tonalRamp": [
-          "#0C1217",
-          "#212A31",
-          "#39444D",
-          "#576570",
-          "#7C8892",
-          "#A2ACB5",
-          "#CAD2D9",
-          "#E9EFF5"
-        ]
-      },
-      "tint-sand": {
-        "role": "neutral",
-        "displayName": "Tint Sand",
-        "canonical": "oklch(94.1% 0.024 77.5)",
-        "tonalRamp": [
-          "#15110A",
-          "#2E281F",
-          "#494136",
-          "#6B6254",
-          "#8D8579",
-          "#B1AA9F",
-          "#D6D0C8",
-          "#F2EEE7"
-        ]
-      },
-      "error": {
-        "role": "error",
-        "displayName": "Error",
-        "canonical": "oklch(50.1% 0.178 28.7)",
-        "tonalRamp": [
-          "#2B0000",
-          "#540001",
-          "#800706",
-          "#B3251E",
-          "#D15D4F",
-          "#EE8B7E",
-          "#FFBFB5",
-          "#FFE9E5"
-        ]
-      },
-      "error-wash": {
-        "role": "error",
-        "displayName": "Error Wash",
-        "canonical": "oklch(96.7% 0.013 28.9)",
-        "tonalRamp": [
-          "#151010",
-          "#2D2726",
-          "#48403F",
-          "#6B615F",
-          "#8D8482",
-          "#B0A9A7",
-          "#D5CFCE",
-          "#F2EDEC"
-        ]
-      },
-      "confirm": {
-        "role": "success",
-        "displayName": "Confirm",
-        "canonical": "oklch(46.2% 0.090 163.3)",
-        "tonalRamp": [
-          "#00170D",
-          "#003220",
-          "#0C4F37",
-          "#267354",
-          "#599579",
-          "#87B8A0",
-          "#B5DBC8",
-          "#D9F7E7"
-        ]
-      },
-      "confirm-wash": {
-        "role": "success",
-        "displayName": "Confirm Wash",
-        "canonical": "oklch(96.1% 0.013 167.2)",
-        "tonalRamp": [
-          "#0E1311",
-          "#252A28",
-          "#3D4441",
-          "#5C6662",
-          "#808885",
-          "#A6ADA9",
-          "#CDD2D0",
-          "#EBF0EE"
+          "#00170B",
+          "#00321E",
+          "#005033",
+          "#00764E",
+          "#219D6C",
+          "#69BF95",
+          "#A1E2C0",
+          "#CAFCE1"
         ]
       }
     },
@@ -451,7 +511,15 @@
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Moment questions and review titles."
+        "purpose": "Ticket questions."
+      },
+      "review-title": {
+        "displayName": "Review title",
+        "purpose": "Review titles."
+      },
+      "stage": {
+        "displayName": "Stage",
+        "purpose": "The word on each ticket stub."
       },
       "price": {
         "displayName": "Price",
@@ -480,23 +548,36 @@
       "label": {
         "displayName": "Label",
         "purpose": "Field labels."
+      },
+      "caps": {
+        "displayName": "Caps",
+        "purpose": "Stub and audience labels."
+      },
+      "strip-title": {
+        "displayName": "Strip title",
+        "purpose": "The airline strip title."
       }
     },
     "shadows": [
       {
         "name": "card",
-        "value": "0 1px 1px rgba(11,43,48,.05), 0 10px 24px -10px rgba(11,43,48,.2), 0 44px 80px -36px rgba(11,43,48,.5)",
+        "value": "0 1px 2px rgba(14,47,52,.06), 0 14px 28px -14px rgba(14,47,52,.28), 0 40px 72px -36px rgba(14,47,52,.36)",
         "purpose": "The booking card only."
       },
       {
         "name": "pop",
-        "value": "0 2px 6px rgba(11,43,48,.08), 0 22px 44px -18px rgba(11,43,48,.36)",
+        "value": "0 2px 6px rgba(14,47,52,.08), 0 22px 44px -18px rgba(14,47,52,.34)",
         "purpose": "Suggestions menu."
       },
       {
+        "name": "ticket",
+        "value": "0 1px 2px rgba(14,47,52,.04), 0 22px 40px -34px rgba(14,47,52,.45)",
+        "purpose": "Proof strip and Be ready tickets (production shadow)."
+      },
+      {
         "name": "action",
-        "value": "0 1px 1px rgba(122,51,0,.28), 0 10px 22px -12px rgba(201,67,0,.62)",
-        "purpose": "Primary buttons."
+        "value": "0 1px 2px rgba(122,51,0,.28), 0 8px 18px -10px rgba(201,67,0,.6)",
+        "purpose": "Primary buttons (production shadow)."
       }
     ],
     "motion": [
@@ -513,7 +594,7 @@
       {
         "name": "base",
         "value": "200ms",
-        "purpose": "Hover, focus, color."
+        "purpose": "Hover, focus, colour."
       },
       {
         "name": "slow",
@@ -522,8 +603,18 @@
       },
       {
         "name": "entrance",
-        "value": "640-900ms, staggered",
-        "purpose": "Hero copy, card and traveler rise once on load; skipped under reduced motion."
+        "value": "640-720ms, staggered",
+        "purpose": "Hero copy, card and proof strip rise once on load; skipped under reduced motion."
+      },
+      {
+        "name": "marquee",
+        "value": "46s linear, infinite",
+        "purpose": "Airline logos; pauses on hover and with a visible button; static under reduced motion."
+      },
+      {
+        "name": "slide-in",
+        "value": "640ms, 18px, transform only",
+        "purpose": "Review and ticket cards on scroll; text never fades."
       }
     ],
     "breakpoints": [
@@ -552,7 +643,7 @@
       "refersTo": "button-primary",
       "description": "The one action: Get my onward ticket.",
       "html": "<button class=\"ds-btn\">Get my onward ticket</button>",
-      "css": ".ds-btn { display:inline-flex; align-items:center; min-height:48px; padding:0 22px; border:0; border-radius:14px; background:#C94300; color:#fff; font-family: Figtree, system-ui, sans-serif; font-weight:700; font-size:16px; box-shadow:0 1px 1px rgba(122,51,0,.28),0 10px 22px -12px rgba(201,67,0,.62); cursor:pointer; transition:background-color .2s, box-shadow .2s, transform .12s; } .ds-btn:hover { background:#B33C00; } .ds-btn:active { background:#9C3200; transform:translateY(1px); } .ds-btn:focus-visible { outline:2px solid #0B2B30; outline-offset:3px; }"
+      "css": ".ds-btn { display:inline-flex; align-items:center; min-height:48px; padding:0 22px; border:0; border-radius:10px; background:#C94300; color:#fff; font-family: Figtree, system-ui, sans-serif; font-weight:700; font-size:17px; box-shadow:0 1px 2px rgba(122,51,0,.28),0 8px 18px -10px rgba(201,67,0,.6); cursor:pointer; transition:background-color .2s, box-shadow .2s, transform .12s; } .ds-btn:hover { background:#B33C00; } .ds-btn:active { background:#9C3200; transform:translateY(1px); } .ds-btn:focus-visible { outline:2px solid #0E2F34; outline-offset:3px; }"
     },
     {
       "name": "Quiet Button",
@@ -560,7 +651,7 @@
       "refersTo": "button-quiet",
       "description": "Secondary link styled as a button.",
       "html": "<a class=\"ds-quiet\" href=\"#\">Read more reviews on Trustpilot</a>",
-      "css": ".ds-quiet { display:inline-flex; align-items:center; min-height:48px; padding:0 22px; border:1px solid #7E979A; border-radius:14px; background:#fff; color:#0B2B30; font-family: Figtree, system-ui, sans-serif; font-weight:700; text-decoration:none; transition:background-color .2s, border-color .2s; } .ds-quiet:hover { border-color:#0B2B30; background:#F3F9F9; } .ds-quiet:focus-visible { outline:2px solid #156970; outline-offset:3px; }"
+      "css": ".ds-quiet { display:inline-flex; align-items:center; min-height:48px; padding:0 22px; border:1px solid #0E2F34; border-radius:10px; background:#fff; color:#0E2F34; font-family: Figtree, system-ui, sans-serif; font-weight:700; text-decoration:none; transition:background-color .2s; } .ds-quiet:hover { background:#F3F8F8; } .ds-quiet:focus-visible { outline:2px solid #156970; outline-offset:3px; }"
     },
     {
       "name": "Field",
@@ -568,7 +659,7 @@
       "refersTo": "field",
       "description": "Labelled booking field: label above, value below.",
       "html": "<label class=\"ds-field\"><span class=\"ds-l\">Travel date</span><input class=\"ds-i\" placeholder=\"City or airport…\"></label>",
-      "css": ".ds-field { display:flex; flex-direction:column; gap:2px; min-height:66px; padding:10px 16px; border:1px solid #7E979A; border-radius:14px; background:#fff; font-family: Figtree, system-ui, sans-serif; transition:border-color .2s, box-shadow .2s; } .ds-field:hover { border-color:#2E474B; } .ds-field:focus-within { border-color:#156970; box-shadow:0 0 0 1px #156970,0 0 0 5px rgba(21,105,112,.16); } .ds-l { font-weight:600; font-size:13px; color:#4F676B; } .ds-i { border:0; outline:0; padding:0; height:30px; font:650 17px/30px Figtree, system-ui, sans-serif; color:#0B2B30; background:transparent; } .ds-i::placeholder { color:#5E7478; font-weight:500; }"
+      "css": ".ds-field { display:flex; flex-direction:column; gap:2px; min-height:62px; padding:8px 16px; border:1px solid #809194; border-radius:12px; background:#fff; font-family: Figtree, system-ui, sans-serif; transition:border-color .2s, box-shadow .2s; } .ds-field:hover { border-color:#33484B; } .ds-field:focus-within { border-color:#156970; box-shadow:0 0 0 1px #156970,0 0 0 5px rgba(21,105,112,.16); } .ds-l { font-weight:600; font-size:13px; color:#4A6266; } .ds-i { border:0; outline:0; padding:0; height:30px; font:650 17px/30px Figtree, system-ui, sans-serif; color:#0E2F34; background:transparent; } .ds-i::placeholder { color:#5F7477; font-weight:500; }"
     },
     {
       "name": "Trip Control",
@@ -576,7 +667,7 @@
       "refersTo": "segment-selected",
       "description": "Segmented trip type control on the deep teal card header.",
       "html": "<div class=\"ds-head\"><span class=\"ds-t\">Choose your route</span><div class=\"ds-seg\"><button class=\"ds-s on\">One way</button><button class=\"ds-s\">Return</button><button class=\"ds-s\">Multi-city</button></div></div>",
-      "css": ".ds-head { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 16px 14px 24px; border-radius:28px 28px 0 0; background:#0F555B; color:#fff; } .ds-t { font-family: Manrope, system-ui, sans-serif; font-weight:700; font-size:19px; } .ds-seg { display:inline-flex; gap:2px; padding:4px; border-radius:12px; background:rgba(255,255,255,.14); } .ds-s { padding:8px 14px; border:0; border-radius:8px; background:transparent; color:rgba(255,255,255,.92); font-family: Figtree, system-ui, sans-serif; font-weight:650; font-size:15px; cursor:pointer; } .ds-s.on { background:#fff; color:#0F555B; font-weight:750; box-shadow:0 1px 3px rgba(11,43,48,.3); }"
+      "css": ".ds-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 14px 12px 22px; border-radius:18px 18px 0 0; background:#0F555B; color:#fff; } .ds-t { font-family: Figtree, system-ui, sans-serif; font-weight:700; font-size:18px; } .ds-seg { display:inline-flex; gap:2px; padding:4px; border-radius:12px; background:rgba(255,255,255,.14); } .ds-s { padding:7px 11px; border:0; border-radius:8px; background:transparent; color:rgba(255,255,255,.92); font-family: Figtree, system-ui, sans-serif; font-weight:650; font-size:14.4px; cursor:pointer; } .ds-s.on { background:#fff; color:#0F555B; font-weight:750; box-shadow:0 1px 3px rgba(14,47,52,.3); }"
     },
     {
       "name": "Route Entry",
@@ -584,80 +675,90 @@
       "refersTo": "field",
       "description": "Signature: chosen airports as departure-board entries joined by a connector.",
       "html": "<div class=\"ds-route\"><div class=\"ds-row\"><b>DEL</b><span>New Delhi<small>India</small></span></div><div class=\"ds-row\"><b>AMS</b><span>Amsterdam<small>Netherlands</small></span></div></div>",
-      "css": ".ds-route { position:relative; border:1px solid #7E979A; border-radius:14px; background:#fff; } .ds-route::before { content:''; position:absolute; left:27px; top:34px; bottom:34px; border-left:2px solid #C94300; } .ds-row { display:flex; align-items:center; gap:12px; padding:14px 16px 14px 58px; } .ds-row + .ds-row { border-top:1px solid #D5E3E2; } .ds-row b { font-family: Manrope, system-ui, sans-serif; font-weight:800; font-size:26px; color:#0B2B30; } .ds-row span { display:grid; font-family: Figtree, system-ui, sans-serif; font-weight:650; font-size:15px; line-height:1.15; color:#0B2B30; } .ds-row small { font-weight:400; font-size:13px; color:#4F676B; }"
+      "css": ".ds-route { position:relative; border:1px solid #809194; border-radius:12px; background:#fff; } .ds-route::before { content:''; position:absolute; left:27px; top:32px; bottom:32px; border-left:2px solid #21A1A3; } .ds-row { display:flex; align-items:center; gap:12px; padding:12px 16px 12px 58px; } .ds-row + .ds-row { border-top:1px solid #D5E4E4; } .ds-row b { font-family: Figtree, system-ui, sans-serif; font-weight:800; font-size:26px; color:#0E2F34; } .ds-row span { display:grid; font-family: Figtree, system-ui, sans-serif; font-weight:650; font-size:15px; line-height:1.15; color:#0E2F34; } .ds-row small { font-weight:400; font-size:13px; color:#4A6266; }"
     },
     {
-      "name": "Moment Stage",
+      "name": "Proof Ticket",
       "kind": "card",
-      "refersTo": "stage",
-      "description": "Pastel stage holding one fetched illustration with a moment tag.",
-      "html": "<div class=\"ds-stage\"><span class=\"ds-tag\">Ready for check-in</span></div>",
-      "css": ".ds-stage { position:relative; width:260px; aspect-ratio:1/1.04; border-radius:28px; background:#FBE5D4; } .ds-tag { position:absolute; left:16px; top:16px; padding:6px 12px; border-radius:999px; background:#fff; color:#0B2B30; font-family: Figtree, system-ui, sans-serif; font-weight:650; font-size:13px; box-shadow:0 1px 2px rgba(11,43,48,.1); }"
+      "refersTo": "proof-ticket",
+      "description": "Signature: the three promises as a boarding-pass strip with dashed perforations and notches.",
+      "html": "<ul class=\"ds-pt\"><li><span class=\"ds-tile\"></span>Real airline PNR you can verify</li><li><span class=\"ds-tile\"></span>Automatically expires. No cancellation needed.</li><li><span class=\"ds-tile\"></span>Human support when you need it</li></ul>",
+      "css": ".ds-pt { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); background:#fff; border:1px solid #D5E4E4; border-radius:18px; overflow:hidden; box-shadow:0 1px 2px rgba(14,47,52,.04),0 22px 40px -34px rgba(14,47,52,.45); font-family: Figtree, system-ui, sans-serif; } .ds-pt li { position:relative; display:flex; align-items:center; gap:14px; padding:14px 24px; font-weight:650; font-size:16px; color:#0E2F34; } .ds-pt li + li { border-left:2px dashed #C6D7D7; } .ds-pt li + li::before, .ds-pt li + li::after { content:''; position:absolute; left:-11px; width:20px; height:20px; border-radius:50%; background:#E7F3F3; border:1px solid #D5E4E4; } .ds-pt li + li::before { top:-11px; } .ds-pt li + li::after { bottom:-11px; } .ds-tile { width:44px; height:44px; flex:none; border-radius:12px; background:#E7F3F3; }"
     },
     {
-      "name": "Featured Review",
+      "name": "Ticket Card",
       "kind": "card",
-      "refersTo": "review-featured",
-      "description": "Large quote on deep teal.",
-      "html": "<figure class=\"ds-rev\"><blockquote>“The booking came with a verifiable PNR…”</blockquote><figcaption>Zeeshan Khan</figcaption></figure>",
-      "css": ".ds-rev { margin:0; padding:32px; border-radius:28px; background:#0F555B; color:#fff; font-family: Figtree, system-ui, sans-serif; } .ds-rev blockquote { margin:0 0 16px; font-weight:500; font-size:24px; line-height:1.42; } .ds-rev figcaption { font-size:14px; color:rgba(255,255,255,.78); }"
+      "refersTo": "ticket-card",
+      "description": "Signature, restored from the live site: a stub with a stage word, a main with audience label, title and copy.",
+      "html": "<article class=\"ds-tk\"><div class=\"ds-stub\"><small>READY FOR</small><b>CHECK-IN</b></div><div class=\"ds-main\"><i>ONE-WAY TRAVELERS</i><h3>Flying without a return ticket?</h3><p>Some airlines ask for proof of onward travel at check-in.</p></div></article>",
+      "css": ".ds-tk { display:grid; grid-template-columns:.82fr 1.5fr; background:#fff; border:1px solid #D5E4E4; border-radius:18px; overflow:hidden; box-shadow:0 1px 2px rgba(14,47,52,.04),0 22px 40px -34px rgba(14,47,52,.45); font-family: Figtree, system-ui, sans-serif; } .ds-stub { position:relative; padding:16px 18px 40px; background:#E7F3F3; border-right:2px dashed #C6D7D7; } .ds-stub small { display:block; font-weight:700; font-size:12px; letter-spacing:.16em; color:#4A6266; } .ds-stub b { display:block; margin-top:4px; font-weight:800; font-size:26px; color:#156970; } .ds-stub::before, .ds-stub::after { content:''; position:absolute; right:-11px; width:20px; height:20px; border-radius:50%; background:#F5FAFA; border:1px solid #D5E4E4; } .ds-stub::before { top:-11px; } .ds-stub::after { bottom:-11px; } .ds-main { padding:22px 28px 24px; } .ds-main i { display:block; font-style:normal; font-weight:800; font-size:12px; letter-spacing:.14em; color:#CC4700; } .ds-main h3 { margin:8px 0 6px; font-weight:700; font-size:22px; color:#0E2F34; } .ds-main p { margin:0; font-size:16px; line-height:1.55; color:#33484B; }"
+    },
+    {
+      "name": "Airline Strip",
+      "kind": "card",
+      "refersTo": "airline-strip",
+      "description": "The panel foot: gradient strip with a small-caps title and the logo marquee.",
+      "html": "<div class=\"ds-strip\"><p>ONWARD SKY™ WORKS WITH 100+ AIRLINES</p><div class=\"ds-logos\"><span>BRITISH AIRWAYS</span><span>Emirates</span><span>KLM</span></div></div>",
+      "css": ".ds-strip { padding:16px 0 12px; background:linear-gradient(180deg,#186C73,#156970); border-radius:0 0 28px 28px; text-align:center; font-family: Figtree, system-ui, sans-serif; } .ds-strip p { margin:0; font-weight:700; font-size:13px; letter-spacing:.14em; color:#D9F1EE; } .ds-logos { display:flex; justify-content:center; gap:40px; margin-top:14px; color:#fff; font-weight:700; opacity:.92; }"
+    },
+    {
+      "name": "Dark Review",
+      "kind": "card",
+      "refersTo": "review-dark",
+      "description": "The emphasised review card in the production trio.",
+      "html": "<figure class=\"ds-rev\"><span class=\"ds-q\">\"</span><blockquote>“The booking came with a verifiable PNR…”</blockquote><figcaption>Zeeshan Khan · IN · Sep 28, 2026</figcaption></figure>",
+      "css": ".ds-rev { margin:0; padding:32px; border-radius:24px; background:#0E2F34; color:#fff; font-family: Figtree, system-ui, sans-serif; } .ds-q { display:block; height:.62em; font-weight:800; font-style:italic; font-size:76px; line-height:1; color:#21A1A3; } .ds-rev blockquote { margin:12px 0 16px; font-size:17px; line-height:1.6; color:#D7E4E4; } .ds-rev figcaption { font-size:14px; color:#ABC2C1; }"
     }
   ],
   "narrative": {
-    "northStar": "The Daylight Terminal",
-    "overview": "Onward Sky is drawn as a bright departure hall: pale teal daylight, a traveler on a phone with her luggage and a plane overhead, and a booking card that is the counter she steps up to. It keeps the brand's friendly identity (teal, the production orange, Figtree) and adds weight where a premium service needs it: confident Manrope headlines, a deep teal card header, real airline marks and illustration with a human in it.\n\nDensity is calm. Large type, generous space, and surfaces that change color by meaning: pale teal for the welcome, deep teal for the instrument and the proof, white for reading, four pastel stages for the four moments. Motion is one gentle entrance on load; after that, only answers to input.\n\nEverything that looks drawn was fetched. Illustrations come from the unDraw collection and are only recolored; icons are Phosphor; airline and payment marks come from Soaring Symbols and Simple Icons; the full record is in `assets/SOURCES.md`.",
+    "northStar": "The Boarding Pass",
+    "overview": "The page is drawn as one family of tickets. The hero is an inset teal panel that holds the booking card; the three promises are a boarding-pass strip with perforations and notches; the airline logos run along the panel's foot like a departures board; and the four \"Be ready\" cards are the client's own ticket stubs. One idea, repeated with the same geometry, from the first viewport to the last section.\n\nEvery colour is a production colour. The palette is the production theme's presets and the values its section styles resolve to (teal ink, brand teal, deep teal, a soft teal surface, one burnt-orange action) and nothing is invented. Type is the production face, Figtree, at weight 800 for the hero and 700 for sections. The artwork (the four illustrations, the dotted globe, the plane, the nine airline logos) is the client's own.\n\nDensity is calm: large type, generous space, surfaces that change by meaning (pale teal for the welcome, white for reading and operating, deep teal for the instrument and the proof, the dark teal review for emphasis). Motion is one entrance, one slow marquee that can be paused, and answers to input.",
     "keyCharacteristics": [
-      "Pale teal stage with one large soft halo behind the booking card and a faint vector atlas behind the traveler.",
-      "Deep teal as the committed dark: the card header, the airline band and the featured review.",
-      "Burnt orange appears only on actions (and on the plotted connector once a route is set).",
-      "Manrope 800 for headlines, prices and airport codes; Figtree for sentences and controls.",
-      "Fetched illustration, recolored to brand teal, ink and a peach accent; the figure stands on a real edge (the band)."
+      "An inset, rounded hero panel on white; its content shares one left edge with the header and every section.",
+      "The booking card is the brightest, most finished object, with a deep-teal header and tabs on a single row.",
+      "Ticket vocabulary everywhere: dashed perforation, semicircle notches, a barcode bar, small-caps stub labels.",
+      "Burnt orange appears only on actions and on error text (the production's own choice).",
+      "A sideways airline-logo marquee as the foot of the panel, with a visible pause control."
     ],
     "rules": [
       {
-        "name": "The One Hot Color Rule",
-        "body": "Burnt orange marks what happens next (the action, the route) and nothing else: never a heading, badge or background wash.",
+        "name": "The No New Colour Rule",
+        "body": "If a value is not in the production palette it does not ship. `tools/palette-audit.js` renders the page and lists every colour painted.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Hot Colour Rule",
+        "body": "Burnt orange marks the action and the error; never a heading, badge or background wash. Errors are never red.",
         "section": "colors"
       },
       {
         "name": "The Boundary Rule",
-        "body": "A control's edge uses control-line (3:1 minimum); hairline is for decoration and never the only boundary of something a person operates.",
+        "body": "A control's edge uses control-line (3:1 minimum); hairlines are decoration and never the only boundary of something a person operates.",
         "section": "colors"
       },
       {
-        "name": "The Fetched Art Rule",
-        "body": "Illustration, icons, logos and maps are fetched from open libraries and only recolored or cropped. Nothing figurative is drawn by hand; every source is recorded with its license.",
-        "section": "colors"
-      },
-      {
-        "name": "The Two Voices Rule",
-        "body": "Manrope carries headings, prices and codes; Figtree carries sentences and controls. Never a paragraph in Manrope or a heading in Figtree.",
+        "name": "The One Voice Rule",
+        "body": "Figtree only. Weight, size and the accent colour create hierarchy, never a second typeface.",
         "section": "typography"
       },
       {
         "name": "The Sentence Case Rule",
-        "body": "Labels, buttons and headings are sentence case; only airport and airline codes are capitals.",
+        "body": "Headings, labels and buttons are sentence case; capitals are reserved for airport codes, stub labels and the strip title.",
         "section": "typography"
-      },
-      {
-        "name": "The Instrument Rule",
-        "body": "Only things you can operate float. Content panels sit on their ground with a tint or a hairline, never a shadow.",
-        "section": "elevation"
       }
     ],
     "dos": [
-      "Do keep the booking card the brightest, most finished object in the first viewport.",
-      "Do break the display headline on meaning (\"Get a verifiable / onward ticket / in 2 minutes.\").",
-      "Do fetch every illustration, icon, logo and map from an open library, recolor it to the palette, and record the source.",
-      "Do give every control a 44px minimum target and a control-line boundary.",
-      "Do answer input with motion (route connector, swap turn, flight added) and show final states under reduced motion."
+      "Do keep the booking card the brightest, most finished object in the first viewport, with its CTA above the fold.",
+      "Do use only production colours, under their production names, and re-run the palette audit after any change.",
+      "Do carry the ticket vocabulary (perforation, notch, stub label) into every new component.",
+      "Do keep the airline marquee pausable and give reduced-motion users a static row.",
+      "Do give every control a 44px minimum target and a control-line boundary."
     ],
     "donts": [
-      "Don't hand-draw illustrations, icons or logos.",
-      "Don't put eyebrow labels or kickers above headings.",
-      "Don't use burnt orange for decoration, emphasis words or headings.",
-      "Don't set the display face as body copy, or Figtree as a headline.",
-      "Don't hide the booking form behind a button, modal or second page."
+      "Don't add a colour, a second typeface or a stock illustration; the artwork is the client's.",
+      "Don't use red for errors, gradient text, or orange for anything but actions and errors.",
+      "Don't let decoration touch text: the globe fades before the headline and the plane stays beside the card.",
+      "Don't fade text while it animates; entrance effects move cards without changing their contrast."
     ]
   }
 }

@@ -1,28 +1,32 @@
-# Asset tools
+# Tools
 
-How the fetched vectors in `assets/` were produced. None of these scripts draw anything; they copy, recolor or crop
-files from open libraries (see [`../assets/SOURCES.md`](../assets/SOURCES.md)). They are only needed to regenerate assets.
+Small scripts that reproduce or check the assets in this folder. None of them draws anything: artwork is copied
+from the client's own page or from open libraries (see [`../assets/SOURCES.md`](../assets/SOURCES.md)). They are only
+needed to regenerate assets or to re-run the colour audit.
+
+The client's saved page (`our_website.htm`) is not part of this repository; the scripts that read it take its path.
 
 ```bash
-# 1. Fetch the libraries (npm registry; each command downloads a tarball into the current folder)
-npm pack undraw-svg@2.0.0 soaring-symbols@0.5.2 @phosphor-icons/core@2.1.1 simple-icons@16.38.1
-for f in *.tgz; do mkdir -p "${f%.tgz}" && tar -xzf "$f" -C "${f%.tgz}"; done
+# 1. Icons (Phosphor, MIT): rebuild the inline sprite inside index.html
+npm pack @phosphor-icons/core@2.1.1 && mkdir -p phosphor && tar -xzf phosphor-icons-core-2.1.1.tgz -C phosphor
+python3 tools/build-sprite.py phosphor/package/assets index.html
 ```
 
 ```bash
-# 2. Illustrations: copy from unDraw and remap colors to the brand palette
-python3 tools/recolor-undraw.py undraw-svg-2.0.0/package/svgs assets/vectors \
-  at-the-airport connected-world luggage my-documents approve travel-mode reviews
+# 2. "Be ready" illustrations: copied from the client's page, production variables resolved to their real values
+python3 tools/build-ready-art.py path/to/our_website.htm index.html
 ```
 
 ```bash
-# 3. Icons: rebuild the inline sprite inside index.html
-python3 tools/build-sprite.py phosphor-icons-core-2.1.1/package/assets index.html
+# 3. Hero decoration: the dotted globe and one plane, cut from the client's hero artwork
+python3 tools/build-hero-art.py path/to/our_website.htm assets/vectors
 ```
 
 ```bash
-# 4. Airline and payment marks: crop each file's viewBox to the drawn bounds (needs Playwright)
-node tools/crop-svg-viewbox.js '[["soaring-symbols-0.5.2/package/dist/assets/klm/logo-mono.svg","assets/airlines/klm.svg"]]'
+# 4. Colour audit: every colour the rendered page paints, checked against the brand palette (needs Playwright)
+python3 -m http.server 8765 &
+URL=http://127.0.0.1:8765/index.html node tools/palette-audit.js
 ```
 
-`connected-world-soft.svg` is `connected-world.svg` with the lighter remap listed in `SOURCES.md`.
+The airline logos in `assets/airlines/` are the client's own `.webp` files, copied unchanged (white marks with a
+transparent background).

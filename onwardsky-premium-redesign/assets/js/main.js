@@ -46,6 +46,41 @@
   });
 
   /* ------------------------------------------------------------------
+   * Airline strip: the sideways marquee has a visible pause control
+   * (WCAG 2.2.2). It also pauses on hover and keyboard focus (CSS).
+   * ------------------------------------------------------------------ */
+  var strip = doc.querySelector('[data-marquee]');
+  var marqueeBtn = doc.querySelector('[data-marquee-toggle]');
+  if (strip && marqueeBtn) {
+    marqueeBtn.addEventListener('click', function () {
+      var paused = marqueeBtn.getAttribute('aria-pressed') !== 'true';
+      marqueeBtn.setAttribute('aria-pressed', String(paused));
+      marqueeBtn.setAttribute('aria-label', paused ? 'Play the scrolling airline logos' : 'Pause the scrolling airline logos');
+      strip.classList.toggle('is-paused', paused);
+    });
+  }
+
+  /* ------------------------------------------------------------------
+   * Scroll reveal for the review and ticket cards. Without script, or with
+   * reduced motion, the cards are simply visible (the CSS only hides them
+   * when the html element carries the js class and motion is allowed).
+   * ------------------------------------------------------------------ */
+  if ('IntersectionObserver' in window && !reduceMotion.matches) {
+    var revealIo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-in');
+        revealIo.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    doc.querySelectorAll('.review, .tk').forEach(function (el, i) {
+      el.classList.add('reveal');
+      el.style.transitionDelay = (i % 3) * 70 + 'ms';
+      revealIo.observe(el);
+    });
+  }
+
+  /* ------------------------------------------------------------------
    * Booking console
    * ------------------------------------------------------------------ */
   var form = doc.querySelector('[data-booking]');
@@ -567,6 +602,16 @@
     if (t.closest('[data-add-leg]')) { addLeg(); return; }
     var remove = t.closest('[data-remove-leg]');
     if (remove) { removeLeg(parseInt(remove.getAttribute('data-remove-leg'), 10)); return; }
+    // The whole cell is the hit target: a click on its padding focuses the control (and opens the
+    // passenger list), exactly like the date cells below.
+    var cell = t.closest('.field-place, .field-pax');
+    if (cell && !t.closest('.suggestions')) {
+      var control = cell.querySelector('input, select');
+      if (control && t !== control) {
+        control.focus();
+        if (control.tagName === 'SELECT' && typeof control.showPicker === 'function') { try { control.showPicker(); } catch (err) { /* not allowed here */ } }
+      }
+    }
     // Open the native calendar from anywhere on a date field.
     var dateField = t.closest('.field-date');
     if (dateField) {

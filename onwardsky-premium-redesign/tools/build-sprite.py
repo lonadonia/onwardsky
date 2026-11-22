@@ -4,9 +4,9 @@ Icons: b- = bold (controls), d- = duotone (proof tiles), f- = fill (stars, quote
 import re, sys
 PH, HTML = sys.argv[1].rstrip('/') + '/', sys.argv[2]
 ICONS = {
-  'b': 'list x arrows-down-up plus warning-circle check-circle arrow-right arrow-up-right caret-down lock-simple envelope-simple clock user whatsapp-logo headset'.split(),
+  'b': 'list x arrows-down-up plus warning-circle check-circle arrow-right arrow-up-right caret-down lock-simple envelope-simple clock whatsapp-logo headset'.split(),
   'd': 'seal-check clock headset'.split(),
-  'f': 'star quotes'.split(),
+  'f': 'star pause play'.split(),
 }
 WEIGHT = {'b': 'bold', 'd': 'duotone', 'f': 'fill'}
 out = []

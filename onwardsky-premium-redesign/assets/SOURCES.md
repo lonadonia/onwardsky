@@ -1,65 +1,43 @@
 # Asset sources and licenses
 
-**Rule for this prototype:** nothing figurative is drawn by hand. Every illustration, icon, logo and map was
-fetched from an open library and only *recolored* or *cropped*. The exact commands and scripts are in
-[`../tools/`](../tools/README.md).
+**Rule for this prototype:** nothing figurative is drawn by hand. Every image, icon and logo is either the client's
+own asset (copied unchanged or recolored with brand values) or comes from an open library. The scripts that reproduce
+the derived files are in [`../tools/`](../tools/README.md).
 
-| Asset | Where it is used | Source (as fetched) | License |
+| Asset | Where it is used | Source | License / owner |
 | --- | --- | --- | --- |
-| Illustrations (7) | Hero traveler, reviews, four "Be ready" moments, hero atlas | [unDraw](https://undraw.co) via npm `undraw-svg@2.0.0` | [unDraw license](https://undraw.co/license): free for personal and commercial use, no attribution required; the npm package is MIT |
-| UI icons (20 symbols) | Header, form, proof list, buttons | [Phosphor Icons](https://phosphoricons.com) via npm `@phosphor-icons/core@2.1.1` (bold, duotone, fill weights) | MIT |
-| Airline marks (8) | Airline band | [Soaring Symbols](https://soaringsymbols.org) via npm `soaring-symbols@0.5.2` (`logo-mono.svg`) | Catalog and code MIT. **The marks are trademarks of their airlines** (see below) |
-| Payment and review marks (5) | Card footer, Trustpilot button | [Simple Icons](https://simpleicons.org) via npm `simple-icons@16.38.1` | CC0. Trademarks remain with their owners |
-| Manrope (display) | Headlines, fare, airport codes | [Fontsource](https://fontsource.org) `@fontsource-variable/manrope@5.3.0` | SIL OFL 1.1 (`fonts/LICENSE-Manrope-OFL.txt`) |
-| Figtree (text) | Body and controls | [Fontsource](https://fontsource.org) `@fontsource-variable/figtree@5.3.0` | SIL OFL 1.1 (`fonts/LICENSE-Figtree-OFL.txt`) |
-| Onward Sky logo | Header, favicon | Client's own asset, extracted from the production export | Client |
+| Airline logos (9, `airlines/*.webp`) | Hero strip marquee | **Supplied by the client** (`imgi_39…47` archive); byte-identical copies | Client; the marks belong to their airlines |
+| "Be ready" illustrations (4) | The four ticket stubs, inline in `index.html` | **The client's current homepage** (the `travel-use-cases` section). Mechanical changes only, see below | Client |
+| Hero globe and plane (`vectors/hero-globe.svg`, `hero-plane.svg`) | Hero panel decoration | **The client's hero artwork** (`.os-book__art` image), cut into two files and recolored | Client |
+| Onward Sky logo (`img/onward-sky-logo.svg`) | Header, favicon | The client's logo, extracted from the production export | Client |
+| UI icons (20 symbols) | Header, form, proof strip, buttons, stars | [Phosphor Icons](https://phosphoricons.com) via npm `@phosphor-icons/core@2.1.1` (bold, duotone and fill weights) | MIT |
+| Payment marks (4) | Card footer | [Simple Icons](https://simpleicons.org) via npm `simple-icons@16.38.1` | CC0; trademarks remain with their owners |
+| Figtree (text and display) | Everything | [Fontsource](https://fontsource.org) `@fontsource-variable/figtree@5.3.0` | SIL OFL 1.1 (`fonts/LICENSE-Figtree-OFL.txt`) |
 
-## Illustrations (unDraw)
+## What changed from v2
 
-| File in `vectors/` | unDraw name | Used for |
+v2 used stock illustration (unDraw), airline marks from Soaring Symbols and a second typeface (Manrope). All of that is
+gone: the page now uses the client's own illustrations, globe, logos and typeface, which is what keeps it on brand.
+
+## Mechanical changes to the client's artwork
+
+| File | Change | Why |
 | --- | --- | --- |
-| `at-the-airport.svg` | at the airport | Hero traveler |
-| `connected-world-soft.svg` | connected world | Faint atlas behind the hero |
-| `reviews.svg` | reviews | Reviews header |
-| `luggage.svg` | luggage | Moment: check-in |
-| `my-documents.svg` | my documents | Moment: arrival |
-| `approve.svg` | approve | Moment: visa |
-| `travel-mode.svg` | travel mode | Moment: take-off |
+| "Be ready" illustrations | Legacy variables resolved to the values the production page resolves them to (`--c-0B283D` → `#0E2F34`, `--c-27A3B5` → `#21A1A3`, `--c-FFD2B0` → `#FFD3BA`, `--c-BFE9F0` → `#C8E6E1`); lost camel case restored (`viewBox`, `feTurbulence`…); filter ids made unique; text font set to Figtree | The saved page loses its stylesheet context; the drawings render the same as on the live page |
+| `hero-globe.svg` | Only the dotted globe is kept; fill `#0B283D` → accent `#156970`; opacity 10% → 28%; numbers rounded to one decimal (svgo) | Navy dots read grey on the teal panel; accent keeps the palette closed |
+| `hero-plane.svg` | One of the two planes and the first part of its dashed path; viewBox cropped; path `black` → accent, plane navy → heading `#0E2F34` | The second plane flies out from behind the booking card |
 
-unDraw ships its accent color as `currentColor`. The only change made to each file is a **color remap** to the
-Onward Sky palette (no shapes were added, moved or redrawn):
+## Airline logos
 
-| unDraw color | Becomes | Role |
-| --- | --- | --- |
-| `currentColor` (accent) | `#156970` | Brand teal |
-| `#3f3d56`, `#2f2e41`, `#090814` | `#0F4C54`, `#0B2B30` | Deep teal and ink (clothing, objects) |
-| `#e6e6e6`, `#f2f2f2`, `#f0f0f0`, `#e4e4e4`, `#cbcbcb`, `#d6d6e3`, `#e1e7ef` | Teal-tinted greys (`#D8E8E7` … `#C3D9D8`) | Backgrounds and shadows inside the art |
-| `#ed9da0`, `#e8989b` | `#F08A57` | Warm accent (peach/orange clothing) |
-| Skin tones, white | unchanged | |
+The nine files are the white-on-transparent marks the production strip already uses (British Airways, Malaysia
+Airlines, SriLankan Airlines, Turkish Airlines, Emirates, Qatar Airways, Iberia, KLM, AirAsia). They are the client's
+files and are used for the same purpose as on the production site ("works with 100+ airlines"). Per-logo heights follow the
+production strip (27 to 36 px) so the optical weight matches; the scale is 0.86 on phones, 0.93 on tablets and 1.1 on desktop
+(production uses 1.0 there; the logos are 10% larger here for legibility).
 
-`connected-world-soft.svg` is the same map with a lighter remap (`#B9DBE0` land, `#97CCD4` routes, `#EDF7F8` plate) so it can
-sit quietly behind text.
+## Payment marks and ratings
 
-## Icons (Phosphor)
-
-Defined once as an inline SVG sprite in `index.html` (so previews work from `file://`). Bold weight for controls
-(`b-…`), duotone for the proof tiles (`d-…`), fill for stars and the quote mark (`f-…`).
-
-## Airline marks and trademark notice
-
-The eight marks (British Airways, Malaysia Airlines, Turkish Airlines, Emirates, Qatar Airways, Iberia, KLM, AirAsia)
-are the monochrome (`logo-mono`) versions from Soaring Symbols with their viewBox cropped to the drawn bounds and
-rendered white on the dark band. **They are the property of their owners.** The Soaring Symbols disclaimer says the
-project license does not cover the marks and that commercial use may need the owner's permission. The production
-site already shows airline logos for the same purpose ("works with 100+ airlines"), so production should keep using
-the client's own licensed files; these are stand-ins for the prototype.
-
-**Gap:** SriLankan Airlines is named on the production site but is not in the Soaring Symbols collection, so the
-prototype shows eight marks instead of nine. The client should supply that asset.
-
-## Payment and review marks
-
-PayPal, Stripe, Visa and Mastercard come from Simple Icons and are cropped to their bounds and shown in a quiet
-monochrome. Simple Icons has no UPI mark, so UPI is set as text in the same chip. The Trustpilot star is the Simple
-Icons glyph filled with Trustpilot's green (`#00B67A`) and is used only to label the link to the client's own
-Trustpilot page.
+PayPal, Stripe, Visa and Mastercard come from Simple Icons, cropped to their bounds and shown in a quiet monochrome.
+Simple Icons has no UPI mark, so UPI is set as text in the same chip. The Trustpilot rating is drawn as the green
+squares the client's reviews already use (Trustpilot brand green `#00B67A`, with a Phosphor star), which also label the
+link to the client's own Trustpilot page; no Trustpilot logo file is used.

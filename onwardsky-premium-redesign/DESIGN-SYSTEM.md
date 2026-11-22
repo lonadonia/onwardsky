@@ -1,146 +1,184 @@
-# Design system — “The Daylight Terminal”
+# Design system — “Boarding pass” (v3)
 
-The redesign treats the homepage as a bright departure hall: pale teal daylight, a traveler on her phone with
-luggage and a plane overhead, and a booking card that is the counter she steps up to. It keeps the brand's
-friendly identity and adds weight where a premium service needs it: confident headlines, a deep teal card header,
-real airline marks and illustration with a human in it.
+The page is drawn as one family of tickets. The hero is an inset panel, the three promises are a boarding-pass
+strip with perforations, and the “Be ready” cards are the client's own ticket stubs. Colour, type and artwork
+all come from the production site, so nothing reads as a different brand.
 
-All values below are live CSS custom properties in `assets/css/styles.css` (`:root`). The same system is recorded
-in machine-readable form in `../DESIGN.md` (token frontmatter) and `../.impeccable/design.json`.
+All values below are live CSS custom properties in `assets/css/styles.css` (`:root`). The same system is recorded in
+machine-readable form in `../DESIGN.md` (token frontmatter) and `../.impeccable/design.json`.
 
 ---
 
-## 1. Color
+## 1. Colour: every value is a production value
 
-The brand palette was refined, not replaced: the CTA orange is exactly the production value, and the teals are the
-production accent and deep tones.
+v2 was rejected because its colours were invented (near-matches such as `#0B2B30`, a blue-grey pastel, a sand tint,
+a red error). v3 uses **only** the colours the production site already defines, under the same names:
 
-| Token | Hex | Role |
-| --- | --- | --- |
-| `--c-cta` | `#C94300` | The one hot color: actions and the plotted route connector |
-| `--c-cta-hover` / `--c-cta-active` | `#B33C00` / `#9C3200` | Hover / pressed (production values) |
-| `--c-teal` | `#156970` | Links, icons, stars, illustration accent (production `accent`) |
-| `--c-teal-deep` | `#0F555B` | Card header, selected states, featured review (production `deep`) |
-| `--c-night` | `#0B363C` | Airline band, scope strip |
-| `--c-sky` / `--c-sky-soft` | `#2FB0C6` / `#8FD3DF` | Quote mark and stars on deep teal (logo sky) |
-| `--c-mist` | `#B8D3D2` | Secondary text on night |
-| `--c-ink` / `--c-ink-2` / `--c-ink-3` | `#0B2B30` / `#2E474B` / `#4F676B` | Headlines / reading text / meta |
-| `--c-stage` / `--c-stage-2` | `#E3F2F3` / `#D0E9EC` | Hero ground and the halo behind the card |
-| `--c-paper` | `#F3F9F9` | Section ground, quiet panels |
-| `--c-rule` | `#D5E3E2` | Decorative hairlines only |
-| `--c-field-line` | `#7E979A` | Every control boundary (3.1:1 on white) |
-| `--tint-peach` / `-teal` / `-sky` / `-sand` | `#FBE5D4` / `#D6ECEF` / `#D9E9F6` / `#F5EADA` | One pastel stage per moment |
-| `--c-error` / `--c-error-bg` | `#B3261E` / `#FDF1EF` | Validation |
-| `--c-ok` / `--c-ok-bg` | `#17684A` / `#EAF5F0` | “Search ready” confirmation |
+- the **theme.json presets** of the production theme (`heading`, `accent`, `deep`, `surface`, `cta` …), and
+- the **values its section styles resolve to** (airline strip, mint, peach …). The production CSS names some of these
+  after blues (`--c-0B283D`, `--c-E4F5FB`), but the page remaps every one to a teal; the table lists what is painted.
+
+| Token | Hex | Production name | Used for |
+| --- | --- | --- | --- |
+| `--heading` | `#0E2F34` | preset `heading` | Headlines, field values, dark review card |
+| `--ink` | `#12262A` | preset `ink` | Base text colour |
+| `--secondary` | `#33484B` | preset `secondary` | Body copy |
+| `--muted` | `#4A6266` | preset `muted` | Labels, meta, stub labels |
+| `--accent` | `#156970` | preset `accent` | “verifiable”, links, icons, focus, route dots |
+| `--accent-bright` | `#21A1A3` | preset `accent-bright` | Quote marks, routed connector, illustration accent |
+| `--deep` | `#0F555B` | preset `deep` | Booking-card header, selected tab |
+| `--surface` | `#E7F3F3` | preset `surface` | Panel base, ticket stubs, tinted review, tiles |
+| `--surface-alt` / `--surface-soft` | `#EFF4F4` / `#F3F8F8` | presets | Hover grounds, quiet buttons |
+| `--border` / `--border-strong` / `--divider` | `#D5E4E4` / `#C6D7D7` / `#DDE7E7` | presets | Hairlines, dashed perforations, rules |
+| `--cta` / `-hover` / `-active` | `#C94300` / `#B33C00` / `#9C3200` | presets `cta*` | Primary actions; `-active` is also the error colour |
+| `--v9-bg` | `#F5FAFA` | section ground | “Be ready” ground, panel top |
+| `--v9-line` | `#E5EBEB` | section rules | Header and section borders |
+| `--v9-strip-1` → `--v9-strip-2` | `#186C73` → `#156970` | airline strip | Strip gradient |
+| `--v9-strip-ink` | `#D9F1EE` | airline strip title | Strip title; text on the scope strip |
+| `--v9-deep` | `#0F5A60` | deep section | Scope strip |
+| `--v9-mint` | `#C8E6E1` | illustration mint | Glow behind the card |
+| `--v9-aqua` | `#86D6D2` | aqua on dark | Links and highlights on the dark review |
+| `--v9-peach` / `--v9-peach-wash` | `#FFD3BA` / `#FFEDE7` | illustration peach / wash | Art; error ground |
+| `--v9-orange` | `#CC4700` | orange text | Audience labels on the stubs |
+| `--v9-bar` | `#9DC4C7` | ticket bar | The barcode strip |
+| `--v9-on-dark` / `--v9-on-dark-2` | `#D7E4E4` / `#ABC2C1` | dark-card text | Quote and meta on the dark review |
+| `--v9-placeholder` | `#5F7477` | placeholder | Placeholder text |
+| `--tp-green` | `#00B67A` | Trustpilot (third party) | Rating squares, as in the client's reviews |
+
+One value is derived, by a stated rule: `--field-line` `#809194` = `--muted` mixed 70% with white. Control boundaries
+need 3:1 on white (WCAG 1.4.11); the production field border is far lighter, so this is the lightest brand-derived tint
+that passes (3.28:1).
 
 **Rules**
-- **One hot color.** Orange marks what happens next (the action, the route) and nothing else.
-- **Boundary rule.** Controls use `--c-field-line`; hairlines never form the only edge of something you operate.
-- **Fetched art rule.** Illustration, icons, logos and maps are fetched and only recolored or cropped.
+- **No new colour.** If it is not in the table it does not ship. `tools/palette-audit.js` renders the page and lists every
+  colour painted; the last run found 34 distinct values, **all of them in the table** (the three it flags are artefacts:
+  `#FFF` is white written short in the client's art, `#9C3402` is a mid-transition frame of the error border, and
+  `#7A3300` at 28% is the production CTA shadow).
+- **One hot colour.** Orange is the action. Errors use the same orange family (`cta-active`), as the production form does,
+  never red.
+- **Boundary rule.** Controls use `--field-line`; hairlines never form the only edge of something you operate.
 
-**Measured contrast (WCAG 2.1):** ink on stage 13.0:1 · ink-2 on stage 8.6:1 · ink-2 on the peach/sand stages 8.2–8.3:1 ·
-ink-3 on white 6.0:1 · white on CTA 4.9:1 · white on deep teal 8.5:1 · sky-soft on deep teal 5.1:1 ·
-white on night 13.1:1 · mist on night 8.3:1 · teal on white 6.4:1 · placeholder on white 4.95:1 · error on white 6.5:1.
+**Measured contrast (WCAG 2.1)**
 
-## 2. Typography
+| Pair | Ratio |
+| --- | --- |
+| heading on white / `--v9-bg` / surface | 14.2 / 13.5 / 12.6 |
+| secondary on white / surface | 9.7 / 8.5 |
+| muted on white / surface | 6.5 / 5.7 |
+| accent on white / surface | 6.4 / 5.6 |
+| white on deep (card header) | 8.5 |
+| white on cta | 4.9 |
+| white on strip `#186C73` | 6.1 |
+| strip ink `#D9F1EE` on strip | 5.2 |
+| `--v9-aqua` on heading (dark review links) | 8.5 |
+| `--v9-on-dark` / `-2` on heading | 10.9 / 7.6 |
+| orange label `#CC4700` on white | 4.7 |
+| cta-active (errors) on white / on peach wash | 7.3 / 6.5 |
+| `--field-line` on white (control edge, 3:1 needed) | 3.3 |
+| placeholder on white | 4.9 |
 
-| Role | Face | Size | Weight · leading |
-| --- | --- | --- | --- |
-| Display (hero h1) | Manrope | `clamp(2.5rem, 1.25rem + 3.75vw, 4.75rem)` → 74px at 1440 | 800 · 1.02 · -0.035em |
-| Headline (h2) | Manrope | `clamp(2rem, 1.1rem + 2.6vw, 3.25rem)` → 52px | 800 · 1.05 · -0.03em |
-| Title (h3) | Manrope | `clamp(1.25rem, 1.12rem + 0.4vw, 1.5rem)` | 800 · 1.15 |
-| Price / airport code | Manrope | 2.125rem / 1.625rem, tabular lining numerals | 800 |
-| Lead | Figtree | `clamp(1.0625rem, 0.98rem + 0.3vw, 1.25rem)` | 400 · 1.55 · max 22em |
-| Body | Figtree | 1rem | 400 · 1.6 · max 34ch in columns |
-| UI / label | Figtree | 1.0625rem / 0.8125rem | 650 / 600 · sentence case |
+## 2. Typography: Figtree only
 
-- **Manrope** (variable 200–800) names things and sets prices: headings, fare, airport codes.
-- **Figtree** (the existing brand face) carries every sentence and control, for continuity with the live site.
-- The hero breaks on meaning: “Get a verifiable / onward ticket / in 2 minutes.”
-- Sentence case everywhere. No eyebrow labels.
-- Both fonts are self-hosted WOFF2 (Manrope 24 KB, Figtree 20 KB + 10 KB latin-ext) with `font-display: swap`.
+The production face is Figtree; v2's second typeface (Manrope) is gone.
 
-## 3. Space, grid and layout
+| Role | Size | Weight · leading · tracking |
+| --- | --- | --- |
+| Hero headline | `clamp(2.375rem, 0.9rem + 3.95vw, 4.5rem)` → 72px at 1440 | 800 · 1.02 · −0.035em |
+| Section headline | `clamp(1.875rem, 1.1rem + 2.4vw, 3.125rem)` → 50px | 700 · 1.06 · −0.028em (as the production sections) |
+| Phone headline | `clamp(2.125rem, 1.2rem + 4.6vw, 3rem)` | 800 · 1.05 |
+| Ticket stage word | `clamp(1.375rem, 1.1rem + 0.9vw, 1.75rem)` | 800 · 1 · uppercase |
+| Ticket / review title | `clamp(1.25rem, 1.1rem + 0.5vw, 1.4375rem)` / 1.25rem | 700 · 1.2 |
+| Lead | `clamp(1.0625rem, 0.98rem + 0.3vw, 1.25rem)` | 400 · 1.55 · max 25em |
+| Body | 1rem | 400 · 1.55–1.6 |
+| Fare | 2.125rem (1.875rem on short screens) | 800 · tabular numerals |
+| Airport code | 1.625rem | 800 |
+| Labels / micro | 0.8125rem / 0.75rem (uppercase, wide tracking on stub and strip labels) | 600 / 700–800 |
 
-- **Spacing scale (4px base):** 8 · 12 · 16 · 20 · 24 · 32 · 40 · 48 · 64 (`--s-2` … `--s-10`).
-- **Section rhythm:** `clamp(64px, 7vw, 104px)` top and bottom.
-- **Container:** 1240px max; side gutter `clamp(16px, 4.2vw, 56px)` (respects notch safe areas); 12 columns, 16–28px gaps.
-- **Hero (≥1024px):** copy at the left, the 480px (440px below 1280) booking card at the right, the traveler between
-  them standing on the band's top edge. Below 1024px the order is copy, card, traveler; proof points move into the band.
-- **Breakpoints:** phone < 768 · tablet 768–1023 · laptop 1024–1279 · desktop ≥ 1280. The header collapses to a menu below 1080px.
+Sentence case everywhere except the strip title and ticket labels, which the production site already sets in capitals.
+The hero breaks on meaning: “Get a **verifiable** / onward ticket / in 2 minutes.” with the key word in `--accent`
+(as on the live site). One self-hosted variable font (Figtree, 20 KB latin + 10 KB latin-ext, `font-display: swap`).
+
+## 3. Layout
+
+- **Container** 1240px, side gutter `clamp(16px, 4.2vw, 56px)`.
+- **Hero panel** is inset by `--panel-m` (8–16px) and padded by `--panel-pad` so its content lines up exactly with the
+  header and the other sections (logo, headline, section titles share one left edge).
+- **Hero grid ≥ 1024px:** copy at the left, the 468px (440px below 1280) booking card at the right, copy aligned to
+  the top so a taller card (multi-city) never pushes it away. Below 1024px: headline, lead, card, trust line.
+- **Above the fold** at 1440×900 the whole hero is visible: card with its CTA, the proof strip and the logo strip.
+- **Breakpoints:** phone < 768 · tablet 768–1023 · laptop 1024–1279 · desktop ≥ 1280. The header collapses below 1080px.
 
 ## 4. Shape and depth
 
 | Token | Value | Used on |
 | --- | --- | --- |
-| `--r-chip` | 8px | Tabs, chips, suggestions |
-| (small button) | 12px | Header CTA, menu button, remove flight |
-| `--r-control` | 14px | Fields, buttons, route group (13px for the fields inside it) |
-| (menu) | 16px | Suggestions list |
-| `--r-panel` | 24px | Supporting reviews |
-| `--r-card` | 28px | Booking card, featured review, moment stages (22px for the card on phones) |
+| `--r-chip` | 8px | Tabs, suggestions, chips |
+| `--r-cta` | 10px | Buttons (production CTA radius) |
+| `--r-control` / `--r-inner` | 12px / 11px | Fields, route group, trust line; inner = control minus its 1px border |
+| `--r-card` | 18px | Booking card, proof ticket, “Be ready” tickets (production ticket radius) |
+| (reviews) | 24px | Review cards |
+| `--r-panel` | 28px (22px on phones) | The hero panel and the strip's lower corners |
 
-Only things you operate float. Shadows always carry an offset and a soft blur tinted from ink or orange:
-`--sh-card` (booking card), `--sh-pop` (suggestions), `--sh-cta` / `--sh-cta-hover` (primary buttons).
+Shadows carry an offset and a soft blur tinted from `--heading`: `--sh-card` (booking card), `--sh-pop` (suggestions),
+`--sh-tk` (ticket cards, the production shadow), `--sh-cta` / `--sh-cta-hover` (production values).
 
 ## 5. Components
 
-**Header.** White, sticky, hairline bottom border, soft shadow once scrolled. Logo, five links, “WhatsApp support” and
-the orange CTA. Below 1080px the links collapse into a 44px menu button that opens a full-width panel; Escape closes
-it and returns focus to the button.
+**Hero panel.** Vertical gradient `--v9-bg` → `--surface` with a `--v9-mint` glow behind the card, the client's dotted
+globe (accent at 28%, left side masked so no dots touch the headline) and one of the client's planes flying out from behind
+the card (desktop only). The airline strip is the panel's foot.
 
-**Booking card (signature).**
-- **Header:** deep teal with the title and a segmented trip control built on real radio buttons (the selected tab is white). On phones the title is visually hidden (the form keeps its accessible name) to keep the CTA in the first viewport.
-- **Route:** From over To in one bordered unit with a dashed vertical connector and a 44px swap control. Once both airports are set the connector and swap turn orange. A chosen airport shows its code (Manrope) with city and country, like a departure board.
-- **Date and passengers:** native date input (the whole cell opens the picker; the minimum is enforced) and a native select with a drawn caret.
-- **Fare:** “From **$9.99**” with “Delivered in 2 minutes”, directly above the 60px orange submit (full width, trailing arrow).
-- **Return / multi-city:** return adds a return-date cell and moves passengers beside the fare; multi-city stacks labelled “Flight N” blocks (2–6) with From and To side by side, a remove control each and a dashed “Add another flight”.
-- **Foot:** secure checkout and email delivery, plus payment marks (PayPal, Stripe, UPI, Visa, Mastercard) as quiet chips.
+**Booking card (signature).** White, 18px radius; a deep-teal header with the title and a segmented trip control on real
+radio buttons; From over To in one bordered unit with a dashed connector and a 44px swap control; chosen airports become
+departure-board entries (code + city); the connector turns solid aqua once both ends are set. Date and passengers side by
+side, fare above a 58px orange CTA, status line, then assurances and payment marks. All behaviour of the production form is
+kept (see `IMPLEMENTATION-NOTES.md`). Errors: pressed-orange text on the peach wash with an icon, summary line, focus to
+the first problem.
 
-**Suggestions list.** Popover on a 16px radius. Each row is a code chip plus city and country, with the first match
-pre-highlighted. When nothing matches, an explicit “No airports found” row gives a hint.
+**Proof ticket.** The three promises as one boarding-pass strip: white, 18px radius, two dashed perforations with notches
+(the notch colour is `--surface`, the panel's colour at that height). Turns vertical below 900px.
 
-**Fields.** Rest: label above, value below, `--c-field-line` border. Hover: darker border. Focus: teal border, inner ring and a
-5px teal halo. Error: error border, wash and red label, with the message inside the cell.
+**Airline strip.** Production strip: gradient `--v9-strip-1` → `--v9-strip-2`, centred small-caps title, then the client's nine
+logos in a sideways marquee. Three identical sets, `translateX(−33.333%)` over 46s linear (the production speed), masked
+edges. It pauses on hover, has a visible pause/play button (WCAG 2.2.2), and under `prefers-reduced-motion` becomes a static
+centred row with the duplicate sets removed.
 
-**Buttons.** Primary: orange, 700 weight; hover is darker with a longer shadow and the arrow nudges right; press sinks 1px;
-focus shows a 2px ink outline offset by 3px. Quiet: white with a control-line border.
+**Reviews.** The production trio, equal width: dark `--heading` card, `--surface` card, white bordered card; aqua quote glyph,
+Trustpilot-green rating squares, title, quote, name · country · date, source. Link and meta colours on the dark card use
+`--v9-aqua` / `--v9-on-dark-2`.
 
-**Airline band.** Night teal; “Onward Sky™ works with 100+ airlines” and eight white marks sized for equal optical weight
-(one row on desktop, wrapping on tablets, two columns on phones). Below 1024px it also carries the three proof points.
+**Be ready (restored from the live site).** Same four tickets, same copy and order, same stub (“READY FOR / CHECK-IN”), the
+client's own illustrations, notches, dashed perforation and barcode bar, and the CTA in the fourth. Improvements:
+- two **equal** columns instead of 7fr/5fr, so no card is squeezed (the old fourth card wrapped its button and “TAKE-OFF”);
+- copy **top-aligned**, so each row's labels, titles and paragraphs start on one line;
+- stub labels 12px (were 11px), stage words never break, CTA never wraps;
+- on phones the stub becomes a compact row (label left, art right) with notches on the dashed line;
+- semantic list, `aria-labelledby` per card, and a slide-in on scroll (transform only, skipped for reduced motion).
 
-**Reviews.** An intro with the unDraw “reviews” illustration standing on the top edge of the grid; one featured quote on
-deep teal (large quote mark, sky stars, avatar initials) and two supporting quotes on paper. The TrustScore disclosure stays as a footnote.
+## 6. Icons and artwork
 
-**Moments (signature).** Four pastel stages in the original order (check-in, arrival, visa, take-off), each with one
-fetched illustration standing on the stage's bottom edge, a small white tag, then title, body and audience line.
-Titles, bodies and audience lines align across columns via CSS subgrid. The fourth moment keeps the CTA.
-
-## 6. Icons and illustration
-
-- **Icons:** Phosphor (bold for controls, duotone for proof tiles, fill for stars and the quote mark), defined once as an inline SVG sprite. No emoji or Unicode glyphs as icons.
-- **Illustration:** unDraw, recolored by a documented remap to brand teal, ink and a peach accent; decorative (`aria-hidden`). Below-the-fold art uses `loading="lazy"`.
-- **Marks:** airline logos from Soaring Symbols and payment marks from Simple Icons, cropped to their bounds.
-- Provenance, licenses and the recolor table: `assets/SOURCES.md`.
+- **Icons:** Phosphor (bold for controls, duotone for the proof tiles, fill for stars and play/pause), defined once as an inline sprite.
+- **Artwork:** the client's own: the four “Be ready” illustrations, the dotted globe and plane. The nine airline logos are the
+  client's files. Provenance and the mechanical changes made: `assets/SOURCES.md`.
 
 ## 7. Motion
 
 | Moment | Trigger | Spec |
 | --- | --- | --- |
-| Entrance (the one authored moment) | Page load | Copy lines, card and traveler rise 12px in sequence (640–900ms ease-out) |
-| Connector turns orange | Both airports chosen | 360ms color transition |
-| Swap icon turns | Press | 360ms rotation |
-| Flight row appears | Add flight | 360ms fade + 6px rise |
-| Sticky fare bar | Card leaves the viewport (phones/tablets) | 360ms slide |
-| Hover / focus | Pointer / keyboard | 120–200ms, color and shadow only |
+| Entrance | Page load | Copy, card and proof strip rise 12px in sequence (640–720ms ease-out) |
+| Logo marquee | Always | 46s linear loop; pauses on hover or with the button; static under reduced motion |
+| Cards slide in | Scroll (reviews, tickets) | 18px, 640ms, transform only (text never fades); skipped under reduced motion |
+| Connector, swap, flight row | Input | 360ms colour, rotation, fade + rise |
+| Sticky fare bar | Card leaves the viewport (< 1024px) | 360ms slide |
+| Hover / focus | Pointer / keyboard | 120–200ms, colour and shadow only |
 
-`--ease-out` is `cubic-bezier(0.16, 0.84, 0.24, 1)`. Under `prefers-reduced-motion: reduce`, every animation and
-transition collapses to its final state, and scroll-to-form jumps instead of gliding.
+`--ease-out` is `cubic-bezier(0.16, 0.84, 0.24, 1)`. Under `prefers-reduced-motion: reduce` every animation and transition
+collapses to its final state.
 
 ## 8. Accessibility built in
 
-- Semantic landmarks, a skip link, a logical heading outline (one h1), and a labelled form with a radio group and comboboxes.
-- WAI-ARIA 1.2 combobox: `aria-expanded`, `aria-activedescendant`, a listbox with options, keyboard ↑ ↓ Enter Esc, and announced result counts.
-- Errors are linked with `aria-describedby`, marked `aria-invalid`, focus the first error, and announce through a polite live region.
-- Targets are ≥ 44px. Focus is visible on every stop. Sticky UI never hides the focused control (`scroll-padding`).
-- `color-scheme: light`, `translate="no"` on codes and the brand, and safe-area-aware gutters.
+- Landmarks, skip link, one h1, labelled form with a radio group and ARIA 1.2 comboboxes (↑ ↓ Enter Esc, announced counts).
+- Errors linked with `aria-describedby`, `aria-invalid`, focus to the first error, polite live region.
+- Targets ≥ 44px; visible focus on every stop; sticky UI never hides the focused control (`scroll-padding`).
+- The marquee duplicates are `aria-hidden`; the pause control is a real button with `aria-pressed` and a changing label.
+- `color-scheme: light`, `translate="no"` on codes and the brand, safe-area-aware gutters.

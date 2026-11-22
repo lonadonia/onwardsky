@@ -65,8 +65,11 @@ backs it. Price starts at $9.99.
 ## Brand Commitments
 
 - Name **Onward Sky** (™ used in "Onward Sky™ works with 100+ airlines") and the existing logo
-  mark (navy/teal/sky-cyan swoosh). The client brief makes the teal brand family and the
-  burnt-orange action color binding to *refine*, not replace.
+  mark (navy/teal/sky-cyan swoosh). Colours must match the brand exactly: after two rounds of
+  invented palettes the client asked for colours "carefully defined" and on brand, so only the
+  production palette ships (theme.json presets such as heading #0E2F34, accent #156970, deep
+  #0F555B, surface #E7F3F3, cta #C94300, plus the values its section styles resolve to).
+  Typeface: Figtree only. Artwork: the client's own (illustrations, dotted globe, airline logos).
 - Primary CTA wording: "Get my onward ticket".
 - Voice: plain, reassuring, factual; sentence case.
 
@@ -86,6 +89,7 @@ backs it. Price starts at $9.99.
 2. Prove legitimacy with specifics (PNR, verification, expiry, support), never with hype.
 3. Calm speed: fast to complete, nothing that adds steps or doubt.
 4. Every claim on the page is one the business already makes publicly.
+5. Brand fidelity: colour, type and artwork come from the production site; a redesign changes structure and craft, never the palette.
 
 ## Accessibility & Inclusion
 

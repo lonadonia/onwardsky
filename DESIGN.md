@@ -1,65 +1,99 @@
 ---
 name: Onward Sky
-description: A bright, human travel-document service: pale teal daylight, a traveler in the scene, and a booking card you step up to.
+description: A trust-first travel-document service drawn as one family of tickets: an inset teal hero panel, a deep-teal booking card, a boarding-pass proof strip and the client's own ticket stubs, all in the production palette.
 colors:
-  ink: "#0B2B30"
-  ink-secondary: "#2E474B"
-  ink-muted: "#4F676B"
-  placeholder: "#5E7478"
-  brand-teal: "#156970"
-  deep-teal: "#0F555B"
-  night-teal: "#0B363C"
-  logo-sky: "#2FB0C6"
-  sky-soft: "#8FD3DF"
-  mist: "#B8D3D2"
-  action-orange: "#C94300"
-  action-orange-hover: "#B33C00"
-  action-orange-active: "#9C3200"
-  stage: "#E3F2F3"
-  stage-deep: "#D0E9EC"
-  paper: "#F3F9F9"
+  heading: "#0E2F34"
+  ink: "#12262A"
+  secondary: "#33484B"
+  muted: "#4A6266"
+  placeholder: "#5F7477"
+  control-line: "#809194"
+  accent: "#156970"
+  accent-bright: "#21A1A3"
+  deep: "#0F555B"
+  action: "#C94300"
+  action-hover: "#B33C00"
+  action-active: "#9C3200"
+  orange-text: "#CC4700"
   white: "#FFFFFF"
-  hairline: "#D5E3E2"
-  control-line: "#7E979A"
-  selection: "#BFE3E7"
-  star-muted: "#BCD3D2"
-  tint-peach: "#FBE5D4"
-  tint-teal: "#D6ECEF"
-  tint-sky: "#D9E9F6"
-  tint-sand: "#F5EADA"
-  error: "#B3261E"
-  error-wash: "#FDF1EF"
-  confirm: "#17684A"
-  confirm-wash: "#EAF5F0"
+  surface: "#E7F3F3"
+  surface-alt: "#EFF4F4"
+  surface-soft: "#F3F8F8"
+  section-ground: "#F5FAFA"
+  section-line: "#E5EBEB"
+  border: "#D5E4E4"
+  border-strong: "#C6D7D7"
+  divider: "#DDE7E7"
+  strip-start: "#186C73"
+  strip-ink: "#D9F1EE"
+  deep-section: "#0F5A60"
+  mint: "#C8E6E1"
+  aqua: "#86D6D2"
+  peach: "#FFD3BA"
+  peach-wash: "#FFEDE7"
+  ticket-bar: "#9DC4C7"
+  on-dark: "#D7E4E4"
+  on-dark-muted: "#ABC2C1"
+  trustpilot-green: "#00B67A"
 typography:
   display:
-    fontFamily: "Manrope, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2.5rem, 1.25rem + 3.75vw, 4.75rem)"
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(2.375rem, 0.9rem + 3.95vw, 4.5rem)"
     fontWeight: 800
     lineHeight: 1.02
     letterSpacing: "-0.035em"
-  headline:
-    fontFamily: "Manrope, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2rem, 1.1rem + 2.6vw, 3.25rem)"
+  display-phone:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(2.125rem, 1.2rem + 4.6vw, 3rem)"
     fontWeight: 800
     lineHeight: 1.05
-    letterSpacing: "-0.03em"
+    letterSpacing: "-0.035em"
+  headline:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.875rem, 1.1rem + 2.4vw, 3.125rem)"
+    fontWeight: 700
+    lineHeight: 1.06
+    letterSpacing: "-0.028em"
   title:
-    fontFamily: "Manrope, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.25rem, 1.12rem + 0.4vw, 1.5rem)"
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.25rem, 1.1rem + 0.5vw, 1.4375rem)"
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: "-0.016em"
+  review-title:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.25rem"
+    fontWeight: 700
+    lineHeight: 1.22
+    letterSpacing: "-0.014em"
+  stage:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(1.375rem, 1.1rem + 0.9vw, 1.75rem)"
     fontWeight: 800
-    lineHeight: 1.15
-    letterSpacing: "-0.02em"
+    lineHeight: 1
+    letterSpacing: "-0.01em"
   price:
-    fontFamily: "Manrope, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
     fontSize: "2.125rem"
     fontWeight: 800
     lineHeight: 1
     letterSpacing: "-0.03em"
     fontFeature: "'tnum' 1, 'lnum' 1"
+  price-compact:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.875rem"
+    fontWeight: 800
+    lineHeight: 1
+    letterSpacing: "-0.03em"
   code:
-    fontFamily: "Manrope, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
     fontSize: "1.625rem"
+    fontWeight: 800
+    lineHeight: 1
+    letterSpacing: "0.01em"
+  code-compact:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.5rem"
     fontWeight: 800
     lineHeight: 1
     letterSpacing: "0.01em"
@@ -71,6 +105,11 @@ typography:
   body:
     fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
     fontSize: "1rem"
+    fontWeight: 400
+    lineHeight: 1.6
+  body-large:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "1.0625rem"
     fontWeight: 400
     lineHeight: 1.6
   ui:
@@ -85,26 +124,9 @@ typography:
     lineHeight: 1.3
   button:
     fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1.125rem"
+    fontSize: "1.0625rem"
     fontWeight: 700
     lineHeight: 1.15
-  micro:
-    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.75rem"
-    fontWeight: 700
-    lineHeight: 1
-  price-compact:
-    fontFamily: "Manrope, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1.875rem"
-    fontWeight: 800
-    lineHeight: 1
-    letterSpacing: "-0.03em"
-  display-phone:
-    fontFamily: "Manrope, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2.375rem, 1.3rem + 5.2vw, 3.25rem)"
-    fontWeight: 800
-    lineHeight: 1.04
-    letterSpacing: "-0.035em"
   small:
     fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
     fontSize: "0.875rem"
@@ -115,16 +137,34 @@ typography:
     fontSize: "0.8125rem"
     fontWeight: 600
     lineHeight: 1.25
+  caps:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "0.75rem"
+    fontWeight: 800
+    lineHeight: 1.35
+    letterSpacing: "0.14em"
+  strip-title:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "clamp(0.78rem, 0.74rem + 0.1vw, 0.84rem)"
+    fontWeight: 700
+    lineHeight: 1.35
+    letterSpacing: "0.14em"
+  quote-mark:
+    fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
+    fontSize: "4.75rem"
+    fontWeight: 800
+    lineHeight: 1
 rounded:
   chip: "8px"
-  button-sm: "12px"
-  field-inner: "13px"
-  control: "14px"
+  cta: "10px"
+  control: "12px"
+  field-inner: "11px"
   menu: "16px"
-  panel: "24px"
-  phone-card: "22px"
-  card: "28px"
-  pill: "999px"
+  phone-card: "16px"
+  card: "18px"
+  phone-panel: "22px"
+  review: "24px"
+  panel: "28px"
 spacing:
   "2": "8px"
   "3": "12px"
@@ -137,200 +177,221 @@ spacing:
   "10": "64px"
 components:
   button-primary:
-    backgroundColor: "{colors.action-orange}"
+    backgroundColor: "{colors.action}"
     textColor: "{colors.white}"
-    rounded: "{rounded.control}"
+    rounded: "{rounded.cta}"
     padding: "0 22px"
     height: "48px"
   button-primary-hover:
-    backgroundColor: "{colors.action-orange-hover}"
+    backgroundColor: "{colors.action-hover}"
   button-primary-active:
-    backgroundColor: "{colors.action-orange-active}"
+    backgroundColor: "{colors.action-active}"
   button-submit:
-    backgroundColor: "{colors.action-orange}"
+    backgroundColor: "{colors.action}"
     textColor: "{colors.white}"
-    rounded: "{rounded.control}"
+    rounded: "{rounded.cta}"
     padding: "0 28px"
-    height: "60px"
+    height: "58px"
   button-quiet:
     backgroundColor: "{colors.white}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.control}"
+    textColor: "{colors.heading}"
+    rounded: "{rounded.cta}"
     padding: "0 22px"
     height: "48px"
   field:
     backgroundColor: "{colors.white}"
-    textColor: "{colors.ink}"
+    textColor: "{colors.heading}"
     rounded: "{rounded.control}"
-    padding: "10px 16px"
-    height: "66px"
+    padding: "8px 16px"
+    height: "62px"
   booking-card:
     backgroundColor: "{colors.white}"
     rounded: "{rounded.card}"
-    padding: "20px 22px"
+    padding: "18px 20px"
   booking-card-head:
-    backgroundColor: "{colors.deep-teal}"
+    backgroundColor: "{colors.deep}"
     textColor: "{colors.white}"
     rounded: "{rounded.card}"
-    padding: "14px 16px 14px 24px"
+    padding: "12px 14px 12px 22px"
   segment-selected:
     backgroundColor: "{colors.white}"
-    textColor: "{colors.deep-teal}"
+    textColor: "{colors.deep}"
     rounded: "{rounded.chip}"
-    padding: "8px 14px"
-  stage:
-    backgroundColor: "{colors.tint-peach}"
-    rounded: "{rounded.card}"
-  review-featured:
-    backgroundColor: "{colors.deep-teal}"
-    textColor: "{colors.white}"
-    rounded: "{rounded.card}"
-    padding: "48px"
-  review:
-    backgroundColor: "{colors.paper}"
-    textColor: "{colors.ink-secondary}"
+    padding: "7px 11px"
+  hero-panel:
+    backgroundColor: "{colors.surface}"
     rounded: "{rounded.panel}"
+    padding: "32px 40px 26px"
+  proof-ticket:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.heading}"
+    rounded: "{rounded.card}"
+    padding: "14px 24px"
+  airline-strip:
+    backgroundColor: "{colors.strip-start}"
+    textColor: "{colors.strip-ink}"
+    rounded: "{rounded.panel}"
+    padding: "16px 0 10px"
+  review-dark:
+    backgroundColor: "{colors.heading}"
+    textColor: "{colors.white}"
+    rounded: "{rounded.review}"
     padding: "32px"
+  review-tint:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.secondary}"
+    rounded: "{rounded.review}"
+    padding: "32px"
+  review-light:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.secondary}"
+    rounded: "{rounded.review}"
+    padding: "32px"
+  ticket-card:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.secondary}"
+    rounded: "{rounded.card}"
+    padding: "22px 28px 24px"
+  ticket-stub:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.accent}"
+    rounded: "{rounded.card}"
+    padding: "16px 18px 18px"
 ---
 
 # Design System: Onward Sky
 
 ## Overview
 
-**Creative North Star: "The Daylight Terminal"**
+**Creative North Star: "The Boarding Pass"**
 
-Onward Sky is drawn as a bright departure hall: pale teal daylight, a traveler on a phone with her luggage and a plane overhead, and a booking card that is the counter she steps up to. It keeps the brand's friendly identity (teal, the production orange, Figtree) and adds weight where a premium service needs it: confident Manrope headlines, a deep teal card header, real airline marks and illustration with a human in it.
+The page is drawn as one family of tickets. The hero is an inset teal panel that holds the booking card; the three promises are a boarding-pass strip with perforations and notches; the airline logos run along the panel's foot like a departures board; and the four "Be ready" cards are the client's own ticket stubs. One idea, repeated with the same geometry, from the first viewport to the last section.
 
-Density is calm. Large type, generous space, and surfaces that change color by meaning: pale teal for the welcome, deep teal for the instrument and the proof, white for reading, four pastel stages for the four moments. Motion is one gentle entrance on load; after that, only answers to input.
+Every colour is a production colour. The palette is the production theme's presets and the values its section styles resolve to (teal ink, brand teal, deep teal, a soft teal surface, one burnt-orange action) and nothing is invented. Type is the production face, Figtree, at weight 800 for the hero and 700 for sections. The artwork (the four illustrations, the dotted globe, the plane, the nine airline logos) is the client's own.
 
-Everything that looks drawn was fetched. Illustrations come from the unDraw collection and are only recolored; icons are Phosphor; airline and payment marks come from Soaring Symbols and Simple Icons; the full record is in `assets/SOURCES.md`.
+Density is calm: large type, generous space, surfaces that change by meaning (pale teal for the welcome, white for reading and operating, deep teal for the instrument and the proof, the dark teal review for emphasis). Motion is one entrance, one slow marquee that can be paused, and answers to input.
 
 **Key Characteristics:**
-- Pale teal stage with one large soft halo behind the booking card and a faint vector atlas behind the traveler.
-- Deep teal as the committed dark: the card header, the airline band and the featured review.
-- Burnt orange appears only on actions (and on the plotted connector once a route is set).
-- Manrope 800 for headlines, prices and airport codes; Figtree for sentences and controls.
-- Fetched illustration, recolored to brand teal, ink and a peach accent; the figure stands on a real edge (the band).
+- An inset, rounded hero panel on white; its content shares one left edge with the header and every section.
+- The booking card is the brightest, most finished object, with a deep-teal header and tabs on a single row.
+- Ticket vocabulary everywhere: dashed perforation, semicircle notches, a barcode bar, small-caps stub labels.
+- Burnt orange appears only on actions and on error text (the production's own choice).
+- A sideways airline-logo marquee as the foot of the panel, with a visible pause control.
 
 ## Colors
 
-A cool, teal-tinted daylight palette with one hot action color.
+A teal-tinted palette with one hot action colour, taken from the production site.
 
 ### Primary
-- **Action Orange** (action-orange): primary buttons and the plotted route connector. Hover deepens to action-orange-hover, press to action-orange-active.
+- **Action** (action): primary buttons only. Hover deepens to action-hover, press to action-active; action-active is also the error text colour, as in the production form.
 
 ### Secondary
-- **Brand Teal** (brand-teal): links, rating stars, small icons, delivery note, illustration accent.
-- **Deep Teal** (deep-teal): the booking card header, selected states, the featured review, identifier chips.
-- **Night Teal** (night-teal): the airline band and the scope strip; carries white marks and mist text.
+- **Accent** (accent): the key word in the headline, links, icons, focus, route markers. **Deep** (deep): the booking-card header and the selected tab.
 
 ### Tertiary
-- **Logo Sky** (logo-sky) and **Sky Soft** (sky-soft): quote mark, stars and icons on deep teal and night.
-- **Mist** (mist): secondary text on night.
+- **Accent Bright** (accent-bright), **Aqua** (aqua), **Mint** (mint): the routed connector and quote marks; links and highlights on dark; the glow behind the card.
+- **Peach** (peach), **Peach Wash** (peach-wash), **Orange Text** (orange-text): illustration warmth, the error ground, the audience labels on the stubs.
 
 ### Neutral
-- **Ink** (ink): headlines and primary text, 14:1 on stage.
-- **Ink Secondary** (ink-secondary) and **Ink Muted** (ink-muted): reading text and meta; both clear 5:1 on every light ground.
-- **Stage** (stage) and **Stage Deep** (stage-deep): the hero ground and the halo.
-- **Paper** (paper): section ground and quiet panels. **White** (white): reading surfaces, fields, the card body.
-- **Hairline** (hairline): decorative dividers only. **Control Line** (control-line): every control boundary (3.1:1 on white).
-- **Tints** (tint-peach, tint-teal, tint-sky, tint-sand): the four moment stages, one per moment.
+- **Heading** (heading) for headlines, field values and the dark review card; **Ink** (ink) for base text; **Secondary** (secondary) for body copy; **Muted** (muted) for labels and meta.
+- **Surface**, **Surface Alt**, **Surface Soft**, **Section Ground**: the panel, stubs, tiles and the "Be ready" ground.
+- **Border**, **Border Strong**, **Divider**, **Section Line**: hairlines, perforations, rules.
+- **Control Line** (control-line): every control boundary (3.3:1 on white). The only derived colour: muted mixed 70% with white.
+- **Strip Start**, **Strip Ink**, **Deep Section**: the airline strip gradient (to accent) and its text; the scope strip.
+- **On Dark**, **On Dark Muted**: text on the dark review card. **Ticket Bar**: the barcode strip. **Placeholder**: placeholder text.
+- **Trustpilot Green** (trustpilot-green): third-party rating squares, as the client's reviews already use.
 
 ### Named Rules
-**The One Hot Color Rule.** Burnt orange marks what happens next (the action, the route) and nothing else: never a heading, badge or background wash.
+**The No New Colour Rule.** If a value is not in the production palette it does not ship. `tools/palette-audit.js` renders the page and lists every colour painted.
 
-**The Boundary Rule.** A control's edge uses control-line (3:1 minimum); hairline is for decoration and never the only boundary of something a person operates.
+**The One Hot Colour Rule.** Burnt orange marks the action and the error; never a heading, badge or background wash. Errors are never red.
 
-**The Fetched Art Rule.** Illustration, icons, logos and maps are fetched from open libraries and only recolored or cropped. Nothing figurative is drawn by hand; every source is recorded with its license.
+**The Boundary Rule.** A control's edge uses control-line (3:1 minimum); hairlines are decoration and never the only boundary of something a person operates.
 
 ## Typography
 
-**Display Font:** Manrope variable (with the platform sans)
-**Body Font:** Figtree variable (with the platform sans)
+**Font:** Figtree variable (with the platform sans). One family, as in production.
 
-**Character:** A modern geometric headline voice over the brand's round, friendly text face: Manrope names things and sets prices, Figtree talks to people.
+**Character:** Round, friendly geometry at heavy weight for names and prices, regular weight for sentences. The hero breaks on meaning and sets its key word in the accent colour.
 
 ### Hierarchy
-- **Display** (800, clamp(2.5rem…4.75rem), line-height 1.02, -0.035em): the hero headline only, broken on meaning.
-- **Headline** (800, clamp(2rem…3.25rem), line-height 1.05, -0.03em): section titles, balanced.
-- **Title** (800, clamp(1.25rem…1.5rem), line-height 1.15): moment questions, review titles.
-- **Price and Code** (800, 2.125rem and 1.625rem, tabular lining numerals): the fare and chosen airport codes.
-- **Lead** (400, clamp(1.0625rem…1.25rem), line-height 1.55, max 22em): the hero promise and section intros.
-- **Body** (400, 1rem, line-height 1.6, max 34ch in columns): descriptions and quotes.
-- **UI** (650, 1.0625rem), **UI compact** (600, 0.9375rem), **Button** (700, 1.125rem in the card) and **Label** (600, 0.8125rem, sentence case): fields, buttons, meta; **Micro** (700, 0.75rem) for payment chips.
+- **Display** (800, clamp(2.375rem…4.5rem), line-height 1.02, -0.035em): the hero headline only.
+- **Headline** (700, clamp(1.875rem…3.125rem), line-height 1.06, -0.028em): section titles, balanced.
+- **Title** (700, clamp(1.25rem…1.4375rem)): ticket questions; **Review Title** (700, 1.25rem). **Stage** (800, clamp(1.375rem…1.75rem), uppercase): the word on each ticket stub.
+- **Price and Code** (800, 2.125rem and 1.625rem, 1.5rem on small phones, tabular lining numerals): the fare and chosen airport codes.
+- **Lead** (400, clamp(1.0625rem…1.25rem), line-height 1.55): the hero promise and section intros. **Body** (400, 1rem) and **Body Large** (400, 1.0625rem): descriptions and quotes.
+- **UI** (650, 1.0625rem), **UI compact** (600, 0.9375rem), **Button** (700, 1.0625rem) and **Label** (600, 0.8125rem, sentence case).
+- **Caps** (800, 0.75rem, 0.14em) and **Strip Title** (700, ~0.8rem, 0.14em, uppercase): the stub labels and the airline strip title, which the production site already sets in capitals.
 
 ### Named Rules
-**The Two Voices Rule.** Manrope carries headings, prices and codes; Figtree carries sentences and controls. Never a paragraph in Manrope or a heading in Figtree.
+**The One Voice Rule.** Figtree only. Weight, size and the accent colour create hierarchy, never a second typeface.
 
-**The Sentence Case Rule.** Labels, buttons and headings are sentence case; only airport and airline codes are capitals.
+**The Sentence Case Rule.** Headings, labels and buttons are sentence case; capitals are reserved for airport codes, stub labels and the strip title.
 
 ## Layout
 
-A 12-column grid in a 1240px container with fluid gutters (16px on phones to 56px) and 16–28px column gaps. Sections breathe on a fluid rhythm (64px to 104px). The hero places copy at the left, the 480px booking card at the right and the traveler between them, standing on the top edge of the airline band; below 1024px the order becomes copy, card, traveler, and the proof points move into the band.
+A 1240px container with fluid gutters (16px on phones to 56px). The hero panel is inset by 8-16px and padded so its content lines up with the header and the sections below. The hero grid puts the copy at the left (top-aligned) and the 468px booking card at the right (440px below 1280); below 1024px the order becomes headline, lead, card, trust line. Under the grid sits the proof ticket, and the airline strip closes the panel. At 1440x900 the whole hero is above the fold.
 
-The booking card runs on its own two-column grid: route (From over To) full width, date and passengers side by side, fare, submit, status and foot. Return adds a return-date cell and moves passengers beside the fare; multi-city stacks labelled flights (2–6) with From and To side by side.
+The booking card runs on its own two-column grid: route (From over To) full width, date and passengers side by side, fare, submit, status and foot. Return adds a return-date cell; multi-city stacks labelled flights (2-6).
 
-Reviews pair one featured quote (7 columns) with two supporting quotes (5 columns) under an intro and illustration. The moments run as four columns sharing rows through CSS subgrid (stage, title, body), then 2×2 on tablets and one column on phones.
+Reviews are three equal columns (two plus one on tablets, one on phones). "Be ready" is a two-column grid of equal tickets on desktop and a single column below 1024px; on phones each ticket's stub becomes a compact row.
 
 ## Elevation & Depth
 
-Mostly flat and tonal; depth comes from color fields (stage, halo, deep teal) and from the booking card lifting off them. Shadows are reserved for things you operate, always with an offset and a soft blur tinted from ink or the action color.
+Mostly flat and tonal; depth comes from colour fields and from the booking card lifting off the panel. Shadows always carry an offset and a soft blur tinted from the heading colour.
 
 ### Shadow Vocabulary
-- **Card** (`0 1px 1px rgba(11,43,48,.05), 0 10px 24px -10px rgba(11,43,48,.2), 0 44px 80px -36px rgba(11,43,48,.5)`): the booking card only.
-- **Pop** (`0 2px 6px rgba(11,43,48,.08), 0 22px 44px -18px rgba(11,43,48,.36)`): the suggestions list.
-- **Action** (`0 1px 1px rgba(122,51,0,.28), 0 10px 22px -12px rgba(201,67,0,.62)`): primary buttons; longer on hover, collapsed on press.
-
-### Named Rules
-**The Instrument Rule.** Only things you can operate float. Content panels sit on their ground with a tint or a hairline, never a shadow.
+- **Card** (`0 1px 2px rgba(14,47,52,.06), 0 14px 28px -14px rgba(14,47,52,.28), 0 40px 72px -36px rgba(14,47,52,.36)`): the booking card only.
+- **Pop** (`0 2px 6px rgba(14,47,52,.08), 0 22px 44px -18px rgba(14,47,52,.34)`): the suggestions list.
+- **Ticket** (`0 1px 2px rgba(14,47,52,.04), 0 22px 40px -34px rgba(14,47,52,.45)`): the proof strip and the "Be ready" tickets (the production shadow).
+- **Action** (`0 1px 2px rgba(122,51,0,.28), 0 8px 18px -10px rgba(201,67,0,.6)`): primary buttons (the production shadow).
 
 ## Shapes
 
-Radii follow hierarchy: 8px chips and tabs, 12px small buttons, 14px controls and the submit button (13px for the fields nested inside the route group), 16px for the suggestions menu, 24px panels, 28px for the booking card, featured review and moment stages (22px for the card on phones). Circles are reserved for the swap control, avatars and route markers. Illustration sits on tinted stages with the figure standing on the stage's bottom edge.
+Radii follow the production geometry: 8px chips and tabs, 10px buttons, 12px controls (11px for fields nested in a 1px-bordered group), 16px menus and the phone card, 18px for the booking card and every ticket, 24px for review cards, 28px for the hero panel (22px on phones). Circles are reserved for the swap control, route markers and notches.
 
 ## Components
 
 ### Buttons
-- **Shape:** 14px radius (12px compact).
-- **Primary:** action orange with white text, 700 weight, 48px tall (44px compact, 60px in the card, 58px on phones); a trailing arrow nudges right on hover.
-- **Hover / Focus:** darker orange and a longer shadow; focus shows a 2px ink outline offset by 3px; press drops 1px.
-- **Quiet:** white with a control-line border and ink text; hover darkens the border and tints the ground.
+- **Shape:** 10px radius. **Primary:** action orange, white text, 700 weight, 48px (44px compact, 58px in the card); a trailing arrow nudges right on hover. Focus: 2px heading outline offset 3px; press drops 1px.
+- **Quiet:** white with a heading-coloured border; hover tints the ground.
 
 ### Inputs / Fields
-- **Style:** a labelled cell (label above, value below) on white with a control-line border, 14px radius, 66px tall.
-- **Focus:** the whole cell takes a brand-teal border, a 1px inner ring and a soft 5px teal halo.
-- **Error:** error border, error wash and a red label, with the message and an alert icon inside the cell; the card shows one summary line and focus moves to the first invalid field.
-- **Chosen airport:** the field shows the code as a departure-board entry with city and country beside it; editing shows the typed value again.
+- A labelled cell on white with a control-line border, 12px radius, 62px tall. Focus: accent border, 1px ring and a soft 5px halo. Error: action-active border and text on peach-wash, with an icon and one summary line; focus moves to the first problem.
+- A chosen airport shows its code as a departure-board entry; the connector between the two ends turns solid accent-bright.
 
 ### Booking Card (signature)
-- White, 28px radius, card shadow, on a soft halo; deep teal header with the title and a segmented trip control built on real radio buttons.
-- Route: From over To in one bordered unit with a dashed vertical connector and a circular swap control; once both ends are set the connector turns solid orange.
-- Foot: secure checkout and email delivery assurances, and payment marks as quiet monochrome chips.
+- White, 18px radius, deep-teal header with the title and a segmented trip control built on real radio buttons; route unit with dashed connector and swap; fare above the CTA; assurances and payment chips below.
 
-### Airline Band
-- Night teal; the heading at the left and eight white airline marks at equal optical weight; the hero traveler stands on its top edge.
+### Hero Panel
+- Vertical gradient section-ground to surface, a mint glow behind the card, the client's dotted globe (accent at 28%, left side masked) and one plane flying out from behind the card (desktop only).
+
+### Proof Ticket (signature)
+- The three promises as one white boarding-pass strip: two dashed perforations with notches, a 44px surface tile with a duotone icon, and a sentence per segment. Vertical below 900px.
+
+### Airline Strip
+- The panel's foot: gradient strip-start to accent, small-caps title, the client's nine logos in a sideways marquee (three sets, 46s linear, masked edges). Pauses on hover and with a visible button; static centred row under reduced motion.
 
 ### Reviews
-- One featured quote on deep teal with a large quote mark and sky stars; two supporting quotes on paper; avatars are initials on tinted circles.
+- The production trio: heading-coloured card, surface card, white bordered card; accent-bright quote glyph, green rating squares, title, quote, name, country and date.
 
-### Moments (signature)
-- Four pastel stages, each holding one fetched illustration standing on the stage's bottom edge, a small white tag naming the moment, then title, body and an audience line.
+### Ticket Cards (signature, restored)
+- The client's "Be ready" tickets: a surface stub with a "READY FOR" label, the stage word in accent, the client's illustration, notches and a dashed edge; a white main with an orange audience label, title, copy, barcode bar and (in the fourth) the CTA.
 
 ### Navigation
-- White sticky header; 600-weight links with an 8px-radius hover tint; the WhatsApp support link in brand teal; the CTA stays visible. Below 1080px the links collapse into a menu button that opens a full-width disclosure panel.
+- White sticky header; 600-weight links with an 8px hover tint; WhatsApp support in accent; the CTA stays visible. Below 1080px the links collapse into a disclosure menu.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep the booking card the brightest, most finished object in the first viewport.
-- **Do** break the display headline on meaning ("Get a verifiable / onward ticket / in 2 minutes.").
-- **Do** fetch every illustration, icon, logo and map from an open library, recolor it to the palette, and record the source.
+- **Do** keep the booking card the brightest, most finished object in the first viewport, with its CTA above the fold.
+- **Do** use only production colours, under their production names, and re-run the palette audit after any change.
+- **Do** carry the ticket vocabulary (perforation, notch, stub label) into every new component.
+- **Do** keep the airline marquee pausable and give reduced-motion users a static row.
 - **Do** give every control a 44px minimum target and a control-line boundary.
-- **Do** answer input with motion (route connector, swap turn, flight added) and show final states under reduced motion.
 
 ### Don't:
-- **Don't** hand-draw illustrations, icons or logos.
-- **Don't** put eyebrow labels or kickers above headings.
-- **Don't** use burnt orange for decoration, emphasis words or headings.
-- **Don't** set the display face as body copy, or Figtree as a headline.
-- **Don't** hide the booking form behind a button, modal or second page.
+- **Don't** add a colour, a second typeface or a stock illustration; the artwork is the client's.
+- **Don't** use red for errors, gradient text, or orange for anything but actions and errors.
+- **Don't** let decoration touch text: the globe fades before the headline and the plane stays beside the card.
+- **Don't** fade text while it animates; entrance effects move cards without changing their contrast.

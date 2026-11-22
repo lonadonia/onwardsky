@@ -1,4 +1,4 @@
-# Design rationale (v4)
+# Design rationale (v5)
 
 ## 1. Scope (confirmed from the export and screenshot)
 
@@ -18,39 +18,39 @@ In order, from the top of the page:
 | 1 | Premium UI/UX redesign of the homepage, form prominent above the fold, every form capability preserved | v1, rejected (“a very bad design”) |
 | 2 | Nothing pleased them: inspect both sites properly, design something professional, and fetch vectors from a source instead of drawing them | v2 (a bright “Daylight Terminal”), rejected: invented palette, stock illustration, a second typeface |
 | 3 | The colours must match the brand exactly; take inspiration from the competitor; a better hero; the supplied airline logos in a sideways-scrolling strip; keep “Be ready” as on the live site, with improvements | v3: production palette, framed hero, marquee, restored “Be ready”; rejected as too close to the old site |
-| **4** | **“You only made small changes to the old site. The client wants a real design improvement, more professional, inspired by the competitor, with a wonderful professional touch especially on the hero: more beautiful, organised and consistent. Vectors from other sites are fine if used precisely and in an organised way.”** | **v4: a new hero composition** |
+| 4 | “Only small changes to the old site. A real design improvement, more professional, inspired by the competitor, a wonderful professional touch on the hero.” Vectors from other sites are fine | v4: a deep-teal sky, two sample itinerary pages behind a boarding-pass booking bar |
+| **5** | **“Redo the hero: more professional, more beautiful, more organised. Remove the two documents in the back. You may use a set of vectors and professional, high-quality images from a site or sites, consistent with the brand.”** | **v5: a photographic hero** |
 
-## 3. Why v3 fell short (an honest diagnosis)
+## 3. Why v4 fell short (an honest diagnosis)
 
-v3 fixed the colours, but it kept the live site's composition: copy at the left, a tall form card at the right, a faded
-panel behind them. It re-skinned that composition (a rounded panel, a teal card header, a strip of promises) without
-changing what a visitor sees first. The client read it, fairly, as the old site with small changes. Three structural
-problems remained:
+v4 replaced the live site's composition, but its focal object was the weakest thing in the picture. The two itinerary pages
+behind the form were small, rotated and unreadable at hero size; they competed with the headline, added a second layer of
+visual noise next to the dotted globe, the plane and the badge, and made the right-hand side busy rather than rich. The hero
+had a lot of parts and no single image to carry the eye. The client asked for fewer, better things.
 
-- **The hero showed no product.** The visitor is asked to pay for “a verifiable onward ticket” and never sees one in the
-  first viewport. The client's own page shows redacted sample itineraries lower down, under “A real onward ticket. See for
-  yourself.”
-- **The form was the same object.** A white 468px card of stacked fields is what the live site has; the ticket idea
-  appeared only below it.
-- **No focal point.** Headline, card, art and chips competed at similar weight on a pale ground, so nothing led the eye.
+## 4. The v5 idea: one photograph, one ticket
 
-## 4. The v4 idea: show the ticket, and make the form one
+**One sentence:** an airliner's wing against a sunset, graded to the brand teals, with a boarding-pass booking bar laid across
+it.
 
-**One sentence:** a deep-teal sky panel in which the product (the client's sample itinerary) rises from behind a
-boarding-pass-shaped booking bar.
-
-- **The sky.** The hero panel is now the brand's darkest teal gradient. White type on it is the strongest contrast on the
-  page, so the headline finally leads, and every light object (the sheets, the ticket) stands out without extra effects.
-- **The product, shown.** The client's own redacted itinerary pages, rotated and overlapping, with a “Verifiable PNR” badge.
-  This answers the visitor's first question (“what exactly will I get?”) before they read a word.
-- **The form is a boarding pass.** On desktop the booking form is a wide ticket across the panel: route, date and
-  passengers on the white half, the fare and the orange CTA on the tinted stub, a perforation and two notches between them.
-  It keeps every capability of the production form. Below 1180px it becomes the familiar card, so touch screens get large
-  targets and a single column.
-- **Chips instead of a strip.** The three promises and the TrustScore are four quiet glass chips on the sky (the
-  competitor's “three promises” idea, in the client's colours).
-- **Logos as the horizon.** The airline marquee stays the foot of the panel, now on the darkest teal, so white logos read at
-  full contrast.
+- **One picture instead of four decorations.** The sample pages, the badge, the plane and the globe are gone. The right-hand
+  side is simply the sky: the wing tip and the sunset glow above the form. The eye goes headline → sky → ticket → orange button.
+- **The right photograph.** Candidates were compared on contact sheets (about a hundred frames from Unsplash and Pexels, four
+  finalists). The sunset wing won because it is dark exactly where the interface sits (the ground under the form and the logo
+  strip) and warm exactly where nothing sits (the sky), which makes the brand's two colours, deep teal and burnt orange, appear
+  naturally. A sunrise wing over bright clouds went murky under a teal veil; a pastel pink one was off-brand; one frame showed
+  an airline's logo on the winglet and was rejected as a trademark risk.
+- **Brand grading, not a filter.** The picture is graded with a split tone (shadows pulled to `heading`, lower mid-tones lightly
+  to `deep`) so it sits inside the palette while keeping its warm light. A full duotone was tried first and looked flat.
+- **Text on a veil, measured.** Text never sits on the bare photograph. Brand-teal veils darken the text side and the foot, and
+  the contrast was measured on the rendered page at eight widths, not assumed (section 9 shows what that caught).
+- **The form is still a boarding pass.** The notches at its perforation now show the photograph through them.
+- **One proof bar.** The three promises and the TrustScore are one glass object with four cells, instead of four boxes. That is
+  tidier, easier to scan and the same width as the ticket above it.
+- **Logos as the horizon.** The airline marquee stays the foot of the panel.
+- **Vectors.** No new vector artwork was added: the one thing the page needed was a photograph, and the icons (Phosphor) and the
+  client's artwork (the nine logos, the four “Be ready” drawings) already form a consistent set. Adding more would have undone
+  the “fewer, better” request.
 
 ## 5. The two sites, compared
 
@@ -62,7 +62,7 @@ boarding-pass-shaped booking bar.
 
 ### What held it back
 - **A flat hero.** A form card on a faded gradient, a dotted globe and two stray planes; nothing framed the content or
-  showed the product, and the first viewport ended in an empty strip (its logos were hosted elsewhere and missing).
+  carried emotion, and the first viewport ended in an empty strip (its logos were hosted elsewhere and missing).
 - **A cramped form.** 11–12px labels, an empty circle where the swap icon belongs, field borders at about 1.4:1.
 - **“Be ready” in unequal columns** (7fr / 5fr): the narrow cards wrapped their headings, the button and “TAKE-OFF”.
 
@@ -70,62 +70,62 @@ boarding-pass-shaped booking bar.
 - **Learned:** an inset, rounded hero panel that frames the message; a **ticket** as the visual idea (boarding pass with
   perforation and notch); three short proof statements near the hero; soft rounded surfaces; airline names as proof.
 - **Avoided:** the form hidden behind a button; saturated mint with navy, lime and pink; gradient text; clouds; pill
-  buttons; their boarding-pass graphic. Nothing was copied: no layout, asset, illustration or colour.
+  buttons; their boarding-pass graphic. Nothing was copied: no layout, asset, illustration, photograph or colour.
 - Observed fonts and colours: Poppins, navy `#1f368d` on mint with lime and pink accents. None is used here.
 
 ## 6. Key decisions
 
 | Change | Why it helps |
 | --- | --- |
-| **Dark teal sky panel** (`accent → deep → v9-deep`) | A focal ground for white type; still only production colours; the strip and the panel read as one object |
-| **Sample itinerary pages** (the client's own, rotated, behind the ticket) | Shows the product in the first viewport; reuses an asset the client already publishes; no invented claims |
+| **Aerial photograph** (airliner wing, sunset) behind the hero, graded to the teals | The emotional centre the hero lacked; warm light against deep teal echoes the orange button; one image replaces four decorations |
+| **Two brand-teal veils** (text side, foot) | Keep every line of text above its contrast threshold while the sky stays luminous on the right |
 | **Boarding-pass booking bar** (≥ 1180px): main half + stub, notches, perforation | The competitor's ticket idea built as a real, working form; route, date and passengers share one row, and the fare and CTA sit together on the stub; the whole hero, logo strip included, fits 1440×900 |
 | **Return on two rows, multi-city one flight per row** | Five controls do not fit one row at 1240px; the route keeps its width and nothing is clipped |
-| **Card below 1180px** with a tinted header | Touch-friendly; every control ≥ 44px; one column |
-| **Four glass chips** (three promises + TrustScore) | Same words as before; the Trustpilot line moved out of the headline column, which shortened the hero so the logo strip is above the fold |
-| **Dotted globe and one plane (white and aqua variants)** | The client's own art recoloured for the dark sky; the plane flies from the sheets to the headline's side |
-| **Airline marquee on the darkest teal** | Exactly what was asked; production speed (46s), masked edges, pause on hover, a visible pause button (WCAG 2.2.2), a static row under reduced motion |
+| **Card below 1180px**, lowered in the two-column band | Touch-friendly; every control ≥ 44px; the sunset stays visible above the card on small laptops and large tablets |
+| **One glass proof bar** (three promises + TrustScore) | Same words, one object, aligned to the ticket's width; the Trustpilot cell sizes to its content |
+| **Header collapses below 1200px** | At 1100px “How it works” and “Verify a PNR” wrapped onto two lines; five links, WhatsApp and the CTA need about 1200px |
+| **Airline marquee on the darkest teal** | Exactly what was asked; production speed (46s), masked edges, pause on hover, focus, off screen and with a button (WCAG 2.2.2), a static row under reduced motion |
 | **Reviews and “Be ready” unchanged from v3** | The client asked to keep them; v3's improvements (equal columns, aligned copy, no wrapped buttons) stand |
 | Pressed-orange error states | Matches the production form; red was off-brand |
 
-## 7. Vectors and artwork
+## 7. Images and vectors: sources and licences
 
-The client allowed vectors from other sites if used precisely and in an organised way. v4 uses **no** third-party
-illustration at all: the artwork is the client's own (the dotted globe and plane from its hero, the sample itinerary pages from
-its own page, the four “Be ready” drawings, the airline logos), and the icons are one consistent family (Phosphor, MIT). A
-trial with unDraw clouds was rejected on sight: they read as clip art against the client's linework. Provenance and every
-mechanical change: `assets/SOURCES.md`.
+The client allowed vectors and professional images from other sites, in the brand's spirit. The page now contains:
+- **one photograph**, from Unsplash (Unsplash License: free for commercial use, no attribution required), graded as above;
+- **no third-party illustration**: the artwork is the client's own (the four “Be ready” drawings, the nine airline logos);
+- **icons** from one family (Phosphor, MIT) and payment marks (Simple Icons, CC0).
+
+Unsplash and Pexels block automated access to their pages, so the candidates were found by id on their image CDNs and judged by
+eye; the photographer's name could not be read from the sandbox (see `assets/SOURCES.md`). Provenance and the exact grade are
+reproducible with `tools/build-hero-photo.py`.
 
 ## 8. Content decisions (all factual copy preserved)
 
 All headlines, descriptions, review excerpts, names, dates, prices, delivery promises, payment methods and the
 TrustScore disclosure are the client's existing copy.
 
-- **Proof points:** the same three promises, now glass chips under the form.
-- **Trust line:** “TrustScore 4.0 on Trustpilot / All 4 reviews rated 5 stars”, with the green rating squares, as the fourth chip.
+- **Proof points:** the same three promises, one glass bar under the form.
+- **Trust line:** “TrustScore 4.0 on Trustpilot / All 4 reviews rated 5 stars”, with the green rating squares, as the fourth cell.
 - **Be ready:** every label (“READY FOR”, stage words, audience labels) and paragraph is as on the live site.
-- **New UI copy** (not claims): the ticket label “Choose your route” (the card's former title), the badge “Verifiable PNR”
-  (the client's own phrase), the sheets' accessible name, “No airports found. Try another spelling, a nearby city or a 3-letter
-  airport code.”, the prototype's “Search ready …” confirmation, and the pause/play control label.
-- **Not added:** no testimonials, customer counts, years in business, certifications, guarantees or prices. The itinerary pages
-  are the client's samples, already marked “SAMPLE · PRIVACY REDACTED”.
+- **New UI copy** (not claims): the ticket label “Choose your route” (the card's former title), “No airports found. Try another
+  spelling, a nearby city or a 3-letter airport code.”, the prototype's “Search ready …” confirmation, and the pause/play label.
+  v4's “Verifiable PNR” badge and the sample-page caption are gone with the pages.
+- **Not added:** no testimonials, customer counts, years in business, certifications, guarantees or prices.
 
 ## 9. Self-critique during the build
 
 Each issue was caught in a Playwright pass or a measurement and fixed:
 
-- The first ticket put the Trustpilot line in the headline column and pushed the logo strip below the fold; it became the fourth
-  chip and the spacing was tightened so the whole hero fits 1440×900.
-- Return needed two rows: five controls in one row clipped the date fields at 1240px.
-- Between 1024 and 1179px the stacked layout pushed the CTA below the fold; from 900px the copy and the card now sit side by side.
-- On tablets the lead ran under the sample sheets; its width now accounts for them (and the sheets are hidden below 680px and in
-  the two-column layout).
-- Trustpilot's rating squares shrank in narrow chips; they no longer shrink.
-- On phones the aqua glow sat under the headline and lead (measured as low as 3.4 : 1 for the lead); it is removed there. The
-  measured worst case on the gradient is now 4.8 : 1 for body text and 3.8 : 1 for the large aqua word.
-- An entrance effect that faded the form made an automated contrast check flag the CTA mid-fade (4.2–4.4 : 1 against 4.5); text,
-  the form and the chips now slide without fading (axe: 0 violations in 8 consecutive runs and in four states).
-- Multi-city flight 1 was wider than flights 2–6 because it has no remove button; the column is now always reserved.
-- The hairline between From and To was a one-sided border on a rounded box, a pattern the detector (rightly) distrusts; it is now
-  a line on the route group's centre.
-- The notch cut-outs are painted with gradients rather than masks so the airport list is never clipped.
+- The first photograph (a sunrise wing over bright clouds) went murky and foggy under the teal veil, and a full duotone made it
+  flat. The sunset wing, with a split-tone grade, kept its depth.
+- **The first veil failed contrast where it mattered**: the lead measured 2.5–3.4 : 1 on desktop and the aqua key word 2.9 : 1
+  at 1024px. The side veil was reshaped (darker to the middle of the page, then a quick fade) and the top given a light
+  vignette; the worst measured value on desktop is now 4.85 : 1 for both the lead and the key word.
+- With equal columns, the Trustpilot cell of the proof bar wrapped to four lines and pushed the logo strip below the fold; the
+  last column now sizes to its content.
+- At 900–1179px the photograph vanished behind the text and the card; the card now starts 44–84px lower so the sunset shows.
+- The header navigation wrapped at 1100px (a long-standing defect that captures at other widths had missed); it now collapses at 1200px.
+- A divider drawn as a one-sided border on a rounded cell is a pattern the detector (rightly) distrusts; the bar is now a clipped
+  container with square cells.
+- Unsplash's anti-bot challenge blocked its search pages, and a first attempt to use its undocumented search endpoint was refused
+  by the session's safeguards; the final photograph was chosen from image-CDN candidates by eye instead.

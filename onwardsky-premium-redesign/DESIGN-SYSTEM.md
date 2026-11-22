@@ -1,17 +1,18 @@
-# Design system — “Boarding pass” (v4)
+# Design system — “Boarding pass” (v5)
 
-The page is one family of tickets, now with the product shown. The hero is a deep-teal sky panel: the headline at the
-left, the client's own sample itinerary rising from behind a **boarding-pass-shaped booking bar**, three promises and the
-Trustpilot score as glass chips, and the airline logos running along the panel's foot. Below the hero the reviews and the
-“Be ready” tickets keep the same ticket vocabulary. Colour, type and artwork all come from the production site, so
-nothing reads as a different brand.
+The page is one family of tickets. The hero is now photographic: an airliner's wing against a sunset, graded to the brand
+teals, with the headline at the left and a **boarding-pass-shaped booking bar** laid across it. One glass bar carries the
+three promises and the Trustpilot score, and the airline logos run along the panel's foot like a horizon. Below the hero,
+the reviews and the “Be ready” tickets keep the same ticket vocabulary. Colour, type and the client's artwork come from the
+production site, so nothing reads as a different brand; the photograph is the one third-party picture, chosen and graded to
+sit inside the palette (see section 5).
 
 All values below are live CSS custom properties in `assets/css/styles.css` (`:root`). The same system is recorded in
 machine-readable form in `../DESIGN.md` (token frontmatter) and `../.impeccable/design.json`.
 
 ---
 
-## 1. Colour: every value is a production value
+## 1. Colour: every UI value is a production value
 
 v2 was rejected because its colours were invented (near-matches such as `#0B2B30`, a blue-grey pastel, a sand tint,
 a red error). From v3 on, the page uses **only** the colours the production site already defines, under the same names:
@@ -22,22 +23,21 @@ a red error). From v3 on, the page uses **only** the colours the production site
 
 | Token | Hex | Production name | Used for |
 | --- | --- | --- | --- |
-| `--heading` | `#0E2F34` | preset `heading` | Headlines, field values, dark review card, the foot of the airline strip |
+| `--heading` | `#0E2F34` | preset `heading` | Headlines, field values, dark review card, the veils over the photograph, the foot of the airline strip |
 | `--ink` | `#12262A` | preset `ink` | Base text colour |
 | `--secondary` | `#33484B` | preset `secondary` | Body copy |
 | `--muted` | `#4A6266` | preset `muted` | Labels, meta, ticket label |
-| `--accent` | `#156970` | preset `accent` | Hero gradient start, links, icons, focus |
-| `--accent-bright` | `#21A1A3` | preset `accent-bright` | Glow behind the sample itinerary, routed connector, quote marks |
-| `--deep` | `#0F555B` | preset `deep` | Hero gradient middle, selected tab text |
+| `--accent` | `#156970` | preset `accent` | Links, icons, focus, route markers |
+| `--accent-bright` | `#21A1A3` | preset `accent-bright` | Routed connector, quote marks, art |
+| `--deep` | `#0F555B` | preset `deep` | The hero panel's base while the photograph loads, the veils, the selected tab's text |
 | `--surface` | `#E7F3F3` | preset `surface` | The ticket stub, tinted review, tiles |
 | `--surface-alt` / `--surface-soft` | `#EFF4F4` / `#F3F8F8` | presets | Hover grounds, quiet buttons |
 | `--border` / `--border-strong` / `--divider` | `#D5E4E4` / `#C6D7D7` / `#DDE7E7` | presets | Hairlines, the dashed perforation, rules |
 | `--cta` / `-hover` / `-active` | `#C94300` / `#B33C00` / `#9C3200` | presets `cta*` | Primary actions; `-active` is also the error colour |
 | `--v9-bg` | `#F5FAFA` | section ground | “Be ready” ground |
 | `--v9-line` | `#E5EBEB` | section rules | Header and section borders |
-| `--v9-strip-1` → `--v9-strip-2` | `#186C73` → `#156970` | airline strip | Lower-left glow of the hero |
-| `--v9-strip-ink` | `#D9F1EE` | airline strip title | Lead text on the hero, strip title, chip captions |
-| `--v9-deep` | `#0F5A60` | deep section | Hero gradient end, strip start, scope strip |
+| `--v9-strip-ink` | `#D9F1EE` | airline strip title | Lead text on the hero, strip title, trust-line caption |
+| `--v9-deep` | `#0F5A60` | deep section | Strip start, scope strip |
 | `--v9-mint` | `#C8E6E1` | illustration mint | Text selection, art |
 | `--v9-aqua` | `#86D6D2` | aqua on dark | The key word “verifiable”, icons and links on dark |
 | `--v9-peach` / `--v9-peach-wash` | `#FFD3BA` / `#FFEDE7` | illustration peach / wash | Art; error ground |
@@ -46,25 +46,29 @@ a red error). From v3 on, the page uses **only** the colours the production site
 | `--v9-on-dark` / `--v9-on-dark-2` | `#D7E4E4` / `#ABC2C1` | dark-card text | Quote and meta on the dark review |
 | `--v9-placeholder` | `#5F7477` | placeholder | Placeholder text |
 | `--tp-green` | `#00B67A` | Trustpilot (third party) | Rating squares, as in the client's reviews |
+| `--heading-rgb` / `--deep-rgb` | `14, 47, 52` / `15, 85, 91` | `heading` / `deep` as channels | The alpha veils over the photograph |
+
+`--v9-strip-1`, `--v9-strip-2` and `--v9-wash` stay defined (they are production values) but nothing paints them in v5.
 
 One value is derived, by a stated rule: `--field-line` `#809194` = `--muted` mixed 70% with white. Control boundaries
 need 3:1 on white (WCAG 1.4.11); the production field border is far lighter, so this is the lightest brand-derived tint
 that passes (3.28:1).
 
-**Translucent white on the sky.** The glass chips, the trip tabs and the payment marks use white at 9–20% over the hero
-gradient. These are alpha values of an existing colour (white), not new colours; `tools/palette-audit.js` accepts white
-and black at any alpha.
+**Translucent white and teal.** The glass bar, the trip tabs and the payment marks use white at 10–20% over the hero; the
+veils use `heading` and `deep` at 0–93%. These are alpha values of existing colours, not new colours;
+`tools/palette-audit.js` accepts white, black and the palette colours at any alpha.
 
 **Rules**
-- **No new colour.** If it is not in the table it does not ship. `tools/palette-audit.js` renders the page, opens the error
+- **No new UI colour.** If it is not in the table it does not ship. `tools/palette-audit.js` renders the page, opens the error
   state, waits for the transitions to settle and lists every colour painted: **32 distinct values, none outside the table**
   (three consecutive runs). It expands the short hex in the client's art (`#FFF` = white) and treats `#7A3300` at 28–30% as
-  what it is: the production CTA shadow tint, used in shadows only.
+  what it is: the production CTA shadow tint, used in shadows only. Pixels inside the photograph are not audited; they are
+  governed by the grade below.
 - **One hot colour.** Orange is the action. Errors use the same orange family (`cta-active`), as the production form does,
-  never red.
+  never red. The sunset in the photograph is the same burnt-orange family, which is why that picture was chosen.
 - **Boundary rule.** Controls use `--field-line`; hairlines never form the only edge of something you operate.
-- **No glow under text.** The aqua glow sits behind the sample itinerary only; on phones, where the sheets are hidden, it is
-  removed so the headline and lead never sit on its brightest part.
+- **The veil rule.** Text never sits on the bare photograph. A brand-teal veil darkens the text side until the *measured*
+  contrast passes; the photograph shows where there is no text (the right-hand side and the sky above the form).
 
 **Measured contrast (WCAG 2.1)**
 
@@ -85,18 +89,17 @@ On white and tinted grounds:
 | placeholder on white | 4.9 |
 | selected tab, `--deep` on white | 8.5 |
 
-On the hero gradient, which an automated checker cannot evaluate, so it was **measured on the rendered page**
-(`scratchpad` script: hide the text, sample every pixel under each line box, take the worst; widths 1440, 1180, 768, 680, 390, 360):
+On the photograph, which an automated checker cannot evaluate, so it was **measured on the rendered page**
+(hide the text, sample every pixel under each line box, keep the worst; widths 1440, 1280, 1180, 1024, 768, 680, 390, 360):
 
-| Text on the sky | Worst measured | Needs |
+| Text over the photograph | Worst measured | Needs |
 | --- | --- | --- |
-| Headline, white (37–62px, 800) | 6.5 : 1 | 3 : 1 (large) |
-| “verifiable”, `--v9-aqua` (37–62px, 800) | 3.8 : 1 | 3 : 1 (large) |
-| Lead, `--v9-strip-ink` (17–19px) | 4.8 : 1 | 4.5 : 1 |
-| Chip text, white (15px, 600) | 5.9 : 1 | 4.5 : 1 |
-| Chip captions and trust line, `--v9-strip-ink` (14px) | 5.3 : 1 | 4.5 : 1 |
-| Assurances, white at 90% (14px) | 6.7 : 1 | 4.5 : 1 |
-| Inactive trip tab, white at 92% (14px, 650) | 4.8 : 1 | 4.5 : 1 |
+| Headline, white (36–62px, 800) | 5.6 : 1 (8.3 : 1 on desktop) | 3 : 1 (large) |
+| “verifiable”, `--v9-aqua` (36–62px, 800) | 4.8 : 1 on desktop, 3.3 : 1 on tablet and phone | 3 : 1 (large) |
+| Lead, `--v9-strip-ink` (17–19px) | 4.85 : 1 | 4.5 : 1 |
+| Glass-bar text, white (15px, 600) and caption (14px) | 10 : 1 | 4.5 : 1 |
+| Assurances, white at 90% (14px, desktop) | 9.2 : 1 | 4.5 : 1 |
+| Inactive trip tab, white at 92% (14px, 650) | 6.2 : 1 | 4.5 : 1 |
 | Strip title, `--v9-strip-ink` (13px, caps) | 6.8 : 1 | 4.5 : 1 |
 
 ## 2. Typography: Figtree only
@@ -119,7 +122,7 @@ The production face is Figtree; v2's second typeface (Manrope) is gone.
 
 Sentence case everywhere except the strip title and ticket labels, which the production site already sets in capitals.
 The hero breaks on meaning: “Get a **verifiable** / onward ticket / in 2 minutes.” with the key word in aqua (the
-production site sets it in the brand teal; on the dark panel the aqua is the production's “aqua on dark”). One
+production site sets it in the brand teal; on the dark photograph the aqua is the production's “aqua on dark”). One
 self-hosted variable font (Figtree, 20 KB latin + 10 KB latin-ext, `font-display: swap`).
 
 ## 3. Layout
@@ -127,55 +130,56 @@ self-hosted variable font (Figtree, 20 KB latin + 10 KB latin-ext, `font-display
 - **Container** 1240px, side gutter `clamp(16px, 4.2vw, 56px)`.
 - **Hero panel** is inset by `--panel-m` (8–16px) and padded by `--panel-pad`, so its content lines up exactly with the
   header and the other sections (logo, headline, section titles share one left edge). It is 1320px wide at 1440.
-- **Five hero layouts**, one DOM:
+- **Four hero layouts**, one DOM:
 
 | Width | Layout |
 | --- | --- |
-| ≥ 1180px | **Ticket.** Headline and lead at the left, the two sample sheets at the right, trip tabs, then the boarding-pass bar across the full panel width, then assurances and payment marks, the four chips and the airline strip |
-| 900–1179px | **Two columns.** Copy and chips at the left, a 430px booking card at the right; sheets hidden |
-| 680–899px | **One column** with the sheets at the top right; the card is centred (max 640px). Below 768px the card turns compact: title hidden visually, tabs fill the row |
-| < 680px | **Phone.** Headline, lead, full-width card, stacked chips; sheets hidden |
+| ≥ 1180px | **Ticket.** Headline and lead at the left, the photograph's wing and sunset at the right, trip tabs, then the boarding-pass bar across the full panel width, assurances and payment marks, the glass bar and the airline strip |
+| 900–1179px | **Two columns.** Copy and the glass bar at the left (2 × 2 cells from 1100px, one column below), a 430px booking card at the right, set 44–84px lower than the headline so the sunset shows above it |
+| 680–899px | **One column.** The card is centred (max 640px); the veil runs top-down; below 768px the card turns compact (title hidden visually, tabs fill the row) and the portrait crop of the photograph is used |
+| < 680px | **Phone.** Headline, lead, full-width card, the glass bar as one stacked list, the strip |
 
-- **Above the fold** at 1440×900 the whole hero is visible: headline, lead, tabs, the ticket with its CTA, the chips and the
-  logo strip. The CTA's bottom edge is at 612px (1440×900), 591px (1280×720), 552px (1024×768), 811px (820×1180), 748px (390×844).
-- **Header** collapses to the menu below 1080px.
+- **Above the fold** at 1440×900 the whole hero is visible: headline, lead, tabs, the ticket with its CTA, the glass bar and the
+  logo strip (the panel ends at 892px). The CTA's bottom edge is at 612px (1440×900), 591px (1280×720), 624px (1024×768),
+  757px (820×1180 and 680×900), 748px (390×844), 743px (375×812).
+- **Header** collapses to the menu below 1200px (below that, five links, WhatsApp and the CTA no longer fit on one line).
 
 ## 4. Shape and depth
 
 | Token | Value | Used on |
 | --- | --- | --- |
-| `--r-sheet` | 6px | The sample itinerary pages |
 | `--r-chip` | 8px | Tabs, suggestions, payment chips |
 | `--r-cta` | 10px | Buttons (production CTA radius), icon tiles |
-| `--r-control` / `--r-inner` | 12px / 11px | Fields, route group, chips, badge; inner = control minus its 1px border |
+| `--r-control` / `--r-inner` | 12px / 11px | Fields, route group, the glass bar; inner = control minus its 1px border |
 | `--r-card` | 18px | Tablet/phone booking card, “Be ready” tickets (production ticket radius) |
 | `--r-ticket` | 22px | The outer corners of the desktop boarding-pass bar |
 | (reviews) | 24px | Review cards |
 | `--r-panel` | 28px (22px on phones) | The hero panel and the strip's lower corners |
 
 Shadows carry an offset and a soft blur tinted from `--heading`: `--sh-card` (booking card), `--sh-pop` (suggestions),
-`--sh-tk` (ticket cards, the production shadow), `--sh-cta` / `--sh-cta-hover` (production values). The ticket halves and the
-sheets carry their own two-layer shadow (a 1–2px contact line and a long soft drop) so they lift off the sky.
+`--sh-tk` (ticket cards, the production shadow), `--sh-cta` / `--sh-cta-hover` (production values). The ticket halves carry
+their own two-layer shadow (a 1–2px contact line and a long soft drop) so they lift off the photograph.
 
 ## 5. Components
 
-**Hero panel (the sky).** `linear-gradient(165deg, accent → deep 62% → v9-deep)`: the brand teals, light at the top left to
-deep at the foot. Two soft glows sit in a separate decoration layer (`.hero-art`, so text never sits on a glow it did not
-expect): aqua (`accent-bright` at 85%) behind the sample itinerary, and `--v9-strip-1` at the lower left. The client's dotted
-globe is white at 20%, masked away from the headline. One of the client's planes (white, with an aqua dashed path) flies from
-the sheets towards the headline's side on desktop.
-
-**Sample itinerary (the product, shown).** The client's own redacted itinerary pages (from its “A real onward ticket. See for
-yourself.” section, already watermarked “SAMPLE · PRIVACY REDACTED”), 680px WebP, 35–39 KB each. Two pages, rotated −8° and
-+4.5°, rise from behind the ticket. A white badge, “Verifiable PNR” with a seal-check icon, states what they are. The figure
-is one image to assistive technology (`role="img"`, labelled “Sample itinerary with a verifiable PNR, personal details redacted”).
+**Hero panel (the photograph).** A flat `--deep` base (what shows while the picture loads) under an aerial photograph: an
+airliner's wing against a sunset, from Unsplash (Unsplash License), 2000px WebP (44 KB) with a 900px portrait crop for phones
+(20 KB). The photograph is **graded to the brand** by one edit: a split tone that pulls the shadows towards `heading` and the
+lower mid-tones lightly towards `deep`, so the dark ground under the form reads as brand teal, while the highlights keep the
+warm sunset light of the burnt-orange family. It has no people, no logos and no text. Two brand-teal veils sit over it:
+- the **side veil**, `heading` 93% at the left, `deep` 86% at 48% of the width, easing to 3% at the right, keeps the text
+  column at 4.5:1 or better and lets the sky and the wing tip show on the right;
+- the **foot veil**, `heading` 0% at 48% of the height to 86% at the bottom, carries the glass bar and the logo strip (and a 30%
+  veil at the very top keeps the first headline line clear of the bright haze).
+Below 900px the text spans the width, so the veil runs top-down (`deep` 78% → `heading` 98%) and the crop moves to the wing tip.
+The photograph fades in over one second (opacity only); the text never fades.
 
 **Booking ticket (signature, ≥ 1180px).** A real boarding-pass shape built from two backgrounds: the main half is white, the
 stub is the `--surface` tint, and each half has a quarter circle cut out of its top and bottom corner at the perforation, so
-the sky (and the sheets) show through the notch. The seam carries a dashed `--border-strong` perforation. The label row reads
+the photograph shows through the notch. The seam carries a dashed `--border-strong` perforation. The label row reads
 “CHOOSE YOUR ROUTE ··········· ✈”. One row of controls: From | To with a 40px swap between them, travel date, passengers.
 The stub holds the fare (“From $9.99”, “Delivered in 2 minutes”) above the 54px orange CTA. Trip tabs sit above the ticket as
-a translucent white segmented control on the sky. Assurances and payment marks sit below, directly on the sky.
+a translucent white segmented control. Assurances and payment marks sit below, directly on the photograph.
 - **Return:** the route takes its own row, then departure, return and passengers.
 - **Multi-city:** one flight per row (label, route, date, a reserved 44px remove column, so flight 1 aligns with the rest), then
   “Add another flight” and passengers.
@@ -188,14 +192,16 @@ side, fare above a 58px orange CTA, status line, then assurances and payment mar
 kept (see `IMPLEMENTATION-NOTES.md`). Errors: pressed-orange text on the peach wash with an icon, a summary line, focus on the
 first problem.
 
-**Proof chips.** The three promises and the TrustScore line, as four glass chips under the form (white at 9% with a 1px white
-18% edge): a 38px tile with a duotone icon (aqua on white 14%), one short sentence. The Trustpilot chip shows the green
-rating squares and links to the client's Trustpilot page. Four across at ≥1180px, 2×2 at 1100–1179px, a column below.
+**Proof bar.** The three promises and the TrustScore line as **one** glass object (heading at 40% with a 10px blur and a 1px
+white edge at 20%), four cells separated by hairlines: a 38px tile with a duotone icon (aqua on white 14%) and one sentence
+each; the Trustpilot cell sizes to its content (green rating squares and the caption) and links to the client's page. Four
+cells in a row from 1180px, 2 × 2 from 1100 to 1179px, one column below. The container clips its corners (`overflow: clip`);
+the Trustpilot cell shows a white focus ring inside its edge.
 
 **Airline strip.** The panel's foot: gradient `--v9-deep` → `--heading`, centred small-caps title, then the client's nine logos
 in a sideways marquee. Three identical sets, `translateX(−33.333%)` over 46s linear (the production speed), masked edges. It
-pauses on hover, has a visible pause/play button (WCAG 2.2.2), and under `prefers-reduced-motion` becomes a static centred row
-with the duplicate sets removed.
+pauses on hover, on focus, while off screen and with a visible pause/play button (WCAG 2.2.2), and under
+`prefers-reduced-motion` becomes a static centred row with the duplicate sets removed.
 
 **Reviews.** The production trio, equal width: dark `--heading` card, `--surface` card, white bordered card; aqua quote glyph,
 Trustpilot-green rating squares, title, quote, name · country · date, source. Link and meta colours on the dark card use
@@ -211,18 +217,19 @@ client's own illustrations, notches, dashed perforation and barcode bar, and the
 
 ## 6. Icons and artwork
 
-- **Icons:** Phosphor (bold for controls, duotone for the proof tiles, fill for stars, play/pause, the seal-check badge and the
-  ticket's airplane), defined once as an inline sprite (22 symbols).
-- **Artwork:** the client's own: the four “Be ready” illustrations, the dotted globe and plane, the two sample itinerary pages.
-  The nine airline logos are the client's files. Provenance and the mechanical changes made: `assets/SOURCES.md`.
+- **Icons:** Phosphor (bold for controls, duotone for the proof tiles, fill for stars, play/pause and the ticket's airplane),
+  defined once as an inline sprite (21 symbols).
+- **Artwork:** the client's own: the four “Be ready” illustrations and the nine airline logos.
+- **Photograph:** one third-party picture (Unsplash License). Provenance, grade and the reasons for the choice:
+  `assets/SOURCES.md`. The client's dotted globe, plane and sample itinerary pages used in v4 are no longer on the page.
 
 ## 7. Motion
 
 | Moment | Trigger | Spec |
 | --- | --- | --- |
-| Entrance | Page load | Headline and lead, then the form (tabs and ticket), then the chips slide up 14px in sequence (640–720ms ease-out, 0–260ms delays). **Transform only**: text and the form never fade |
-| Sample itinerary | Page load | Each sheet rises 44px and fades in (900ms, from 220ms); the badge fades in after (500ms, from 600ms). Everything is at rest by about 1.1s |
-| Logo marquee | Always | 46s linear loop; pauses on hover or with the button; static under reduced motion |
+| Entrance | Page load | Headline and lead, then the form (tabs and ticket), then the proof bar slide up 14px in sequence (640–720ms ease-out, 0–260ms delays). **Transform only**: text and the form never fade |
+| Photograph | Page load | Fades in over 1s (opacity only). Under it the `--deep` base and the veils keep the text's ground dark, so contrast can only be higher while it fades |
+| Logo marquee | Always | 46s linear loop; pauses on hover, on focus, off screen or with the button; static under reduced motion |
 | Cards slide in | Scroll (reviews, tickets) | 18px, 640ms, transform only; skipped under reduced motion |
 | Connector, swap, flight row | Input | 360ms colour, rotation, fade + rise |
 | Sticky fare bar | Card leaves the viewport (< 1024px) | 360ms slide |
@@ -235,8 +242,8 @@ collapses to its final state.
 
 - Landmarks, skip link, one h1, labelled form with a radio group and ARIA 1.2 comboboxes (↑ ↓ Enter Esc, announced counts).
 - Errors linked with `aria-describedby`, `aria-invalid`, focus to the first error, polite live region.
-- Targets ≥ 44px; visible focus on every stop; sticky UI never hides the focused control (`scroll-padding`).
+- Targets ≥ 44px; visible focus on every stop (white on the photograph); sticky UI never hides the focused control (`scroll-padding`).
 - Reading order equals visual order: tabs, From, swap, To, date, passengers, CTA, Trustpilot, pause control.
 - The marquee duplicates are `aria-hidden`; the pause control is a real button with `aria-pressed` and a changing label.
-- The decorative glows, globe and plane are `alt=""` / CSS; the sample itinerary is one labelled image.
+- The photograph is decorative (`alt=""` inside an `aria-hidden` wrapper), with explicit dimensions and high fetch priority.
 - `color-scheme: light`, `translate="no"` on codes and the brand, safe-area-aware gutters.

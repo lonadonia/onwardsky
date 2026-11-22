@@ -41,7 +41,7 @@
   doc.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && !menu.hidden) setMenu(false, true);
   });
-  window.matchMedia('(min-width: 1080px)').addEventListener('change', function (e) {
+  window.matchMedia('(min-width: 1200px)').addEventListener('change', function (e) {
     if (e.matches && !menu.hidden) setMenu(false);
   });
 

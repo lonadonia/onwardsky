@@ -6,7 +6,7 @@ PH, HTML = sys.argv[1].rstrip('/') + '/', sys.argv[2]
 ICONS = {
   'b': 'list x arrows-down-up plus warning-circle check-circle arrow-right arrow-up-right caret-down lock-simple envelope-simple clock whatsapp-logo headset'.split(),
   'd': 'seal-check clock headset'.split(),
-  'f': 'star pause play seal-check airplane-tilt'.split(),
+  'f': 'star pause play airplane-tilt'.split(),
 }
 WEIGHT = {'b': 'bold', 'd': 'duotone', 'f': 'fill'}
 out = []

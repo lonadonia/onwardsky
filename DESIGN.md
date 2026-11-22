@@ -1,6 +1,6 @@
 ---
 name: Onward Sky
-description: A trust-first travel-document service drawn as one family of tickets: an inset teal hero panel, a deep-teal booking card, a boarding-pass proof strip and the client's own ticket stubs, all in the production palette.
+description: A trust-first travel-document service drawn as one family of tickets: a deep-teal sky panel in which the client's own sample itinerary rises from behind a boarding-pass booking bar, glass proof chips, a logo horizon and the client's ticket stubs, all in the production palette.
 colors:
   heading: "#0E2F34"
   ink: "#12262A"
@@ -38,9 +38,9 @@ colors:
 typography:
   display:
     fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(2.375rem, 0.9rem + 3.95vw, 4.5rem)"
+    fontSize: "clamp(2.375rem, 0.9rem + 3.3vw, 3.875rem)"
     fontWeight: 800
-    lineHeight: 1.02
+    lineHeight: 1.03
     letterSpacing: "-0.035em"
   display-phone:
     fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
@@ -99,7 +99,7 @@ typography:
     letterSpacing: "0.01em"
   lead:
     fontFamily: "Figtree, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "clamp(1.0625rem, 0.98rem + 0.3vw, 1.25rem)"
+    fontSize: "clamp(1.0625rem, 0.95rem + 0.28vw, 1.1875rem)"
     fontWeight: 400
     lineHeight: 1.55
   body:
@@ -155,6 +155,7 @@ typography:
     fontWeight: 800
     lineHeight: 1
 rounded:
+  sheet: "6px"
   chip: "8px"
   cta: "10px"
   control: "12px"
@@ -162,6 +163,7 @@ rounded:
   menu: "16px"
   phone-card: "16px"
   card: "18px"
+  ticket: "22px"
   phone-panel: "22px"
   review: "24px"
   panel: "28px"
@@ -209,26 +211,40 @@ components:
     rounded: "{rounded.card}"
     padding: "18px 20px"
   booking-card-head:
-    backgroundColor: "{colors.deep}"
-    textColor: "{colors.white}"
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.heading}"
     rounded: "{rounded.card}"
     padding: "12px 14px 12px 22px"
+  booking-ticket:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.heading}"
+    rounded: "{rounded.ticket}"
+    padding: "14px 22px 16px"
+  booking-stub:
+    backgroundColor: "{colors.surface}"
+    textColor: "{colors.heading}"
+    rounded: "{rounded.ticket}"
+    padding: "14px 22px"
   segment-selected:
     backgroundColor: "{colors.white}"
     textColor: "{colors.deep}"
     rounded: "{rounded.chip}"
     padding: "7px 11px"
   hero-panel:
-    backgroundColor: "{colors.surface}"
+    backgroundColor: "{colors.deep}"
+    textColor: "{colors.white}"
     rounded: "{rounded.panel}"
-    padding: "32px 40px 26px"
-  proof-ticket:
+    padding: "36px 40px 26px"
+  sample-sheet:
     backgroundColor: "{colors.white}"
-    textColor: "{colors.heading}"
-    rounded: "{rounded.card}"
-    padding: "14px 24px"
+    rounded: "{rounded.sheet}"
+  proof-chip:
+    backgroundColor: "{colors.deep}"
+    textColor: "{colors.white}"
+    rounded: "{rounded.control}"
+    padding: "8px 16px 8px 8px"
   airline-strip:
-    backgroundColor: "{colors.strip-start}"
+    backgroundColor: "{colors.deep-section}"
     textColor: "{colors.strip-ink}"
     rounded: "{rounded.panel}"
     padding: "16px 0 10px"
@@ -265,15 +281,16 @@ components:
 
 **Creative North Star: "The Boarding Pass"**
 
-The page is drawn as one family of tickets. The hero is an inset teal panel that holds the booking card; the three promises are a boarding-pass strip with perforations and notches; the airline logos run along the panel's foot like a departures board; and the four "Be ready" cards are the client's own ticket stubs. One idea, repeated with the same geometry, from the first viewport to the last section.
+The page is drawn as one family of tickets, and the hero now shows the product itself. The hero is a deep-teal sky panel: the headline at the left, the client's own redacted sample itinerary rising from behind a boarding-pass-shaped booking bar at the right, the three promises and the Trustpilot score as quiet glass chips, and the airline logos running along the panel's foot like a departures board. The four "Be ready" cards are the client's own ticket stubs. One idea, repeated with the same geometry, from the first viewport to the last section.
 
 Every colour is a production colour. The palette is the production theme's presets and the values its section styles resolve to (teal ink, brand teal, deep teal, a soft teal surface, one burnt-orange action) and nothing is invented. Type is the production face, Figtree, at weight 800 for the hero and 700 for sections. The artwork (the four illustrations, the dotted globe, the plane, the nine airline logos) is the client's own.
 
 Density is calm: large type, generous space, surfaces that change by meaning (pale teal for the welcome, white for reading and operating, deep teal for the instrument and the proof, the dark teal review for emphasis). Motion is one entrance, one slow marquee that can be paused, and answers to input.
 
 **Key Characteristics:**
-- An inset, rounded hero panel on white; its content shares one left edge with the header and every section.
-- The booking card is the brightest, most finished object, with a deep-teal header and tabs on a single row.
+- An inset, rounded sky panel on white; its content shares one left edge with the header and every section.
+- The booking form is a boarding pass (desktop): a white main half and a tinted stub with the fare and the CTA, a dashed perforation and two notches through which the sky shows. Below 1180px it becomes a white card.
+- The product, shown: two of the client's redacted itinerary pages, rotated, rising from behind the ticket, with a "Verifiable PNR" badge.
 - Ticket vocabulary everywhere: dashed perforation, semicircle notches, a barcode bar, small-caps stub labels.
 - Burnt orange appears only on actions and on error text (the production's own choice).
 - A sideways airline-logo marquee as the foot of the panel, with a visible pause control.
@@ -330,9 +347,9 @@ A teal-tinted palette with one hot action colour, taken from the production site
 
 ## Layout
 
-A 1240px container with fluid gutters (16px on phones to 56px). The hero panel is inset by 8-16px and padded so its content lines up with the header and the sections below. The hero grid puts the copy at the left (top-aligned) and the 468px booking card at the right (440px below 1280); below 1024px the order becomes headline, lead, card, trust line. Under the grid sits the proof ticket, and the airline strip closes the panel. At 1440x900 the whole hero is above the fold.
+A 1240px container with fluid gutters (16px on phones to 56px). The hero panel is inset by 8-16px and padded so its content lines up with the header and the sections below. From 1180px: headline and lead at the left, the sample sheets at the right, then the trip tabs and the boarding-pass bar across the full width, the assurances and payment marks, four glass chips, and the airline strip as the panel's foot. From 900 to 1179px the copy and a 430px card sit side by side and the sheets are hidden; below 900px everything stacks (the sheets stay at the top right down to 680px). At 1440x900 the whole hero is above the fold.
 
-The booking card runs on its own two-column grid: route (From over To) full width, date and passengers side by side, fare, submit, status and foot. Return adds a return-date cell; multi-city stacks labelled flights (2-6).
+The ticket's main half runs on one row for a one-way trip: route (From | To with a swap control between them), travel date and passengers. Return puts the route on its own row, then departure, return and passengers; multi-city stacks flights (2-6), one per row, each with a reserved remove column so the first flight lines up with the rest. The stub holds the fare above the submit button. The tablet and phone card runs on a two-column grid: route (From over To) full width, date and passengers side by side, fare, submit, status and foot.
 
 Reviews are three equal columns (two plus one on tablets, one on phones). "Be ready" is a two-column grid of equal tickets on desktop and a single column below 1024px; on phones each ticket's stub becomes a compact row.
 
@@ -341,14 +358,15 @@ Reviews are three equal columns (two plus one on tablets, one on phones). "Be re
 Mostly flat and tonal; depth comes from colour fields and from the booking card lifting off the panel. Shadows always carry an offset and a soft blur tinted from the heading colour.
 
 ### Shadow Vocabulary
-- **Card** (`0 1px 2px rgba(14,47,52,.06), 0 14px 28px -14px rgba(14,47,52,.28), 0 40px 72px -36px rgba(14,47,52,.36)`): the booking card only.
+- **Card** (`0 1px 2px rgba(14,47,52,.06), 0 14px 28px -14px rgba(14,47,52,.28), 0 40px 72px -36px rgba(14,47,52,.36)`): the tablet and phone booking card.
+- **Ticket half** (`0 1px 2px rgba(14,47,52,.2), 0 24px 38px -12px rgba(14,47,52,.45)`) and **sheet** (`0 2px 4px rgba(14,47,52,.2), 0 30px 50px -18px rgba(14,47,52,.7)`): the desktop boarding-pass halves and the sample itinerary pages, lifted off the sky.
 - **Pop** (`0 2px 6px rgba(14,47,52,.08), 0 22px 44px -18px rgba(14,47,52,.34)`): the suggestions list.
 - **Ticket** (`0 1px 2px rgba(14,47,52,.04), 0 22px 40px -34px rgba(14,47,52,.45)`): the proof strip and the "Be ready" tickets (the production shadow).
 - **Action** (`0 1px 2px rgba(122,51,0,.28), 0 8px 18px -10px rgba(201,67,0,.6)`): primary buttons (the production shadow).
 
 ## Shapes
 
-Radii follow the production geometry: 8px chips and tabs, 10px buttons, 12px controls (11px for fields nested in a 1px-bordered group), 16px menus and the phone card, 18px for the booking card and every ticket, 24px for review cards, 28px for the hero panel (22px on phones). Circles are reserved for the swap control, route markers and notches.
+Radii follow the production geometry: 6px for the sample itinerary pages (paper), 8px chips and tabs, 10px buttons and icon tiles, 12px controls and chips (11px for fields nested in a 1px-bordered group), 16px menus and the phone card, 18px for the tablet card and every "Be ready" ticket, 22px for the outer corners of the desktop boarding-pass bar, 24px for review cards, 28px for the hero panel (22px on phones). Circles are reserved for the swap control, route markers and notches.
 
 ## Components
 
@@ -360,17 +378,23 @@ Radii follow the production geometry: 8px chips and tabs, 10px buttons, 12px con
 - A labelled cell on white with a control-line border, 12px radius, 62px tall. Focus: accent border, 1px ring and a soft 5px halo. Error: action-active border and text on peach-wash, with an icon and one summary line; focus moves to the first problem.
 - A chosen airport shows its code as a departure-board entry; the connector between the two ends turns solid accent-bright.
 
-### Booking Card (signature)
-- White, 18px radius, deep-teal header with the title and a segmented trip control built on real radio buttons; route unit with dashed connector and swap; fare above the CTA; assurances and payment chips below.
+### Booking Ticket (signature, from 1180px)
+- A boarding pass built from two backgrounds: a white main half and a surface-tinted stub, each with a quarter circle cut from its top and bottom corner at the perforation, so the sky and the sheets show through the notch. A dashed border-strong line runs down the seam. The main half carries a small-caps label ("Choose your route", a dotted rule, a plane) and one row of controls; the stub carries the fare and the 54px orange CTA. Trip tabs sit above it on the sky as a translucent segmented control. Assurances and payment marks sit below, on the sky.
 
-### Hero Panel
-- Vertical gradient section-ground to surface, a mint glow behind the card, the client's dotted globe (accent at 28%, left side masked) and one plane flying out from behind the card (desktop only).
+### Booking Card (tablet and phone)
+- White, 18px radius, a surface header with the title and a segmented trip control built on real radio buttons; route unit with dashed connector and swap; fare above the CTA; assurances and payment chips below.
 
-### Proof Ticket (signature)
-- The three promises as one white boarding-pass strip: two dashed perforations with notches, a 44px surface tile with a duotone icon, and a sentence per segment. Vertical below 900px.
+### Hero Panel (the sky)
+- A 165-degree gradient from accent through deep to deep-section, two soft glows in a separate decoration layer (aqua behind the sample itinerary, strip-start at the lower left; no glow on phones), the client's dotted globe (white at 20%, left side masked) and one plane with an aqua dashed path (desktop only).
+
+### Sample Itinerary (signature)
+- Two of the client's redacted itinerary pages, rotated -8 and +4.5 degrees, rising from behind the ticket, with a white "Verifiable PNR" badge. One labelled image to assistive technology.
+
+### Proof Chips
+- The three promises and the TrustScore line as four glass chips (white at 9%, a 1px white edge at 18%): a 38px tile with a duotone icon in aqua, one sentence. The Trustpilot chip links to the client's page and shows a white focus ring.
 
 ### Airline Strip
-- The panel's foot: gradient strip-start to accent, small-caps title, the client's nine logos in a sideways marquee (three sets, 46s linear, masked edges). Pauses on hover and with a visible button; static centred row under reduced motion.
+- The panel's foot: gradient deep-section to heading, small-caps title, the client's nine logos in a sideways marquee (three sets, 46s linear, masked edges). Pauses on hover, on focus, off screen and with a visible button; static centred row under reduced motion.
 
 ### Reviews
 - The production trio: heading-coloured card, surface card, white bordered card; accent-bright quote glyph, green rating squares, title, quote, name, country and date.
@@ -384,7 +408,7 @@ Radii follow the production geometry: 8px chips and tabs, 10px buttons, 12px con
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep the booking card the brightest, most finished object in the first viewport, with its CTA above the fold.
+- **Do** keep the booking form the brightest, most finished object in the first viewport, with its CTA above the fold.
 - **Do** use only production colours, under their production names, and re-run the palette audit after any change.
 - **Do** carry the ticket vocabulary (perforation, notch, stub label) into every new component.
 - **Do** keep the airline marquee pausable and give reduced-motion users a static row.
@@ -393,5 +417,5 @@ Radii follow the production geometry: 8px chips and tabs, 10px buttons, 12px con
 ### Don't:
 - **Don't** add a colour, a second typeface or a stock illustration; the artwork is the client's.
 - **Don't** use red for errors, gradient text, or orange for anything but actions and errors.
-- **Don't** let decoration touch text: the globe fades before the headline and the plane stays beside the card.
-- **Don't** fade text while it animates; entrance effects move cards without changing their contrast.
+- **Don't** let decoration touch text: the globe fades before the headline, the plane stays beside the sheets and the aqua glow never sits behind the headline or lead.
+- **Don't** fade text or the form while they animate; entrance effects slide them without changing their contrast (only the picture-only sheets and the badge fade).

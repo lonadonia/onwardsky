@@ -58,6 +58,12 @@
       marqueeBtn.setAttribute('aria-label', paused ? 'Play the scrolling airline logos' : 'Pause the scrolling airline logos');
       strip.classList.toggle('is-paused', paused);
     });
+    /* the loop also rests while the strip is off screen: nothing to see, nothing to animate */
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        strip.classList.toggle('is-offscreen', !entries[entries.length - 1].isIntersecting);
+      }).observe(strip);
+    }
   }
 
   /* ------------------------------------------------------------------

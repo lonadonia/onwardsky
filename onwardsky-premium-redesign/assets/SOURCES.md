@@ -8,24 +8,28 @@ the derived files are in [`../tools/`](../tools/README.md).
 | --- | --- | --- | --- |
 | Airline logos (9, `airlines/*.webp`) | Hero strip marquee | **Supplied by the client** (`imgi_39…47` archive); byte-identical copies | Client; the marks belong to their airlines |
 | "Be ready" illustrations (4) | The four ticket stubs, inline in `index.html` | **The client's current homepage** (the `travel-use-cases` section). Mechanical changes only, see below | Client |
-| Hero globe and plane (`vectors/hero-globe.svg`, `hero-plane.svg`) | Hero panel decoration | **The client's hero artwork** (`.os-book__art` image), cut into two files and recolored | Client |
+| Hero globe and plane (`vectors/hero-globe-light.svg`, `hero-plane-light.svg`) | Hero panel decoration | **The client's hero artwork** (`.os-book__art` image), cut into two files and recolored for the dark sky | Client |
+| Sample itinerary pages (2, `img/itinerary-page-1.webp`, `itinerary-page-2.webp`) | Hero, rising from behind the booking ticket | **The client's current homepage** (the “A real onward ticket. See for yourself.” section, `section#verify`): two redacted sample itinerary pages, already watermarked “SAMPLE · PRIVACY REDACTED”. Resized to 680px wide | Client |
 | Onward Sky logo (`img/onward-sky-logo.svg`) | Header, favicon | The client's logo, extracted from the production export | Client |
-| UI icons (20 symbols) | Header, form, proof strip, buttons, stars | [Phosphor Icons](https://phosphoricons.com) via npm `@phosphor-icons/core@2.1.1` (bold, duotone and fill weights) | MIT |
+| UI icons (22 symbols) | Header, form, ticket label, proof chips, “Verifiable PNR” badge, buttons, stars, play/pause | [Phosphor Icons](https://phosphoricons.com) via npm `@phosphor-icons/core@2.1.1` (bold, duotone and fill weights) | MIT |
 | Payment marks (4) | Card footer | [Simple Icons](https://simpleicons.org) via npm `simple-icons@16.38.1` | CC0; trademarks remain with their owners |
 | Figtree (text and display) | Everything | [Fontsource](https://fontsource.org) `@fontsource-variable/figtree@5.3.0` | SIL OFL 1.1 (`fonts/LICENSE-Figtree-OFL.txt`) |
 
-## What changed from v2
+## What changed from v2 and v3
 
 v2 used stock illustration (unDraw), airline marks from Soaring Symbols and a second typeface (Manrope). All of that is
-gone: the page now uses the client's own illustrations, globe, logos and typeface, which is what keeps it on brand.
+gone: the page uses the client's own illustrations, globe, plane, sample itineraries, logos and typeface, which is what keeps it
+on brand. In v4 a trial with unDraw clouds on the new dark sky was dropped (they read as clip art beside the client's linework),
+so **the page contains no third-party illustration**; the only third-party artwork is the icon family (Phosphor) and the payment marks.
 
 ## Mechanical changes to the client's artwork
 
 | File | Change | Why |
 | --- | --- | --- |
 | "Be ready" illustrations | Legacy variables resolved to the values the production page resolves them to (`--c-0B283D` → `#0E2F34`, `--c-27A3B5` → `#21A1A3`, `--c-FFD2B0` → `#FFD3BA`, `--c-BFE9F0` → `#C8E6E1`); lost camel case restored (`viewBox`, `feTurbulence`…); filter ids made unique; text font set to Figtree | The saved page loses its stylesheet context; the drawings render the same as on the live page |
-| `hero-globe.svg` | Only the dotted globe is kept; fill `#0B283D` → accent `#156970`; opacity 10% → 28%; numbers rounded to one decimal (svgo) | Navy dots read grey on the teal panel; accent keeps the palette closed |
-| `hero-plane.svg` | One of the two planes and the first part of its dashed path; viewBox cropped; path `black` → accent, plane navy → heading `#0E2F34` | The second plane flies out from behind the booking card |
+| `hero-globe-light.svg` | Only the dotted globe is kept; fill navy → white; opacity 10% → 20%; numbers rounded to one decimal (svgo, viewBox restored) | White dots at 20% read as a soft dotted globe on the dark teal sky |
+| `hero-plane-light.svg` | One of the two planes and the first part of its dashed path; viewBox cropped; plane navy → white, path black → aqua `#86D6D2` | The plane flies from the sample pages towards the headline's side, on the dark sky |
+| `itinerary-page-1.webp`, `itinerary-page-2.webp` | The two tall pages decoded from the page's embedded WebP data, resized to 680px wide (WebP quality 84), page 1 = the page dated 16 Oct. No edits to the content | The saved page embeds them at full size; 35–39 KB each is enough for a 300–470px display |
 
 ## Airline logos
 

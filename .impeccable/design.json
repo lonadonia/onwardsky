@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-22T16:59:33+00:00",
+  "generatedAt": "2026-11-22T20:58:30+00:00",
   "title": "Design System: Onward Sky",
   "extensions": {
     "colorMeta": {
@@ -562,7 +562,17 @@
       {
         "name": "card",
         "value": "0 1px 2px rgba(14,47,52,.06), 0 14px 28px -14px rgba(14,47,52,.28), 0 40px 72px -36px rgba(14,47,52,.36)",
-        "purpose": "The booking card only."
+        "purpose": "The tablet and phone booking card."
+      },
+      {
+        "name": "ticket half",
+        "value": "0 1px 2px rgba(14,47,52,.2), 0 24px 38px -12px rgba(14,47,52,.45)",
+        "purpose": "The two halves of the desktop boarding-pass bar."
+      },
+      {
+        "name": "sheet",
+        "value": "0 2px 4px rgba(14,47,52,.2), 0 30px 50px -18px rgba(14,47,52,.7)",
+        "purpose": "The sample itinerary pages."
       },
       {
         "name": "pop",
@@ -572,7 +582,7 @@
       {
         "name": "ticket",
         "value": "0 1px 2px rgba(14,47,52,.04), 0 22px 40px -34px rgba(14,47,52,.45)",
-        "purpose": "Proof strip and Be ready tickets (production shadow)."
+        "purpose": "The Be ready tickets (production shadow)."
       },
       {
         "name": "action",
@@ -620,19 +630,19 @@
     "breakpoints": [
       {
         "name": "phone",
-        "value": "<768px"
+        "value": "<768px (sheets hidden below 680px)"
       },
       {
-        "name": "tablet",
-        "value": "768-1023px"
+        "name": "card",
+        "value": "<1180px"
       },
       {
-        "name": "laptop",
-        "value": "1024-1279px"
+        "name": "two columns",
+        "value": "900-1179px"
       },
       {
-        "name": "desktop",
-        "value": ">=1280px"
+        "name": "ticket",
+        "value": ">=1180px"
       }
     ]
   },
@@ -665,9 +675,9 @@
       "name": "Trip Control",
       "kind": "chip",
       "refersTo": "segment-selected",
-      "description": "Segmented trip type control on the deep teal card header.",
-      "html": "<div class=\"ds-head\"><span class=\"ds-t\">Choose your route</span><div class=\"ds-seg\"><button class=\"ds-s on\">One way</button><button class=\"ds-s\">Return</button><button class=\"ds-s\">Multi-city</button></div></div>",
-      "css": ".ds-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 14px 12px 22px; border-radius:18px 18px 0 0; background:#0F555B; color:#fff; } .ds-t { font-family: Figtree, system-ui, sans-serif; font-weight:700; font-size:18px; } .ds-seg { display:inline-flex; gap:2px; padding:4px; border-radius:12px; background:rgba(255,255,255,.14); } .ds-s { padding:7px 11px; border:0; border-radius:8px; background:transparent; color:rgba(255,255,255,.92); font-family: Figtree, system-ui, sans-serif; font-weight:650; font-size:14.4px; cursor:pointer; } .ds-s.on { background:#fff; color:#0F555B; font-weight:750; box-shadow:0 1px 3px rgba(14,47,52,.3); }"
+      "description": "Segmented trip type control: a translucent white track on the sky (desktop), a tinted track on the card header (tablet and phone).",
+      "html": "<div class=\"ds-sky\"><div class=\"ds-seg\"><button class=\"ds-s on\">One way</button><button class=\"ds-s\">Return</button><button class=\"ds-s\">Multi-city</button></div></div>",
+      "css": ".ds-sky { padding:16px; border-radius:18px; background:linear-gradient(165deg,#156970,#0F555B 62%,#0F5A60); } .ds-seg { display:inline-flex; gap:2px; padding:4px; border-radius:12px; background:rgba(255,255,255,.14); } .ds-s { border:0; border-radius:8px; padding:8px 15px; background:transparent; color:rgba(255,255,255,.92); font-family: Figtree, system-ui, sans-serif; font-weight:650; font-size:14.4px; } .ds-s.on { background:#fff; color:#0F555B; font-weight:750; box-shadow:0 1px 3px rgba(14,47,52,.3); }"
     },
     {
       "name": "Route Entry",
@@ -678,12 +688,28 @@
       "css": ".ds-route { position:relative; border:1px solid #809194; border-radius:12px; background:#fff; } .ds-route::before { content:''; position:absolute; left:27px; top:32px; bottom:32px; border-left:2px solid #21A1A3; } .ds-row { display:flex; align-items:center; gap:12px; padding:12px 16px 12px 58px; } .ds-row + .ds-row { border-top:1px solid #D5E4E4; } .ds-row b { font-family: Figtree, system-ui, sans-serif; font-weight:800; font-size:26px; color:#0E2F34; } .ds-row span { display:grid; font-family: Figtree, system-ui, sans-serif; font-weight:650; font-size:15px; line-height:1.15; color:#0E2F34; } .ds-row small { font-weight:400; font-size:13px; color:#4A6266; }"
     },
     {
-      "name": "Proof Ticket",
+      "name": "Booking Ticket",
       "kind": "card",
-      "refersTo": "proof-ticket",
-      "description": "Signature: the three promises as a boarding-pass strip with dashed perforations and notches.",
-      "html": "<ul class=\"ds-pt\"><li><span class=\"ds-tile\"></span>Real airline PNR you can verify</li><li><span class=\"ds-tile\"></span>Automatically expires. No cancellation needed.</li><li><span class=\"ds-tile\"></span>Human support when you need it</li></ul>",
-      "css": ".ds-pt { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); background:#fff; border:1px solid #D5E4E4; border-radius:18px; overflow:hidden; box-shadow:0 1px 2px rgba(14,47,52,.04),0 22px 40px -34px rgba(14,47,52,.45); font-family: Figtree, system-ui, sans-serif; } .ds-pt li { position:relative; display:flex; align-items:center; gap:14px; padding:14px 24px; font-weight:650; font-size:16px; color:#0E2F34; } .ds-pt li + li { border-left:2px dashed #C6D7D7; } .ds-pt li + li::before, .ds-pt li + li::after { content:''; position:absolute; left:-11px; width:20px; height:20px; border-radius:50%; background:#E7F3F3; border:1px solid #D5E4E4; } .ds-pt li + li::before { top:-11px; } .ds-pt li + li::after { bottom:-11px; } .ds-tile { width:44px; height:44px; flex:none; border-radius:12px; background:#E7F3F3; }"
+      "refersTo": "booking-ticket",
+      "description": "Signature (desktop): the booking form as a boarding pass: a white main half and a tinted stub with the fare and the CTA, a dashed perforation and two notches through which the sky shows.",
+      "html": "<div class=\"ds-sky\"><div class=\"ds-tkt\"><div class=\"ds-m\"><small>CHOOSE YOUR ROUTE</small><div class=\"ds-r\"><span>From<b>City or airport…</b></span><span>To<b>City or airport…</b></span><span>Travel date<b>mm/dd/yyyy</b></span></div></div><div class=\"ds-st\"><p>From <strong>$9.99</strong></p><button class=\"ds-cta\">Get my onward ticket</button></div></div></div>",
+      "css": ".ds-sky { padding:24px; border-radius:18px; background:linear-gradient(165deg,#156970,#0F555B 62%,#0F5A60); } .ds-tkt { display:grid; grid-template-columns:1fr 200px; } .ds-m { padding:14px 22px 16px; border-radius:22px 0 0 22px; background:radial-gradient(circle 12px at 100% 0,transparent 11.5px,#fff 12px) top/100% 51% no-repeat,radial-gradient(circle 12px at 100% 100%,transparent 11.5px,#fff 12px) bottom/100% 51% no-repeat; box-shadow:0 1px 2px rgba(14,47,52,.2),0 24px 38px -12px rgba(14,47,52,.45); font-family: Figtree, system-ui, sans-serif; } .ds-m small { font-weight:800; font-size:11px; letter-spacing:.14em; color:#4A6266; } .ds-r { display:flex; gap:8px; margin-top:8px; } .ds-r span { flex:1; padding:8px 12px; border:1px solid #809194; border-radius:12px; font-size:12px; color:#4A6266; } .ds-r b { display:block; font-size:14px; font-weight:500; } .ds-st { position:relative; padding:14px 22px; border-radius:0 22px 22px 0; background:radial-gradient(circle 12px at 0 0,transparent 11.5px,#E7F3F3 12px) top/100% 51% no-repeat,radial-gradient(circle 12px at 0 100%,transparent 11.5px,#E7F3F3 12px) bottom/100% 51% no-repeat; box-shadow:0 1px 2px rgba(14,47,52,.2),0 24px 38px -12px rgba(14,47,52,.45); font-family: Figtree, system-ui, sans-serif; } .ds-st::before { content:''; position:absolute; left:0; top:18px; bottom:18px; border-left:2px dashed #C6D7D7; } .ds-st p { margin:0 0 10px; color:#4A6266; font-size:14px; } .ds-st strong { font-size:26px; font-weight:800; color:#0E2F34; } .ds-cta { width:100%; min-height:54px; border:0; border-radius:10px; background:#C94300; color:#fff; font-weight:700; font-size:16px; }"
+    },
+    {
+      "name": "Sample Itinerary",
+      "kind": "card",
+      "refersTo": "sample-sheet",
+      "description": "Signature: the client's redacted sample itinerary pages, rotated, with a Verifiable PNR badge.",
+      "html": "<div class=\"ds-sky\"><div class=\"ds-docs\"><span class=\"ds-p1\"></span><span class=\"ds-p2\"></span><em>Verifiable PNR</em></div></div>",
+      "css": ".ds-sky { padding:24px; border-radius:18px; background:linear-gradient(165deg,#156970,#0F555B 62%,#0F5A60); } .ds-docs { position:relative; height:190px; width:260px; margin:auto; } .ds-p1, .ds-p2 { position:absolute; display:block; background:#fff; border-radius:6px; box-shadow:0 2px 4px rgba(14,47,52,.2),0 30px 50px -18px rgba(14,47,52,.7); } .ds-p1 { left:0; top:20px; width:57%; height:170px; transform:rotate(-8deg); } .ds-p2 { right:0; top:0; width:61%; height:180px; transform:rotate(4.5deg); } .ds-docs em { position:absolute; left:8%; bottom:22%; padding:8px 14px; border-radius:12px; background:#fff; color:#0E2F34; font-family: Figtree, system-ui, sans-serif; font-style:normal; font-weight:700; font-size:13px; box-shadow:0 14px 30px -12px rgba(14,47,52,.6); }"
+    },
+    {
+      "name": "Proof Chip",
+      "kind": "chip",
+      "refersTo": "proof-chip",
+      "description": "The three promises and the TrustScore line as glass chips on the sky: a duotone tile and one sentence.",
+      "html": "<div class=\"ds-sky\"><ul class=\"ds-pc\"><li><span class=\"ds-tile\"></span>Real airline PNR you can verify</li><li><span class=\"ds-tile\"></span>Human support when you need it</li></ul></div>",
+      "css": ".ds-sky { padding:16px; border-radius:18px; background:linear-gradient(165deg,#156970,#0F555B 62%,#0F5A60); } .ds-pc { list-style:none; margin:0; padding:0; display:flex; gap:14px; } .ds-pc li { flex:1; display:flex; align-items:center; gap:12px; padding:8px 16px 8px 8px; border:1px solid rgba(255,255,255,.18); border-radius:12px; background:rgba(255,255,255,.09); color:#fff; font-family: Figtree, system-ui, sans-serif; font-weight:600; font-size:15px; } .ds-tile { width:38px; height:38px; flex:none; border-radius:10px; background:rgba(255,255,255,.14); }"
     },
     {
       "name": "Ticket Card",
@@ -697,9 +723,9 @@
       "name": "Airline Strip",
       "kind": "card",
       "refersTo": "airline-strip",
-      "description": "The panel foot: gradient strip with a small-caps title and the logo marquee.",
+      "description": "The panel foot: a deep-section to heading gradient with a small-caps title and the logo marquee.",
       "html": "<div class=\"ds-strip\"><p>ONWARD SKY™ WORKS WITH 100+ AIRLINES</p><div class=\"ds-logos\"><span>BRITISH AIRWAYS</span><span>Emirates</span><span>KLM</span></div></div>",
-      "css": ".ds-strip { padding:16px 0 12px; background:linear-gradient(180deg,#186C73,#156970); border-radius:0 0 28px 28px; text-align:center; font-family: Figtree, system-ui, sans-serif; } .ds-strip p { margin:0; font-weight:700; font-size:13px; letter-spacing:.14em; color:#D9F1EE; } .ds-logos { display:flex; justify-content:center; gap:40px; margin-top:14px; color:#fff; font-weight:700; opacity:.92; }"
+      "css": ".ds-strip { padding:16px 0 12px; background:linear-gradient(180deg,#0F5A60,#0E2F34); border-radius:0 0 28px 28px; text-align:center; font-family: Figtree, system-ui, sans-serif; } .ds-strip p { margin:0; font-weight:700; font-size:13px; letter-spacing:.14em; color:#D9F1EE; } .ds-logos { display:flex; justify-content:center; gap:36px; margin-top:12px; color:#fff; font-weight:800; font-size:15px; opacity:.92; }"
     },
     {
       "name": "Dark Review",
@@ -712,10 +738,11 @@
   ],
   "narrative": {
     "northStar": "The Boarding Pass",
-    "overview": "The page is drawn as one family of tickets. The hero is an inset teal panel that holds the booking card; the three promises are a boarding-pass strip with perforations and notches; the airline logos run along the panel's foot like a departures board; and the four \"Be ready\" cards are the client's own ticket stubs. One idea, repeated with the same geometry, from the first viewport to the last section.\n\nEvery colour is a production colour. The palette is the production theme's presets and the values its section styles resolve to (teal ink, brand teal, deep teal, a soft teal surface, one burnt-orange action) and nothing is invented. Type is the production face, Figtree, at weight 800 for the hero and 700 for sections. The artwork (the four illustrations, the dotted globe, the plane, the nine airline logos) is the client's own.\n\nDensity is calm: large type, generous space, surfaces that change by meaning (pale teal for the welcome, white for reading and operating, deep teal for the instrument and the proof, the dark teal review for emphasis). Motion is one entrance, one slow marquee that can be paused, and answers to input.",
+    "overview": "The page is drawn as one family of tickets, and the hero now shows the product itself. The hero is a deep-teal sky panel: the headline at the left, the client's own redacted sample itinerary rising from behind a boarding-pass-shaped booking bar at the right, the three promises and the Trustpilot score as quiet glass chips, and the airline logos running along the panel's foot like a departures board. The four \"Be ready\" cards are the client's own ticket stubs. One idea, repeated with the same geometry, from the first viewport to the last section.\n\nEvery colour is a production colour. The palette is the production theme's presets and the values its section styles resolve to (teal ink, brand teal, deep teal, a soft teal surface, one burnt-orange action) and nothing is invented. Type is the production face, Figtree, at weight 800 for the hero and 700 for sections. The artwork (the four illustrations, the dotted globe, the plane, the nine airline logos) is the client's own.\n\nDensity is calm: large type, generous space, surfaces that change by meaning (pale teal for the welcome, white for reading and operating, deep teal for the instrument and the proof, the dark teal review for emphasis). Motion is one entrance, one slow marquee that can be paused, and answers to input.",
     "keyCharacteristics": [
-      "An inset, rounded hero panel on white; its content shares one left edge with the header and every section.",
-      "The booking card is the brightest, most finished object, with a deep-teal header and tabs on a single row.",
+      "An inset, rounded sky panel on white; its content shares one left edge with the header and every section.",
+      "The booking form is a boarding pass (desktop): a white main half and a tinted stub with the fare and the CTA, a dashed perforation and two notches through which the sky shows. Below 1180px it becomes a white card.",
+      "The product, shown: two of the client's redacted itinerary pages, rotated, rising from behind the ticket, with a \"Verifiable PNR\" badge.",
       "Ticket vocabulary everywhere: dashed perforation, semicircle notches, a barcode bar, small-caps stub labels.",
       "Burnt orange appears only on actions and on error text (the production's own choice).",
       "A sideways airline-logo marquee as the foot of the panel, with a visible pause control."
@@ -748,7 +775,7 @@
       }
     ],
     "dos": [
-      "Do keep the booking card the brightest, most finished object in the first viewport, with its CTA above the fold.",
+      "Do keep the booking form the brightest, most finished object in the first viewport, with its CTA above the fold.",
       "Do use only production colours, under their production names, and re-run the palette audit after any change.",
       "Do carry the ticket vocabulary (perforation, notch, stub label) into every new component.",
       "Do keep the airline marquee pausable and give reduced-motion users a static row.",
@@ -757,8 +784,8 @@
     "donts": [
       "Don't add a colour, a second typeface or a stock illustration; the artwork is the client's.",
       "Don't use red for errors, gradient text, or orange for anything but actions and errors.",
-      "Don't let decoration touch text: the globe fades before the headline and the plane stays beside the card.",
-      "Don't fade text while it animates; entrance effects move cards without changing their contrast."
+      "Don't let decoration touch text: the globe fades before the headline, the plane stays beside the sheets and the aqua glow never sits behind the headline or lead.",
+      "Don't fade text or the form while they animate; entrance effects slide them without changing their contrast (only the picture-only sheets and the badge fade)."
     ]
   }
 }

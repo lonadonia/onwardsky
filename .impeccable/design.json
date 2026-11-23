@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-22T23:37:01+00:00",
+  "generatedAt": "2026-11-23T01:00:00+00:00",
   "title": "Design System: Onward Sky",
   "extensions": {
     "colorMeta": {
@@ -519,7 +519,7 @@
       },
       "rating-score": {
         "displayName": "Rating score",
-        "purpose": "The TrustScore in the reviews summary."
+        "purpose": "The TrustScore on the Trustpilot ticket stub (in accent)."
       },
       "stage": {
         "displayName": "Stage",
@@ -581,7 +581,7 @@
       {
         "name": "ticket",
         "value": "0 1px 2px rgba(14,47,52,.04), 0 22px 40px -34px rgba(14,47,52,.45)",
-        "purpose": "The review cards, the Trustpilot summary on hover and the Be ready tickets (production shadow)."
+        "purpose": "The review tickets, the Trustpilot ticket and the Be ready tickets (production shadow)."
       },
       {
         "name": "action",
@@ -655,6 +655,14 @@
       {
         "name": "header menu",
         "value": "<1200px"
+      },
+      {
+        "name": "review tickets",
+        "value": "3 upright >=1100px; lying down 640-1099px; upright, one column <640px"
+      },
+      {
+        "name": "hero panel",
+        "value": "min(100% - 2 x 8-20px, 1640px); content box = the 1320px page container"
       }
     ]
   },
@@ -732,25 +740,25 @@
       "css": ".ds-sky { padding:24px; border-radius:18px; background:linear-gradient(165deg,#156970,#0F555B 62%,#0F5A60); } .ds-tag { display:inline-block; padding:4px 8px; border-radius:8px; border:1px solid rgba(255,255,255,.24); background:rgba(14,47,52,.62); color:#fff; font-family: Figtree, system-ui, sans-serif; font-weight:800; font-size:12px; line-height:1; letter-spacing:.08em; }"
     },
     {
-      "name": "Trustpilot Summary",
+      "name": "Trustpilot Ticket",
       "kind": "card",
-      "refersTo": "rating-summary",
-      "description": "One link beside the reviews heading: the TrustScore large, the green squares, the client's two lines and a link to Trustpilot.",
-      "html": "<a class=\"ds-rt\" href=\"#\"><b>4.0</b><span><i class=\"ds-sq\"></i><i class=\"ds-sq\"></i><i class=\"ds-sq\"></i><i class=\"ds-sq\"></i><i class=\"ds-sq off\"></i><strong>TrustScore 4.0 on Trustpilot</strong><small>All 4 reviews rated 5 stars</small></span><em>Read more reviews on Trustpilot ↗</em></a>",
-      "css": ".ds-rt { display:grid; grid-template-columns:auto 1fr; align-items:center; gap:6px 16px; max-width:340px; padding:18px 22px; border:1px solid #D5E4E4; border-radius:18px; background:#F5FAFA; color:#0E2F34; text-decoration:none; font-family: Figtree, system-ui, sans-serif; } .ds-rt b { font-weight:800; font-size:44px; line-height:1; letter-spacing:-.03em; } .ds-rt strong, .ds-rt small { display:block; } .ds-rt strong { font-size:15px; margin-top:6px; } .ds-rt small { font-size:14px; color:#4A6266; } .ds-sq { display:inline-block; width:20px; height:20px; margin-right:2px; background:#00B67A; } .ds-sq.off { background:#C6D7D7; } .ds-rt em { grid-column:1/-1; margin-top:6px; padding-top:12px; border-top:1px solid #DDE7E7; font-style:normal; font-weight:700; font-size:15px; color:#156970; } .ds-rt:hover { border-color:#156970; box-shadow:0 1px 2px rgba(14,47,52,.04),0 22px 40px -34px rgba(14,47,52,.45); }"
+      "refersTo": "rating-ticket",
+      "description": "One link beside the reviews heading, drawn as a small ticket: the TrustScore on a surface stub, a dashed perforation with notches, then the green squares, the client's two lines and a link to Trustpilot.",
+      "html": "<a class=\"ds-rt\" href=\"#\"><span class=\"ds-rs\"><small>TRUSTSCORE</small><b>4.0</b></span><span class=\"ds-rb\"><span class=\"ds-sqs\"><i class=\"ds-sq\"></i><i class=\"ds-sq\"></i><i class=\"ds-sq\"></i><i class=\"ds-sq\"></i><i class=\"ds-sq off\"></i></span><strong>TrustScore 4.0 on Trustpilot</strong><small>All 4 reviews rated 5 stars</small><em>Read more reviews on Trustpilot ↗</em></span></a>",
+      "css": ".ds-rt { display:grid; grid-template-columns:auto 1fr; max-width:440px; overflow:hidden; border:1px solid #D5E4E4; border-radius:18px; background:#fff; box-shadow:0 1px 2px rgba(14,47,52,.04),0 22px 40px -34px rgba(14,47,52,.45); color:#0E2F34; text-decoration:none; font-family: Figtree, system-ui, sans-serif; } .ds-rs { position:relative; display:grid; align-content:center; gap:6px; padding:18px 26px 18px 22px; background:#E7F3F3; border-right:2px dashed #C6D7D7; } .ds-rs::before, .ds-rs::after { content:\"\"; position:absolute; right:-11px; width:20px; height:20px; border-radius:50%; background:#fff; border:1px solid #D5E4E4; } .ds-rs::before { top:-11px; } .ds-rs::after { bottom:-11px; } .ds-rs small { font-weight:700; font-size:12px; letter-spacing:.16em; color:#4A6266; } .ds-rs b { font-weight:800; font-size:44px; line-height:1; letter-spacing:-.03em; color:#156970; } .ds-rb { display:grid; gap:5px; padding:16px 20px 16px 22px; } .ds-rb strong { font-size:15px; } .ds-rb small { font-size:14px; color:#4A6266; } .ds-sq { display:inline-block; width:20px; height:20px; margin-right:2px; background:#00B67A; } .ds-sq.off { background:#C6D7D7; } .ds-rb em { margin-top:6px; padding-top:10px; border-top:1px solid #DDE7E7; font-style:normal; font-weight:700; font-size:15px; color:#156970; } .ds-rt:hover { border-color:#156970; }"
     },
     {
-      "name": "Review Card",
+      "name": "Review Ticket",
       "kind": "card",
-      "refersTo": "review-card",
-      "description": "One card style for every review: rating and a mint quote mark, the title, the quote, then initials, the linked name and country · date.",
-      "html": "<figure class=\"ds-rev\"><div class=\"ds-top\"><span class=\"ds-st\"></span><span class=\"ds-qm\">❝</span></div><h3>Easy, Fast &amp; Reliable</h3><blockquote>“The whole process was quick and straightforward, and I received the reservation within the promised time.”</blockquote><figcaption><span class=\"ds-av\">MM</span><span><a href=\"#\">Md Manam</a><small>India · Sep 27, 2026</small></span></figcaption></figure>",
-      "css": ".ds-rev { display:flex; flex-direction:column; gap:12px; max-width:380px; margin:0; padding:30px; border:1px solid #D5E4E4; border-radius:18px; background:#fff; box-shadow:0 1px 2px rgba(14,47,52,.04),0 22px 40px -34px rgba(14,47,52,.45); font-family: Figtree, system-ui, sans-serif; } .ds-top { display:flex; justify-content:space-between; align-items:center; } .ds-st { width:108px; height:20px; background:repeating-linear-gradient(90deg,#00B67A 0 20px,transparent 20px 22px); } .ds-qm { font-size:34px; line-height:1; color:#C8E6E1; } .ds-rev h3 { margin:2px 0 0; font-weight:700; font-size:20px; line-height:1.25; color:#0E2F34; } .ds-rev blockquote { margin:0; font-size:17px; line-height:1.6; color:#33484B; } .ds-rev figcaption { display:flex; align-items:center; gap:12px; padding-top:18px; border-top:1px solid #DDE7E7; } .ds-av { display:grid; place-items:center; width:42px; height:42px; border-radius:50%; background:#E7F3F3; color:#0E2F34; font-weight:800; font-size:13px; letter-spacing:.04em; } .ds-rev a { display:block; padding:2px 0; font-weight:700; font-size:15px; color:#0E2F34; } .ds-rev small { font-size:14px; color:#4A6266; }"
+      "refersTo": "review-ticket",
+      "description": "The 'Be ready' ticket stood upright, one style for every review: a surface stub with TRUSTPILOT and five green squares beside a picture in the client's illustration style, a perforation with notches, then an orange topic label, the title, the quote, and the initials, linked name, country · date and a barcode.",
+      "html": "<figure class=\"ds-rev\"><div class=\"ds-rstub\"><span><small>TRUSTPILOT</small><span class=\"ds-st\"></span></span><span class=\"ds-art\"></span></div><div class=\"ds-rmain\"><i>DELIVERY TIME</i><h3>Easy, Fast &amp; Reliable</h3><blockquote>“The whole process was quick and straightforward, and I received the reservation within the promised time.”</blockquote></div><figcaption><span class=\"ds-av\">MM</span><span><a href=\"#\">Md Manam</a><small>India · Sep 27, 2026</small></span><span class=\"ds-bar\"></span></figcaption></figure>",
+      "css": ".ds-rev { display:grid; max-width:400px; margin:0; overflow:hidden; border:1px solid #D5E4E4; border-radius:18px; background:#fff; box-shadow:0 1px 2px rgba(14,47,52,.04),0 22px 40px -34px rgba(14,47,52,.45); font-family: Figtree, system-ui, sans-serif; } .ds-rstub { position:relative; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:14px 16px 12px 22px; background:#E7F3F3; border-bottom:2px dashed #C6D7D7; } .ds-rstub::before, .ds-rstub::after { content:\"\"; position:absolute; bottom:-11px; width:20px; height:20px; border-radius:50%; background:#fff; border:1px solid #D5E4E4; } .ds-rstub::before { left:-11px; } .ds-rstub::after { right:-11px; } .ds-rstub small { display:block; margin-bottom:10px; font-weight:700; font-size:12px; letter-spacing:.16em; color:#4A6266; } .ds-st { display:block; width:118px; height:22px; background:repeating-linear-gradient(90deg,#00B67A 0 22px,transparent 22px 24px); } .ds-art { width:150px; height:105px; border-radius:16px; background:linear-gradient(135deg,#C8E6E1 0 50%,#FFD3BA 50%); } .ds-rmain { display:grid; gap:10px; padding:24px 26px 20px; } .ds-rmain i { font-style:normal; font-weight:800; font-size:12px; letter-spacing:.14em; color:#CC4700; } .ds-rmain h3 { margin:0; font-weight:700; font-size:20px; line-height:1.25; color:#0E2F34; } .ds-rmain blockquote { margin:0; font-size:17px; line-height:1.6; color:#33484B; } .ds-rev figcaption { display:flex; align-items:center; gap:12px; margin:0 26px 20px; padding-top:16px; border-top:1px solid #DDE7E7; } .ds-av { display:grid; place-items:center; width:42px; height:42px; border-radius:50%; background:#E7F3F3; color:#0E2F34; font-weight:800; font-size:13px; } .ds-rev figcaption a { display:block; font-weight:700; font-size:15px; color:#0E2F34; } .ds-rev figcaption small { font-size:14px; color:#4A6266; } .ds-bar { width:44px; height:30px; margin-left:auto; opacity:.65; background:repeating-linear-gradient(90deg,#9DC4C7 0 1.5px,transparent 1.5px 4.5px); }"
     }
   ],
   "narrative": {
     "northStar": "The Boarding Pass",
-    "overview": "The page is drawn as one family of tickets. The hero is drawn with vectors only: on the brand-teal panel, a dot-matrix map of the world's land (Natural Earth's open data) carries five flight routes between real airports, four airport codes in small departure-board tags and one airplane in flight, beside the headline at the left; a boarding-pass-shaped booking bar is laid across the panel, the three promises and the Trustpilot score follow as one quiet glass bar, and the airline logos run along the panel's foot like a departures board. The reviews open with the Trustpilot score and continue in three cards of one kind; the four \"Be ready\" cards are the client's own ticket stubs on the same dotted map. One idea, repeated with the same geometry, from the first viewport to the last section.\n\nEvery colour is a production colour. The palette is the production theme's presets and the values its section styles resolve to (teal ink, brand teal, deep teal, a soft teal surface, one burnt-orange action) and nothing is invented. Type is the production face, Figtree, at weight 800 for the hero and 700 for sections. The artwork (the four illustrations, the nine airline logos) is the client's own; the map is computed from public-domain data by a script and the icons are Phosphor's, so nothing is drawn by hand and there is no photograph.\n\nDensity is calm: large type, generous space, surfaces that change by meaning (brand teal for the welcome and the instrument, white for reading and operating, a pale teal ground for the Trustpilot summary and \"Be ready\"). Motion is one entrance, one slow marquee that can be paused, and answers to input.",
+    "overview": "The page is drawn as one family of tickets. The hero is drawn with vectors only, on a panel that grows with the screen to 1640px: on the brand-teal panel, a dot-matrix map of the world's land (Natural Earth's open data) carries five flight routes between real airports, four airport codes in small departure-board tags and one airplane in flight, beside the headline at the left; a boarding-pass-shaped booking bar is laid across the panel, the three promises and the Trustpilot score follow as one quiet glass bar, and the airline logos run along the panel's foot like a departures board. The reviews open with the Trustpilot score on a small ticket and continue in three review tickets built like the client's stubs, each with a picture drawn the client's way; the four \"Be ready\" cards are the client's own ticket stubs on the same dotted map. One idea, repeated with the same geometry, from the first viewport to the last section.\n\nEvery colour is a production colour. The palette is the production theme's presets and the values its section styles resolve to (teal ink, brand teal, deep teal, a soft teal surface, one burnt-orange action) and nothing is invented. Type is the production face, Figtree, at weight 800 for the hero and 700 for sections. The artwork (the four illustrations, the nine airline logos) is the client's own; the map is computed from public-domain data by a script and the icons are Phosphor's, so nothing is drawn by hand and there is no photograph.\n\nDensity is calm: large type, generous space, surfaces that change by meaning (brand teal for the welcome and the instrument, white for reading and operating, a pale teal ground for the Trustpilot summary and \"Be ready\"). Motion is one entrance, one slow marquee that can be paused, and answers to input.",
     "keyCharacteristics": [
       "An inset, rounded brand-teal panel on white; its content shares one left edge with the header and every section.",
       "The booking form is a boarding pass (desktop): a white main half and a tinted stub with the fare and the CTA, a dashed perforation and two notches through which the panel shows. Below 1180px it becomes a white card.",
@@ -792,10 +800,11 @@
       "Do carry the ticket vocabulary (perforation, notch, stub label, departure-board code) into every new component.",
       "Do keep the airline marquee pausable and give reduced-motion users a static row.",
       "Do give every control a 44px minimum target and a control-line boundary, and every text link at least 24px.",
-      "Do rebuild the map with its script (open data, computed routes) instead of editing or redrawing it."
+      "Do rebuild the map with its script (open data, computed routes) instead of editing or redrawing it.",
+      "Do build any new illustration with tools/build-review-art.py: objects from Tabler Icons, unchanged, in the client's construction (blocks, 2.4 ink line, white paper, one orange accent, the wobble filter)."
     ],
     "donts": [
-      "Don't add a colour, a second typeface, a photograph or a stock illustration; the artwork is the client's, the map is computed from open data and the icons are Phosphor's.",
+      "Don't add a colour, a second typeface, a photograph or a stock illustration; the artwork is the client's, the map is computed from open data, the icons are Phosphor's and the review pictures are Tabler objects composed in the client's style.",
       "Don't use red for errors, gradient text, or orange for anything but actions and errors.",
       "Don't let the map reach the text: it is masked out across the text column and hidden below 900px, so the headline, lead and tabs keep 4.5:1 or better (3:1 for the large aqua word), measured on the rendered page.",
       "Don't fade text or the form while they animate; entrance effects slide them without changing their contrast (only the map behind them fades in).",

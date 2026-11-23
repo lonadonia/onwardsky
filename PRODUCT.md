@@ -69,7 +69,9 @@ backs it. Price starts at $9.99.
   invented palettes the client asked for colours "carefully defined" and on brand, so only the
   production palette ships (theme.json presets such as heading #0E2F34, accent #156970, deep
   #0F555B, surface #E7F3F3, cta #C94300, plus the values its section styles resolve to).
-  Typeface: Figtree only. Artwork: the client's own (illustrations, dotted globe, airline logos).
+  Typeface: Figtree only. Artwork: the client's own (illustrations, dotted globe, airline logos); new pictures, which the
+  client asked for in round 7 ("professional vectors, in the same style as the Be ready section"), are composed from an
+  open icon library (Tabler Icons, MIT) in the construction of the client's own illustrations.
 - Primary CTA wording: "Get my onward ticket".
 - Voice: plain, reassuring, factual; sentence case.
 

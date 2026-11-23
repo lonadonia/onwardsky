@@ -1,4 +1,4 @@
-# Design rationale (v6)
+# Design rationale (v7)
 
 ## 1. Scope (confirmed from the export and screenshot)
 
@@ -20,9 +20,37 @@ In order, from the top of the page:
 | 3 | The colours must match the brand exactly; take inspiration from the competitor; a better hero; the supplied airline logos in a sideways-scrolling strip; keep “Be ready” as on the live site, with improvements | v3: production palette, framed hero, marquee, restored “Be ready”; rejected as too close to the old site |
 | 4 | “Only small changes to the old site. A real design improvement, more professional, inspired by the competitor.” Vectors from other sites are fine | v4: a deep-teal sky, two sample itinerary pages behind a boarding-pass booking bar |
 | 5 | Redo the hero (more professional, beautiful and organised); remove the two documents; professional images and vectors are welcome | v5: a photographic hero (a wing at sunset) |
-| **6** | **“Remove the image; make it vectors only. And improve the other sections too.”** | **v6: a vector route-map hero, a redesigned reviews section, a refined “Be ready”** |
+| 6 | “Remove the image; make it vectors only. And improve the other sections too.” | v6: a vector route-map hero, a redesigned reviews section, a refined “Be ready” |
+| **7** | **“Make the hero card a little wider and right for every size. Improve the other sections, more beauty and professionalism; professional vectors from a site are fine, on brand and in the same style as the ‘Be ready’ section.”** | **v7: a wider, fluid hero panel with the map running to its edge; the reviews rebuilt as tickets with three pictures in the “Be ready” style** |
 
-## 3. Reading the round-6 request
+## 3. Reading the round-7 request
+
+- **“The card in the hero” is the teal panel.** The client's crop shows the panel's right edge with white beyond it: at 1440px
+  and above the panel stopped at 1320px, so on a 1920 monitor it filled only 69% of the width and the margins grew from 16px
+  (1280px) to 300px. “Wider and right for every size” means one rule at every width: a slim margin to the window until the
+  panel reaches a generous maximum (1640px), with its content still on the page's one left edge.
+- **The same style as “Be ready”.** What the client likes in that section is its ticket stubs and the client's own drawings:
+  soft peach and mint blocks, one ink line, white paper, a warm orange accent, a slight hand-drawn wobble. “Vectors from a
+  site” in that style means professional source objects built into pictures with that exact construction, not a stock set
+  with its own look.
+- **“The other sections.”** In scope that is the reviews (“Be ready” is the reference itself). They had to become part of the
+  same family visibly, with every word, name, date and link kept.
+
+## 4. The v7 changes
+
+- **Hero panel:** `width: min(100% - 2 × (8–20px), 1640px)`; its content box is the page container, which grows from 1240 to
+  1320px. 1408px wide at 1440, 1502 at 1536, 1640 from 1680; below 1280 as in v6, to a pixel or two. The route map is rebuilt 600 units wider by
+  its script, and its routes stay in a 16:9 box (the panel up to 1320px, centred on the content), so the dots run on to the edge
+  of a wide panel (Japan, Australia) while the routes keep their place beside the headline and above the form.
+- **Reviews as tickets:** the Trustpilot summary becomes a small ticket (the score on the stub, as the stage word on the client's
+  stubs); each review becomes the “Be ready” ticket stood upright: stub with the rating and a picture, perforation and notches,
+  an orange topic label, the title, the quote, the reviewer and a barcode. They lie down on tablets exactly like “Be ready”.
+- **Three pictures:** composed by `tools/build-review-art.py` from Tabler Icons (MIT) with the client's recipe, each showing what
+  its reviewer wrote about (a PNR under a magnifier beside the appointment date; a phone receiving the email inside the
+  stopwatch's two minutes; the itinerary's route beside a checked ID). Tabler was chosen over Lucide, IconPark and Hugeicons
+  after rendering the same objects from all four in the client's line: its rounded 2-unit outlines match the client's drawings.
+
+## 5. Reading the round-6 request (v6)
 
 - **No photograph.** The hero has to be drawn with vectors. Round 2 still applies: vectors are taken from a source, not drawn
   by hand, and they have to be organised and on brand.
@@ -30,7 +58,7 @@ In order, from the top of the page:
   now looked like a different site from the hero above them. They needed a visible improvement, not a re-skin, while keeping
   every word and the client's “Be ready” illustrations.
 
-## 4. The v6 idea: a route map, and one visual language down the page
+## 6. The v6 idea: a route map, and one visual language down the page
 
 **One sentence:** the hero is a map of where onward tickets go: a dot-matrix world drawn from open map data, with flight
 routes between real airports, beside the headline and above a boarding-pass booking bar.
@@ -48,7 +76,7 @@ routes between real airports, beside the headline and above a boarding-pass book
 - **One language down the page.** The same dot matrix, in the brand teal at 16%, is the texture of the “Be ready” section; the
   reviews use the same card shape, radius and shadow as the tickets.
 
-## 5. The other sections
+## 7. The other sections (v6)
 
 ### Reviews (redesigned)
 - **Before:** three different cards (dark, tinted, white), a quote glyph, meta in one small line, and the Trustpilot link as a
@@ -64,7 +92,7 @@ routes between real airports, beside the headline and above a boarding-pass book
   the section ground carries the hero's dotted map in the brand teal. The client's tickets, illustrations,
   copy and order are as on the live site, as round 3 asked.
 
-## 6. The two sites, compared
+## 8. The two sites, compared
 
 ### Current Onward Sky page (kept)
 - **The booking form lives in the hero.** The biggest advantage over the competitor, whose hero only has a “Book now” button.
@@ -84,7 +112,7 @@ routes between real airports, beside the headline and above a boarding-pass book
 - **Avoided:** the form hidden behind a button; saturated mint with navy, lime and pink; gradient text; clouds; pill
   buttons; their boarding-pass graphic. Nothing was copied: no layout, asset, illustration or colour.
 
-## 7. Key decisions
+## 9. Key decisions
 
 | Change | Why it helps |
 | --- | --- |
@@ -97,7 +125,7 @@ routes between real airports, beside the headline and above a boarding-pass book
 | **Header collapses below 1200px** | Five links, WhatsApp and the CTA need about 1200px; below that the links wrapped |
 | Pressed-orange error states | Matches the production form; red was off-brand |
 
-## 8. Content decisions (all factual copy preserved)
+## 10. Content decisions (all factual copy preserved)
 
 All headlines, descriptions, review excerpts, names, dates, prices, delivery promises, payment methods and the TrustScore
 disclosure are the client's existing copy.
@@ -108,8 +136,12 @@ disclosure are the client's existing copy.
 - **Airport codes** on the map (LHR, DXB, DEL, BKK) are illustrative real airports, not a claim about routes sold.
 - **Be ready:** every label and paragraph is as on the live site; the button text is unchanged.
 - **Not added:** no testimonials, customer counts, years in business, certifications, guarantees or prices.
+- **v7 adds three short labels** on the review tickets, *Visa appointment*, *Delivery time* and *Itinerary details*, in the
+  place of the audience labels on the “Be ready” tickets. Each names what that reviewer wrote about (a Schengen visa VFS
+  appointment; receiving the reservation within the promised time; the passenger and route details); they add no claim.
+  The stubs' “TRUSTPILOT” and “TRUSTSCORE” are labels for data already on the page. Flag the three topic labels for sign-off.
 
-## 9. Self-critique during the build
+## 11. Self-critique during the build
 
 Each issue was caught in a Playwright pass or a measurement and fixed:
 
@@ -127,3 +159,16 @@ Each issue was caught in a Playwright pass or a measurement and fixed:
   check), so the lift was removed.
 - Measuring the airport tags showed that from 900 to 1179px three of them sat under the booking card (at 900px one peeked out
   from under its edge); below 1180px only the London tag is shown now. The tags measure at least 8.8 : 1 where they show.
+
+In round 7:
+
+- Widening the gutter to give the phone hero more air pushed the booking CTA below the first viewport at 360 × 740 and wrapped
+  “Delivered in 2 minutes”; the change was reverted, and phones are as in v6.
+- The first review grid kept three columns on phones (the old one-column rule had been removed with the old cards); fixed with
+  a phone rule, then checked at 390, 600, 768, 900, 1100 and 1440.
+- Moving each reviewer's `figcaption` inside the ticket's main column made it invalid inside `figure`; it is a direct child
+  again and the grid places it (under the main column, or beside the stub when the ticket lies down).
+- Measuring the hero at fourteen widths (v6 measured eight) found the lead at 4.3 : 1 at 1100px, on faint dots; in the
+  900–1179px band the map now shows only above the card, and the lead's worst is 4.9 : 1.
+- The review rating read “Trustpilot, Rated 5 out of 5 on Trustpilot” to a screen reader; it now reads “Trustpilot, Rated 5 out
+  of 5”. The unused quote-mark symbol left the sprite.

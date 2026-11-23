@@ -1,4 +1,4 @@
-# Implementation notes (v6)
+# Implementation notes (v7)
 
 ## 1. What is real, what is simulated
 
@@ -70,6 +70,31 @@ New in v6:
   the same shape as the others; the section ground carries the same dot matrix in the brand teal at 16%.
 - **No hover motion on things that are not links**: the tickets keep still; the Trustpilot summary (a link) answers hover.
 
+New in v7:
+- **The hero panel grows to 1640px** (`--panel-max`) with an 8–20px margin to the window (`--panel-m`); the page container grows
+  from 1240 to 1320px (`--max`), and `.hero-main` takes the container's width inside the panel, so every left edge still lines
+  up. Below 1280px the layout is as in v6 (the panel's margin differs by a pixel or two). From 1600 × 1000 the panel gets 54px
+  above the headline (36px before).
+- **The route map is drawn 2200 units wide.** `tools/build-route-map.mjs` keeps the projection and the routes of v6 and continues
+  the dots eastwards (`WX = 2200`); the CSS places the 16:9 route box (`--s`: the panel up to 1320px) centred on the content and
+  lets the rest run to the panel's edge. The airport tags' `--x` values are the script's new percentages. The “Be ready”
+  texture is unchanged (byte-identical). The glow moved onto the map element so it follows the routes.
+- **900–1179px: the map shows only above the card** (a second vertical mask), because there the text column reaches past the
+  map's clear zone: at 1100px the end of the lead measured 4.3 : 1 on faint dots (a v6 gap; v6 measured eight widths, not
+  1100). The lead's worst is now 4.9 : 1.
+- **Reviews are tickets.** A Trustpilot ticket (the score on a surface stub, perforation, notches; one link) and three review
+  tickets (stub with “TRUSTPILOT”, the green squares and a picture; perforation and notches; an orange topic label, title,
+  quote; the reviewer with initials, linked name, country · date and a barcode). Upright and three across from 1100px, lying
+  down from 640 to 1099px (as “Be ready”), upright in one column below. The markup stays `figure` > `blockquote` + `figcaption`
+  (the caption is the figure's last child and the grid places it). Mint quote marks are gone (the stub carries the rating).
+- **Three review pictures**, inline SVG built by `tools/build-review-art.py` from Tabler Icons (MIT, `@tabler/icons@3.52.0`) with
+  the construction of the client's “Be ready” drawings (blocks, 2.4-unit ink line, white paper, one orange accent, the client's
+  wobble filter). The build is idempotent and reproduces `index.html` byte for byte.
+- **Topic labels** (*Visa appointment*, *Delivery time*, *Itinerary details*) are new copy: each names what that review is
+  about. **Flag for sign-off.**
+- The review rating's accessible name is now “Rated 5 out of 5” (the visible “Trustpilot” label precedes it). The unused
+  quote-mark symbol was removed from the sprite (21 symbols).
+
 ## 4. Reference gaps and assumptions
 
 - **Airline logos** are the client's nine `.webp` files, copied unchanged (white marks, transparent background). The production strip paints them through CSS `mask-image`; the prototype uses `<img>` so the page also works when opened from disk (Chrome blocks file masks over `file://`). Sizes follow the production strip.
@@ -83,7 +108,9 @@ New in v6:
 - **Reviewers:** names, dates, titles and excerpts are as exported; the country codes are spelled out (IN → India, ES → Spain); the initials are derived from the names. No avatar photographs are invented.
 - **Payment marks:** PayPal, Stripe, Visa and Mastercard are quiet monochrome marks (Simple Icons). **UPI has no mark in that library, so it is set as text** in the same chip.
 - **Review dates** (Aug–Sep 2026) are reproduced exactly as they appear in the export.
-- **The decorative quote mark** on the review cards is Phosphor's `quotes` (fill) in mint, aria-hidden (production uses a typed glyph).
+- **Review pictures:** the client asked for professional vectors from a site in the “Be ready” style. Only package registries
+  are reachable from the build sandbox, so the objects come from Tabler Icons on npm (Lucide, IconPark and Hugeicons were
+  rendered side by side and compared); the licence text ships as `assets/LICENSE-Tabler-Icons-MIT.txt`.
 - **Copy case:** headings and buttons stay in the client's sentence case; the Web Interface Guidelines suggest Title Case, which would change the brand voice. The input placeholder keeps the client's “City or airport…” (no example pattern).
 - **Competitor:** observed for structure only (framed hero, ticket motif, a strip of promises). No layout, asset, photograph, colour or text was copied.
 - **Error summary:** a failed submit shows inline errors and a summary line and moves focus to the first invalid field (the production behaviour). It does not add a separate focusable summary block.
@@ -103,12 +130,31 @@ New in v6:
 - **Tokens:** the `:root` names are the production preset slugs (`heading`, `accent`, `deep`, `surface`, `cta` …) plus the section values listed in `DESIGN-SYSTEM.md`; copy them into `theme.json` (`settings.color.palette`) and the section stylesheets.
 - **Booking form:** replace the markup of `wp-block-onwardsky-booking-form`. The behaviour layer maps onto the existing Interactivity API store (`state.fields`, `state.dates`, `state.trip`, `state.legCount`); add the `is-set` / `is-routed` class bindings and keep `handoff.js` for submit. Add the click-to-focus on field cells. The ticket and the card are the **same DOM**: `.ticket`, `.ticket-main` and `.stub` are `display: contents` below 1180px, so only the stylesheet changes between them.
 - **Ticket notches:** painted with two `radial-gradient` backgrounds per half, not masks, so the suggestion list can overflow the ticket. Keep the halves' `--notch` (12px) and `--stub-w` (344px; 322px from 1180 to 1279px) variables together.
-- **Hero panel:** a Group block with the panel gradient, plus the map as an image (or a Cover block with the SVG and no overlay). Keep the mask on the image: the contrast figures depend on the map staying clear of the text column. The four airport tags are absolutely positioned spans whose `--x` / `--y` come from the build script's output.
-- **Proof bar, reviews, tickets:** register as block patterns. The review cards are `figure` / `blockquote` / `figcaption`; the Trustpilot summary is one link. The “Be ready” illustrations are inline SVG in the pattern; the section's dotted texture is a CSS background (`world-dots.svg`).
+- **Hero panel:** a Group block with the panel gradient, plus the map as an image (or a Cover block with the SVG and no overlay). Keep the mask on the image: the contrast figures depend on the map staying clear of the text column. The four airport tags are absolutely positioned spans whose `--x` / `--y` come from the build script's output. In v7 the panel is `min(100% - 2 × --panel-m, --panel-max)` (1640px) and its inner group is the 1320px page container; the map box is sized by `--s` (the panel up to 1320px) and is 2200/1600 of it wide, so keep those three values together.
+- **Proof bar, reviews, tickets:** register as block patterns. The review tickets are `figure` > stub, main (`blockquote`) and `figcaption` (the caption stays the figure's last child); the Trustpilot ticket is one link; the three review pictures are inline SVG in the pattern, like the “Be ready” illustrations. The “Be ready” illustrations are inline SVG in the pattern; the section's dotted texture is a CSS background (`world-dots.svg`).
 - **Airline strip:** keep the existing strip block; add the pause button, the off-screen pause, a third set of logos for very wide screens and the reduced-motion static row.
 - **Fonts:** none to add (Figtree is already the theme font).
 
 ## 7. QA performed (actual results)
+
+### v7 (this round)
+
+| Check | Result |
+| --- | --- |
+| Widths 2560, 1920, 1680, 1536, 1440, 1366, 1280, 1200, 1180, 1100, 1024, 1000, 900, 820, 768, 680, 660, 600, 560, 430, 390, 375, 360 | No horizontal overflow and no console error at any of them |
+| Hero panel width | 1252px at 1280 · 1336 at 1366 · 1408 at 1440 · 1502 at 1536 · 1640 at 1680, 1920 and 2560 (v6: 1320 from 1350px up) |
+| Booking CTA inside the first viewport | Bottom edge: 1920×1080 634px · 1536×864 613 · 1440×900 612 · 1366×768 603 · 1280×720 590 · 1200×800 577 · 1180×800 574 · 1100×800 631 · 1024×768 623 · 900×900 606 · 820×1180 756 · 768×1024 750 · 680×900 757 · 430×932 754 · 390×844 748 · 375×812 743 · 360×740 740 |
+| Whole hero in the first viewport | Yes at 2560×1300 and 1920×1080 (the panel ends at 909px), 1440×900 (880px) and 900×900 |
+| Contrast on the hero, measured on the rendered page at 14 widths (2560 to 360; text hidden, every pixel under each line box sampled, worst kept) | Headline 5.9 : 1 · “verifiable” 3.5 : 1 (large text, 3 : 1 needed) · lead 4.9 : 1 · inactive tabs 4.8 : 1 · glass bar 8.8 : 1 · assurances 6.9 : 1 · strip title 7.0 : 1 · airport tags 9.1 : 1. Before the 900–1179px mask: lead 4.3 : 1 at 1100px |
+| Contrast, new review text (computed) | “TRUSTPILOT” / “TRUSTSCORE” muted on surface 5.7 : 1 · score accent on surface 5.6 : 1 · orange topic label on white 4.7 : 1 |
+| Colour audit (`tools/palette-audit.js`) | 30 distinct colours painted, **none outside the production palette**; the pictures use heading, white, mint, peach, accent-bright and the orange text colour only |
+| axe-core 4.10.2 (WCAG 2.1 A/AA + best practice) at 1440, 1024 and 390 | **0 violations**. “Incomplete” items are text on the hero gradient (measured above) and the stub labels next to the notches' pseudo-elements (computed above) |
+| Booking form smoke test (1920, 1440, 390) | `del` and `bkk` give suggestions and set DEL → BKK; a date 20 days out; submit shows “Search ready”; Return shows the return date; Multi-city adds a third flight with the origin auto-filled; no overflow, no errors |
+| Build scripts | `build-route-map.mjs` (v6 settings) reproduced the committed v6 SVGs byte for byte before the change; `build-sprite.py` and `build-review-art.py` reproduce `index.html` byte for byte |
+| Page weight | 323 KB uncompressed at desktop (CSS 63, logos 50, HTML 50, route map 48, dot texture 42, JS 27 + 7, font 20, logo 12, payment marks 3); 274 KB on a phone (the map is lazy and hidden there) |
+| Screenshots | The set in `screenshots/` was regenerated (13 viewports, the reviews at 1440 / 900 / 390, “Be ready”, the ticket, the 1024 band and the “After” half of both comparisons). The form, strip and mobile-menu state captures are from v6: those components did not change |
+
+### v6 (kept for reference; the form, keyboard order and marquee did not change in v7)
 
 | Check | Result |
 | --- | --- |
@@ -128,6 +174,12 @@ New in v6:
 | Design-review metrics (1440 / 768 / 375) | No horizontal overflow; review cards equal height per row (358px at 1440); quotes about 42 characters per line (the full-width third card at 768 about 72); the only targets under 24px were the reviewer names (21px), now 25px |
 
 ## 8. Skills used
+
+**v7:** the five design skills of the earlier rounds were installed in an earlier session and were not available in this one, so
+this round's checks were run directly with Playwright scripts: overflow and console at 23 widths, the palette audit, axe-core
+4.10.2, the pixel-sampled hero contrast at 14 widths, the booking form smoke test and the CTA and panel measurements above.
+
+**v6:**
 
 All five requested skills were installed from their official repositories into `~/.claude/skills/` and confirmed
 discovered by a fresh Claude Code process in round 1. In round 6 (vector-only hero, reviews, “Be ready”):

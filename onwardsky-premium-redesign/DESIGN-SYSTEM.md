@@ -1,11 +1,13 @@
-# Design system — “Boarding pass” (v6)
+# Design system — “Boarding pass” (v7)
 
 The page is one family of tickets, drawn in vectors only. The hero is a deep-teal panel with a dot-matrix world map
 (Natural Earth data) on which flight routes join real airports; the headline sits at the left on the plain gradient and a
 **boarding-pass-shaped booking bar** is laid across the panel. One glass bar carries the three promises and the
 Trustpilot score, and the airline logos run along the panel's foot like a horizon. Below the hero, the reviews open with a
-Trustpilot summary and three cards of one kind, and the “Be ready” tickets sit on the same dotted map, in the brand teal.
-Colour, type and the client's artwork come from the production site; there is no photograph and no hand-drawn art.
+small Trustpilot ticket and continue in three review tickets built like the client's “Be ready” stubs, each with a picture
+drawn the way the client's are; the “Be ready” tickets sit on the same dotted map, in the brand teal. Colour, type and the
+client's artwork come from the production site; there is no photograph and nothing is drawn freehand (the new pictures are
+composed by a script from Tabler Icons).
 
 All values below are live CSS custom properties in `assets/css/styles.css` (`:root`). The same system is recorded in
 machine-readable form in `../DESIGN.md` (token frontmatter) and `../.impeccable/design.json`.
@@ -30,25 +32,25 @@ a red error). From v3 on, the page uses **only** the colours the production site
 | `--accent` | `#156970` | preset `accent` | Hero gradient start, links, icons, focus, the dots of the light map texture |
 | `--accent-bright` | `#21A1A3` | preset `accent-bright` | The glow behind the routes, routed connector |
 | `--deep` | `#0F555B` | preset `deep` | Hero gradient middle, the selected tab's text |
-| `--surface` | `#E7F3F3` | preset `surface` | The ticket stub, a reviewer's initials, tiles |
+| `--surface` | `#E7F3F3` | preset `surface` | Every ticket stub (booking, reviews, Trustpilot, “Be ready”), a reviewer's initials, tiles |
 | `--surface-alt` / `--surface-soft` | `#EFF4F4` / `#F3F8F8` | presets | Hover grounds |
 | `--border` / `--border-strong` / `--divider` | `#D5E4E4` / `#C6D7D7` / `#DDE7E7` | presets | Card edges, the dashed perforation, rules |
 | `--cta` / `-hover` / `-active` | `#C94300` / `#B33C00` / `#9C3200` | presets `cta*` | Primary actions; `-active` is also the error colour |
-| `--v9-bg` | `#F5FAFA` | section ground | “Be ready” ground, the Trustpilot summary |
+| `--v9-bg` | `#F5FAFA` | section ground | “Be ready” ground and its notches |
 | `--v9-line` | `#E5EBEB` | section rules | Header and section borders |
 | `--v9-strip-ink` | `#D9F1EE` | airline strip title | Lead text on the hero, strip title, trust-line caption |
 | `--v9-deep` | `#0F5A60` | deep section | Hero gradient end, strip start, scope strip |
-| `--v9-mint` | `#C8E6E1` | illustration mint | Quote marks and a reviewer's initials, text selection, art |
+| `--v9-mint` | `#C8E6E1` | illustration mint | A reviewer's initials, text selection, the art's colour blocks |
 | `--v9-aqua` | `#86D6D2` | aqua on dark | The key word “verifiable”, the routes and airport markers, icons on dark |
 | `--v9-peach` / `--v9-peach-wash` | `#FFD3BA` / `#FFEDE7` | illustration peach / wash | Art, a reviewer's initials; error ground |
-| `--v9-orange` | `#CC4700` | orange text | Audience labels on the “Be ready” stubs |
+| `--v9-orange` | `#CC4700` | orange text | Audience labels on the “Be ready” tickets, topic labels on the review tickets, the art's one warm accent |
 | `--v9-bar` | `#9DC4C7` | ticket bar | The barcode strip |
 | `--v9-placeholder` | `#5F7477` | placeholder | Placeholder text |
 | `--tp-green` | `#00B67A` | Trustpilot (third party) | Rating squares, as in the client's reviews |
 | `--heading-rgb` / `--accent-bright-rgb` | `14, 47, 52` / `33, 161, 163` | `heading` / `accent-bright` as channels | Glass fills and the glow |
 
 `--v9-strip-1`, `--v9-strip-2`, `--v9-wash` and `--v9-on-dark(-2)` stay defined (they are production values) but nothing
-paints them in v6.
+paints them in v7.
 
 One value is derived, by a stated rule: `--field-line` `#809194` = `--muted` mixed 70% with white. Control boundaries
 need 3:1 on white (WCAG 1.4.11); the production field border is far lighter, so this is the lightest brand-derived tint
@@ -67,9 +69,10 @@ accepts white, black and the palette colours at any alpha. The map SVGs use only
 - **One hot colour.** Orange is the action. Errors use the same orange family (`cta-active`), as the production form does,
   never red. The map's routes and markers are aqua, never orange.
 - **Boundary rule.** Controls use `--field-line`; hairlines never form the only edge of something you operate.
-- **The map rule.** The map never sits under text. It is masked to nothing across the text column (0–46% of the panel's
-  width), reaches full strength from 60%, fades out above the booking bar, and is not shown below 900px, where the text spans
-  the width. The contrast below was *measured*, not assumed.
+- **The map rule.** The map never sits under text. Its routes are composed in a 16:9 box (the panel up to 1320px, centred on
+  the content); the map is masked to nothing across the text column (0–46% of that box), reaches full strength from 60%,
+  fades out above the booking bar, shows only above the card from 900 to 1179px, and is not shown below 900px, where the text
+  spans the width. The contrast below was *measured*, not assumed.
 
 **Measured contrast (WCAG 2.1)**
 
@@ -88,20 +91,25 @@ On white and tinted grounds:
 | placeholder on white | 4.9 |
 | selected tab, `--deep` on white | 8.5 |
 | heading initials on mint / surface / peach | 10.8 / 12.6 / 10.4 |
-| muted and accent on `--v9-bg` (Trustpilot summary) | 6.2 / 6.1 |
+| muted labels and the accent score on the surface stubs (reviews, Trustpilot) | 5.7 / 5.6 |
 
 On the hero gradient and map, which an automated checker cannot evaluate, so it was **measured on the rendered page**
-(hide the text, sample every pixel under each line box, keep the worst; widths 1440, 1280, 1180, 1024, 768, 680, 390, 360):
+(hide the text, sample every pixel under each line box, keep the worst; v7 widths 2560, 1920, 1680, 1536, 1440, 1366, 1280,
+1180, 1100, 1024, 900, 768, 390, 360):
 
 | Text on the hero | Worst measured | Needs |
 | --- | --- | --- |
-| Headline, white (36–62px, 800) | 6.0 : 1 | 3 : 1 (large) |
+| Headline, white (36–62px, 800) | 5.9 : 1 | 3 : 1 (large) |
 | “verifiable”, `--v9-aqua` (36–62px, 800) | 3.5 : 1 | 3 : 1 (large) |
 | Lead, `--v9-strip-ink` (17–19px) | 4.9 : 1 | 4.5 : 1 |
-| Glass-bar text, white (15px, 600) | 10 : 1 | 4.5 : 1 |
-| Assurances, white at 90% (14px, desktop) | 7.0 : 1 | 4.5 : 1 |
+| Glass-bar text, white (15px, 600) | 8.8 : 1 | 4.5 : 1 |
+| Assurances, white at 90% (14px, desktop) | 6.9 : 1 | 4.5 : 1 |
 | Inactive trip tab, white at 92% (14px, 650) | 4.8 : 1 | 4.5 : 1 |
-| Strip title, `--v9-strip-ink` (13px, caps) | 6.8 : 1 | 4.5 : 1 |
+| Strip title, `--v9-strip-ink` (13px, caps) | 7.0 : 1 | 4.5 : 1 |
+| Airport tags, white on glass (12px, 800) | 9.1 : 1 | 4.5 : 1 |
+
+v6 measured eight widths and missed 1100px, where the end of the lead sat on faint dots (4.3 : 1); the map now shows only above
+the card in the 900–1179px band, and the lead's worst is 4.9 : 1 on the plain gradient.
 
 ## 2. Typography: Figtree only
 
@@ -128,9 +136,11 @@ One self-hosted variable font (Figtree, 20 KB latin + 10 KB latin-ext, `font-dis
 
 ## 3. Layout
 
-- **Container** 1240px, side gutter `clamp(16px, 4.2vw, 56px)`.
-- **Hero panel** is inset by `--panel-m` (8–16px) and padded by `--panel-pad`, so its content lines up exactly with the
-  header and the other sections (logo, headline, section titles share one left edge). It is 1320px wide at 1440.
+- **Container** 1320px (1240px until v6), side gutter `clamp(16px, 4.2vw, 56px)`.
+- **Hero panel** is inset by `--panel-m` (8–20px) and grows to `--panel-max` (1640px). Its content box is the page
+  container, so the logo, the headline and the section titles share one left edge at every width; on wide screens the panel
+  reaches past the content by up to 160px on each side. Widths: 1252px at 1280, 1408px at 1440, 1502px at 1536, 1640px from
+  1680px (1320px everywhere above 1350px in v6). From 1600 × 1000 the panel gets 54px of air above the headline.
 - **Four hero layouts**, one DOM:
 
 | Width | Layout |
@@ -140,11 +150,13 @@ One self-hosted variable font (Figtree, 20 KB latin + 10 KB latin-ext, `font-dis
 | 680–899px | **One column.** The card is centred (max 640px); no map (the text spans the width); below 768px the card turns compact |
 | < 680px | **Phone.** Headline, lead, full-width card, the glass bar as one stacked list, the strip |
 
-- **Above the fold** at 1440×900 the whole hero is visible: headline, lead, tabs, the ticket with its CTA, the glass bar and the
-  logo strip. The CTA's bottom edge is at 612px (1440×900), 591px (1280×720), 624px (1024×768), 757px (820×1180 and 680×900),
-  748px (390×844), 743px (375×812).
-- **Reviews:** heading and lead at the left, the Trustpilot summary at the right (stacked below 900px); three cards in a row,
-  2 + 1 on tablets, one column on phones.
+- **Above the fold** at 1440×900 (and 1920×1080, 2560×1300, 900×900) the whole hero is visible: headline, lead, tabs, the
+  ticket with its CTA, the glass bar and the logo strip. The CTA's bottom edge is at 634px (1920×1080), 613px (1536×864),
+  612px (1440×900), 603px (1366×768), 590px (1280×720), 623px (1024×768), 756/757px (820×1180 and 680×900), 748px (390×844),
+  743px (375×812), 740px (360×740).
+- **Reviews:** heading and lead at the left, the Trustpilot ticket at the right (stacked below 900px); three upright
+  tickets in a row from 1100px, one column of tickets lying down (stub at the left) from 640 to 1099px, upright tickets in one
+  column on phones.
 - **Be ready:** heading at the left, the action at the right (full width on phones); four tickets in a 2 × 2 grid from 1024px,
   one column below.
 - **Header** collapses to the menu below 1200px.
@@ -156,12 +168,12 @@ One self-hosted variable font (Figtree, 20 KB latin + 10 KB latin-ext, `font-dis
 | `--r-chip` | 8px | Tabs, suggestions, payment chips, map tags |
 | `--r-cta` | 10px | Buttons (production CTA radius), icon tiles |
 | `--r-control` / `--r-inner` | 12px / 11px | Fields, route group, the glass bar; inner = control minus its 1px border |
-| `--r-card` | 18px | Booking card, review cards, the Trustpilot summary, “Be ready” tickets (production ticket radius) |
+| `--r-card` | 18px | Booking card, review tickets, the Trustpilot ticket, “Be ready” tickets (production ticket radius) |
 | `--r-ticket` | 22px | The outer corners of the desktop boarding-pass bar |
 | `--r-panel` | 28px (22px on phones) | The hero panel and the strip's lower corners |
 
 Shadows carry an offset and a soft blur tinted from `--heading`: `--sh-card` (booking card), `--sh-pop` (suggestions),
-`--sh-tk` (review cards and “Be ready” tickets, the production shadow), `--sh-cta` / `--sh-cta-hover` (production values). The
+`--sh-tk` (review, Trustpilot and “Be ready” tickets, the production shadow), `--sh-cta` / `--sh-cta-hover` (production values). The
 ticket halves carry their own two-layer shadow so they lift off the panel. Nothing that is not a link or a button moves on hover:
 the “Be ready” tickets are not links, so they keep still.
 
@@ -172,8 +184,10 @@ one vector: `assets/vectors/route-map.svg`, built by `tools/build-route-map.mjs`
 land (Natural Earth 1:110m, Equal Earth projection, one dot every 10 units, white at 30%) with five flight routes between real
 airports (London, Lisbon, Istanbul, Dubai, Delhi, Bangkok, Singapore) drawn as aqua dashed arcs with a soft halo, an aqua marker
 at each airport and Phosphor's airplane on the Delhi–London route. Four markers carry a small departure-board tag in HTML
-(`LHR`, `DXB`, `DEL`, `BKK`, Figtree 800, glass). The map box is 16:9 at the top of the panel; it is masked out across the text
-column and above the form, fades in over a second, and is hidden below 900px (and lazy-loaded, so phones do not download it).
+(`LHR`, `DXB`, `DEL`, `BKK`, Figtree 800, glass). The routes are composed in a 16:9 box at the top of the panel (the panel's
+width up to 1320px, centred on the content); the drawing is 2200 units wide, so it runs on eastwards (Japan, Australia) to the
+edge of a wide panel. It is masked out across the text column and above the form, fades in over a second, and is hidden below
+900px (and lazy-loaded, so phones do not download it). The glow travels with the map.
 From 900 to 1179px the card covers the map's eastern half, so only the `LHR` tag is shown (`.map-tag--wide` hides the others).
 
 **Booking ticket (signature, ≥ 1180px).** A real boarding-pass shape built from two backgrounds: the main half is white, the
@@ -196,16 +210,24 @@ problem.
 sideways marquee (46s, masked edges) that pauses on hover, on focus, off screen and with a visible button, and becomes a static
 row under reduced motion.
 
-**Reviews (redesigned in v6).** The heading and lead at the left and, at the right, a **Trustpilot summary** that is one link:
-the score “4.0” large, four of five green squares, “TrustScore 4.0 on Trustpilot”, “All 4 reviews rated 5 stars”, and
-“Read more reviews on Trustpilot ↗” under a rule (the `--v9-bg` section ground, 18px radius, accent edge and shadow on hover). Then **three cards of one
-kind** (white, 1px border, 18px radius, the production ticket shadow): five green squares with a mint quote mark (Phosphor
-`quotes`) on the same row, the review's title, the quote, and a footer under a rule with the reviewer's **initials** in a
-tinted circle (mint, surface, peach), their name (linked to the review on Trustpilot; a 25px target) and “country · date” (the live page's format, with the
-country spelled out). A one-line note
-below repeats that these are excerpts and the overall score. v3's mixed dark / tinted / white cards are gone.
+**Reviews (redesigned as tickets in v7).** The heading and lead at the left and, at the right, a **Trustpilot ticket** that is
+one link: a surface stub with “TRUSTSCORE” and the score “4.0” in the accent (the stage word of the client's stubs), a dashed
+perforation with two notches, then four of five green squares, “TrustScore 4.0 on Trustpilot”, “All 4 reviews rated 5 stars”
+and “Read more reviews on Trustpilot ↗” under a rule (accent edge and a deeper shadow on hover, the arrow nudges). Then
+**three review tickets**, the “Be ready” ticket stood upright: a surface **stub** with “TRUSTPILOT” and five green squares
+beside a **picture** (below), a dashed perforation with a notch at each end, and a white **main** with an orange topic label
+(*Visa appointment*, *Delivery time*, *Itinerary details*: what each reviewer wrote about), the title, the quote and, under a
+rule, the reviewer's initials in a tinted circle (mint, surface, peach), their name (linked to the review; a 25px target),
+“country · date” and a barcode. Three across from 1100px; from 640 to 1099px they lie down with the stub at the left, exactly
+as “Be ready”; below 640px they stand in one column and the Trustpilot ticket's stub becomes a row. The markup stays
+`figure` → `blockquote` + `figcaption`. A one-line note below repeats that these are excerpts and the overall score.
 
-**Be ready (refined in v6).** Same four tickets, copy, order, stub (“READY FOR / CHECK-IN”), the client's illustrations,
+**Review pictures.** Three illustrations on the client's 200 × 140 box, composed by `tools/build-review-art.py` from Tabler
+Icons (paths unchanged) with the client's recipe: peach and mint blocks, ink outlines at 2.4 units, white paper, one orange
+accent, the client's wobble filter. A PNR ticket under a magnifier beside a circled appointment date; a phone receiving the
+email, a paper plane and a stopwatch; an itinerary with its route beside a checked ID card.
+
+**Be ready (refined in v6, unchanged in v7 apart from the wider container).** Same four tickets, copy, order, stub (“READY FOR / CHECK-IN”), the client's illustrations,
 notches, perforation and barcode bar. Changes: the heading row now carries the **“Get my onward ticket” action at the right**, so
 all four tickets have the same shape (the action used to sit inside the fourth); the section ground carries the hero's
 **dot-matrix map in the brand teal at 16%** (`assets/vectors/world-dots.svg`) behind the heading, tying it to the hero. The tickets are not links, so they do not react to hover (a lift was tried and
@@ -214,12 +236,12 @@ and a slide-in on scroll.
 
 ## 6. Icons and artwork
 
-- **Icons:** Phosphor (bold for controls, duotone for the proof tiles, fill for stars, play/pause, the ticket's airplane, the
-  map's airplane and the review quote mark), defined once as an inline sprite (22 symbols).
+- **Icons:** Phosphor (bold for controls, duotone for the proof tiles, fill for stars, play/pause, the ticket's airplane and the
+  map's airplane), defined once as an inline sprite (21 symbols; v7 dropped the review quote mark).
 - **Map:** Natural Earth land (public domain) via the `world-atlas` package, projected with `d3-geo`; routes computed between
   airport coordinates. See `assets/SOURCES.md`.
-- **Artwork:** the client's own: the four “Be ready” illustrations and the nine airline logos. No photograph and no
-  third-party illustration.
+- **Artwork:** the client's own: the four “Be ready” illustrations and the nine airline logos; and three review pictures
+  composed from Tabler Icons (MIT) in the client's construction. No photograph and no stock illustration.
 
 ## 7. Motion
 

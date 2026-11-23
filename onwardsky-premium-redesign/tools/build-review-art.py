@@ -1,0 +1,127 @@
+"""Build the review illustrations in the style of the client's "Be ready" drawings and inline them into index.html.
+
+Nothing is drawn freehand: every object is an icon from Tabler Icons (MIT, https://tabler.io/icons), taken unchanged
+from the npm package and composed the way the client's own illustrations are built:
+  * two soft colour blocks (peach and mint, 20-unit corners) and at most one accent dot, behind the drawing;
+  * the objects outlined in the heading ink at 2.4 units on a 200 x 140 box, with round caps and joins
+    (each icon's stroke is rescaled so every object has the same line weight);
+  * paper objects filled white, one warm accent in the illustration orange;
+  * the same slight hand-drawn wobble (an feTurbulence + feDisplacementMap filter with the client's values).
+
+Usage:  python3 tools/build-review-art.py <path-to>/@tabler/icons/icons/outline index.html [preview.html]
+Each svg lands between <!--ART:<name>:START--> and <!--ART:<name>:END--> markers in index.html (idempotent).
+"""
+import re
+import sys
+
+TABLER, HTML = sys.argv[1].rstrip('/'), sys.argv[2]
+PREVIEW = sys.argv[3] if len(sys.argv) > 3 else None
+
+# The client's illustration palette (assets/SOURCES.md): ink, paper, the two blocks, the accent dot, orange, aqua.
+INK, PAPER, MINT, PEACH, TEAL, ORANGE, AQUA = '#0E2F34', '#fff', '#C8E6E1', '#FFD3BA', '#21A1A3', '#CC4700', '#86D6D2'
+LINE = 2.4  # the client's line weight on the 200 x 140 box
+FILTER = ('<filter id="{id}" x="-6%" y="-6%" width="112%" height="112%"><feTurbulence type="fractalNoise" '
+          'baseFrequency=".04" numOctaves="2" seed="16" /><feDisplacementMap in="SourceGraphic" scale="2.6" '
+          'xChannelSelector="R" yChannelSelector="G" /></filter>')
+
+
+def paths(name):
+    """The drawing elements of one Tabler outline icon (24 x 24 grid), without its invisible bounding box."""
+    svg = open(f'{TABLER}/{name}.svg', encoding='utf-8').read()
+    els = re.findall(r'<(?:path|circle|rect|line|polyline|ellipse)\b[^>]*/>', svg)
+    return [e for e in els if 'stroke="none"' not in e]
+
+
+def icon(name, x, y, size, rot=0, fill=None, keep=None, style=None, extra=''):
+    """Place a Tabler icon: its 24-unit grid maps to a size x size square at (x, y), rotated about its centre.
+    fill:  {element index: colour} for closed outlines that are paper (white) or ink.
+    keep:  element indexes to keep (default: all).  style: {index: extra attributes}.
+    extra: marks added on the icon's own grid (dates on a calendar, a hand on a dial), in the same line weight."""
+    s = size / 24
+    fill, style = fill or {}, style or {}
+    els = paths(name)
+    out = []
+    for i, el in enumerate(els):
+        if keep is not None and i not in keep:
+            continue
+        attrs = ''
+        if i in fill:
+            attrs += f' fill="{fill[i]}"'
+        if i in style:
+            attrs += ' ' + style[i]
+        out.append(el.replace('/>', f'{attrs} />').replace('  />', ' />'))
+    rotate = f' rotate({rot:g} 12 12)' if rot else ''
+    return (f'<g transform="translate({x:g} {y:g}) scale({s:.4g}){rotate}" stroke-width="{LINE / s:.3g}">'
+            + ''.join(out) + extra + '</g>')
+
+
+def art(name, blocks, drawing):
+    fid = f'art-{name}'
+    return (f'<svg viewBox="0 0 200 140" class="tk-svg" overflow="visible" focusable="false" aria-hidden="true">'
+            f'<defs>{FILTER.format(id=fid)}</defs>{blocks}'
+            f'<g filter="url(#{fid})" fill="none" stroke="{INK}" stroke-width="{LINE}" stroke-linecap="round" '
+            f'stroke-linejoin="round">{drawing}</g></svg>')
+
+
+def text(x, y, s, size=12.5, rot=0, spacing=1.4, color=INK):
+    r = f' transform="rotate({rot:g} {x:g} {y:g})"' if rot else ''
+    return (f'<text x="{x:g}" y="{y:g}"{r} font-family="Figtree, system-ui, sans-serif" font-size="{size:g}" '
+            f'font-weight="800" fill="{color}" stroke="none" letter-spacing="{spacing:g}">{s}</text>')
+
+
+ARTS = {}
+
+# 1. Review about a visa appointment and a verifiable PNR: the booking reference on a ticket, checked under a
+#    magnifier, beside the appointment date (circled in orange, as the client's "Take-off" calendar).
+ARTS['review-visa'] = art('review-visa',
+    f'<rect x="12" y="34" width="90" height="88" rx="20" fill="{MINT}" />'
+    f'<rect x="94" y="12" width="92" height="74" rx="20" fill="{PEACH}" />',
+    icon('calendar-event', 8, 22, 84, rot=-6, fill={0: PAPER}, keep=[0, 1, 2, 3],
+         extra='<path d="M7.5 14h.8M10.5 14h.8M13.5 14h.8M16.5 14h.8M7.5 17h.8M10.5 17h.8" />'
+               f'<circle cx="16.9" cy="17" r="1.9" stroke="{ORANGE}" />')
+    + icon('ticket', 90, 14, 94, rot=8, fill={3: PAPER})
+    + text(109, 70, 'PNR', size=14, rot=8, spacing=1.8)
+    + icon('zoom-check', 106, 66, 62, fill={0: PAPER}))
+
+# 2. Review about speed: the reservation arrives by email on the phone, well inside the stopwatch's two minutes.
+ARTS['review-delivery'] = art('review-delivery',
+    f'<rect x="18" y="20" width="84" height="100" rx="20" fill="{PEACH}" />'
+    f'<rect x="98" y="58" width="88" height="66" rx="20" fill="{MINT}" />'
+    f'<circle cx="164" cy="30" r="13" fill="{TEAL}" />',
+    icon('device-mobile', 16, 16, 106, rot=-7, fill={0: PAPER}, keep=[0, 1])
+    + icon('mail', 42, 50, 50, rot=-7, fill={0: PAPER})
+    + '<path d="M96 50c18-24 40-28 58-14" stroke-dasharray="3 5" />'
+    + icon('send', 140, 14, 40)
+    + icon('stopwatch', 110, 56, 74, fill={0: PAPER}, keep=[0, 2, 3],
+           extra=f'<path d="M12 13l2.5-2.5" stroke="{ORANGE}" />'))
+
+# 3. Review about the itinerary: the document with its route, and the passenger's details checked.
+ARTS['review-itinerary'] = art('review-itinerary',
+    f'<rect x="14" y="22" width="90" height="96" rx="20" fill="{PEACH}" />'
+    f'<rect x="100" y="50" width="86" height="74" rx="20" fill="{MINT}" />',
+    icon('file-text', 10, 12, 116, rot=-4, fill={1: PAPER}, keep=[0, 1],
+         extra=f'<circle cx="8.6" cy="9.6" r=".7" fill="{INK}" /><path d="M9.4 10.2c1.6 1.9 3.6 .6 4.9 2.5" stroke-dasharray=".55 1.05" />'
+               f'<circle cx="14.9" cy="13.2" r=".7" fill="{INK}" /><path d="M8.5 16.5h7M8.5 18.4h4.5" />')
+    + icon('id', 102, 38, 84, rot=6, fill={0: PAPER})
+    + icon('circle-check', 150, 84, 40, fill={0: PAPER}, style={1: f'stroke="{ORANGE}"'}))
+
+
+html = open(HTML, encoding='utf-8').read()
+for name, svg in ARTS.items():
+    pattern = rf'<!--ART:{name}:START-->.*?<!--ART:{name}:END-->'
+    if re.search(pattern, html, re.S):
+        html = re.sub(pattern, lambda m: f'<!--ART:{name}:START-->{svg}<!--ART:{name}:END-->', html, flags=re.S)
+    elif not PREVIEW:
+        sys.exit(f'marker for {name} missing in {HTML}')
+if not PREVIEW:
+    open(HTML, 'w', encoding='utf-8').write(html)
+    print('injected', len(ARTS), 'illustrations')
+else:
+    # a side-by-side sheet: the client's four drawings, then the new ones
+    ready = re.findall(r'<!--ART:(?:checkin|arrival|visa|takeoff):START-->(.*?)<!--ART', html, re.S)
+    cells = ''.join(f'<div class="c">{s}</div>' for s in ready + list(ARTS.values()))
+    open(PREVIEW, 'w', encoding='utf-8').write(
+        '<!doctype html><meta charset="utf-8"><style>body{margin:0;padding:20px;background:#F5FAFA;'
+        'display:grid;grid-template-columns:repeat(4,300px);gap:20px}.c{background:#E7F3F3;border-radius:18px;'
+        'padding:18px}</style>' + cells)
+    print('preview written')

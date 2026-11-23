@@ -1,4 +1,4 @@
-# Onward Sky — premium homepage redesign (prototype v6)
+# Onward Sky — premium homepage redesign (prototype v7)
 
 A browser-viewable, high-fidelity prototype of the Onward Sky homepage from the top of the page
 through **“Be ready when proof of onward travel is requested”**. Everything below that section is
@@ -6,25 +6,34 @@ out of scope and unchanged.
 
 ![Desktop first viewport](screenshots/desktop-1440-first-viewport.png)
 
-## What changed in v6
+## What changed in v7
 
-The client's feedback on v5: **remove the photograph and make the hero vectors only**, and **improve the other sections too**.
+The client's feedback on v6: **make the hero card a little wider and right for every screen size**, and **give the other
+sections more beauty and polish, with professional vectors in the same style as the “Be ready” illustrations**.
 
-- **A vector hero.** The photograph is gone. At the right of the brand-teal panel there is now a **route map**: the world's land as
-  a dot matrix (Natural Earth's open data), five flight routes between real airports (London, Lisbon, Istanbul, Dubai, Delhi,
-  Bangkok, Singapore), the airports' codes in small departure-board tags, and one airplane in flight (Phosphor). It is computed
-  by a script from open data, so nothing is drawn by hand, and it continues the dotted globe of the client's current hero.
-- **Organised around the text.** The map is masked out across the headline column, so the copy always sits on the plain teal
-  (contrast measured on the rendered page at eight widths); it is shown from 900px and is not even downloaded on phones.
-- **Reviews redesigned.** A Trustpilot summary sits beside the heading (4.0, the green squares, “All 4 reviews rated 5 stars”,
-  the link to Trustpilot), then three cards of one kind: rating and quote mark, title, quote, and the reviewer's initials, name,
-  country and date. Same excerpts, names, dates and links as the live page.
-- **“Be ready” refined.** The “Get my onward ticket” action moved into the heading row, so the four tickets are the same shape;
-  the section ground carries the hero's dot map in the brand teal. The client's tickets, illustrations and copy are unchanged.
-- **Kept from v5:** the boarding-pass booking form (from 1180px; every capability of the production form), the single glass proof
-  bar, the airline-logo marquee with its pause button, the header that folds below 1200px. Every UI colour is a production colour
-  (`tools/palette-audit.js`: 30 colours painted, none outside the palette), Figtree is the only typeface, and the page weighs
-  309 KB on a desktop and 264 KB on a phone.
+- **A wider hero panel, fluid at every size.** The panel now grows to 1640px (it stopped at 1320px) and keeps an 8–20px
+  margin to the window until it gets there, so on a 1440 screen it is 1408px wide, on a 1536 laptop 1502px and on a 1920
+  monitor 1640px. The page container grows from 1240 to 1320px, so the headline, the boarding-pass form, the reviews and
+  “Be ready” widen with it and still share one left edge with the header. Below 1280px the layout is as in v6 (the panel's
+  margin differs by a pixel or two).
+- **The route map runs on to the panel's edge.** The map is rebuilt by its script 600 units wider (Japan and Australia are
+  now drawn), and its routes stay composed in the same 16:9 box, centred on the content: on wide panels the dots continue to
+  the edge instead of stopping, and the routes keep clear of the headline and the form at every width.
+- **Reviews redesigned as tickets, in the “Be ready” style.** The Trustpilot summary is a small ticket (the score on the stub),
+  and each review is an upright ticket: a tinted stub with the Trustpilot rating and an **illustration drawn the same way as
+  the client's “Be ready” art**, a dashed perforation with two notches, an orange topic label (*Visa appointment*, *Delivery
+  time*, *Itinerary details*), the title, the quote and the reviewer, and a barcode. Three across on desktops, lying down
+  (stub at the left, as “Be ready”) on tablets, upright in one column on phones. Every word, name, date and link is unchanged.
+- **Professional vectors, in the client's construction.** The three new illustrations are composed by a script
+  (`tools/build-review-art.py`) from **Tabler Icons** (tabler.io, MIT): the objects are Tabler's, unchanged; the construction is
+  the client's own: peach and mint blocks, ink lines at the same weight, white paper, one orange accent and the same slight
+  hand-drawn wobble.
+- **A contrast fix the earlier rounds had not measured.** At 1100px (the two-column band, 900–1179px) the end of the lead sat
+  on faint map dots (4.3 : 1); in that band the map now shows only above the card, and the lead measures at least 4.9 : 1 at
+  all fourteen widths measured, from 360 to 2560px.
+- **Kept:** the boarding-pass form and every one of its behaviours, the glass proof bar, the airline marquee with its pause
+  button, “Be ready” as the client designed it. Every colour is still a production colour (`tools/palette-audit.js`: 30 colours,
+  none outside the palette) and Figtree is the only typeface. The page weighs 323 KB on a desktop and 274 KB on a phone.
 
 ## Preview it
 
@@ -50,7 +59,8 @@ preloading is simply skipped under `file://`.
 | Try this | What you should see |
 | --- | --- |
 | Look at the first screen on a laptop | The headline, the route map with its airport tags and airplane, the boarding-pass form with its orange button, the proof bar and the logo strip, all visible at 1440×900 |
-| Shrink the window below 1200px, 1180px, then 900px | The header folds into the menu at 1200px; the ticket becomes a card at 1180px, set lower so the map shows above it; below 900px the layout stacks and the map is not shown |
+| Widen the window from 1280px to 1920px and beyond | The hero panel keeps a slim margin to the window and grows to 1640px; the map's dots run on to its edge (Japan, Australia) while the routes stay where they were |
+| Shrink the window below 1200px, 1180px, then 900px | The header folds into the menu at 1200px; the ticket becomes a card at 1180px, set lower so the map shows above it (only above it, so the lead stays on the plain teal); below 900px the layout stacks and the map is not shown |
 | Watch the airline strip | The nine logos scroll sideways; hover pauses them; the round button at its right pauses and plays them; they also rest while the strip is off screen |
 | Turn on “reduce motion” in your OS | The logos become a static centred row; the entrance and slide-in effects and the map's fade are skipped |
 | Type `del`, `bom`, `bangkok` or `saigon` in **From** | Ranked airport suggestions with boxed codes; ↑/↓ + Enter or click to choose |
@@ -62,7 +72,7 @@ preloading is simply skipped under `file://`.
 | Switch to **Return** / **Multi-city** | Return puts the route on its own row and adds a return date; flights 2–6 start where the previous one lands, with add and remove |
 | Type nonsense (e.g. `zzq`) | A visible “No airports found” state with a hint |
 | Phone width, scroll past the form | A sticky fare bar; its button returns you to the form and focuses **From** |
-| Scroll to the reviews | The Trustpilot summary beside the heading (one link), then three cards of one kind; each name links to its review |
+| Scroll to the reviews | The Trustpilot ticket beside the heading (one link), then three review tickets with the new illustrations; each name links to its review. Narrow the window: they lie down below 1100px and stand up in one column below 640px |
 | Scroll to “Be ready” | The action beside the heading; four ticket stubs of one shape in two equal columns (one on tablets and phones) on the dotted map |
 | Keyboard only | Logical tab order, visible focus everywhere (white on the teal panel), full combobox support |
 
@@ -81,8 +91,8 @@ onwardsky-premium-redesign/
 │   ├── brands/                Payment marks (Simple Icons)
 │   ├── fonts/                 Figtree variable font (self-hosted, SIL OFL licence included)
 │   └── SOURCES.md             Where every asset came from, its owner or licence, and what was changed
-├── tools/                     Scripts that rebuild the sprite, the route map and the art, and the colour audit
-├── screenshots/               Final captures: 1920, 1440, 1280, 1024, 768, 390, 375 + form and strip states + before/after
+├── tools/                     Scripts that rebuild the sprite, the route map, the “Be ready” and review art, and the colour audit
+├── screenshots/               Final captures: 2560, 1920, 1440, 1280, 1024, 768, 390, 375 + section, form and strip states + before/after
 ├── DESIGN-SYSTEM.md           Palette with production names and measured contrast, type, layout, components, motion
 ├── DESIGN-RATIONALE.md        What was wrong, how the two sites compare, what changed and why, self-critique
 └── IMPLEMENTATION-NOTES.md    Demo-only behaviour, gaps, limitations, porting notes, QA log, skills used
@@ -98,9 +108,10 @@ Machine-readable design records produced by the Impeccable skill live at the rep
 | --- | --- |
 | Before / after, desktop | `screenshots/before-after/compare-desktop-1440.png` |
 | Before / after, mobile | `screenshots/before-after/compare-mobile-390.png` |
-| First viewports (2×, and 1× for 1920 and 1024) | `screenshots/*-first-viewport.png` |
+| First viewports (2×, and 1× for 2560, 1920 and 1024) | `screenshots/*-first-viewport.png` |
 | Full pages | `screenshots/*-full-page.png` |
-| Form states (suggestions, error, ready, return, multi-city), the strip and the mobile states, plus the reviews and “Be ready” sections at 1440 | `screenshots/states/` |
+| The reviews at 1440, 900 and 390, “Be ready” at 1440, the boarding-pass bar, the 1024 two-column band | `screenshots/states/section-*.png`, `ticket-closeup-1440.png`, `tablet-1024-two-columns.png` |
+| Form states (suggestions, error, ready, return, multi-city), the strip and the mobile states (captured in v6; the form and strip did not change in v7) | `screenshots/states/` |
 
 ## Important
 

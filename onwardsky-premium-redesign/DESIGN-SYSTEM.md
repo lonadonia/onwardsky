@@ -207,7 +207,7 @@ problem.
 20%) with four cells split by hairlines; the Trustpilot cell sizes to its content and shows a white focus ring inside its edge.
 
 **Airline strip.** The panel's foot: gradient `--v9-deep` → `--heading`, centred small-caps title, the client's nine logos in a
-sideways marquee (46s, masked edges) that pauses on hover, on focus, off screen and with a visible button, and becomes a static
+sideways marquee (46s, masked edges) that pauses on hover, on focus and off screen (the pause button was removed at the client's request in v7.1; logos 15% larger), and becomes a static
 row under reduced motion.
 
 **Reviews (redesigned as tickets in v7).** The heading and lead at the left and, at the right, a **Trustpilot ticket** that is
@@ -236,7 +236,7 @@ and a slide-in on scroll.
 
 ## 6. Icons and artwork
 
-- **Icons:** Phosphor (bold for controls, duotone for the proof tiles, fill for stars, play/pause, the ticket's airplane and the
+- **Icons:** Phosphor (bold for controls, duotone for the proof tiles, fill for stars, the ticket's airplane and the
   map's airplane), defined once as an inline sprite (21 symbols; v7 dropped the review quote mark).
 - **Map:** Natural Earth land (public domain) via the `world-atlas` package, projected with `d3-geo`; routes computed between
   airport coordinates. See `assets/SOURCES.md`.

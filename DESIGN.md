@@ -298,7 +298,7 @@ Density is calm: large type, generous space, surfaces that change by meaning (br
 - One picture, and it is information: routes between real airports, the client's own dotted-globe motif made precise. It is masked out across the text column, so text never sits on it.
 - Ticket vocabulary everywhere: dashed perforation, semicircle notches, a barcode bar, small-caps stub labels, departure-board codes.
 - Burnt orange appears only on actions and on error text (the production's own choice).
-- A sideways airline-logo marquee as the foot of the panel, with a visible pause control.
+- A sideways airline-logo marquee as the foot of the panel; it pauses on hover and focus (no pause button, at the client's request).
 
 ## Colors
 

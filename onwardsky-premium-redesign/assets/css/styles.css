@@ -684,7 +684,7 @@ strong { font-weight: 700; }
 
 /* ---------- Airline strip: the foot of the hero panel, a sideways marquee ---------- */
 .strip {
-  --k: 0.86;
+  --k: 1;
   position: relative; overflow: hidden;
   padding: clamp(12px, 1.15vw, 16px) 0 clamp(6px, 0.8vw, 10px);
   background: linear-gradient(180deg, var(--v9-deep) 0%, var(--heading) 100%);
@@ -692,7 +692,7 @@ strong { font-weight: 700; }
 }
 .strip::before { content: ""; position: absolute; inset: 0 0 auto; height: 1px; background: rgba(255, 255, 255, 0.08); }
 .strip-title {
-  margin: 0; padding: 0 52px; text-align: center;
+  margin: 0; padding: 0 20px; text-align: center;
   font: 700 clamp(0.78rem, 0.74rem + 0.1vw, 0.84rem)/1.35 var(--f); letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--v9-strip-ink); text-wrap: balance;
 }
@@ -707,29 +707,15 @@ strong { font-weight: 700; }
 }
 .marquee-track li {
   flex: none; display: flex; align-items: center; justify-content: center;
-  height: clamp(52px, 4.4vw, 64px); padding: 0 clamp(22px, 2.8vw, 42px);
+  height: clamp(60px, 5vw, 74px); padding: 0 clamp(22px, 2.8vw, 42px);
 }
 .marquee-track img { width: auto; height: calc(var(--h) * var(--k)); max-width: none; opacity: 0.92; }
 @keyframes marquee { to { transform: translateX(-33.3333%); } }
-/* hovering the logos pauses them; the toggle (a sibling) pauses and resumes explicitly */
+/* hovering or focusing the logos pauses them; they also rest off screen */
 .marquee:hover .marquee-track,
 .marquee:focus-within .marquee-track,
-.strip.is-paused .marquee-track,
 .strip.is-offscreen .marquee-track { animation-play-state: paused; }
 
-.marquee-toggle {
-  position: absolute; z-index: 2; top: 8px; right: clamp(10px, 1.6vw, 18px);
-  display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.32); background: rgba(255, 255, 255, 0.1); color: #fff;
-  transition: background-color var(--d-base) var(--ease-out), border-color var(--d-base) var(--ease-out);
-}
-.marquee-toggle::after { content: ""; position: absolute; inset: -4px; } /* 44px hit area, 36px look */
-.marquee-toggle:hover { background: rgba(255, 255, 255, 0.2); border-color: rgba(255, 255, 255, 0.5); }
-.marquee-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 50%; }
-.marquee-toggle .icon { width: 16px; height: 16px; grid-area: 1 / 1; }
-.marquee-toggle .icon-play { display: none; }
-.marquee-toggle[aria-pressed="true"] .icon-pause { display: none; }
-.marquee-toggle[aria-pressed="true"] .icon-play { display: block; }
 
 /* ---------- Reviews: a Trustpilot ticket beside the heading, then three review tickets ----------
    The same ticket as "Be ready" (a surface stub with a small-caps label and an illustration, a dashed perforation with
@@ -918,17 +904,16 @@ strong { font-weight: 700; }
   .marquee { overflow: visible; -webkit-mask-image: none; mask-image: none; }
   .marquee-track { width: auto; flex-wrap: wrap; justify-content: center; animation: none; padding: 4px var(--gutter) 8px; }
   .marquee-track li[aria-hidden="true"] { display: none; }
-  .marquee-track li { height: 52px; padding: 0 clamp(14px, 1.5vw, 20px); }
-  .strip { --k: 0.95; }
-  .marquee-toggle { display: none; }
+  .marquee-track li { height: 60px; padding: 0 clamp(14px, 1.5vw, 20px); }
+  .strip { --k: 1.08; }
 }
 
 /* ==========================================================================
    Responsive
    ========================================================================== */
 
-@media (min-width: 720px) { .strip { --k: 0.93; } }
-@media (min-width: 1024px) { .strip { --k: 1.1; } }
+@media (min-width: 720px) { .strip { --k: 1.07; } }
+@media (min-width: 1024px) { .strip { --k: 1.26; } }
 
 /* Laptop: a slimmer stub */
 @media (min-width: 1180px) and (max-width: 1279.98px) {
@@ -1038,7 +1023,6 @@ strong { font-weight: 700; }
   .booking[data-trip="multi_city"] .route > .field:last-child .suggestions { left: -1px; right: -1px; }
   .booking-foot { justify-items: center; text-align: center; }
   .assurances, .payments { justify-content: center; }
-  .strip-title { padding: 0 54px 0 20px; text-align: left; }
   .ready-cta { width: 100%; }
   .scope-end { padding-bottom: calc(26px + 76px); }
 }

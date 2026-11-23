@@ -95,6 +95,11 @@ New in v7:
 - The review rating's accessible name is now “Rated 5 out of 5” (the visible “Trustpilot” label precedes it). The unused
   quote-mark symbol was removed from the sprite (21 symbols).
 
+v7.1 (client request):
+- **The marquee's pause button is removed** and the logos are about 15% larger. Hover, keyboard focus, off-screen rest and the
+  reduced-motion static row remain. Note for sign-off: without a visible pause control a looping animation longer than five
+  seconds does not meet WCAG 2.2.2 (Pause, Stop, Hide) for pointer-less users who do not set reduced motion.
+
 ## 4. Reference gaps and assumptions
 
 - **Airline logos** are the client's nine `.webp` files, copied unchanged (white marks, transparent background). The production strip paints them through CSS `mask-image`; the prototype uses `<img>` so the page also works when opened from disk (Chrome blocks file masks over `file://`). Sizes follow the production strip.

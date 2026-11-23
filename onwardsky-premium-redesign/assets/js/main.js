@@ -46,18 +46,11 @@
   });
 
   /* ------------------------------------------------------------------
-   * Airline strip: the sideways marquee has a visible pause control
-   * (WCAG 2.2.2). It also pauses on hover and keyboard focus (CSS).
+   * Airline strip: the sideways marquee pauses on hover and keyboard
+   * focus (CSS), and is a static row under reduced motion.
    * ------------------------------------------------------------------ */
   var strip = doc.querySelector('[data-marquee]');
-  var marqueeBtn = doc.querySelector('[data-marquee-toggle]');
-  if (strip && marqueeBtn) {
-    marqueeBtn.addEventListener('click', function () {
-      var paused = marqueeBtn.getAttribute('aria-pressed') !== 'true';
-      marqueeBtn.setAttribute('aria-pressed', String(paused));
-      marqueeBtn.setAttribute('aria-label', paused ? 'Play the scrolling airline logos' : 'Pause the scrolling airline logos');
-      strip.classList.toggle('is-paused', paused);
-    });
+  if (strip) {
     /* the loop also rests while the strip is off screen: nothing to see, nothing to animate */
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {

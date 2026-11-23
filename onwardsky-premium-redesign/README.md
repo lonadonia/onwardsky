@@ -35,6 +35,12 @@ sections more beauty and polish, with professional vectors in the same style as 
   button, “Be ready” as the client designed it. Every colour is still a production colour (`tools/palette-audit.js`: 30 colours,
   none outside the palette) and Figtree is the only typeface. The page weighs 323 KB on a desktop and 274 KB on a phone.
 
+## v7.1
+
+At the client's request the round pause button on the airline strip is gone, and the airline logos are about 15% larger
+(scale 1.26 on desktops, 1.07 on tablets, 1.0 on phones; rows 60–74px tall). The strip still pauses on hover and keyboard
+focus, rests off screen, and becomes a static row under reduced motion.
+
 ## Preview it
 
 The prototype is static HTML, CSS and vanilla JavaScript. There is no build step and nothing to install.

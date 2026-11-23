@@ -110,6 +110,12 @@ v7.2 (client request):
   `tools/build-review-art.py` from Tabler's filled `cloud` and `plane`. The tickets' notch discs stay white because the section
   ground stays white. On tablets the section gets 28px more top padding so the plane and its cloud sit above the heading.
 
+v7.3 (client request):
+- **Reviews back to the production direction**: the three review pictures, the ticket stubs, perforations, barcodes, topic
+  labels and initials are removed; the cards are dark (`--heading`, text in `--v9-on-dark` / `--v9-on-dark-2`, names in aqua),
+  tinted (`--surface`) and white, with Phosphor's `quotes` mark in accent-bright (back in the sprite, 20 symbols). The
+  Trustpilot summary is a plain card. `tools/build-review-art.py` now builds only the section's sky; its picture helpers stay.
+
 ## 4. Reference gaps and assumptions
 
 - **Airline logos** are the client's nine `.webp` files, copied unchanged (white marks, transparent background). The production strip paints them through CSS `mask-image`; the prototype uses `<img>` so the page also works when opened from disk (Chrome blocks file masks over `file://`). Sizes follow the production strip.

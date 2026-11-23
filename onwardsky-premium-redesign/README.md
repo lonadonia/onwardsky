@@ -53,6 +53,15 @@ focus, rests off screen, and becomes a static row under reduced motion.
   appear in the margins of wide screens, two small clouds on phones. Decoration only (`aria-hidden`), never under text that
   would lose contrast.
 
+## v7.3
+
+At the client's request the reviews return to the direction of the production section: **no illustrations, no tickets**.
+Three cards in the production's three tones (dark teal, tinted, white) share one anatomy: a quote mark in accent-bright, the
+green Trustpilot squares, the title, the quote, and under a rule the reviewer's name (linked), country and date with
+“5-star review on Trustpilot”. The Trustpilot summary beside the heading is a plain card again, and the topic labels and
+initials are gone. The clouds and the flight path behind the section stay. Three across from 1024px, two plus one on
+tablets, one column on phones.
+
 ## Preview it
 
 The prototype is static HTML, CSS and vanilla JavaScript. There is no build step and nothing to install.

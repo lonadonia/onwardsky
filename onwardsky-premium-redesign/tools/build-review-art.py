@@ -1,4 +1,5 @@
-"""Build the review illustrations in the style of the client's "Be ready" drawings and inline them into index.html.
+"""Build the reviews section's sky and inline it into index.html (v7.3: the three review pictures were retired at the
+client's request; the helpers for pictures in the "Be ready" construction are kept for future use).
 
 Nothing is drawn freehand: every object is an icon from Tabler Icons (MIT, https://tabler.io/icons), taken unchanged
 from the npm package and composed the way the client's own illustrations are built:
@@ -83,41 +84,6 @@ def filled(name):
 
 ARTS = {}
 
-# 1. Review about a visa appointment and a verifiable PNR: the booking reference on a ticket, checked under a
-#    magnifier, beside the appointment date (circled in orange, as the client's "Take-off" calendar).
-ARTS['review-visa'] = art('review-visa',
-    f'<rect x="12" y="34" width="90" height="88" rx="20" fill="{MINT}" />'
-    f'<rect x="94" y="12" width="92" height="74" rx="20" fill="{PEACH}" />',
-    icon('calendar-event', 8, 22, 84, rot=-6, fill={0: PAPER}, keep=[0, 1, 2, 3],
-         extra='<path d="M7.5 14h.8M10.5 14h.8M13.5 14h.8M16.5 14h.8M7.5 17h.8M10.5 17h.8" />'
-               f'<circle cx="16.9" cy="17" r="1.9" stroke="{ORANGE}" />')
-    + icon('ticket', 90, 14, 94, rot=8, fill={3: PAPER})
-    + text(109, 70, 'PNR', size=14, rot=8, spacing=1.8)
-    + icon('zoom-check', 106, 66, 62, fill={0: PAPER}))
-
-# 2. Review about speed: the reservation arrives by email on the phone, well inside the stopwatch's two minutes.
-ARTS['review-delivery'] = art('review-delivery',
-    f'<rect x="18" y="20" width="84" height="100" rx="20" fill="{PEACH}" />'
-    f'<rect x="98" y="58" width="88" height="66" rx="20" fill="{MINT}" />'
-    f'<circle cx="164" cy="30" r="13" fill="{TEAL}" />',
-    icon('device-mobile', 16, 16, 106, rot=-7, fill={0: PAPER}, keep=[0, 1])
-    + icon('mail', 42, 50, 50, rot=-7, fill={0: PAPER})
-    + '<path d="M96 50c18-24 40-28 58-14" stroke-dasharray="3 5" />'
-    + icon('send', 140, 14, 40)
-    + icon('stopwatch', 110, 56, 74, fill={0: PAPER}, keep=[0, 2, 3],
-           extra=f'<path d="M12 13l2.5-2.5" stroke="{ORANGE}" />'))
-
-# 3. Review about the itinerary: the document with its route, and the passenger's details checked.
-ARTS['review-itinerary'] = art('review-itinerary',
-    f'<rect x="14" y="22" width="90" height="96" rx="20" fill="{PEACH}" />'
-    f'<rect x="100" y="50" width="86" height="74" rx="20" fill="{MINT}" />',
-    icon('file-text', 10, 12, 116, rot=-4, fill={1: PAPER}, keep=[0, 1],
-         extra=f'<circle cx="8.6" cy="9.6" r=".7" fill="{INK}" /><path d="M9.4 10.2c1.6 1.9 3.6 .6 4.9 2.5" stroke-dasharray=".55 1.05" />'
-               f'<circle cx="14.9" cy="13.2" r=".7" fill="{INK}" /><path d="M8.5 16.5h7M8.5 18.4h4.5" />')
-    + icon('id', 102, 38, 84, rot=6, fill={0: PAPER})
-    + icon('circle-check', 150, 84, 40, fill={0: PAPER}, style={1: f'stroke="{ORANGE}"'}))
-
-
 # 4. The reviews section's sky: cloud banks behind the section and one flight path with a plane across its top.
 #    Each cloud is Tabler's filled `cloud` (bounding box 1 4 22 15), alone or with a smaller copy at its lower left; drawn
 #    as a surface shadow, then the shapes' union outlined in mint (a 4px stroke under the paper leaves 2px showing),
@@ -166,7 +132,7 @@ if not PREVIEW:
 else:
     # a side-by-side sheet: the client's four drawings, then the new ones
     ready = re.findall(r'<!--ART:(?:checkin|arrival|visa|takeoff):START-->(.*?)<!--ART', html, re.S)
-    cells = ''.join(f'<div class="c">{s}</div>' for s in ready + [v for k, v in ARTS.items() if k != 'review-sky'])
+    cells = ''.join(f'<div class="c">{s}</div>' for s in ready)
     open(PREVIEW, 'w', encoding='utf-8').write(
         '<!doctype html><meta charset="utf-8"><style>body{margin:0;padding:20px;background:#F5FAFA;'
         'display:grid;grid-template-columns:repeat(4,300px);gap:20px}.c{background:#E7F3F3;border-radius:18px;'

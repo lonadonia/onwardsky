@@ -217,7 +217,9 @@ cloud (a surface shadow offset down-right, the union outlined in mint at 2px, wh
 page's centre line: between the lead and the ticket and under the tickets on laptops, larger banks in the margins from
 1600px, the plane and two clouds on tablets (with 28px more top padding), two small clouds on phones.
 
-**Reviews (redesigned as tickets in v7).** The heading and lead at the left and, at the right, a **Trustpilot ticket** that is
+**Reviews (v7.3: back to the production direction; the ticket version below was retired).** Three cards in the production tones, dark teal, tinted and white: quote mark, green squares, title, quote, then name · country · date and “5-star review on Trustpilot” under a rule; a plain Trustpilot summary beside the heading.
+
+**Reviews as tickets (v7–v7.2, retired).** The heading and lead at the left and, at the right, a **Trustpilot ticket** that is
 one link: a surface stub with “TRUSTSCORE” and the score “4.0” in the accent (the stage word of the client's stubs), a dashed
 perforation with two notches, then four of five green squares, “TrustScore 4.0 on Trustpilot”, “All 4 reviews rated 5 stars”
 and “Read more reviews on Trustpilot ↗” under a rule (accent edge and a deeper shadow on hover, the arrow nudges). Then

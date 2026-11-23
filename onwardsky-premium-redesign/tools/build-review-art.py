@@ -8,9 +8,15 @@ from the npm package and composed the way the client's own illustrations are bui
   * paper objects filled white, one warm accent in the illustration orange;
   * the same slight hand-drawn wobble (an feTurbulence + feDisplacementMap filter with the client's values).
 
+It also builds the reviews section's sky (`review-sky`): Tabler's filled cloud, unchanged, as soft cloud banks (a surface
+shadow, a mint outline, white paper) and a dashed flight path ending in Tabler's filled plane, as on the hero map.
+
 Usage:  python3 tools/build-review-art.py <path-to>/@tabler/icons/icons/outline index.html [preview.html]
+(the filled icons are read from the sibling `filled` folder of the package).
 Each svg lands between <!--ART:<name>:START--> and <!--ART:<name>:END--> markers in index.html (idempotent).
 """
+import math
+import os
 import re
 import sys
 
@@ -69,6 +75,12 @@ def text(x, y, s, size=12.5, rot=0, spacing=1.4, color=INK):
             f'font-weight="800" fill="{color}" stroke="none" letter-spacing="{spacing:g}">{s}</text>')
 
 
+def filled(name):
+    """The outline of one Tabler filled icon (24 x 24 grid)."""
+    svg = open(os.path.join(os.path.dirname(TABLER), 'filled', f'{name}.svg'), encoding='utf-8').read()
+    return re.findall(r'<path d="([^"]+)"', svg)[-1]
+
+
 ARTS = {}
 
 # 1. Review about a visa appointment and a verifiable PNR: the booking reference on a ticket, checked under a
@@ -106,6 +118,41 @@ ARTS['review-itinerary'] = art('review-itinerary',
     + icon('circle-check', 150, 84, 40, fill={0: PAPER}, style={1: f'stroke="{ORANGE}"'}))
 
 
+# 4. The reviews section's sky: cloud banks behind the section and one flight path with a plane across its top.
+#    Each cloud is Tabler's filled `cloud` (bounding box 1 4 22 15), alone or with a smaller copy at its lower left; drawn
+#    as a surface shadow, then the shapes' union outlined in mint (a 4px stroke under the paper leaves 2px showing),
+#    then white paper. Positions are set in the stylesheet (.sky-*), so the composition answers the layout.
+SURFACE, ACCENT = '#E7F3F3', '#156970'
+CLOUD_D, PLANE_D = filled('cloud'), filled('plane')
+BANK = 'translate(-3.62 8.52) scale(.62)'          # the small cloud: bounding box from (-3, 11), 13.6 x 9.3
+
+
+def cloud(cls, bank=False):
+    shapes = ['<use href="#sky-c" />'] + ([f'<use href="#sky-c" transform="{BANK}" />'] if bank else [])
+    vb = '-3.6 3.4 28 18.2' if bank else '.4 3.4 24 16.4'
+    group = ''.join(shapes)
+    return (f'<svg class="sky-cloud {cls}" viewBox="{vb}" overflow="visible" focusable="false">'
+            f'<g transform="translate(.9 .9)" fill="{SURFACE}">{group}</g>'
+            f'<g fill="{MINT}" stroke="{MINT}" stroke-width="4" stroke-linejoin="round">{group}</g>'
+            f'<g fill="{PAPER}">{group}</g></svg>')
+
+
+# the flight path: a cubic arc on a 1200 x 90 box (the stylesheet shows it 1:1), the plane just past its end
+P0, C1, C2, P1 = (0, 62), (380, 4), (800, 0), (1146, 35)
+angle = math.degrees(math.atan2(P1[1] - C2[1], P1[0] - C2[0]))   # Tabler's plane points right
+plane_at = (P1[0] + 22 * math.cos(math.radians(angle)), P1[1] + 22 * math.sin(math.radians(angle)))
+ROUTE = (f'<svg class="sky-route" viewBox="0 0 1200 90" overflow="visible" focusable="false">'
+         f'<path d="M{P0[0]} {P0[1]}C{C1[0]} {C1[1]} {C2[0]} {C2[1]} {P1[0]} {P1[1]}" fill="none" stroke="{ACCENT}" '
+         f'stroke-opacity=".34" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 7" />'
+         f'<g transform="translate({plane_at[0]:.1f} {plane_at[1]:.1f}) rotate({angle:.1f}) scale(1.1) translate(-12 -12)">'
+         f'<path d="{PLANE_D}" fill="{ACCENT}" fill-opacity=".8" /></g></svg>')
+
+ARTS['review-sky'] = (f'<svg class="sky-defs" width="0" height="0" focusable="false"><defs>'
+                      f'<path id="sky-c" d="{CLOUD_D}" vector-effect="non-scaling-stroke" /></defs></svg>'
+                      + ROUTE + cloud('sky-a') + cloud('sky-b', bank=True) + cloud('sky-c', bank=True)
+                      + cloud('sky-d') + cloud('sky-e') + cloud('sky-f', bank=True))
+
+
 html = open(HTML, encoding='utf-8').read()
 for name, svg in ARTS.items():
     pattern = rf'<!--ART:{name}:START-->.*?<!--ART:{name}:END-->'
@@ -119,7 +166,7 @@ if not PREVIEW:
 else:
     # a side-by-side sheet: the client's four drawings, then the new ones
     ready = re.findall(r'<!--ART:(?:checkin|arrival|visa|takeoff):START-->(.*?)<!--ART', html, re.S)
-    cells = ''.join(f'<div class="c">{s}</div>' for s in ready + list(ARTS.values()))
+    cells = ''.join(f'<div class="c">{s}</div>' for s in ready + [v for k, v in ARTS.items() if k != 'review-sky'])
     open(PREVIEW, 'w', encoding='utf-8').write(
         '<!doctype html><meta charset="utf-8"><style>body{margin:0;padding:20px;background:#F5FAFA;'
         'display:grid;grid-template-columns:repeat(4,300px);gap:20px}.c{background:#E7F3F3;border-radius:18px;'

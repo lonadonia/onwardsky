@@ -682,24 +682,23 @@ strong { font-weight: 700; }
 }
 .tile .icon { width: 24px; height: 24px; }
 
-/* ---------- Airline strip: the foot of the hero panel, a sideways marquee ---------- */
+/* ---------- Airline strip: its own band under the hero card, edge to edge, in the hero's teal one step darker ---------- */
 .strip {
   --k: 1;
   position: relative; overflow: hidden;
-  padding: clamp(12px, 1.15vw, 16px) 0 clamp(6px, 0.8vw, 10px);
-  background: linear-gradient(180deg, var(--v9-deep) 0%, var(--heading) 100%);
-  border-radius: 0 0 var(--r-panel) var(--r-panel);
+  margin-top: var(--panel-m); /* the same air under the card as at its sides */
+  padding: clamp(14px, 1.3vw, 18px) 0 clamp(8px, 0.9vw, 12px);
+  /* the hero's deep teal under a veil of the heading teal (22% at the top to 42% at the foot): the same family as the
+     card above, a little darker; alpha values of palette colours, no new colour */
+  background: linear-gradient(180deg, rgba(var(--heading-rgb), 0.22), rgba(var(--heading-rgb), 0.42)), var(--deep);
 }
-.strip::before { content: ""; position: absolute; inset: 0 0 auto; height: 1px; background: rgba(255, 255, 255, 0.08); }
 .strip-title {
   margin: 0; padding: 0 20px; text-align: center;
   font: 700 clamp(0.78rem, 0.74rem + 0.1vw, 0.84rem)/1.35 var(--f); letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--v9-strip-ink); text-wrap: balance;
 }
 .marquee {
-  position: relative; margin-top: clamp(2px, 0.4vw, 6px); overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0, var(--base) 12%, var(--base) 88%, transparent 100%);
-  mask-image: linear-gradient(90deg, transparent 0, var(--base) 12%, var(--base) 88%, transparent 100%);
+  position: relative; margin-top: clamp(2px, 0.4vw, 6px); overflow: hidden; /* no edge fade: the logos run on past the window */
 }
 .marquee-track {
   display: flex; flex-wrap: nowrap; width: max-content; margin: 0; padding: 0; list-style: none;
@@ -720,7 +719,22 @@ strong { font-weight: 700; }
 /* ---------- Reviews: a Trustpilot ticket beside the heading, then three review tickets ----------
    The same ticket as "Be ready" (a surface stub with a small-caps label and an illustration, a dashed perforation with
    two notches, a white main with an orange label and a barcode), stood upright so three fit side by side. */
-.reviews { padding-block: var(--section-pad); background: var(--base); }
+.reviews { position: relative; isolation: isolate; overflow: clip; padding-block: var(--section-pad); background: var(--base); }
+/* the section's sky (decoration): cloud banks around the content and one flight path with a plane across the top
+   padding, placed from the page's centre line so the composition follows the container (tools/build-review-art.py) */
+.reviews-sky { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.sky-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.sky-cloud, .sky-route { position: absolute; display: block; height: auto; max-width: none; }
+.sky-route { top: 8px; left: calc(50% - 1100px); width: 1200px; }
+.sky-a { top: 12px; left: calc(50% + 250px); width: 104px; }                 /* ahead of the plane, above the Trustpilot ticket */
+.sky-b { top: 132px; left: calc(50% + 34px); width: 168px; }                  /* between the lead and the Trustpilot ticket */
+.sky-d { bottom: 22px; left: calc(50% + 440px); width: 112px; }              /* under the tickets, right */
+/* on wide screens the margins beside the content get the larger banks */
+.sky-c { top: 46%; left: calc(50% - 940px); width: 320px; }
+.sky-e { top: 26px; left: calc(50% - 860px); width: 92px; transform: scaleX(-1); }
+.sky-f { top: 150px; left: calc(50% + 610px); width: 290px; transform: scaleX(-1); }
+@media (max-width: 1599.98px) { .sky-c, .sky-e, .sky-f { display: none; } }
+@media (max-width: 1279.98px) { .sky-b { left: calc(50% - 20px); top: 138px; width: 140px; } }
 .h-section, .h-ready {
   font: 700 var(--t-h2)/1.06 var(--f); letter-spacing: -0.028em; color: var(--heading); text-wrap: balance;
 }
@@ -1039,6 +1053,20 @@ strong { font-weight: 700; }
   .review-stub::after { right: -11px; bottom: -11px; }
   .review-art { max-width: 188px; justify-self: center; }
   .review-quote p { max-width: 40em; }
+}
+
+/* the sky on narrower screens: the flight path ends over the right of the heading, fewer clouds */
+@media (max-width: 1099.98px) {
+  .reviews { padding-top: calc(var(--section-pad) + 28px); } /* room for the plane and its cloud above the heading */
+  .sky-route { left: calc(66% - 1168px); top: 0; }
+  .sky-a { left: auto; right: 2%; top: 6px; width: 84px; }
+  .sky-b { display: none; }
+  .sky-d { left: auto; right: 4%; bottom: 14px; width: 96px; }
+}
+@media (max-width: 639.98px) {
+  .sky-route { display: none; }
+  .sky-a { right: -12px; top: 4px; width: 72px; }
+  .sky-d { right: -10px; bottom: 10px; width: 84px; }
 }
 
 /* Phones: one column; each stub is a compact row above its perforation (label beside the art, or the score) */

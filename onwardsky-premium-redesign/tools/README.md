@@ -30,6 +30,7 @@ NODE_PATH=mapgen/node_modules node tools/build-route-map.mjs mapgen/node_modules
 ```bash
 # 4. Review illustrations (v7): Tabler Icons (MIT) composed in the construction of the client's "Be ready"
 #    drawings (peach and mint blocks, 2.4-unit ink line, white paper, one orange accent, the client's wobble filter).
+#    It also builds the reviews sky (Tabler's filled cloud and plane, read from the package's sibling `filled` folder).
 #    Add a third argument (an output .html path) for a side-by-side preview with the client's four drawings.
 npm pack @tabler/icons@3.52.0 && mkdir -p tabler && tar -xzf tabler-icons-3.52.0.tgz -C tabler
 python3 tools/build-review-art.py tabler/package/icons/outline index.html

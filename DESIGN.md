@@ -298,7 +298,7 @@ Density is calm: large type, generous space, surfaces that change by meaning (br
 - One picture, and it is information: routes between real airports, the client's own dotted-globe motif made precise. It is masked out across the text column, so text never sits on it.
 - Ticket vocabulary everywhere: dashed perforation, semicircle notches, a barcode bar, small-caps stub labels, departure-board codes.
 - Burnt orange appears only on actions and on error text (the production's own choice).
-- A sideways airline-logo marquee as the foot of the panel; it pauses on hover and focus (no pause button, at the client's request).
+- A sideways airline-logo marquee on its own full-width band under the card, in the hero's teal one step darker; it pauses on hover and focus (no pause button, at the client's request).
 
 ## Colors
 
@@ -396,7 +396,10 @@ Radii follow the production geometry: 8px chips, tabs and map tags, 10px buttons
 - The three promises and the TrustScore line as one glass object (heading at 40%, a 10px blur, a 1px white edge at 20%) with four cells split by hairlines: a 38px tile with a duotone icon in aqua and one sentence each; the Trustpilot cell sizes to its content, links to the client's page and shows a white focus ring inside its edge. A row from 1180px, 2 by 2 from 1100 to 1179px, a column below.
 
 ### Airline Strip
-- The panel's foot: gradient deep-section to heading, small-caps title, the client's nine logos in a sideways marquee (three sets, 46s linear, masked edges). Pauses on hover, on focus, off screen and with a visible button; static centred row under reduced motion.
+- Its own full-width band under the hero card (separated by the card's margin): deep teal under a 22-42% veil of the heading teal, the hero's colour one step darker. Small-caps title, the client's nine logos in a sideways marquee (three sets, 46s linear, no edge fade). Pauses on hover, on focus and off screen; static centred row under reduced motion.
+
+### Reviews Sky
+- Decoration behind the reviews: Tabler filled clouds as soft banks (surface shadow, mint 2px outline, white paper) and a dashed accent flight path with Tabler's filled plane across the top, as on the hero map; aria-hidden, placed around the content.
 
 ### Reviews
 - **Trustpilot ticket** (one link, white, 18px radius, the ticket shadow): a surface stub with "TRUSTSCORE" and the score "4.0" in accent at 2.75rem, a dashed perforation with two notches, then four of five green squares, "TrustScore 4.0 on Trustpilot", "All 4 reviews rated 5 stars" and, under a rule, "Read more reviews on Trustpilot" with an arrow that nudges on hover. On phones the stub becomes a row above the perforation.

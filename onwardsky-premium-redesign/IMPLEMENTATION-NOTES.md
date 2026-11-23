@@ -100,6 +100,16 @@ v7.1 (client request):
   reduced-motion static row remain. Note for sign-off: without a visible pause control a looping animation longer than five
   seconds does not meet WCAG 2.2.2 (Pause, Stop, Hide) for pointer-less users who do not set reduced motion.
 
+v7.2 (client request):
+- **The airline strip left the hero card**: it is now a full-width band under it (`margin-top: var(--panel-m)`), with no edge
+  fade, in `--deep` under a 22–42% veil of `--heading` (the hero's teal one step darker; a navy taken from the logo was tried
+  first and declined by the client). Its title measures at least 8.1 : 1 on the band. The whole hero card is in the first
+  viewport at 1920×1080, 1536×864, 1440×900, 1366×768 and 1024×768 (at 1280×720 it was not before either); the band starts
+  right under it.
+- **A sky behind the reviews**: `.reviews-sky` (decoration, `aria-hidden`) holds clouds and a flight path built by
+  `tools/build-review-art.py` from Tabler's filled `cloud` and `plane`. The tickets' notch discs stay white because the section
+  ground stays white. On tablets the section gets 28px more top padding so the plane and its cloud sit above the heading.
+
 ## 4. Reference gaps and assumptions
 
 - **Airline logos** are the client's nine `.webp` files, copied unchanged (white marks, transparent background). The production strip paints them through CSS `mask-image`; the prototype uses `<img>` so the page also works when opened from disk (Chrome blocks file masks over `file://`). Sizes follow the production strip.

@@ -41,6 +41,18 @@ At the client's request the round pause button on the airline strip is gone, and
 (scale 1.26 on desktops, 1.07 on tablets, 1.0 on phones; rows 60–74px tall). The strip still pauses on hover and keyboard
 focus, rests off screen, and becomes a static row under reduced motion.
 
+## v7.2
+
+- **The airline strip is its own band.** It left the hero card: it now runs under the card, separated from it by the card's
+  own margin, from one edge of the window to the other, and the logos scroll on past both edges (no fade). Its colour is the
+  hero's teal one step darker (the deep teal under a 22–42% veil of the heading teal), so it stays in the card's family; no
+  new colour.
+- **A sky behind the reviews.** Soft cloud banks (Tabler's filled cloud: a surface shadow, a mint outline, white paper) sit
+  around the content, and a dashed flight path crosses the top of the section with a small plane heading for a cloud above
+  the Trustpilot ticket, the same dashed line as the routes on the hero map. Built by `tools/build-review-art.py`; larger banks
+  appear in the margins of wide screens, two small clouds on phones. Decoration only (`aria-hidden`), never under text that
+  would lose contrast.
+
 ## Preview it
 
 The prototype is static HTML, CSS and vanilla JavaScript. There is no build step and nothing to install.
@@ -67,7 +79,7 @@ preloading is simply skipped under `file://`.
 | Look at the first screen on a laptop | The headline, the route map with its airport tags and airplane, the boarding-pass form with its orange button, the proof bar and the logo strip, all visible at 1440×900 |
 | Widen the window from 1280px to 1920px and beyond | The hero panel keeps a slim margin to the window and grows to 1640px; the map's dots run on to its edge (Japan, Australia) while the routes stay where they were |
 | Shrink the window below 1200px, 1180px, then 900px | The header folds into the menu at 1200px; the ticket becomes a card at 1180px, set lower so the map shows above it (only above it, so the lead stays on the plain teal); below 900px the layout stacks and the map is not shown |
-| Watch the airline strip | The nine logos scroll sideways; hover pauses them; the round button at its right pauses and plays them; they also rest while the strip is off screen |
+| Watch the airline strip | Its own band under the hero card, edge to edge, in the hero teal one step darker; the nine logos scroll sideways and run on past both edges of the window; hover or keyboard focus pauses them; they rest while the band is off screen |
 | Turn on “reduce motion” in your OS | The logos become a static centred row; the entrance and slide-in effects and the map's fade are skipped |
 | Type `del`, `bom`, `bangkok` or `saigon` in **From** | Ranked airport suggestions with boxed codes; ↑/↓ + Enter or click to choose |
 | Click anywhere in a field cell | The control inside takes focus (the passenger cell opens its list) |

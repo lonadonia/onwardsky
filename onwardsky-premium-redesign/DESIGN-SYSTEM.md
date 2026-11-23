@@ -3,7 +3,7 @@
 The page is one family of tickets, drawn in vectors only. The hero is a deep-teal panel with a dot-matrix world map
 (Natural Earth data) on which flight routes join real airports; the headline sits at the left on the plain gradient and a
 **boarding-pass-shaped booking bar** is laid across the panel. One glass bar carries the three promises and the
-Trustpilot score, and the airline logos run along the panel's foot like a horizon. Below the hero, the reviews open with a
+Trustpilot score; under the card, the airline logos run edge to edge on their own band of darker hero teal. Below the hero, the reviews open with a
 small Trustpilot ticket and continue in three review tickets built like the client's “Be ready” stubs, each with a picture
 drawn the way the client's are; the “Be ready” tickets sit on the same dotted map, in the brand teal. Colour, type and the
 client's artwork come from the production site; there is no photograph and nothing is drawn freehand (the new pictures are
@@ -206,9 +206,16 @@ problem.
 **Proof bar.** The three promises and the TrustScore line as one glass object (heading at 40%, a 10px blur, a 1px white edge at
 20%) with four cells split by hairlines; the Trustpilot cell sizes to its content and shows a white focus ring inside its edge.
 
-**Airline strip.** The panel's foot: gradient `--v9-deep` → `--heading`, centred small-caps title, the client's nine logos in a
-sideways marquee (46s, masked edges) that pauses on hover, on focus and off screen (the pause button was removed at the client's request in v7.1; logos 15% larger), and becomes a static
-row under reduced motion.
+**Airline strip (v7.2).** Its own band under the hero card (separated by the card's margin), full width: `--deep` under a
+veil of `--heading` at 22% (top) to 42% (foot), the hero's teal one step darker. Centred small-caps title, the client's nine
+logos in a sideways marquee (46s, no edge fade, so they run on past the window's edges) that pauses on hover, on focus and
+off screen, and becomes a static row under reduced motion. Logo scale 1.0 / 1.07 / 1.26 (phone / tablet / desktop).
+
+**Reviews sky (v7.2).** Decoration behind the reviews (`.reviews-sky`, `aria-hidden`): cloud banks built from Tabler's filled
+cloud (a surface shadow offset down-right, the union outlined in mint at 2px, white paper), and a dashed accent flight path at
+34% across the top padding ending in Tabler's filled plane, heading for a cloud above the Trustpilot ticket. Placed from the
+page's centre line: between the lead and the ticket and under the tickets on laptops, larger banks in the margins from
+1600px, the plane and two clouds on tablets (with 28px more top padding), two small clouds on phones.
 
 **Reviews (redesigned as tickets in v7).** The heading and lead at the left and, at the right, a **Trustpilot ticket** that is
 one link: a surface stub with “TRUSTSCORE” and the score “4.0” in the accent (the stage word of the client's stubs), a dashed
